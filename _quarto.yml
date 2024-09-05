@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "R for Research"
+  author: "Olamide M. Adu"
+  date: "9/5/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: yeti
+    cover-image: cover.png
+
+  pdf:
+    documentclass: scrreprt
+    cover-image: cover.png
+
+editor: visual
+
