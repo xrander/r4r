@@ -14,7 +14,7 @@ The reproducibility features of R make it particularly appealing in academic set
 
 ## R and Data Science
 
-R use is not limited to academia, it's use is becoming one of the major tool used in a lot of sectors. This sectors usually need some type of data scientist, researcher, data analyst or data visualization specialist. With R and the numerous packages it supports this roles are fulfilled and be automated. This makes R and it's associated IDE RStudio a tool for all. In the data science community, R is known for its versatility in handling data wrangling, visualization, and modeling tasks. It is an excellent tool for managing complex data workflows from data cleaning to reporting
+R use is not limited to academia, it's use is becoming one of the major tool used in a lot of sectors. These sectors usually need some type of data scientist, researcher, data analyst or data visualization specialist. With R and the numerous packages it supports this roles are fulfilled and be automated. This makes R and it's associated IDE RStudio a tool for all. In the data science community, R is known for its versatility in handling data wrangling, visualization, and modeling tasks. It is an excellent tool for managing complex data workflows from data cleaning to reporting
 
 ## The R Community and Ecosystem
 
@@ -35,16 +35,8 @@ The R community is also known for its strong support culture. Forums like Stack 
 - Growing Popularity in Data Science: Many industries, including finance, healthcare, and tech, use R for data-driven decision-making.
 
 :::{.callout-note appearance=minimal}
-There's a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called [Positron](https://github.com/posit-dev/positron/releases). Positron is still in its early stage development phase, but might be the next big thing.
+There's a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called [Positron](https://github.com/posit-dev/positron/releases). Positron is still in its early stage of development.
 :::
-
-## Goal of the book
-
-The goal of this book is to equip you with the fundamentals of R and how it can be integrated into your research workflow. It is not the most technical book and it is organized in such a way as to take you from novice to
-
-
-# Getting Started
-This program is designed to equip you with the fundamental skills and knowledge needed to leverage the power of R for your research projects. Whether you are a novice with no programming experience or an experienced researcher looking to enhance your data analysis capabilities, this bootcamp  has you covered. To view the complete curriculum, [visit here](https://docs.google.com/document/d/1Tems2HuXV_Ff7R9ybG9LTQIY-XB7-RbX5IZBT3irW_I/edit?usp=sharing).
 
 
 ## Why Not R?
@@ -83,3 +75,37 @@ Despite R's strengths, there are scenarios where it may not be the best fit:
 
 Each of these alternatives has its strengths, and the choice depends on the project requirements, performance needs, and user expertise.
 
+## Goal of the book
+
+The primary goal of R for Research is to provide a clear and practical guide to using R for data analysis in research settings. This book aims to bridge the gap between theoretical knowledge and practical application, equipping readers with the skills needed to handle complex datasets, perform statistical analyses, and create insightful visualizations. Whether you are a beginner or have prior programming experience, this book will help you leverage the full power of R to streamline your research process and make data-driven decisions with confidence.
+
+By the end of this book, readers will have:
+
+-  A solid understanding of R’s core functionalities for data analysis.
+-  Proficiency in using key R packages for data manipulation, visualization, and statistical modeling.
+-  Practical experience through real-world examples and exercises that are relevant to various research fields.
+-  The ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
+
+Ultimately, R for Research is designed to enhance your analytical skills, helping you transform raw data into meaningful insights that drive impactful research.
+
+
+
+## Scope, Limitation, and Expectations
+### Scope
+
+R for Research covers essential techniques for data analysis using R, focusing on the needs of researchers across various disciplines. It introduces readers to R programming, data manipulation, statistical analysis, and visualization, with practical examples and case studies from academic research. The book is structured to help readers at any experience level, from beginner to intermediate, make effective use of R in their research.
+
+### Limitation
+
+While the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.
+
+### Expectations
+
+By the end of this book, readers are expected to:
+
+-  Understand R's core functions for data manipulation and visualization.
+-  Apply R to basic statistical analyses and data preparation.
+-  Integrate R into their research workflow for reproducible and transparent analysis.
+-  Have confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.
+
+This book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.
