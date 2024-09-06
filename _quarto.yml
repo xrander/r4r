@@ -9,7 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - r-rstudio.qmd
-    - summary.qmd
+    - basics.qmd
     - references.qmd
 
 bibliography: references.bib
