@@ -66,11 +66,11 @@ The four windows/panes as shown in @fig-rstudio-environment are:
 
 1. **Source Pane**: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.
 
-![Source window](images/rscript.png){height="200"}
+![Source window](images/rscript.png)
 
 2. **Console/Terminal/Background Jobs pane**: Located in the bottom-left. It include the **Console** pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some  analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the **Terminal** pane which provides direct access to your computer using command line. Lastly, we have the **Background Jobs** pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting. 
 
-![Console window](images/console.png){height="200"}
+![Console window](images/console.png)
 
 3. **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **Histor** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
 
@@ -78,11 +78,11 @@ The four windows/panes as shown in @fig-rstudio-environment are:
 An R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.
 :::
 
-![Environment window](images/environment_pane.png){height="200"}
+![Environment window](images/environment_pane.png)
 
 4 **Files / Plots / Packages / Help / Viewer Window**: Located in the bottom-right. It consists of the **Files** pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the **Plots** pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The **Packages** pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the **Help** pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the **Viewer** pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.
 
-![Files window](images/file_pane.png){height="200"}
+![Files window](images/file_pane.png)
 
 :::{.callout-tip appearance=simple}
 ### Script vs Console
