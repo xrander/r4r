@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R for Research - References</title>
+<title>R for Research - 2&nbsp; R, RStudio, and Posit Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -99,7 +115,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r-rstudio.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R, RStudio, and Posit Cloud</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -138,13 +154,19 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./r-rstudio.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R, RStudio, and Posit Cloud</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -154,14 +176,29 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">2.1</span> Installing R and RStudio</a>
+  <ul class="collapse">
+  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">2.1.1</span> Installing R</a></li>
+  <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">2.1.2</span> Installing RStudio</a></li>
+  <li><a href="#posit-cloud" id="toc-posit-cloud" class="nav-link" data-scroll-target="#posit-cloud"><span class="header-section-number">2.1.3</span> Posit Cloud</a></li>
+  </ul></li>
+  <li><a href="#the-rstudio-interface" id="toc-the-rstudio-interface" class="nav-link" data-scroll-target="#the-rstudio-interface"><span class="header-section-number">2.2</span> The RStudio Interface</a>
+  <ul class="collapse">
+  <li><a href="#sec-windows" id="toc-sec-windows" class="nav-link" data-scroll-target="#sec-windows"><span class="header-section-number">2.2.1</span> RStudio Panes/Windows</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R, RStudio, and Posit Cloud</span></h1>
 </div>
 
 
@@ -178,11 +215,146 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can skip all the steps below if you already have R and RStudio installed. Skip to the operating you use.</p>
+</div>
+</div>
+<section id="installing-r-and-rstudio" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">2.1</span> Installing R and RStudio</h2>
+<p>R and RStudio are both free to install and use. To install both software, you need to download and install the right file for your operating system (OS).</p>
+<section id="installing-r" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">2.1.1</span> Installing R</h3>
+<p><strong>Windows OS (10/ 11)</strong>: To download R from CRAN visit this link <a href="https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe" class="uri">https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe</a> and run the installer. This is the latest version at the time of writing this chapter</p>
+<p><strong>Mac OS</strong>: There are two versions of R for Mac users based on the processor in your computer.</p>
+<ul>
+<li>For M1-M3 processors visit the link <a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg" class="uri">https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg</a> and run the installer</li>
+<li>For Intel processors visit the link <a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg" class="uri">https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg</a> and run the installer.</li>
+</ul>
+<p><strong>Linux Users</strong> R installation on Linux depends on your distribution. Open terminal (<code>Ctrl</code> + <code>Alt</code> + <code>T</code>) and enter the command below based on your distribution.</p>
+<ul>
+<li>Debian/Ubuntu distribution:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash terminal code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt update</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt install r-base r-base-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Redhat/Fedora distribution:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash terminal code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo dnf install R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="installing-rstudio" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="installing-rstudio"><span class="header-section-number">2.1.2</span> Installing RStudio</h3>
+<p>To install RStudio, visit the link <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:</p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=KUb_NYa4m3g">window</a></p></li>
+<li><p><a href="https://drive.google.com/file/d/1haHA_2r6L4D_VcBdTcgH53dcTbGV78_2/view?usp=drive_link">Mac</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=Uw9fWa-hVdc">linux-ubuntu</a></p></li>
+</ul>
+</section>
+<section id="posit-cloud" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="posit-cloud"><span class="header-section-number">2.1.3</span> Posit Cloud</h3>
+<p>There’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit <a href="https://posit.cloud/" class="uri">https://posit.cloud/</a> and register. After registering, you get a page similar to <a href="#fig-cloud" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>. After registering, click on new workspace on the left sidebar and create a new project.</p>
+<div id="fig-cloud" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/posit-cloud.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: posit cloud
+</figcaption>
+</figure>
+</div>
+<p>The video series in this <a href="https://www.youtube.com/watch?v=VV_3MvJmwG4&amp;list=PL9HYL-VRX0oSn7tBLDiSt4Vnyk3yB6ipA">link</a> is a good resource for starting with Posit Cloud.</p>
+</section>
+</section>
+<section id="the-rstudio-interface" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">2.2</span> The RStudio Interface</h2>
+<p>On opening RStudio, you have three panes by default. You can get a fourth pane like what is shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>. To do this, click the <strong>+</strong> button at the top-left and select R Script, or use the keyboard shortcut <code>Ctrl + Shift + N</code> on Windows/Linux and <code>Cmd + Shift + N</code> on Mac. More details on the panes is provided in <a href="#sec-windows" class="quarto-xref"><span>Section 2.2.1</span></a></p>
+<div id="fig-rstudio-environment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/r_interface.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: R Studio Environment
+</figcaption>
+</figure>
+</div>
+<p>You can change the arrangement of the panes by clicking <code>Tools</code> on the menu bar then navigate to <code>Global Options</code> and <code>Pane Layout</code> in the popup box.</p>
+<section id="sec-windows" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="sec-windows"><span class="header-section-number">2.2.1</span> RStudio Panes/Windows</h3>
+<p>The four windows/panes as shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> are:</p>
+<ol type="1">
+<li><strong>Source Pane</strong>: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rscript.png" height="200" class="figure-img"></p>
+<figcaption>Source window</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><strong>Console/Terminal/Background Jobs pane</strong>: Located in the bottom-left. It include the <strong>Console</strong> pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the <strong>Terminal</strong> pane which provides direct access to your computer using command line. Lastly, we have the <strong>Background Jobs</strong> pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/console.png" height="200" class="figure-img"></p>
+<figcaption>Console window</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><strong>Environment / History Pane</strong>: Located in the top-right. It includes the <strong>Environment</strong> pane which displays all objects created during a session, such as data and variables. We also have the <strong>History</strong> pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to <strong>Histor</strong> pane is the <strong>Connection</strong> pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the <strong>Tutorial</strong> pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.</li>
+</ol>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>An R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/environment_pane.png" height="200" class="figure-img"></p>
+<figcaption>Environment window</figcaption>
+</figure>
+</div>
+<p>4 <strong>Files / Plots / Packages / Help / Viewer Window</strong>: Located in the bottom-right. It consists of the <strong>Files</strong> pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the <strong>Plots</strong> pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The <strong>Packages</strong> pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the <strong>Help</strong> pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the <strong>Viewer</strong> pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/file_pane.png" height="200" class="figure-img"></p>
+<figcaption>Files window</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Script vs Console
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors and also perform saved analysis instantly.</p>
+</div>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -596,11 +768,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

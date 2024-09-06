@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - r-rstudio.qmd
     - summary.qmd
     - references.qmd
 
@@ -17,10 +18,13 @@ format:
   html:
     theme: yeti
     cover-image: cover.png
+    
 
   pdf:
     documentclass: scrreprt
+    pdf-engine: pdfroff
     cover-image: cover.png
+    output-file: pdf-book
 
 editor: visual
 

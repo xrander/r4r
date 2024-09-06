@@ -1,0 +1,90 @@
+# R, RStudio, and Posit Cloud
+
+:::{.callout-note}
+You can skip all the steps below if you already have R and RStudio installed. Skip to the operating you use.
+:::
+
+## Installing R and RStudio
+
+R and RStudio are both free to install and use. To install both software, you need to download and install the right file for your operating system (OS).
+
+### Installing R
+
+**Windows OS (10/  11)**: To download R from CRAN visit this link <https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe> and run the installer. This is the latest version at the time of writing this chapter
+
+**Mac OS**: There are two versions of R for Mac users based on the processor in your computer.
+
+- For M1-M3 processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg> and run the installer
+- For Intel processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg> and run the installer.
+
+**Linux Users**
+R installation on Linux depends on your distribution. Open terminal (`Ctrl` + `Alt` + `T`) and enter the command below based on your distribution.
+
+- Debian/Ubuntu distribution:
+
+``` {.bash .terminal}
+#| eval: false
+$ sudo apt update
+$ sudo apt install r-base r-base-dev
+```
+
+- Redhat/Fedora distribution:
+
+``` {.bash .terminal}
+#| eval: false
+$ sudo dnf install R
+```
+
+### Installing RStudio
+
+To install RStudio, visit the link <https://posit.co/download/rstudio-desktop/> scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:
+
+- [window](https://www.youtube.com/watch?v=KUb_NYa4m3g)
+
+- [Mac](https://drive.google.com/file/d/1haHA_2r6L4D_VcBdTcgH53dcTbGV78_2/view?usp=drive_link)
+
+- [linux-ubuntu](https://www.youtube.com/watch?v=Uw9fWa-hVdc)
+
+### Posit Cloud
+There's an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit <https://posit.cloud/> and register. After registering, you get a page similar to @fig-cloud. After registering, click on new workspace on the left sidebar and create a new project.
+
+![posit cloud](images/posit-cloud.png){#fig-cloud}
+
+
+The video series in this [link](https://www.youtube.com/watch?v=VV_3MvJmwG4&list=PL9HYL-VRX0oSn7tBLDiSt4Vnyk3yB6ipA) is a good resource for starting with Posit Cloud.
+
+## The RStudio Interface
+
+On opening RStudio, you have three panes by default. You can get a fourth pane like what is shown in @fig-rstudio-environment. To do this, click the **+** button at the top-left and select R Script, or use the keyboard shortcut `Ctrl + Shift + N` on Windows/Linux and `Cmd + Shift + N` on Mac. More details on the panes is provided in @sec-windows
+
+![R Studio Environment](images/r_interface.png){#fig-rstudio-environment}
+
+You can change the arrangement of the panes by clicking `Tools` on the menu bar then navigate to `Global Options` and `Pane Layout` in the popup box.
+
+### RStudio Panes/Windows {#sec-windows}
+The four windows/panes as shown in @fig-rstudio-environment are:
+
+1. **Source Pane**: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.
+
+![Source window](images/rscript.png){height="200"}
+
+2. **Console/Terminal/Background Jobs pane**: Located in the bottom-left. It include the **Console** pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some  analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the **Terminal** pane which provides direct access to your computer using command line. Lastly, we have the **Background Jobs** pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting. 
+
+![Console window](images/console.png){height="200"}
+
+3. **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **Histor** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
+
+:::{.callout-note appearance=simple}
+An R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.
+:::
+
+![Environment window](images/environment_pane.png){height="200"}
+
+4 **Files / Plots / Packages / Help / Viewer Window**: Located in the bottom-right. It consists of the **Files** pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the **Plots** pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The **Packages** pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the **Help** pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the **Viewer** pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.
+
+![Files window](images/file_pane.png){height="200"}
+
+:::{.callout-tip appearance=simple}
+### Script vs Console
+It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors and also perform saved analysis instantly.
+:::
