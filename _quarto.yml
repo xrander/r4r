@@ -10,6 +10,7 @@ book:
     - intro.qmd
     - r-rstudio.qmd
     - basics.qmd
+    #- intro-github.qmd
     - references.qmd
 
 bibliography: references.bib
