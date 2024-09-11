@@ -1,4 +1,4 @@
-# R, RStudio, and Posit Cloud
+# R, RStudio, and Posit Cloud {#sec-environ}
 
 :::{.callout-note}
 You can skip all the steps below if you already have R and RStudio installed. Skip to the operating you use.
@@ -86,5 +86,5 @@ An R session refers to the instance of R that is currently running, which includ
 
 :::{.callout-tip appearance=simple}
 ### Script vs Console
-It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors and also perform saved analysis instantly.
+It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.
 :::

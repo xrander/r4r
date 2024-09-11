@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -233,16 +233,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title"><span id="sec-intro" class="quarto-section-identifier">Introduction</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <p>R has become a cornerstone in the data science community and academia, largely due to its flexibility, open-source nature, and extensive statistical capabilities. Originally developed in the early 1990s by statisticians Ross Ihaka and Robert Gentleman, R was designed as a language specifically for data analysis and statistical computing. Over time, it evolved into one of the most popular tools for researchers, data scientists, and statisticians alike.</p>
 <section id="r-and-academia" class="level2">
 <h2 class="anchored" data-anchor-id="r-and-academia">R and Academia</h2>
-<p>In academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.</p>
+<p>In academia, R holds a uniSque position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.</p>
 <p>R is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists.</p>
 <p>In academic research, reproducibility is a crucial aspect, and R excels in this area. With some of its packages, users can create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R’s associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.</p>
 <p>The reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like <code>quarto</code> and <code>RMarkdown</code> has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow.</p>
@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="why-not-r">Why Not R?</h2>
 <p>Despite R’s strengths, there are scenarios where it may not be the best fit:</p>
 <ul>
-<li><p>Performance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like <code>data.table</code>, <code>parallel</code> and <code>future</code> can be helpful.</p></li>
+<li><p>Performance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like <code>data.table</code>, <code>parallel</code>, <code>duckdb</code>, <code>arrow</code> and <code>future</code> can be helpful.</p></li>
 <li><p>Learning Curve: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.</p></li>
 <li><p>Less Versatility: R is heavily focused on data analysis and statistics, making it less suited for general-purpose programming. Its capabilities outside of data science, machine learning, and statistical computing are limited compared to more versatile languages.</p></li>
 <li><p>Package Dependency: Although R has a vast library of packages, their quality can vary. Some packages might be poorly maintained or have compatibility issues with newer R versions.</p></li>
@@ -764,7 +764,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>

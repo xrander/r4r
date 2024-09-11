@@ -1,4 +1,4 @@
-# R Basics
+# R Basics {#sec-basics}
 
 Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic (e.g., addition, subtraction), comparison operations which involve using conditionals to check how object compares against one another and iterations or looping to solve repetitive tasks.
 
@@ -64,7 +64,7 @@ Comparison operator in R include
 | <= | Less than or equal to |
 | != | Not equal to |
 
-: Comparison Operators in R
+: Comparison Operators in R {#tbl-comp-operators .striped .hover}
 
 Try these commands in R's console:
 ```{r}
@@ -83,7 +83,7 @@ There are other operators which are useful in R. They are used to assign names t
 |-> | Assignment (not common)|
 | $ | Access elements |
 
-: Other Operators in R
+: Other Operators in R {#tbl-ass .striped .hover}
 
 For example, we can assign the number `17` to the variable `c`. `c` here is a container holding values.
 

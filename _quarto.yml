@@ -4,7 +4,7 @@ project:
 book:
   title: "R for Research"
   author: "Olamide M. Adu"
-  date: "9/5/2024"
+  date: "2024-09-11"
   chapters:
     - index.qmd
     - intro.qmd
@@ -38,12 +38,15 @@ format:
   html:
     theme: yeti
     cover-image: cover.png
+    toc: true
+    toc-depth: 3
+    page-layout: full
     
   pdf:
     documentclass: scrreprt
-    pdf-engine: xelatex
+    pdf-engine: pdflatex
     cover-image: cover.png
-    output-file: pdf-book
+    output-file: r-for-research.pdf
 
 editor: visual
 

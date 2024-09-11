@@ -1,10 +1,10 @@
-# Introduction {.unnumbered}
+# Introduction {#sec-intro .unnumbered}
 
 R has become a cornerstone in the data science community and academia, largely due to its flexibility, open-source nature, and extensive statistical capabilities. Originally developed in the early 1990s by statisticians Ross Ihaka and Robert Gentleman, R was designed as a language specifically for data analysis and statistical computing. Over time, it evolved into one of the most popular tools for researchers, data scientists, and statisticians alike.
 
 ## R and Academia
 
-In academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.
+In academia, R holds a uniSque position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.
 
 R is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists.
 
@@ -43,7 +43,7 @@ There's a new IDE that supports Python and R that is still under development by 
 
 Despite R's strengths, there are scenarios where it may not be the best fit:
 
--   Performance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like `data.table`, `parallel` and `future` can be helpful.
+-   Performance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like `data.table`, `parallel`, `duckdb`, `arrow` and `future` can be helpful.
 
 -   Learning Curve: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.
 

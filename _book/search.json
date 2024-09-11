@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "R and Academia\nIn academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.\nR is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists.\nIn academic research, reproducibility is a crucial aspect, and R excels in this area. With some of its packages, users can create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R’s associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.\nThe reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like quarto and RMarkdown has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow.",
+    "text": "R and Academia\nIn academia, R holds a uniSque position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.\nR is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists.\nIn academic research, reproducibility is a crucial aspect, and R excels in this area. With some of its packages, users can create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R’s associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.\nThe reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like quarto and RMarkdown has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow.",
     "crumbs": [
       "Introduction"
     ]
@@ -54,7 +54,7 @@
     "href": "intro.html#why-not-r",
     "title": "Introduction",
     "section": "Why Not R?",
-    "text": "Why Not R?\nDespite R’s strengths, there are scenarios where it may not be the best fit:\n\nPerformance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like data.table, parallel and future can be helpful.\nLearning Curve: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.\nLess Versatility: R is heavily focused on data analysis and statistics, making it less suited for general-purpose programming. Its capabilities outside of data science, machine learning, and statistical computing are limited compared to more versatile languages.\nPackage Dependency: Although R has a vast library of packages, their quality can vary. Some packages might be poorly maintained or have compatibility issues with newer R versions.\nIntegration: R is not always the first choice for web development, app development, or integration with production systems. While solutions exist (such as Shiny for web apps), these use cases are generally more efficient in other languages like Python or JavaScript.",
+    "text": "Why Not R?\nDespite R’s strengths, there are scenarios where it may not be the best fit:\n\nPerformance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like data.table, parallel, duckdb, arrow and future can be helpful.\nLearning Curve: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.\nLess Versatility: R is heavily focused on data analysis and statistics, making it less suited for general-purpose programming. Its capabilities outside of data science, machine learning, and statistical computing are limited compared to more versatile languages.\nPackage Dependency: Although R has a vast library of packages, their quality can vary. Some packages might be poorly maintained or have compatibility issues with newer R versions.\nIntegration: R is not always the first choice for web development, app development, or integration with production systems. While solutions exist (such as Shiny for web apps), these use cases are generally more efficient in other languages like Python or JavaScript.",
     "crumbs": [
       "Introduction"
     ]
@@ -90,653 +90,623 @@
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "4  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
     "objectID": "r-rstudio.html",
     "href": "r-rstudio.html",
-    "title": "2  R, RStudio, and Posit Cloud",
+    "title": "1  R, RStudio, and Posit Cloud",
     "section": "",
-    "text": "2.1 Installing R and RStudio\nR and RStudio are both free to install and use. To install both software, you need to download and install the right file for your operating system (OS).",
+    "text": "1.1 Installing R and RStudio\nR and RStudio are both free to install and use. To install both software, you need to download and install the right file for your operating system (OS).",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
   {
     "objectID": "r-rstudio.html#installing-r-and-rstudio",
     "href": "r-rstudio.html#installing-r-and-rstudio",
-    "title": "2  R, RStudio, and Posit Cloud",
+    "title": "1  R, RStudio, and Posit Cloud",
     "section": "",
-    "text": "2.1.1 Installing R\nWindows OS (10/ 11): To download R from CRAN visit this link https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe and run the installer. This is the latest version at the time of writing this chapter\nMac OS: There are two versions of R for Mac users based on the processor in your computer.\n\nFor M1-M3 processors visit the link https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg and run the installer\nFor Intel processors visit the link https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg and run the installer.\n\nLinux Users R installation on Linux depends on your distribution. Open terminal (Ctrl + Alt + T) and enter the command below based on your distribution.\n\nDebian/Ubuntu distribution:\n\n#| eval: false\n$ sudo apt update\n$ sudo apt install r-base r-base-dev\n\nRedhat/Fedora distribution:\n\n#| eval: false\n$ sudo dnf install R\n\n\n2.1.2 Installing RStudio\nTo install RStudio, visit the link https://posit.co/download/rstudio-desktop/ scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:\n\nwindow\nMac\nlinux-ubuntu\n\n\n\n2.1.3 Posit Cloud\nThere’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit https://posit.cloud/ and register. After registering, you get a page similar to Figure 2.1. After registering, click on new workspace on the left sidebar and create a new project.\n\n\n\n\n\n\nFigure 2.1: posit cloud\n\n\n\nThe video series in this link is a good resource for starting with Posit Cloud.",
+    "text": "1.1.1 Installing R\nWindows OS (10/ 11): To download R from CRAN visit this link https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe and run the installer. This is the latest version at the time of writing this chapter\nMac OS: There are two versions of R for Mac users based on the processor in your computer.\n\nFor M1-M3 processors visit the link https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg and run the installer\nFor Intel processors visit the link https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg and run the installer.\n\nLinux Users R installation on Linux depends on your distribution. Open terminal (Ctrl + Alt + T) and enter the command below based on your distribution.\n\nDebian/Ubuntu distribution:\n\n#| eval: false\n$ sudo apt update\n$ sudo apt install r-base r-base-dev\n\nRedhat/Fedora distribution:\n\n#| eval: false\n$ sudo dnf install R\n\n\n1.1.2 Installing RStudio\nTo install RStudio, visit the link https://posit.co/download/rstudio-desktop/ scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:\n\nwindow\nMac\nlinux-ubuntu\n\n\n\n1.1.3 Posit Cloud\nThere’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit https://posit.cloud/ and register. After registering, you get a page similar to Figure 1.1. After registering, click on new workspace on the left sidebar and create a new project.\n\n\n\n\n\n\nFigure 1.1: posit cloud\n\n\n\nThe video series in this link is a good resource for starting with Posit Cloud.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
   {
     "objectID": "r-rstudio.html#the-rstudio-interface",
     "href": "r-rstudio.html#the-rstudio-interface",
-    "title": "2  R, RStudio, and Posit Cloud",
-    "section": "2.2 The RStudio Interface",
-    "text": "2.2 The RStudio Interface\nOn opening RStudio, you have three panes by default. You can get a fourth pane like what is shown in Figure 2.2. To do this, click the + button at the top-left and select R Script, or use the keyboard shortcut Ctrl + Shift + N on Windows/Linux and Cmd + Shift + N on Mac. More details on the panes is provided in Section 2.2.1\n\n\n\n\n\n\nFigure 2.2: R Studio Environment\n\n\n\nYou can change the arrangement of the panes by clicking Tools on the menu bar then navigate to Global Options and Pane Layout in the popup box.\n\n2.2.1 RStudio Panes/Windows\nThe four windows/panes as shown in Figure 2.2 are:\n\nSource Pane: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.\n\n\n\n\nSource window\n\n\n\nConsole/Terminal/Background Jobs pane: Located in the bottom-left. It include the Console pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the Terminal pane which provides direct access to your computer using command line. Lastly, we have the Background Jobs pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.\n\n\n\n\nConsole window\n\n\n\nEnvironment / History Pane: Located in the top-right. It includes the Environment pane which displays all objects created during a session, such as data and variables. We also have the History pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to Histor pane is the Connection pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the Tutorial pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.\n\n\n\n\n\n\n\nAn R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.\n\n\n\n\n\n\nEnvironment window\n\n\n4 Files / Plots / Packages / Help / Viewer Window: Located in the bottom-right. It consists of the Files pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the Plots pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The Packages pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the Help pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the Viewer pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.\n\n\n\nFiles window\n\n\n\n\n\n\n\n\nScript vs Console\n\n\n\nIt is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors and also perform saved analysis instantly.",
+    "title": "1  R, RStudio, and Posit Cloud",
+    "section": "1.2 The RStudio Interface",
+    "text": "1.2 The RStudio Interface\nOn opening RStudio, you have three panes by default. You can get a fourth pane like what is shown in Figure 1.2. To do this, click the + button at the top-left and select R Script, or use the keyboard shortcut Ctrl + Shift + N on Windows/Linux and Cmd + Shift + N on Mac. More details on the panes is provided in Section 1.2.1\n\n\n\n\n\n\nFigure 1.2: R Studio Environment\n\n\n\nYou can change the arrangement of the panes by clicking Tools on the menu bar then navigate to Global Options and Pane Layout in the popup box.\n\n1.2.1 RStudio Panes/Windows\nThe four windows/panes as shown in Figure 1.2 are:\n\nSource Pane: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.\n\n\n\n\nSource window\n\n\n\nConsole/Terminal/Background Jobs pane: Located in the bottom-left. It include the Console pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the Terminal pane which provides direct access to your computer using command line. Lastly, we have the Background Jobs pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.\n\n\n\n\nConsole window\n\n\n\nEnvironment / History Pane: Located in the top-right. It includes the Environment pane which displays all objects created during a session, such as data and variables. We also have the History pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to Histor pane is the Connection pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the Tutorial pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.\n\n\n\n\n\n\n\nAn R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.\n\n\n\n\n\n\nEnvironment window\n\n\n4 Files / Plots / Packages / Help / Viewer Window: Located in the bottom-right. It consists of the Files pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the Plots pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The Packages pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the Help pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the Viewer pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.\n\n\n\nFiles window\n\n\n\n\n\n\n\n\nScript vs Console\n\n\n\nIt is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
   {
     "objectID": "basics.html",
     "href": "basics.html",
-    "title": "3  R Basics",
+    "title": "2  R Basics",
     "section": "",
-    "text": "3.1 Arithmetic Operation\nOperations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:\nType the following commands in your console and hit enter:\n2 + 1\n\n[1] 3\n\n3 - 1\n\n[1] 2\n\n4 * 2\n\n[1] 8\n\n15 / 5\n\n[1] 3\n\n3 ^ 2\n\n[1] 9\n\n3 ** 2\n\n[1] 9\nThe above operations are straightforward. %% operator returns the remainder when two numbers are divided. While %/% returns the whole number or integer and discard the remainder.\n5 %% 3\n\n[1] 2\n\n5 %/% 2\n\n[1] 2\nR performs arithmetic easily and also follows the order of operations.\n3 + (5 - 2)\n\n[1] 6\n\n(5 * 4) / (7 - (2 + 4))\n\n[1] 20",
+    "text": "2.1 Arithmetic Operation\nOperations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:\nType the following commands in your console and hit enter:\n2 + 1\n\n[1] 3\n\n3 - 1\n\n[1] 2\n\n4 * 2\n\n[1] 8\n\n15 / 5\n\n[1] 3\n\n3 ^ 2\n\n[1] 9\n\n3 ** 2\n\n[1] 9\nThe above operations are straightforward. %% operator returns the remainder when two numbers are divided. While %/% returns the whole number or integer and discard the remainder.\n5 %% 3\n\n[1] 2\n\n5 %/% 2\n\n[1] 2\nR performs arithmetic easily and also follows the order of operations.\n3 + (5 - 2)\n\n[1] 6\n\n(5 * 4) / (7 - (2 + 4))\n\n[1] 20",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R Basics</span>"
-    ]
-  },
-  {
-    "objectID": "basics.html#summary",
-    "href": "basics.html#summary",
-    "title": "3  R Basics",
-    "section": "3.2 Summary",
-    "text": "3.2 Summary\nIn this chapter, you some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt; and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. Now that we’ve got the basics pinned down, we will move on to learning the data types in R.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R Basics</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html",
-    "href": "data-types.html",
-    "title": "4  Data Types in R",
-    "section": "",
-    "text": "4.1 Character",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html#factor",
-    "href": "data-types.html#factor",
-    "title": "4  Data Types in R",
-    "section": "4.2 Factor",
-    "text": "4.2 Factor",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html#numerical-data",
-    "href": "data-types.html#numerical-data",
-    "title": "4  Data Types in R",
-    "section": "4.3 Numerical Data",
-    "text": "4.3 Numerical Data",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html#set-logic",
-    "href": "data-types.html#set-logic",
-    "title": "4  Data Types in R",
-    "section": "4.4 Logical",
-    "text": "4.4 Logical",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html#objects",
-    "href": "data-types.html#objects",
-    "title": "4  Data Types in R",
-    "section": "4.5 Objects",
-    "text": "4.5 Objects",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "data-types.html#changing-data-types",
-    "href": "data-types.html#changing-data-types",
-    "title": "4  Data Types in R",
-    "section": "4.6 Changing Data Types",
-    "text": "4.6 Changing Data Types",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "14  Introduction to Quarto",
-    "section": "",
-    "text": "14.1 Why source and not visual editor?",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#markdown-basics",
-    "href": "quarto.html#markdown-basics",
-    "title": "14  Introduction to Quarto",
-    "section": "14.2 Markdown Basics",
-    "text": "14.2 Markdown Basics",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#including-code-chunks",
-    "href": "quarto.html#including-code-chunks",
-    "title": "14  Introduction to Quarto",
-    "section": "14.3 Including Code Chunks",
-    "text": "14.3 Including Code Chunks",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#saving-formats",
-    "href": "quarto.html#saving-formats",
-    "title": "14  Introduction to Quarto",
-    "section": "14.4 Saving Formats",
-    "text": "14.4 Saving Formats",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Quarto</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
   {
     "objectID": "basics.html#arithmetic-operation",
     "href": "basics.html#arithmetic-operation",
-    "title": "3  R Basics",
+    "title": "2  R Basics",
     "section": "",
-    "text": "Table 3.1: Arithmetic operators in R\n\n\n\n\n\nOperator\nDefinition\n\n\n\n\n+\nAddition\n\n\n-\nSubtraction\n\n\n*\nMultiplication\n\n\n/\nDivision\n\n\n^\nExponent or Power\n\n\n**\nExponent or Power\n\n\n%%\nRemainder division\n\n\n%/%\nInteger division\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don’t be surprised that a lot of times you and people you work with / for will mostly be reading your codes.\n\n\n\n3.1.1 Comparison Operation\nComparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to data types.\nComparison operator in R include\n\nComparison Operators in R\n\n\nSymbol\nMeaning\n\n\n\n\n&gt;\nGreater than\n\n\n&lt;\nLess than\n\n\n==\nEqual to\n\n\n&gt;=\nGreater than or equal to\n\n\n&lt;=\nLess than or equal to\n\n\n!=\nNot equal to\n\n\n\nTry these commands in R’s console:\n\n4 &gt; 5\n\n[1] FALSE\n\n(5^2) &lt; (5 * 2)\n\n[1] FALSE\n\n10 &gt;= 7\n\n[1] TRUE\n\n10 == 12\n\n[1] FALSE\n\n\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.\n\nOther Operators in R\n\n\nSymbol\nMeaning\n\n\n\n\n&lt;-\nAssignment\n\n\n=\nAssignment\n\n\n-&gt;\nAssignment (not common)\n\n\n$\nAccess elements\n\n\n\nFor example, we can assign the number 17 to the variable c. c here is a container holding values.\n\nc &lt;- 17\nc\n\n[1] 17\n\n\nAbove we assigned the value 17 to c using &lt;-. This is the convention used for assigning objects to variables in R. We can change the value in c by assigning another value to it. This time let’s assign the value 100 using the = operator\n\nc = 100\nc\n\n[1] 100\n\n\nWhen we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For -&gt; assignment variable, it comes after the value. For example:\n\n5000 -&gt; d\nd\n\n[1] 5000\n\n\nWhile -&gt; is an assignment operator in R, it is rarely used. &lt;- is the main operator used for assignment while = is common within functions. Following this simple guide ensure an organized code that is easy to follow.\nThe $ will be discussed in future chapters and it will be used in this book.",
+    "text": "Table 2.1: Arithmetic operators in R\n\n\n\n\n\nOperator\nDefinition\n\n\n\n\n+\nAddition\n\n\n-\nSubtraction\n\n\n*\nMultiplication\n\n\n/\nDivision\n\n\n^\nExponent or Power\n\n\n**\nExponent or Power\n\n\n%%\nRemainder division\n\n\n%/%\nInteger division\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don’t be surprised that a lot of times you and people you work with / for will mostly be reading your codes.\n\n\n\n2.1.1 Comparison Operation\nComparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to data types.\nComparison operator in R include\n\n\n\nTable 2.2: Comparison Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&gt;\nGreater than\n\n\n&lt;\nLess than\n\n\n==\nEqual to\n\n\n&gt;=\nGreater than or equal to\n\n\n&lt;=\nLess than or equal to\n\n\n!=\nNot equal to\n\n\n\n\n\n\nTry these commands in R’s console:\n\n4 &gt; 5\n\n[1] FALSE\n\n(5^2) &lt; (5 * 2)\n\n[1] FALSE\n\n10 &gt;= 7\n\n[1] TRUE\n\n10 == 12\n\n[1] FALSE\n\n\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.\n\n\n\nTable 2.3: Other Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&lt;-\nAssignment\n\n\n=\nAssignment\n\n\n-&gt;\nAssignment (not common)\n\n\n$\nAccess elements\n\n\n\n\n\n\nFor example, we can assign the number 17 to the variable c. c here is a container holding values.\n\nc &lt;- 17\nc\n\n[1] 17\n\n\nAbove we assigned the value 17 to c using &lt;-. This is the convention used for assigning objects to variables in R. We can change the value in c by assigning another value to it. This time let’s assign the value 100 using the = operator\n\nc = 100\nc\n\n[1] 100\n\n\nWhen we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For -&gt; assignment variable, it comes after the value. For example:\n\n5000 -&gt; d\nd\n\n[1] 5000\n\n\nWhile -&gt; is an assignment operator in R, it is rarely used. &lt;- is the main operator used for assignment while = is common within functions. Following this simple guide ensure an organized code that is easy to follow.\nThe $ will be discussed in future chapters and it will be used in this book.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R Basics</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#summary",
+    "href": "basics.html#summary",
+    "title": "2  R Basics",
+    "section": "2.2 Summary",
+    "text": "2.2 Summary\nIn this chapter, you some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt; and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. Now that we’ve got the basics pinned down, we will move on to learning the data types in R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html",
+    "href": "data-types.html",
+    "title": "3  Data Types in R",
+    "section": "",
+    "text": "3.1 Character",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#factor",
+    "href": "data-types.html#factor",
+    "title": "3  Data Types in R",
+    "section": "3.2 Factor",
+    "text": "3.2 Factor",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#numerical-data",
+    "href": "data-types.html#numerical-data",
+    "title": "3  Data Types in R",
+    "section": "3.3 Numerical Data",
+    "text": "3.3 Numerical Data",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#sec-logic",
+    "href": "data-types.html#sec-logic",
+    "title": "3  Data Types in R",
+    "section": "3.4 Logical",
+    "text": "3.4 Logical",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#objects",
+    "href": "data-types.html#objects",
+    "title": "3  Data Types in R",
+    "section": "3.5 Objects",
+    "text": "3.5 Objects",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#changing-data-types",
+    "href": "data-types.html#changing-data-types",
+    "title": "3  Data Types in R",
+    "section": "3.6 Changing Data Types",
+    "text": "3.6 Changing Data Types",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
   {
     "objectID": "fns.html",
     "href": "fns.html",
-    "title": "5  Functions",
+    "title": "4  Functions",
     "section": "",
-    "text": "5.1 Some In-built R Functions",
+    "text": "4.1 Some In-built R Functions",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Functions</span>"
     ]
   },
   {
     "objectID": "fns.html#creating-functions",
     "href": "fns.html#creating-functions",
-    "title": "5  Functions",
-    "section": "5.2 Creating Functions",
-    "text": "5.2 Creating Functions",
+    "title": "4  Functions",
+    "section": "4.2 Creating Functions",
+    "text": "4.2 Creating Functions",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Functions</span>"
     ]
   },
   {
     "objectID": "fns.html#using-the-custom-function",
     "href": "fns.html#using-the-custom-function",
-    "title": "5  Functions",
-    "section": "5.3 Using the custom function",
-    "text": "5.3 Using the custom function",
+    "title": "4  Functions",
+    "section": "4.3 Using the custom function",
+    "text": "4.3 Using the custom function",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Functions</span>"
     ]
   },
   {
     "objectID": "fns.html#getting-help",
     "href": "fns.html#getting-help",
-    "title": "5  Functions",
-    "section": "5.4 Getting Help",
-    "text": "5.4 Getting Help",
+    "title": "4  Functions",
+    "section": "4.4 Getting Help",
+    "text": "4.4 Getting Help",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Functions</span>"
     ]
   },
   {
     "objectID": "data-structure.html",
     "href": "data-structure.html",
-    "title": "6  Data Structure",
+    "title": "5  Data Structure",
     "section": "",
-    "text": "6.1 Atomic Vectors",
+    "text": "5.1 Atomic Vectors",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Structure</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Structure</span>"
     ]
   },
   {
     "objectID": "data-structure.html#matrices",
     "href": "data-structure.html#matrices",
-    "title": "6  Data Structure",
-    "section": "6.2 Matrices",
-    "text": "6.2 Matrices",
+    "title": "5  Data Structure",
+    "section": "5.2 Matrices",
+    "text": "5.2 Matrices",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Structure</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Structure</span>"
     ]
   },
   {
     "objectID": "data-structure.html#list",
     "href": "data-structure.html#list",
-    "title": "6  Data Structure",
-    "section": "6.3 List",
-    "text": "6.3 List",
+    "title": "5  Data Structure",
+    "section": "5.3 List",
+    "text": "5.3 List",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Structure</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Structure</span>"
     ]
   },
   {
     "objectID": "data-structure.html#data-framestibbles",
     "href": "data-structure.html#data-framestibbles",
-    "title": "6  Data Structure",
-    "section": "6.4 Data frames/tibbles",
-    "text": "6.4 Data frames/tibbles",
+    "title": "5  Data Structure",
+    "section": "5.4 Data frames/tibbles",
+    "text": "5.4 Data frames/tibbles",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Structure</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Structure</span>"
     ]
   },
   {
     "objectID": "packages.html",
     "href": "packages.html",
-    "title": "7  Packages",
+    "title": "6  Packages",
     "section": "",
-    "text": "7.1 Installing Packages in R",
+    "text": "6.1 Installing Packages in R",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Packages</span>"
     ]
   },
   {
     "objectID": "packages.html#making-use-of-downloaded-package",
     "href": "packages.html#making-use-of-downloaded-package",
-    "title": "7  Packages",
-    "section": "7.2 Making Use of Downloaded Package",
-    "text": "7.2 Making Use of Downloaded Package",
+    "title": "6  Packages",
+    "section": "6.2 Making Use of Downloaded Package",
+    "text": "6.2 Making Use of Downloaded Package",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Packages</span>"
     ]
   },
   {
     "objectID": "packages.html#using-the-library-function",
     "href": "packages.html#using-the-library-function",
-    "title": "7  Packages",
-    "section": "7.3 Using the Library Function",
-    "text": "7.3 Using the Library Function",
+    "title": "6  Packages",
+    "section": "6.3 Using the Library Function",
+    "text": "6.3 Using the Library Function",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Packages</span>"
     ]
   },
   {
     "objectID": "packages.html#declaring-packages-in-use",
     "href": "packages.html#declaring-packages-in-use",
-    "title": "7  Packages",
-    "section": "7.4 Declaring Packages in Use",
-    "text": "7.4 Declaring Packages in Use",
+    "title": "6  Packages",
+    "section": "6.4 Declaring Packages in Use",
+    "text": "6.4 Declaring Packages in Use",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Packages</span>"
     ]
   },
   {
     "objectID": "workflow.html",
     "href": "workflow.html",
-    "title": "8  Workflow",
+    "title": "7  Workflow",
     "section": "",
-    "text": "8.1 The R Script",
+    "text": "7.1 The R Script",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Workflow</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Workflow</span>"
     ]
   },
   {
     "objectID": "workflow.html#creating-a-r-script",
     "href": "workflow.html#creating-a-r-script",
-    "title": "8  Workflow",
-    "section": "8.2 Creating a R Script",
-    "text": "8.2 Creating a R Script",
+    "title": "7  Workflow",
+    "section": "7.2 Creating a R Script",
+    "text": "7.2 Creating a R Script",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Workflow</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Workflow</span>"
     ]
   },
   {
     "objectID": "workflow.html#the-r-project",
     "href": "workflow.html#the-r-project",
-    "title": "8  Workflow",
-    "section": "8.3 The R Project",
-    "text": "8.3 The R Project",
+    "title": "7  Workflow",
+    "section": "7.3 The R Project",
+    "text": "7.3 The R Project",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Workflow</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Workflow</span>"
     ]
   },
   {
     "objectID": "workflow.html#creating-an-r-project",
     "href": "workflow.html#creating-an-r-project",
-    "title": "8  Workflow",
-    "section": "8.4 Creating an R Project",
-    "text": "8.4 Creating an R Project",
+    "title": "7  Workflow",
+    "section": "7.4 Creating an R Project",
+    "text": "7.4 Creating an R Project",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Workflow</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Workflow</span>"
     ]
   },
   {
     "objectID": "workflow.html#benefits-of-using-r-projects",
     "href": "workflow.html#benefits-of-using-r-projects",
-    "title": "8  Workflow",
-    "section": "8.5 Benefits of Using R Projects",
-    "text": "8.5 Benefits of Using R Projects",
+    "title": "7  Workflow",
+    "section": "7.5 Benefits of Using R Projects",
+    "text": "7.5 Benefits of Using R Projects",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Workflow</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Workflow</span>"
     ]
   },
   {
     "objectID": "intro-github.html",
     "href": "intro-github.html",
-    "title": "9  Introduction to Git and Github",
+    "title": "8  Introduction to Git and Github",
     "section": "",
-    "text": "9.1 What is Git and GitHub",
+    "text": "8.1 What is Git and GitHub",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#why-use-git",
     "href": "intro-github.html#why-use-git",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.2 Why use Git?",
-    "text": "9.2 Why use Git?",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.2 Why use Git?",
+    "text": "8.2 Why use Git?",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#git-key-concepts",
     "href": "intro-github.html#git-key-concepts",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.3 Git Key Concepts",
-    "text": "9.3 Git Key Concepts",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.3 Git Key Concepts",
+    "text": "8.3 Git Key Concepts",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#git-workflow",
     "href": "intro-github.html#git-workflow",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.4 Git Workflow",
-    "text": "9.4 Git Workflow",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.4 Git Workflow",
+    "text": "8.4 Git Workflow",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#basic-git-commands",
     "href": "intro-github.html#basic-git-commands",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.5 Basic Git Commands",
-    "text": "9.5 Basic Git Commands",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.5 Basic Git Commands",
+    "text": "8.5 Basic Git Commands",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#working-with-github",
     "href": "intro-github.html#working-with-github",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.6 Working with GitHub",
-    "text": "9.6 Working with GitHub",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.6 Working with GitHub",
+    "text": "8.6 Working with GitHub",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "intro-github.html#git-and-github-in-rstudio",
     "href": "intro-github.html#git-and-github-in-rstudio",
-    "title": "9  Introduction to Git and Github",
-    "section": "9.7 Git and GitHub in RStudio",
-    "text": "9.7 Git and GitHub in RStudio",
+    "title": "8  Introduction to Git and Github",
+    "section": "8.7 Git and GitHub in RStudio",
+    "text": "8.7 Git and GitHub in RStudio",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Git and Github</span>"
     ]
   },
   {
     "objectID": "importing-data.html",
     "href": "importing-data.html",
-    "title": "10  Getting External Data - importing your data into RStudio",
+    "title": "9  Getting External Data - importing your data into RStudio",
     "section": "",
-    "text": "10.1 Dependent Packages",
+    "text": "9.1 Dependent Packages",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#csv",
     "href": "importing-data.html#csv",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.2 CSV",
-    "text": "10.2 CSV",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.2 CSV",
+    "text": "9.2 CSV",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#base-r-approach",
     "href": "importing-data.html#base-r-approach",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.3 Base R Approach",
-    "text": "10.3 Base R Approach",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.3 Base R Approach",
+    "text": "9.3 Base R Approach",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#tidyverse-approach",
     "href": "importing-data.html#tidyverse-approach",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.4 Tidyverse Approach",
-    "text": "10.4 Tidyverse Approach",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.4 Tidyverse Approach",
+    "text": "9.4 Tidyverse Approach",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#writing-csv-file",
     "href": "importing-data.html#writing-csv-file",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.5 Writing CSV File",
-    "text": "10.5 Writing CSV File",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.5 Writing CSV File",
+    "text": "9.5 Writing CSV File",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#excel-files",
     "href": "importing-data.html#excel-files",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.6 Excel Files",
-    "text": "10.6 Excel Files",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.6 Excel Files",
+    "text": "9.6 Excel Files",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#writing-excel-files",
     "href": "importing-data.html#writing-excel-files",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.7 Writing Excel Files",
-    "text": "10.7 Writing Excel Files",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.7 Writing Excel Files",
+    "text": "9.7 Writing Excel Files",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "importing-data.html#google-sheets",
     "href": "importing-data.html#google-sheets",
-    "title": "10  Getting External Data - importing your data into RStudio",
-    "section": "10.8 Google Sheets",
-    "text": "10.8 Google Sheets",
+    "title": "9  Getting External Data - importing your data into RStudio",
+    "section": "9.8 Google Sheets",
+    "text": "9.8 Google Sheets",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Getting External Data - importing your data into RStudio</span>"
     ]
   },
   {
     "objectID": "data-manip.html",
     "href": "data-manip.html",
-    "title": "11  Data Manipulation",
+    "title": "10  Data Manipulation",
     "section": "",
-    "text": "11.1 Reorder your data with arrange()",
+    "text": "10.1 Reorder your data with arrange()",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "data-manip.html#pick-variables-with-select",
     "href": "data-manip.html#pick-variables-with-select",
-    "title": "11  Data Manipulation",
-    "section": "11.2 Pick variables with select()",
-    "text": "11.2 Pick variables with select()",
+    "title": "10  Data Manipulation",
+    "section": "10.2 Pick variables with select()",
+    "text": "10.2 Pick variables with select()",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "data-manip.html#subset-data-with-filter",
     "href": "data-manip.html#subset-data-with-filter",
-    "title": "11  Data Manipulation",
-    "section": "11.3 Subset data with filter()",
-    "text": "11.3 Subset data with filter()",
+    "title": "10  Data Manipulation",
+    "section": "10.3 Subset data with filter()",
+    "text": "10.3 Subset data with filter()",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "data-manip.html#add-or-change-the-content-of-a-variable-with-mutate",
     "href": "data-manip.html#add-or-change-the-content-of-a-variable-with-mutate",
-    "title": "11  Data Manipulation",
-    "section": "11.4 Add or change the content of a variable with mutate()",
-    "text": "11.4 Add or change the content of a variable with mutate()",
+    "title": "10  Data Manipulation",
+    "section": "10.4 Add or change the content of a variable with mutate()",
+    "text": "10.4 Add or change the content of a variable with mutate()",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "data-manip.html#collapse-columns-using-summarize",
     "href": "data-manip.html#collapse-columns-using-summarize",
-    "title": "11  Data Manipulation",
-    "section": "11.5 Collapse columns using summarize()",
-    "text": "11.5 Collapse columns using summarize()",
+    "title": "10  Data Manipulation",
+    "section": "10.5 Collapse columns using summarize()",
+    "text": "10.5 Collapse columns using summarize()",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "data-manip.html#reshaping-your-data",
     "href": "data-manip.html#reshaping-your-data",
-    "title": "11  Data Manipulation",
-    "section": "11.6 Reshaping your data",
-    "text": "11.6 Reshaping your data",
+    "title": "10  Data Manipulation",
+    "section": "10.6 Reshaping your data",
+    "text": "10.6 Reshaping your data",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Manipulation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Manipulation</span>"
     ]
   },
   {
     "objectID": "edaI.html",
     "href": "edaI.html",
-    "title": "12  Exploratory Data Analysis",
+    "title": "11  Exploratory Data Analysis",
     "section": "",
-    "text": "12.1 Understanding your data",
+    "text": "11.1 Understanding your data",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaI.html#understanding-your-data",
     "href": "edaI.html#understanding-your-data",
-    "title": "12  Exploratory Data Analysis",
+    "title": "11  Exploratory Data Analysis",
     "section": "",
-    "text": "12.1.1 Data preview\n\n\n12.1.2 Data structure\n\n\n12.1.3 Data summary / Descriptive Statistics",
+    "text": "11.1.1 Data preview\n\n\n11.1.2 Data structure\n\n\n11.1.3 Data summary / Descriptive Statistics",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaI.html#missing-values",
     "href": "edaI.html#missing-values",
-    "title": "12  Exploratory Data Analysis",
-    "section": "12.2 Missing Values",
-    "text": "12.2 Missing Values\n\n12.2.1 Detecting missing values\n\n\n12.2.2 Removing missing values",
+    "title": "11  Exploratory Data Analysis",
+    "section": "11.2 Missing Values",
+    "text": "11.2 Missing Values\n\n11.2.1 Detecting missing values\n\n\n11.2.2 Removing missing values",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaI.html#variable-analysis",
     "href": "edaI.html#variable-analysis",
-    "title": "12  Exploratory Data Analysis",
-    "section": "12.3 Variable analysis",
-    "text": "12.3 Variable analysis\n\n12.3.1 Univariate analysis\n\n\n12.3.2 Character / Factor variables\n\n\n12.3.3 Numerical variables",
+    "title": "11  Exploratory Data Analysis",
+    "section": "11.3 Variable analysis",
+    "text": "11.3 Variable analysis\n\n11.3.1 Univariate analysis\n\n\n11.3.2 Character / Factor variables\n\n\n11.3.3 Numerical variables",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaI.html#bivariate-analysis",
     "href": "edaI.html#bivariate-analysis",
-    "title": "12  Exploratory Data Analysis",
-    "section": "12.4 Bivariate Analysis",
-    "text": "12.4 Bivariate Analysis\n###Two categorical variable analysis ### Two numerical variable analysis ### One numerical and one categorical variable analysis",
+    "title": "11  Exploratory Data Analysis",
+    "section": "11.4 Bivariate Analysis",
+    "text": "11.4 Bivariate Analysis\n###Two categorical variable analysis ### Two numerical variable analysis ### One numerical and one categorical variable analysis",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaI.html#multivariate-analysis",
     "href": "edaI.html#multivariate-analysis",
-    "title": "12  Exploratory Data Analysis",
-    "section": "12.5 Multivariate analysis",
-    "text": "12.5 Multivariate analysis",
+    "title": "11  Exploratory Data Analysis",
+    "section": "11.5 Multivariate analysis",
+    "text": "11.5 Multivariate analysis",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Exploratory Data Analysis</span>"
     ]
   },
   {
     "objectID": "edaII.html",
     "href": "edaII.html",
-    "title": "13  Inferential Statistics",
+    "title": "12  Inferential Statistics",
     "section": "",
-    "text": "13.1 Hypothesis testing with t-test",
+    "text": "12.1 Hypothesis testing with t-test",
     "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Inferential Statistics</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Inferential Statistics</span>"
     ]
   },
   {
     "objectID": "edaII.html#hypothesis-testing-with-t-test",
     "href": "edaII.html#hypothesis-testing-with-t-test",
-    "title": "13  Inferential Statistics",
+    "title": "12  Inferential Statistics",
     "section": "",
-    "text": "13.1.1 One-sample t-test\n\n\n13.1.2 Two Sample t-test\n###Limitations and Assumptions of t-test ## ANOVA and Linear regression ### ANOVA ### Linear regression ### Making predictions with linear regression models",
+    "text": "12.1.1 One-sample t-test\n\n\n12.1.2 Two Sample t-test\n###Limitations and Assumptions of t-test ## ANOVA and Linear regression ### ANOVA ### Linear regression ### Making predictions with linear regression models",
     "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Inferential Statistics</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Inferential Statistics</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "13  Introduction to Quarto",
     "section": "",
-    "text": "This section is still under development",
+    "text": "13.1 Why source and not visual editor?",
     "crumbs": [
-      "References"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introduction to Quarto</span>"
     ]
   },
   {
-    "objectID": "preface.html",
-    "href": "preface.html",
-    "title": "1  Preface",
-    "section": "",
-    "text": "In today’s research landscape, the ability to analyze data effectively is crucial. Whether in academia, industry, or governmental research, data-driven decisions shape outcomes. R, a powerful programming language for statistical analysis and data visualization, has emerged as a cornerstone in this field.\nThis book, R for Research, is designed for researchers, data scientists, and students looking to leverage R for a variety of analytical tasks. From data manipulation to visualization, and advanced modeling, this guide provides the foundational knowledge to transform raw data into actionable insights.\nThe journey of mastering R may feel daunting at first, but with the right approach, it quickly becomes intuitive and rewarding. Through hands-on examples, practical exercises, and detailed explanations of core concepts, this book will take you from a beginner to an adept user, ready to tackle complex research problems with confidence.\nWhether you’re aiming to publish research, gain insights from large datasets, or simply deepen your understanding of data, this book equips you with the tools and skills to succeed in your endeavors. Welcome to the world of R—a language that bridges the gap between theory and practice, making data analysis more accessible, efficient, and impactful.",
+    "objectID": "quarto.html#markdown-basics",
+    "href": "quarto.html#markdown-basics",
+    "title": "13  Introduction to Quarto",
+    "section": "13.2 Markdown Basics",
+    "text": "13.2 Markdown Basics",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introduction to Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#including-code-chunks",
+    "href": "quarto.html#including-code-chunks",
+    "title": "13  Introduction to Quarto",
+    "section": "13.3 Including Code Chunks",
+    "text": "13.3 Including Code Chunks",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introduction to Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#saving-formats",
+    "href": "quarto.html#saving-formats",
+    "title": "13  Introduction to Quarto",
+    "section": "13.4 Saving Formats",
+    "text": "13.4 Saving Formats",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introduction to Quarto</span>"
     ]
   }
 ]

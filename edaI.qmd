@@ -1,4 +1,4 @@
-# Exploratory Data Analysis
+# Exploratory Data Analysis {#sec-edai}
 
 :::{.callout-caution appearance=minimal}
 This section is still under development
