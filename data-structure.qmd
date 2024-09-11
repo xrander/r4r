@@ -1,7 +1,11 @@
-# References {.unnumbered}
+# Data Structure
+
 :::{.callout-caution appearance=minimal}
 This section is still under development
 :::
 
-::: {#refs}
-:::
+## Atomic Vectors
+## Matrices
+## List
+## Data frames/tibbles
+

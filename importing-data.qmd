@@ -1,0 +1,14 @@
+# Getting External Data - importing your data into RStudio
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Dependent Packages
+## CSV 
+## Base R Approach
+## Tidyverse Approach
+## Writing CSV File
+## Excel Files
+## Writing Excel Files 
+## Google Sheets

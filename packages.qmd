@@ -1,0 +1,9 @@
+# Packages
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Installing Packages in R
+## Making Use of Downloaded Package
+## Using the Library Function 
+## Declaring Packages in Use 

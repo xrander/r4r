@@ -1,0 +1,30 @@
+# Exploratory Data Analysis
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Understanding your data
+
+### Data preview
+### Data structure
+### Data summary / Descriptive Statistics
+
+## Missing Values
+
+### Detecting missing values
+### Removing missing values
+
+## Variable analysis
+
+### Univariate analysis
+### Character / Factor variables
+### Numerical variables
+
+## Bivariate Analysis
+
+###Two categorical variable analysis
+### Two numerical variable analysis
+### One numerical and one categorical variable analysis
+
+## Multivariate analysis

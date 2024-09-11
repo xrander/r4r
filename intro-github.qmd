@@ -1,0 +1,13 @@
+# Introduction to Git and Github
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## What is Git and GitHub
+## Why use Git?
+## Git Key Concepts
+## Git Workflow
+## Basic Git Commands
+## Working with GitHub
+## Git and GitHub in RStudio

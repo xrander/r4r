@@ -1,0 +1,12 @@
+# Data Manipulation
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Reorder your data with arrange()
+## Pick variables with select()
+## Subset data with filter()
+## Add or change the content of a variable with mutate()
+## Collapse columns using summarize()
+## Reshaping your data

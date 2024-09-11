@@ -132,11 +132,81 @@
   {
     "objectID": "basics.html",
     "href": "basics.html",
-    "title": "R for Research",
+    "title": "3  Arithmetic Operation",
     "section": "",
-    "text": "This section is still under development",
+    "text": "3.0.1 Comparison Operation\nComparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to (set-logic?).\nComparison operator in R include\nTry these in the console:\n4 &gt; 5\n\n[1] FALSE\n\n(5^2) &lt; (5 * 2)\n\n[1] FALSE\n\n10 &gt;= 7\n\n[1] TRUE\n\n10 == 12\n\n[1] FALSE\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>basics.html</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Arithmetic Operation</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#summary",
+    "href": "basics.html#summary",
+    "title": "3  Arithmetic Operation",
+    "section": "3.1 Summary",
+    "text": "3.1 Summary\nIn this chapter, you learned how to install R, Rstudio and make use of Posit Cloud for Data Analysis. You got introduced to the RStudio IDE interface, and how to create R Scripts. You learned some basic R syntax and some operators. Now that you’ve got the basics pinned down, you will move on to learning the data types in R.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Arithmetic Operation</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html",
+    "href": "data-types.html",
+    "title": "4  Data Types in R",
+    "section": "",
+    "text": "4.1 Character",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#factor",
+    "href": "data-types.html#factor",
+    "title": "4  Data Types in R",
+    "section": "4.2 Factor",
+    "text": "4.2 Factor",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#numerical-data",
+    "href": "data-types.html#numerical-data",
+    "title": "4  Data Types in R",
+    "section": "4.3 Numerical Data",
+    "text": "4.3 Numerical Data",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#set-logic",
+    "href": "data-types.html#set-logic",
+    "title": "4  Data Types in R",
+    "section": "4.4 Logical",
+    "text": "4.4 Logical",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#objects",
+    "href": "data-types.html#objects",
+    "title": "4  Data Types in R",
+    "section": "4.5 Objects",
+    "text": "4.5 Objects",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#changing-data-types",
+    "href": "data-types.html#changing-data-types",
+    "title": "4  Data Types in R",
+    "section": "4.6 Changing Data Types",
+    "text": "4.6 Changing Data Types",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   }
 ]

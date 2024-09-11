@@ -1,0 +1,8 @@
+# Introduction to Data Visualization with ggplot2
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Introduction to the grammar of graphics
+## When to use a plot type

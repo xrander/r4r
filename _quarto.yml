@@ -10,7 +10,17 @@ book:
     - intro.qmd
     - r-rstudio.qmd
     - basics.qmd
-    #- intro-github.qmd
+    - data-types.qmd
+    - fns.qmd
+    - data-structure.qmd
+    - packages.qmd
+    - workflow.qmd
+    - intro-github.qmd
+    - importing-data.qmd
+    - data-manip.qmd
+    - edaI.qmd
+    - edaII.qmd
+    - quarto.qmd
     - references.qmd
 
 bibliography: references.bib

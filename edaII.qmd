@@ -1,0 +1,13 @@
+# Inferential Statistics
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## Hypothesis testing with t-test
+### One-sample t-test
+### Two Sample t-test
+###Limitations and Assumptions of t-test
+## ANOVA and Linear regression
+### ANOVA
+### Linear regression
+### Making	 predictions with linear regression models

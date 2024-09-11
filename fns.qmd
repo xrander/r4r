@@ -1,0 +1,11 @@
+# Functions
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+
+## Some In-built R Functions
+## Creating Functions
+## Using the custom function
+## Getting Help

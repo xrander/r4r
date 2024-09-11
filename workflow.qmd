@@ -1,0 +1,11 @@
+# Workflow
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+## The R Script
+## Creating a R Script 
+## The R Project
+## Creating an R Project
+## Benefits of Using R Projects

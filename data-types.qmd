@@ -1,0 +1,14 @@
+# Data Types in R
+
+:::{.callout-caution appearance=minimal}
+This section is still under development
+:::
+
+
+## Character
+## Factor
+## Numerical Data
+## Logical {#set-logic}
+## Objects
+## Changing Data Types
+
