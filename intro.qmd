@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {.unnumbered}
 
 R has become a cornerstone in the data science community and academia, largely due to its flexibility, open-source nature, and extensive statistical capabilities. Originally developed in the early 1990s by statisticians Ross Ihaka and Robert Gentleman, R was designed as a language specifically for data analysis and statistical computing. Over time, it evolved into one of the most popular tools for researchers, data scientists, and statisticians alike.
 
@@ -87,7 +87,6 @@ By the end of this book, readers will have:
 -  The ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
 
 Ultimately, R for Research is designed to enhance your analytical skills, helping you transform raw data into meaningful insights that drive impactful research.
-
 
 
 ## Scope, Limitation, and Expectations

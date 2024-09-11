@@ -22,6 +22,15 @@ book:
     - edaII.qmd
     - quarto.qmd
     - references.qmd
+  favicon: cover.png
+  page-footer:
+    left: |
+      R for Research was written by Olamide M. Adu.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  site-url: https://r4r.olamideadu.com/
+  repo-url: https://github.com/xrander/r4r/
+  repo-branch: main
 
 bibliography: references.bib
 
@@ -30,10 +39,9 @@ format:
     theme: yeti
     cover-image: cover.png
     
-
   pdf:
     documentclass: scrreprt
-    pdf-engine: pdfroff
+    pdf-engine: xelatex
     cover-image: cover.png
     output-file: pdf-book
 
