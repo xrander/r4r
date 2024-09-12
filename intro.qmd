@@ -34,10 +34,6 @@ The R community is also known for its strong support culture. Forums like Stack 
 
 - Growing Popularity in Data Science: Many industries, including finance, healthcare, and tech, use R for data-driven decision-making.
 
-:::{.callout-note appearance=minimal}
-There's a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called [Positron](https://github.com/posit-dev/positron/releases). Positron is still in its early stage of development.
-:::
-
 
 ## Why Not R?
 

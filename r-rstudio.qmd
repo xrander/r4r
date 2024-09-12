@@ -72,7 +72,7 @@ The four windows/panes as shown in @fig-rstudio-environment are:
 
 ![Console window](images/console.png)
 
-3. **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **Histor** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
+3. **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **History** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
 
 :::{.callout-note appearance=simple}
 An R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.
@@ -88,3 +88,8 @@ An R session refers to the instance of R that is currently running, which includ
 ### Script vs Console
 It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.
 :::
+
+## Positron
+There's a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called [Positron](https://github.com/posit-dev/positron/releases). Positron is still in its early stage of development. Positron is a blend of the popular IDE VS Code and RStudio, with the major inspiration from VS Code, [@Radečić]. What makes Positron different is the ease of using python, which is one of the most common programming language of choice for data professionals. To get more details about the development, [click here](https://github.com/posit-dev/positron/releases) and [here](https://www.appsilon.com/post/introducing-positron) for detailed introduction on Positron.
+
+![Positron IDE](images/positron.png)

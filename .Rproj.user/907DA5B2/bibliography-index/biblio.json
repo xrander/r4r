@@ -1,5 +1,27 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "URL": "https://www.appsilon.com/post/introducing-positron",
+            "author": [
+                {
+                    "family": "Radečić",
+                    "given": "Dario"
+                }
+            ],
+            "container-title": "RSS",
+            "id": "Radečić",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "title": "Introducing positron: A new, yet familiar IDE for r and python",
+            "title-short": "Introducing positron",
+            "type": ""
+        }
+    ],
     "project_biblios": [
         "references.bib"
     ]

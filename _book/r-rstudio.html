@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -260,6 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#sec-windows" id="toc-sec-windows" class="nav-link" data-scroll-target="#sec-windows"><span class="header-section-number">1.2.1</span> RStudio Panes/Windows</a></li>
   </ul></li>
+  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron"><span class="header-section-number">1.3</span> Positron</a></li>
   </ul>
 </nav>
     </div>
@@ -383,7 +404,7 @@ Figure&nbsp;1.2: R Studio Environment
 </figure>
 </div>
 <ol start="3" type="1">
-<li><strong>Environment / History Pane</strong>: Located in the top-right. It includes the <strong>Environment</strong> pane which displays all objects created during a session, such as data and variables. We also have the <strong>History</strong> pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to <strong>Histor</strong> pane is the <strong>Connection</strong> pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the <strong>Tutorial</strong> pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.</li>
+<li><strong>Environment / History Pane</strong>: Located in the top-right. It includes the <strong>Environment</strong> pane which displays all objects created during a session, such as data and variables. We also have the <strong>History</strong> pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to <strong>History</strong> pane is the <strong>Connection</strong> pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the <strong>Tutorial</strong> pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.</li>
 </ol>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -421,9 +442,24 @@ Script vs Console
 <p>It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.</p>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="positron" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="positron"><span class="header-section-number">1.3</span> Positron</h2>
+<p>There’s a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called <a href="https://github.com/posit-dev/positron/releases">Positron</a>. Positron is still in its early stage of development. Positron is a blend of the popular IDE VS Code and RStudio, with the major inspiration from VS Code, <span class="citation" data-cites="Radečić">(<a href="references.html#ref-Radečić" role="doc-biblioref">Radečić 2024</a>)</span>. What makes Positron different is the ease of using python, which is one of the most common programming language of choice for data professionals. To get more details about the development, <a href="https://github.com/posit-dev/positron/releases">click here</a> and <a href="https://www.appsilon.com/post/introducing-positron">here</a> for detailed introduction on Positron.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/positron.png" class="img-fluid figure-img"></p>
+<figcaption>Positron IDE</figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Radečić" class="csl-entry" role="listitem">
+Radečić, Dario. 2024. <span>“Introducing Positron: A New, yet Familiar IDE for r and Python.”</span> <em>RSS</em>. <a href="https://www.appsilon.com/post/introducing-positron">https://www.appsilon.com/post/introducing-positron</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
