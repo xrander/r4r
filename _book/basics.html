@@ -250,11 +250,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#arithmetic-operation" id="toc-arithmetic-operation" class="nav-link active" data-scroll-target="#arithmetic-operation"><span class="header-section-number">2.1</span> Arithmetic Operation</a>
-  <ul class="collapse">
-  <li><a href="#comparison-operation" id="toc-comparison-operation" class="nav-link" data-scroll-target="#comparison-operation"><span class="header-section-number">2.1.1</span> Comparison Operation</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.2</span> Summary</a></li>
+  <li><a href="#arithmetic-operators" id="toc-arithmetic-operators" class="nav-link active" data-scroll-target="#arithmetic-operators"><span class="header-section-number">2.1</span> Arithmetic Operators</a></li>
+  <li><a href="#comparison-operators" id="toc-comparison-operators" class="nav-link" data-scroll-target="#comparison-operators"><span class="header-section-number">2.2</span> Comparison Operators</a></li>
+  <li><a href="#assignment-operators" id="toc-assignment-operators" class="nav-link" data-scroll-target="#assignment-operators"><span class="header-section-number">2.3</span> Assignment Operators</a></li>
+  <li><a href="#bringing-it-all-together" id="toc-bringing-it-all-together" class="nav-link" data-scroll-target="#bringing-it-all-together"><span class="header-section-number">2.4</span> Bringing it all together</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.5</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -281,8 +281,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic (e.g., addition, subtraction), comparison operations which involve using conditionals to check how object compares against one another and iterations or looping to solve repetitive tasks.</p>
-<section id="arithmetic-operation" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="arithmetic-operation"><span class="header-section-number">2.1</span> Arithmetic Operation</h2>
+<section id="arithmetic-operators" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="arithmetic-operators"><span class="header-section-number">2.1</span> Arithmetic Operators</h2>
 <p>Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:</p>
 <div id="tbl-arith-op" class="striped hover quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -397,8 +397,9 @@ Tip
 <p>Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don’t be surprised that a lot of times you and people you work with / for will mostly be reading your codes.</p>
 </div>
 </div>
-<section id="comparison-operation" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="comparison-operation"><span class="header-section-number">2.1.1</span> Comparison Operation</h3>
+</section>
+<section id="comparison-operators" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="comparison-operators"><span class="header-section-number">2.2</span> Comparison Operators</h2>
 <p>Comparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to data types.</p>
 <p>Comparison operator in R include</p>
 <div id="tbl-comp-operators" class="striped hover quarto-float anchored">
@@ -463,6 +464,9 @@ Table&nbsp;2.2: Comparison Operators in R
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
+</section>
+<section id="assignment-operators" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="assignment-operators"><span class="header-section-number">2.3</span> Assignment Operators</h2>
 <p>There are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.</p>
 <div id="tbl-ass" class="striped hover quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -525,11 +529,57 @@ Table&nbsp;2.3: Other Operators in R
 </div>
 <p>While <code>-&gt;</code> is an assignment operator in R, it is rarely used. <code>&lt;-</code> is the main operator used for assignment while <code>=</code> is common within functions. Following this simple guide ensure an organized code that is easy to follow.</p>
 <p>The <code>$</code> will be discussed in future chapters and it will be used in this book.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Variables are objects that are used to store values.</p>
+</div>
+</div>
+</div>
 </section>
+<section id="bringing-it-all-together" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="bringing-it-all-together"><span class="header-section-number">2.4</span> Bringing it all together</h2>
+<p>We can perform simple operations with the operators covered recently. For example we can compare the average dried weight of different African tree species. The common nam</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ekki <span class="ot">&lt;-</span> <span class="dv">1065</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>moabi <span class="ot">&lt;-</span> <span class="dv">860</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>obeche <span class="ot">&lt;-</span> <span class="dv">380</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>iroko <span class="ot">&lt;-</span> <span class="dv">660</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can get the difference between <code>ekki</code> and <code>obeche</code>, and between <code>iroko</code> and <code>moabi</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ekki <span class="sc">-</span> obeche</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 685</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>iroko <span class="sc">-</span> moabi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -200</code></pre>
+</div>
+</div>
+<p>The command above translate to <code>1065 - 380</code> and <code>660 - 860</code>respectively. We can also use other operators on this variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ekki <span class="sc">&lt;</span> iroko</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>moabi <span class="sc">&lt;</span> ekki</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>ekki <span class="sc">&gt;</span> obeche</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
 </section>
-<section id="summary" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.2</span> Summary</h2>
-<p>In this chapter, you some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as <code>&lt;</code> and <code>&gt;</code> for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. Now that we’ve got the basics pinned down, we will move on to learning the data types in R.</p>
+<section id="summary" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.5</span> Summary</h2>
+<p>In this chapter, you’ve been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>&gt;=</code> and <code>&gt;</code> for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable.</p>
+<p>Now that we’ve got the a good understanding of the basics, we will move on to learning the data types in R.</p>
 
 
 </section>

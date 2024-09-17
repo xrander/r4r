@@ -2,7 +2,7 @@
 
 Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic (e.g., addition, subtraction), comparison operations which involve using conditionals to check how object compares against one another and iterations or looping to solve repetitive tasks.
 
-## Arithmetic Operation
+## Arithmetic Operators
 Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:
 
 |Operator|Definition|
@@ -50,7 +50,7 @@ R performs arithmetic easily and also follows the order of operations.
 Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you and people you work with / for will mostly be reading your codes.
 :::
 
-### Comparison Operation
+## Comparison Operators
 Comparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to data types.
 
 Comparison operator in R include
@@ -73,6 +73,8 @@ Try these commands in R's console:
 10 >= 7
 10 == 12
 ```
+
+## Assignment Operators
 
 There are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.
 
@@ -108,5 +110,35 @@ While `->` is an assignment operator in R, it is rarely used. `<-` is the main o
 
 The `$` will be discussed in future chapters and it will be used in this book.
 
+:::{.callout-note appearance=simple}
+Variables are objects that are used to store values.
+:::
+
+## Bringing it all together
+We can perform simple operations with the operators covered recently. For example we can compare the average dried weight of different African tree species. The common nam
+
+```{r}
+ekki <- 1065
+moabi <- 860
+obeche <- 380
+iroko <- 660
+```
+
+We can get the difference between `ekki` and `obeche`, and between `iroko` and `moabi`.
+
+```{r}
+ekki - obeche
+iroko - moabi
+```
+The command above translate to `1065 - 380` and `660 - 860`respectively. We can also use other operators on this variables.
+```{r}
+ekki < iroko
+moabi < ekki
+ekki > obeche
+```
+
+
 ## Summary
-In this chapter, you some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as `<` and `>` for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. Now that we've got the basics pinned down,  we will move on to learning the data types in R.
+In this chapter, you've been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as `<`, `<=`, `==`, `>=` and `>` for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. 
+
+Now that we've got the a good understanding of the basics,  we will move on to learning the data types in R.
