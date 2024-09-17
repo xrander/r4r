@@ -14,7 +14,7 @@ The reproducibility features of R make it particularly appealing in academic set
 
 ## R and Data Science
 
-R use is not limited to academia, it's use is becoming one of the major tool used in a lot of sectors. These sectors usually need some type of data scientist, researcher, data analyst or data visualization specialist. With R and the numerous packages it supports this roles are fulfilled and be automated. This makes R and it's associated IDE RStudio a tool for all. In the data science community, R is known for its versatility in handling data wrangling, visualization, and modeling tasks. It is an excellent tool for managing complex data workflows from data cleaning to reporting
+R use is not limited to academia, it's use is becoming one of the major tool used in a lot of sectors. These sectors usually need some type of data scientist, researcher, data analyst or data visualization specialist. With R and the numerous packages it supports these roles are fulfilled and be automated. This makes R and it's associated IDE RStudio a tool for all. In the data science community, R is known for its versatility in handling data wrangling, visualization, and modeling tasks. It is an excellent tool for managing complex data workflows from data cleaning to presentation and reporting insights from data.
 
 ## The R Community and Ecosystem
 
@@ -94,7 +94,7 @@ R for Research covers essential techniques for data analysis using R, focusing o
 
 While the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.
 
-### Expectations
+### What should expect from reading this books
 
 By the end of this book, readers are expected to:
 
