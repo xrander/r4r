@@ -143,8 +143,8 @@
     "objectID": "basics.html#summary",
     "href": "basics.html#summary",
     "title": "2  R Basics",
-    "section": "2.5 Summary",
-    "text": "2.5 Summary\nIn this chapter, you’ve been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt;, &lt;=, ==, &gt;= and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable.\nNow that we’ve got the a good understanding of the basics, we will move on to learning the data types in R.",
+    "section": "2.6 Summary",
+    "text": "2.6 Summary\nIn this chapter, you’ve been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt;, &lt;=, ==, &gt;= and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable.\nNow that we’ve got a good understanding of the basic syntax, we will move on to learn the data types in R.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
@@ -154,7 +154,7 @@
     "href": "data-types.html",
     "title": "3  Data Types in R",
     "section": "",
-    "text": "3.1 Character",
+    "text": "3.1 Character\nCharacters (A.K.A strings) includes anything enclosed in quotation mark. This quotation mark can either be single ’ or double “ (they are treated the same way in r). Characters can be texts or numbers as long as they are in quotation marks.\ntypeof(\"man\")\n\n[1] \"character\"\n\ntypeof(\"2\")\n\n[1] \"character\"\n\ntypeof(\"+\")\n\n[1] \"character\"",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -173,8 +173,8 @@
     "objectID": "data-types.html#numerical-data",
     "href": "data-types.html#numerical-data",
     "title": "3  Data Types in R",
-    "section": "3.3 Numerical Data",
-    "text": "3.3 Numerical Data",
+    "section": "3.2 Numerical Data",
+    "text": "3.2 Numerical Data\nThere are two types of numerical data in R, integers and doubles.\n\nDoubles: These are decimal numbers\n\n\ntypeof(1.5)\n\n[1] \"double\"\n\n\n\nIntegers: These are whole number. They usually having a capital L in front but are printed normally\n\n\ntypeof(1L)\n\n[1] \"integer\"\n\n\nYou can create a sequence of data using :. For example to create a sequence of 1 to 15\n\n1:15\n\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -193,8 +193,8 @@
     "objectID": "data-types.html#objects",
     "href": "data-types.html#objects",
     "title": "3  Data Types in R",
-    "section": "3.5 Objects",
-    "text": "3.5 Objects",
+    "section": "3.4 Objects",
+    "text": "3.4 Objects\nR allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:\n\nfruits &lt;- factor(c(\"mango\", \"papaya\", \"apple\"))\nage &lt;- 20\nresult &lt;- factor(c(0, 1, 3, 4, 5), labels = c(\"F\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\n\nThe object here is fruits, we can get the stored object anytime by calling the object\n\nfruits\n\n[1] mango  papaya apple \nLevels: apple mango papaya\n\nage\n\n[1] 20\n\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -203,8 +203,8 @@
     "objectID": "data-types.html#changing-data-types",
     "href": "data-types.html#changing-data-types",
     "title": "3  Data Types in R",
-    "section": "3.6 Changing Data Types",
-    "text": "3.6 Changing Data Types",
+    "section": "3.5 Changing Data Types",
+    "text": "3.5 Changing Data Types\nChanging data types in R is referred to as coercing the data. The as._data_type helps us change between data types.\n\ntree_names &lt;- c(\"terminalia\", \"eucalyptus\", \"iroko\", \"oak\")\nclass(tree_names)\n\n[1] \"character\"\n\n\nTo change the above to a factor type we’ll use the as.factor() function to coerce it into factor data type.\n\ntree_names &lt;- as.factor(tree_names)\n\nclass(tree_names)\n\n[1] \"factor\"\n\n\nWe can change this back to factor by using the as.character() function to coerce our data into character data type.\n\ntree_names &lt;- as.character(tree_names)\nclass(tree_names)\n\n[1] \"character\"\n\n\nThe as.character() can be used to coerce any data type to character:\n\nnumbers &lt;- 1:20\nclass(numbers)\n\n[1] \"integer\"\n\n\n\nnumbers &lt;- as.character(numbers)\nclass(numbers)\n\n[1] \"character\"\n\n\nCharacters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA’s\n\ntree_height &lt;- c(10, 15, 20, \"25m\")\nclass(tree_height)\n\n[1] \"character\"\n\n\n\ntree_height &lt;- as.double(tree_height)\n\nWarning: NAs introduced by coercion\n\ntree_height\n\n[1] 10 15 20 NA\n\nclass(tree_height)\n\n[1] \"numeric\"\n\n\nData types can be converted to different types using the as.* including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.\n\nas.logical(c(\"TRUE\", 1, 0, \"FALSE\", \"F\", \"T\", 3, 4))\n\n[1]  TRUE    NA    NA FALSE FALSE  TRUE    NA    NA\n\n\n\nas.logical(c(1, 0, 1, 1, 0, 0 , 1))\n\n[1]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE\n\n\n\n\n\n\n\n\nNote\n\n\n\nData coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -743,8 +743,8 @@
     "objectID": "basics.html#bringing-it-all-together",
     "href": "basics.html#bringing-it-all-together",
     "title": "2  R Basics",
-    "section": "2.4 Bringing it all together",
-    "text": "2.4 Bringing it all together\nWe can perform simple operations with the operators covered recently. For example we can compare the average dried weight of different African tree species. The common nam\n\nekki &lt;- 1065\nmoabi &lt;- 860\nobeche &lt;- 380\niroko &lt;- 660\n\nWe can get the difference between ekki and obeche, and between iroko and moabi.\n\nekki - obeche\n\n[1] 685\n\niroko - moabi\n\n[1] -200\n\n\nThe command above translate to 1065 - 380 and 660 - 860respectively. We can also use other operators on this variables.\n\nekki &lt; iroko\n\n[1] FALSE\n\nmoabi &lt; ekki\n\n[1] TRUE\n\nekki &gt; obeche\n\n[1] TRUE",
+    "section": "2.5 Bringing it all together",
+    "text": "2.5 Bringing it all together\nWe can perform simple operations with the operators covered recently. For example we can compare the average dry weight of different African tree species.\n\n# The dry weight in kg/m3\nekki &lt;- 1065\nmoabi &lt;- 860\nobeche &lt;- 380\niroko &lt;- 660\n\nWe can get the difference between ekki and obeche, and between iroko and moabi.\n\nekki - obeche\n\n[1] 685\n\niroko - moabi\n\n[1] -200\n\n\nThe command above translate to 1065 - 380 and 660 - 860respectively. We can also use other operators on this variables.\n\nekki &lt; iroko\n\n[1] FALSE\n\nmoabi &lt; ekki\n\n[1] TRUE\n\nekki &gt; obeche\n\n[1] TRUE",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
@@ -775,6 +775,46 @@
     "title": "2  R Basics",
     "section": "2.3 Assignment Operators",
     "text": "2.3 Assignment Operators\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.\n\n\n\nTable 2.3: Other Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&lt;-\nAssignment\n\n\n=\nAssignment\n\n\n-&gt;\nAssignment (not common)\n\n\n$\nAccess elements\n\n\n\n\n\n\nFor example, we can assign the number 17 to the variable c. c here is a container holding values.\n\nc &lt;- 17\nc\n\n[1] 17\n\n\nAbove we assigned the value 17 to c using &lt;-. This is the convention used for assigning objects to variables in R. We can change the value in c by assigning another value to it. This time let’s assign the value 100 using the = operator\n\nc = 100\nc\n\n[1] 100\n\n\nWhen we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For -&gt; assignment variable, it comes after the value. For example:\n\n5000 -&gt; d\nd\n\n[1] 5000\n\n\nWhile -&gt; is an assignment operator in R, it is rarely used. &lt;- is the main operator used for assignment while = is common within functions. Following this simple guide ensure an organized code that is easy to follow.\nThe $ will be discussed in future chapters and it will be used in this book.\n\n\n\n\n\n\nVariables are objects that are used to store values.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#character",
+    "href": "data-types.html#character",
+    "title": "3  Data Types in R",
+    "section": "",
+    "text": "3.1.1 Factor\nThere’s a spin-off of character data type called factors. Factors are also referred to as categorical data. In R, factors are always leveled. They can either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.\n\nNominal Factor: These are unordered categorical data with levels. There’s no degree of distance or ranking in nominal factor variables.\n\n\ntree_names &lt;- factor(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                       \"Celtis africana\"))\nclass(tree_names)\n\n[1] \"factor\"\n\n\n\n\n\n\n\n\nThe function c() is used to combine values.\n\n\n\n\ntree_names\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nYou can see that as part of the print, you have Levels which is the alphabetical arrangement of trees. To have a better understanding, lets create multiple copies of the trees which you have here using the rep() function and see what happens to levels on print.\n\ntree_names_rep &lt;- factor(rep(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                               \"Celtis africana\"), 3))\n\ntree_names_rep\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[4] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[7] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nThe levels remains the same even on increasing the length of the data here. Other examples of nominal data are:\n\nnames of people\nyes and no / true and false\nnationality\nfruits.\nOrdinal Factors: These are ordered categorical data with levels. They have some of distance or degree of ranking between them. The ordered argument within the factor() function ensure you make ordered list.\n\n\ngrade &lt;- factor(c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"),\n                levels = c(\"F\", \"E\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nYou can check the highest and lowest levels here by using the max() and min() functions.\n\nlevels(grade) # This returns all the grade\n\n[1] \"F\" \"E\" \"D\" \"C\" \"B\" \"A\"\n\nmax(grade) # This returns the highest level\n\n[1] A\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\nmin(grade) # This returns the lowest level.\n\n[1] F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nOther examples:\n\nSalary range\nEducation level\nCustomer level satisfaction\nTree health\n\n\n\n\n\n\n\nNote\n\n\n\nWhile factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Once created, factors can only contain a pre-defined set values,",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#boolean",
+    "href": "data-types.html#boolean",
+    "title": "3  Data Types in R",
+    "section": "3.3 Boolean",
+    "text": "3.3 Boolean\nBoolean also referred to as logical values. Boolean includes TRUE, FALSE and NA which refers to not available.\n\nclass(TRUE)\n\n[1] \"logical\"\n\nclass(NA)\n\n[1] \"logical\"\n\nclass(FALSE)\n\n[1] \"logical\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#summary",
+    "href": "data-types.html#summary",
+    "title": "3  Data Types in R",
+    "section": "3.6 Summary",
+    "text": "3.6 Summary\nYou learned about the data types in R. They include character, factor, double, integer, and boolean. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#making-comments",
+    "href": "basics.html#making-comments",
+    "title": "2  R Basics",
+    "section": "2.4 Making Comments",
+    "text": "2.4 Making Comments\nThere are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The # is used to indicate a comment. Anything that comes after # are not executed by the program. For example\n\nx &lt;- 15 # 15 here is in kg instead of g\n# the line here is a comment\nx\n\n[1] 15",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
