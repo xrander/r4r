@@ -114,10 +114,21 @@ The `$` will be discussed in future chapters and it will be used in this book.
 Variables are objects that are used to store values.
 :::
 
-## Bringing it all together
-We can perform simple operations with the operators covered recently. For example we can compare the average dried weight of different African tree species. The common nam
+## Making Comments
+There are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The `#` is used to indicate a comment. Anything that comes after `#` are not executed by the program. For example
 
 ```{r}
+x <- 15 # 15 here is in kg instead of g
+# the line here is a comment
+x
+```
+
+
+## Bringing it all together
+We can perform simple operations with the operators covered recently. For example we can compare the average dry weight of different African tree species.
+
+```{r}
+# The dry weight in kg/m3
 ekki <- 1065
 moabi <- 860
 obeche <- 380
@@ -141,4 +152,4 @@ ekki > obeche
 ## Summary
 In this chapter, you've been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as `<`, `<=`, `==`, `>=` and `>` for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. 
 
-Now that we've got the a good understanding of the basics,  we will move on to learning the data types in R.
+Now that we've got a good understanding of the basic syntax,  we will move on to learn the data types in R.
