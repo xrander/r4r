@@ -154,7 +154,7 @@
     "href": "data-types.html",
     "title": "3  Data Types in R",
     "section": "",
-    "text": "3.1 Character\nCharacters (A.K.A strings) includes anything enclosed in quotation mark. This quotation mark can either be single ’ or double “ (they are treated the same way in r). Characters can be texts or numbers as long as they are in quotation marks.\ntypeof(\"man\")\n\n[1] \"character\"\n\ntypeof(\"2\")\n\n[1] \"character\"\n\ntypeof(\"+\")\n\n[1] \"character\"",
+    "text": "3.1 Character\nIn R programming, characters are things enclosed in quotation mark. This quotation mark can either be the single ' or double \", they are treated the same way in R programming. It is more common to use the \" than the single. Characters while often thought of as alphabets can also be numbers as long as they are enclosed in quotation marks. For example, “man” is a character:\n\"man\"\n\n[1] \"man\"\nWe can check what data type “man” is this with class() or typeof() function.\ntypeof(\"man\")\n\n[1] \"character\"\n\nclass(\"man\")\n\n[1] \"character\"\nFor now we will to using class() function. What about if we have a number enclosed in quotation marks?\nclass(\"2\")\n\n[1] \"character\"\nThis proves that anything enclosed in quotation marks are characters.\ntypeof(\"+\")\n\n[1] \"character\"\nThis is also true if values are assigned to a variable. The content of the variable will be evaluated and not the variable in its self. To put in simple terms, a bottle in itself is not evaluated but the content of the bottle, be it water, wine, or soft drink.\nman &lt;- \"olamide\"\nclass(man)\n\n[1] \"character\"\nLet’s look at the example below, we have error because olamide is an object with no values assigned to it. So olamide and “olamide” are different. The latter is a character while the formal is an object.\nclass(olamide)\nError: object 'olamide' not found.\nThere is a way to confirm if objects are characters, using is.character() function. The result from the code is either TRUE or FALSE.\nis.character(\"olamide\")\n\n[1] TRUE\nis.character(2)\n\n[1] FALSE\nis.character(\"2\")\n\n[1] TRUE",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -173,8 +173,8 @@
     "objectID": "data-types.html#numerical-data",
     "href": "data-types.html#numerical-data",
     "title": "3  Data Types in R",
-    "section": "3.2 Numerical Data",
-    "text": "3.2 Numerical Data\nThere are two types of numerical data in R, integers and doubles.\n\nDoubles: These are decimal numbers\n\n\ntypeof(1.5)\n\n[1] \"double\"\n\n\n\nIntegers: These are whole number. They usually having a capital L in front but are printed normally\n\n\ntypeof(1L)\n\n[1] \"integer\"\n\n\nYou can create a sequence of data using :. For example to create a sequence of 1 to 15\n\n1:15\n\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15",
+    "section": "3.3 Numerical Data",
+    "text": "3.3 Numerical Data\nThere are two types of numerical data in R, integers and doubles.\n\nDoubles: These are decimal numbers\n\n\ntypeof(1.5)\n\n[1] \"double\"\n\n\n\nIntegers: These are whole number. They usually having a capital L in front but are printed normally\n\n\ntypeof(1L)\n\n[1] \"integer\"\n\n\nYou can create a sequence of data using :. For example to create a sequence of 1 to 15\n\n1:15\n\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -193,8 +193,8 @@
     "objectID": "data-types.html#objects",
     "href": "data-types.html#objects",
     "title": "3  Data Types in R",
-    "section": "3.4 Objects",
-    "text": "3.4 Objects\nR allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:\n\nfruits &lt;- factor(c(\"mango\", \"papaya\", \"apple\"))\nage &lt;- 20\nresult &lt;- factor(c(0, 1, 3, 4, 5), labels = c(\"F\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\n\nThe object here is fruits, we can get the stored object anytime by calling the object\n\nfruits\n\n[1] mango  papaya apple \nLevels: apple mango papaya\n\nage\n\n[1] 20\n\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A",
+    "section": "3.5 Objects",
+    "text": "3.5 Objects\nR allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:\n\nfruits &lt;- factor(c(\"mango\", \"papaya\", \"apple\"))\nage &lt;- 20\nresult &lt;- factor(c(0, 1, 3, 4, 5), labels = c(\"F\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\n\nThe object here is fruits, we can get the stored object anytime by calling the object\n\nfruits\n\n[1] mango  papaya apple \nLevels: apple mango papaya\n\nage\n\n[1] 20\n\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -203,8 +203,8 @@
     "objectID": "data-types.html#changing-data-types",
     "href": "data-types.html#changing-data-types",
     "title": "3  Data Types in R",
-    "section": "3.5 Changing Data Types",
-    "text": "3.5 Changing Data Types\nChanging data types in R is referred to as coercing the data. The as._data_type helps us change between data types.\n\ntree_names &lt;- c(\"terminalia\", \"eucalyptus\", \"iroko\", \"oak\")\nclass(tree_names)\n\n[1] \"character\"\n\n\nTo change the above to a factor type we’ll use the as.factor() function to coerce it into factor data type.\n\ntree_names &lt;- as.factor(tree_names)\n\nclass(tree_names)\n\n[1] \"factor\"\n\n\nWe can change this back to factor by using the as.character() function to coerce our data into character data type.\n\ntree_names &lt;- as.character(tree_names)\nclass(tree_names)\n\n[1] \"character\"\n\n\nThe as.character() can be used to coerce any data type to character:\n\nnumbers &lt;- 1:20\nclass(numbers)\n\n[1] \"integer\"\n\n\n\nnumbers &lt;- as.character(numbers)\nclass(numbers)\n\n[1] \"character\"\n\n\nCharacters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA’s\n\ntree_height &lt;- c(10, 15, 20, \"25m\")\nclass(tree_height)\n\n[1] \"character\"\n\n\n\ntree_height &lt;- as.double(tree_height)\n\nWarning: NAs introduced by coercion\n\ntree_height\n\n[1] 10 15 20 NA\n\nclass(tree_height)\n\n[1] \"numeric\"\n\n\nData types can be converted to different types using the as.* including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.\n\nas.logical(c(\"TRUE\", 1, 0, \"FALSE\", \"F\", \"T\", 3, 4))\n\n[1]  TRUE    NA    NA FALSE FALSE  TRUE    NA    NA\n\n\n\nas.logical(c(1, 0, 1, 1, 0, 0 , 1))\n\n[1]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE\n\n\n\n\n\n\n\n\nNote\n\n\n\nData coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.",
+    "section": "3.6 Changing Data Types",
+    "text": "3.6 Changing Data Types\nChanging data types in R is referred to as coercing the data. The as._data_type helps us change between data types.\n\ntree_names &lt;- c(\"terminalia\", \"eucalyptus\", \"iroko\", \"oak\")\nclass(tree_names)\n\n[1] \"character\"\n\n\nTo change the above to a factor type we’ll use the as.factor() function to coerce it into factor data type.\n\ntree_names &lt;- as.factor(tree_names)\n\nclass(tree_names)\n\n[1] \"factor\"\n\n\nWe can change this back to factor by using the as.character() function to coerce our data into character data type.\n\ntree_names &lt;- as.character(tree_names)\nclass(tree_names)\n\n[1] \"character\"\n\n\nThe as.character() can be used to coerce any data type to character:\n\nnumbers &lt;- 1:20\nclass(numbers)\n\n[1] \"integer\"\n\n\n\nnumbers &lt;- as.character(numbers)\nclass(numbers)\n\n[1] \"character\"\n\n\nCharacters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA’s\n\ntree_height &lt;- c(10, 15, 20, \"25m\")\nclass(tree_height)\n\n[1] \"character\"\n\n\n\ntree_height &lt;- as.double(tree_height)\n\nWarning: NAs introduced by coercion\n\ntree_height\n\n[1] 10 15 20 NA\n\nclass(tree_height)\n\n[1] \"numeric\"\n\n\nData types can be converted to different types using the as.* including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.\n\nas.logical(c(\"TRUE\", 1, 0, \"FALSE\", \"F\", \"T\", 3, 4))\n\n[1]  TRUE    NA    NA FALSE FALSE  TRUE    NA    NA\n\n\n\nas.logical(c(1, 0, 1, 1, 0, 0 , 1))\n\n[1]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE\n\n\n\n\n\n\n\n\nNote\n\n\n\nData coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -793,8 +793,8 @@
     "objectID": "data-types.html#boolean",
     "href": "data-types.html#boolean",
     "title": "3  Data Types in R",
-    "section": "3.3 Boolean",
-    "text": "3.3 Boolean\nBoolean also referred to as logical values. Boolean includes TRUE, FALSE and NA which refers to not available.\n\nclass(TRUE)\n\n[1] \"logical\"\n\nclass(NA)\n\n[1] \"logical\"\n\nclass(FALSE)\n\n[1] \"logical\"",
+    "section": "3.4 Boolean",
+    "text": "3.4 Boolean\nBoolean also referred to as logical values. Boolean includes TRUE, FALSE and NA which refers to not available.\n\nclass(TRUE)\n\n[1] \"logical\"\n\nclass(NA)\n\n[1] \"logical\"\n\nclass(FALSE)\n\n[1] \"logical\"",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -803,8 +803,8 @@
     "objectID": "data-types.html#summary",
     "href": "data-types.html#summary",
     "title": "3  Data Types in R",
-    "section": "3.6 Summary",
-    "text": "3.6 Summary\nYou learned about the data types in R. They include character, factor, double, integer, and boolean. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.",
+    "section": "3.7 Summary",
+    "text": "3.7 Summary\nYou learned about the data types in R. They include character, factor, double, integer, and boolean. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
@@ -817,6 +817,16 @@
     "text": "2.4 Making Comments\nThere are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The # is used to indicate a comment. Anything that comes after # are not executed by the program. For example\n\nx &lt;- 15 # 15 here is in kg instead of g\n# the line here is a comment\nx\n\n[1] 15",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
+    ]
+  },
+  {
+    "objectID": "data-types.html#factors",
+    "href": "data-types.html#factors",
+    "title": "3  Data Types in R",
+    "section": "3.2 Factors",
+    "text": "3.2 Factors\nThere’s a variation of character data type called factors. Factors are also referred to as categorical data. In R, factors are always leveled. They can either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.\n\nNominal Factor: These are unordered categorical data with levels. There’s no degree of distance or ranking in nominal factor variables.\n\n\ntree_names &lt;- factor(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                       \"Celtis africana\"))\nclass(tree_names)\n\n[1] \"factor\"\n\n\n\n\n\n\n\n\nThe function c() is used to combine values.\n\n\n\n\ntree_names\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nYou can see that as part of the print, you have Levels which is the alphabetical arrangement of trees. To have a better understanding, lets create multiple copies of the trees which you have here using the rep() function and see what happens to levels on print.\n\ntree_names_rep &lt;- factor(rep(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                               \"Celtis africana\"), 3))\n\ntree_names_rep\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[4] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[7] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nThe levels remains the same even on increasing the length of the data here. Other examples of nominal data are:\n\nnames of people\nyes and no / true and false\nnationality\nfruits.\nOrdinal Factors: These are ordered categorical data with levels. They have some of distance or degree of ranking between them. The ordered argument within the factor() function ensure you make ordered list.\n\n\ngrade &lt;- factor(c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"),\n                levels = c(\"F\", \"E\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nYou can check the highest and lowest levels here by using the max() and min() functions.\n\nlevels(grade) # This returns all the grade\n\n[1] \"F\" \"E\" \"D\" \"C\" \"B\" \"A\"\n\nmax(grade) # This returns the highest level\n\n[1] A\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\nmin(grade) # This returns the lowest level.\n\n[1] F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nOther examples:\n\nSalary range\nEducation level\nCustomer level satisfaction\nTree health\n\n\n\n\n\n\n\nNote\n\n\n\nWhile factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Once created, factors can only contain a pre-defined set values,",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   }
 ]

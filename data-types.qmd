@@ -39,15 +39,60 @@ There are five different data types in R programming, four which we will be usin
 *   logical
 
 ## Character
-Characters (A.K.A strings) includes anything enclosed in quotation mark. This quotation mark can either be single **'** or double **"** (they are treated the same way in r). Characters can be texts or numbers as long as they are in quotation marks.
+In R programming, characters are things enclosed in quotation mark. This quotation mark can either be the single  `'` or double `"`, they are treated the same way in R programming. It is more common to use the `"` than the single. Characters while often thought of as alphabets can also be numbers as long as they are enclosed in quotation marks. For example, *"man"* is a character:
+
+```{r}
+"man"
+```
+
+We can check what data type *"man"* is this with `class()` or `typeof()` function.
 ```{r}
 typeof("man")
-typeof("2")
+class("man")
+```
+
+For now we will stick to using  `class()` function. What about if we have a number enclosed in quotation marks?
+
+```{r}
+class("2")
+```
+
+This proves that anything enclosed in quotation marks are characters.
+```{r}
 typeof("+")
 ```
 
-### Factor
-There's a spin-off of character data type called **factors**. Factors are also referred to as categorical data. In R, factors are always leveled. They can  either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.
+This is also true if values are assigned to a variable. The content of the variable will be evaluated and not the variable in its self. To put in simple terms, a bottle in itself is not evaluated but the content of the bottle, be it water, wine, or soft drink.
+```{r}
+man <- "olamide"
+class(man)
+```
+
+Let's look at the example below, we have error because `olamide` is an object with no values assigned to it. So `olamide` and "olamide" are different. The latter is a character while the formal is an object.
+```{r}
+#| eval: false
+
+class(olamide)
+```
+`Error: object 'olamide' not found`.
+
+There is a way to confirm if objects are characters, using `is.character()` function. The result of the function is either TRUE or FALSE.
+
+```{r}
+is.character("olamide")
+```
+
+```{r}
+is.character(2)
+```
+
+```{r}
+is.character("2")
+```
+
+
+## Factors
+There's a variation of character data type called **factors**. Factors are also referred to as categorical data. In R, factors are always leveled. They can  either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.
 
 - **Nominal Factor**: These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables.
 ```{r}
