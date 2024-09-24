@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R for Research - 3&nbsp; Data Types in R</title>
+<title>3&nbsp; Data Types in R – R for Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -118,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-types.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types in R</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -299,11 +299,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Before performing any analysis, it’s crucial to understand the types of data you are working with. Like data scientist or analysts, researchers must work with various data forms–whether they are survey response, secondary data, field data, or lab data. In the research process, as seen in <a href="#fig-str" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>, data collection and analysis are key stages. Each data has its own unique structure and requirements influencing the method you’ll use for their analysis. Understanding the distinctions between different data types ensures you can clean, manipulate, and interpret your dataset effectively. In this section, we’ll explore the foundational data types in R programming.</p>
 <div class="cell">
-<div id="fig-str" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-str" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d38820458901d6955330" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d38820458901d6955330">{"x":{"diagram":"digraph {\n    graph [layout = dot, rankdir = TB, splines = TRUE]\n    node [shape = box, style = filled, fillcolor = white, color = dodgerblue, fontcolor = gray4]\n    a [label = \"Identifying the Research Problem\"]\n    b [label = \"Literature Review\"]\n    c [label = \"Formulating Hypothesis or Research Questions\"]\n    d [label = \"Design Research Methodology\"]\n    e [label = \"Collecting Data\", color = red, fillcolor = indianred3, fontcolor = white]\n    f [label = \"Data Analysis\", color = red, fillcolor = indianred3, fontcolor = white]\n    g [label = \"Interpretation of Result\"]\n    h [label = \"Drawing Conclusion and Recommendation\"]\n    i [label = \"Report / Presentation to Academic Community and/or Stakeholders\"]\n    a -> b -> c -> d -> e -> f -> g -> h -> i\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-fb774ec788c1426905e3" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fb774ec788c1426905e3">{"x":{"diagram":"digraph {\n    graph [layout = dot, rankdir = TB, splines = TRUE]\n    node [shape = box, style = filled, fillcolor = white, color = dodgerblue, fontcolor = gray4]\n    a [label = \"Identifying the Research Problem\"]\n    b [label = \"Literature Review\"]\n    c [label = \"Formulating Hypothesis or Research Questions\"]\n    d [label = \"Design Research Methodology\"]\n    e [label = \"Collecting Data\", color = red, fillcolor = indianred3, fontcolor = white]\n    f [label = \"Data Analysis\", color = red, fillcolor = indianred3, fontcolor = white]\n    g [label = \"Interpretation of Result\"]\n    h [label = \"Drawing Conclusion and Recommendation\"]\n    i [label = \"Report / Presentation to Academic Community and/or Stakeholders\"]\n    a -> b -> c -> d -> e -> f -> g -> h -> i\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.1: Stages of Research
@@ -339,7 +339,7 @@ Figure&nbsp;3.1: Stages of Research
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
-<p>For now we will to using <code>class()</code> function. What about if we have a number enclosed in quotation marks?</p>
+<p>For now we will stick to using <code>class()</code> function. What about if we have a number enclosed in quotation marks?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="st">"2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -366,7 +366,7 @@ Figure&nbsp;3.1: Stages of Research
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(olamide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>Error: object 'olamide' not found</code>.</p>
-<p>There is a way to confirm if objects are characters, using <code>is.character()</code> function. The result from the code is either TRUE or FALSE.</p>
+<p>There is a way to confirm if objects are characters, using <code>is.character()</code> function. The result of the function is either TRUE or FALSE.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(<span class="st">"olamide"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -694,18 +694,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -737,7 +726,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/r4r\.olamideadu\.com\/");
@@ -745,7 +756,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

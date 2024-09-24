@@ -80,10 +80,10 @@ There are other operators which are useful in R. They are used to assign names t
 
 | Symbol | Meaning |
 |:----|----:|
-| <- | Assignment |
-|= | Assignment |
-|-> | Assignment (not common)|
-| $ | Access elements |
+| <- | Assignment / bind to value |
+|= | Assignment / bind to value |
+|-> | Assignment / bind to value|
+| $ | Access elements of objects |
 
 : Other Operators in R {#tbl-ass .striped .hover}
 
@@ -106,7 +106,10 @@ When we assign a different value to the same variable name in R, it gets replace
 5000 -> d
 d
 ```
-While `->` is an assignment operator in R, it is rarely used. `<-` is the main operator used for assignment while `=` is common within functions. Following this simple guide ensure an organized code that is easy to follow.
+
+:::{.callout-note appearnce=simple}
+While `->` is an assignment operator in R that is not common. `<-` is the main operator used for assignment while `=` is common within functions. Following this simple guide ensure an organized code that is easy to follow.
+:::
 
 The `$` will be discussed in future chapters and it will be used in this book.
 

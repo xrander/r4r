@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R for Research - 1&nbsp; R, RStudio, and Posit Cloud</title>
+<title>1&nbsp; R, RStudio, and Posit Cloud – R for Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -133,13 +133,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r-rstudio.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">R, RStudio, and Posit Cloud</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -270,17 +270,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">1.1</span> Installing R and RStudio</a>
+  <li><a href="#sec-installing-r" id="toc-sec-installing-r" class="nav-link active" data-scroll-target="#sec-installing-r"><span class="header-section-number">1.1</span> Installing R and RStudio</a>
   <ul class="collapse">
-  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">1.1.1</span> Installing R</a></li>
+  <li><a href="#sec-install-r" id="toc-sec-install-r" class="nav-link" data-scroll-target="#sec-install-r"><span class="header-section-number">1.1.1</span> Installing R</a></li>
   <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">1.1.2</span> Installing RStudio</a></li>
-  <li><a href="#posit-cloud" id="toc-posit-cloud" class="nav-link" data-scroll-target="#posit-cloud"><span class="header-section-number">1.1.3</span> Posit Cloud</a></li>
   </ul></li>
   <li><a href="#the-rstudio-interface" id="toc-the-rstudio-interface" class="nav-link" data-scroll-target="#the-rstudio-interface"><span class="header-section-number">1.2</span> The RStudio Interface</a>
   <ul class="collapse">
-  <li><a href="#sec-windows" id="toc-sec-windows" class="nav-link" data-scroll-target="#sec-windows"><span class="header-section-number">1.2.1</span> RStudio Panes/Windows</a></li>
+  <li><a href="#sec-panes" id="toc-sec-panes" class="nav-link" data-scroll-target="#sec-panes"><span class="header-section-number">1.2.1</span> RStudio Panes</a></li>
   </ul></li>
-  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron"><span class="header-section-number">1.3</span> Positron</a></li>
+  <li><a href="#posit-cloud" id="toc-posit-cloud" class="nav-link" data-scroll-target="#posit-cloud"><span class="header-section-number">1.3</span> Posit Cloud</a></li>
+  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron"><span class="header-section-number">1.4</span> Positron</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.5</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -306,7 +307,7 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled" data-appearnce="simple">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -316,14 +317,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can skip all the steps below if you already have R and RStudio installed. Skip to the operating you use.</p>
+<p>You can skip all the whole of <a href="#sec-installing-r" class="quarto-xref"><span>Section 1.1</span></a> if you already have R and RStudio installed. If not, proceed to the operating system loaded in your machine at <a href="#sec-install-r" class="quarto-xref"><span>Section 1.1.1</span></a>.</p>
 </div>
 </div>
-<section id="installing-r-and-rstudio" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">1.1</span> Installing R and RStudio</h2>
-<p>R and RStudio are both free to install and use. To install both software, you need to download and install the right file for your operating system (OS).</p>
-<section id="installing-r" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">1.1.1</span> Installing R</h3>
+<section id="sec-installing-r" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-installing-r"><span class="header-section-number">1.1</span> Installing R and RStudio</h2>
+<p>R and RStudio are free to install and use softwares. To install them software, you need to download and install the right file for your machine’s operating system (OS). Below are the installation instructions based on operating system.</p>
+<section id="sec-install-r" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="sec-install-r"><span class="header-section-number">1.1.1</span> Installing R</h3>
 <p><strong>Windows OS (10/ 11)</strong>: To download R from CRAN visit this link <a href="https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe" class="uri">https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe</a> and run the installer. This is the latest version at the time of writing this chapter</p>
 <p><strong>Mac OS</strong>: There are two versions of R for Mac users based on the processor in your computer.</p>
 <ul>
@@ -352,39 +353,24 @@ Note
 <li><p><a href="https://www.youtube.com/watch?v=Uw9fWa-hVdc">linux-ubuntu</a></p></li>
 </ul>
 </section>
-<section id="posit-cloud" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="posit-cloud"><span class="header-section-number">1.1.3</span> Posit Cloud</h3>
-<p>There’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit <a href="https://posit.cloud/" class="uri">https://posit.cloud/</a> and register. After registering, you get a page similar to <a href="#fig-cloud" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. After registering, click on new workspace on the left sidebar and create a new project.</p>
-<div id="fig-cloud" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posit-cloud.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: posit cloud
-</figcaption>
-</figure>
-</div>
-<p>The video series in this <a href="https://www.youtube.com/watch?v=VV_3MvJmwG4&amp;list=PL9HYL-VRX0oSn7tBLDiSt4Vnyk3yB6ipA">link</a> is a good resource for starting with Posit Cloud.</p>
-</section>
 </section>
 <section id="the-rstudio-interface" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">1.2</span> The RStudio Interface</h2>
-<p>On opening RStudio, you have three panes by default. You can get a fourth pane like what is shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>. To do this, click the <strong>+</strong> button at the top-left and select R Script, or use the keyboard shortcut <code>Ctrl + Shift + N</code> on Windows/Linux and <code>Cmd + Shift + N</code> on Mac. More details on the panes is provided in <a href="#sec-windows" class="quarto-xref"><span>Section 1.2.1</span></a></p>
-<div id="fig-rstudio-environment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>When you open RStudio newly, you are presented with three panes by default. You can get a fourth pane like what is shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. To do this, click the <strong>+</strong> button at the top-left and select R Script, or use the keyboard shortcut <code>Ctrl + Shift + N</code> on Windows/Linux and <code>Cmd + Shift + N</code> on Mac. More details on the panes is provided in <span class="quarto-unresolved-ref">?sec-paness</span></p>
+<div id="fig-rstudio-environment" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/r_interface.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: R Studio Environment
+Figure&nbsp;1.1: R Studio Environment
 </figcaption>
 </figure>
 </div>
 <p>You can change the arrangement of the panes by clicking <code>Tools</code> on the menu bar then navigate to <code>Global Options</code> and <code>Pane Layout</code> in the popup box.</p>
-<section id="sec-windows" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-windows"><span class="header-section-number">1.2.1</span> RStudio Panes/Windows</h3>
-<p>The four windows/panes as shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>1.2</span></a> are:</p>
+<section id="sec-panes" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-panes"><span class="header-section-number">1.2.1</span> RStudio Panes</h3>
+<p>The four components/panes shown in <a href="#fig-rstudio-environment" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> are:</p>
 <ol type="1">
 <li><strong>Source Pane</strong>: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.</li>
 </ol>
@@ -395,7 +381,7 @@ Figure&nbsp;1.2: R Studio Environment
 </figure>
 </div>
 <ol start="2" type="1">
-<li><strong>Console/Terminal/Background Jobs pane</strong>: Located in the bottom-left. It includes the <strong>Console</strong> pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the <strong>Terminal</strong> pane which provides direct access to your computer using command line. Lastly, we have the <strong>Background Jobs</strong> pane which allows you to run R scripts or tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.</li>
+<li><strong>Console/Terminal/Background Jobs pane</strong>: Located in the bottom-left. It include the <strong>Console</strong> pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the <strong>Terminal</strong> pane which provides direct access to your computer using command line. Lastly, we have the <strong>Background Jobs</strong> pane which allows you to run tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -404,7 +390,7 @@ Figure&nbsp;1.2: R Studio Environment
 </figure>
 </div>
 <ol start="3" type="1">
-<li><strong>Environment / History Pane</strong>: Located in the top-right. It includes the <strong>Environment</strong> pane which displays all objects created during a session, such as data and variables. We also have the <strong>History</strong> pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to <strong>History</strong> pane is the <strong>Connection</strong> pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the <strong>Tutorial</strong> pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.</li>
+<li><strong>Environment / History Pane</strong>: Located in the top-right. It includes the <strong>Environment</strong> pane which displays all objects created during a session, such as data and variables. We also have the <strong>History</strong> pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to <strong>Histor</strong> pane is the <strong>Connection</strong> pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the <strong>Tutorial</strong> pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.</li>
 </ol>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -422,15 +408,29 @@ Figure&nbsp;1.2: R Studio Environment
 <figcaption>Environment window</figcaption>
 </figure>
 </div>
-<ol start="4" type="1">
-<li><strong>Files / Plots / Packages / Help / Viewer Window</strong>: Located in the bottom-right. It consists of the <strong>Files</strong> pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the <strong>Plots</strong> pane which displays visualizations. You can also export, zoom, and copy to clipboard the visuals created in this pane. The <strong>Packages</strong> pane follows closely after and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the <strong>Help</strong> pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the <strong>Viewer</strong> pane is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.</li>
-</ol>
+<p>4 <strong>Files / Plots / Packages / Help / Viewer Window</strong>: This is located in the bottom-right and it consists of the <strong>Files</strong> pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the <strong>Plots</strong> pane which displays visualizations. You can also export, zoom in or out, and copy to your clipboard the visuals created in this pane. The <strong>Packages</strong> pane follows closely and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the <strong>Help</strong> pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the <strong>Viewer</strong> pane which is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/file_pane.png" class="img-fluid figure-img"></p>
 <figcaption>Files window</figcaption>
 </figure>
 </div>
+</section>
+</section>
+<section id="posit-cloud" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="posit-cloud"><span class="header-section-number">1.3</span> Posit Cloud</h2>
+<p>There’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit <a href="https://posit.cloud/" class="uri">https://posit.cloud/</a> and register. After registering, you get a page similar to <a href="#fig-cloud" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>. After registering, click on new workspace on the left sidebar and create a new project.</p>
+<div id="fig-cloud" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/posit-cloud.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: posit cloud
+</figcaption>
+</figure>
+</div>
+<p>The video series in this <a href="https://www.youtube.com/watch?v=VV_3MvJmwG4&amp;list=PL9HYL-VRX0oSn7tBLDiSt4Vnyk3yB6ipA">link</a> is a good resource for starting with Posit Cloud.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -445,9 +445,8 @@ Script vs Console
 </div>
 </div>
 </section>
-</section>
-<section id="positron" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="positron"><span class="header-section-number">1.3</span> Positron</h2>
+<section id="positron" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="positron"><span class="header-section-number">1.4</span> Positron</h2>
 <p>There’s a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called <a href="https://github.com/posit-dev/positron/releases">Positron</a>. Positron is still in its early stage of development. Positron is a blend of the popular IDE VS Code and RStudio, with the major inspiration from VS Code, <span class="citation" data-cites="Radečić">(<a href="references.html#ref-Radečić" role="doc-biblioref">Radečić 2024</a>)</span>. What makes Positron different is the ease of using python, which is one of the most common programming language of choice for data professionals. To get more details about the development, <a href="https://github.com/posit-dev/positron/releases">click here</a> and <a href="https://www.appsilon.com/post/introducing-positron">here</a> for detailed introduction on Positron.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -455,6 +454,10 @@ Script vs Console
 <figcaption>Positron IDE</figcaption>
 </figure>
 </div>
+</section>
+<section id="summary" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.5</span> Summary</h2>
+<p>In this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes. Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Postron, which is the next iteration of IDE from Posit.co</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -500,18 +503,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -543,7 +535,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/r4r\.olamideadu\.com\/");
@@ -551,7 +565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
