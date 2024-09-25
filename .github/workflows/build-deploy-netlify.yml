@@ -10,7 +10,12 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 08 * * *"
+name: Render and deplot Book to Netlify
 
+env:
+  isExtPR: ${{ github.event.pull_request.head.repo.fork == true }}
+  RUST_BACKTRACE: 1
+  
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -55,5 +60,5 @@ jobs:
           enable-commit-comment: false
           env:
             NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2E }}
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           timeout-minutes: 1
