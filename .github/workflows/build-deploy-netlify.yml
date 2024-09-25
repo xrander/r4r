@@ -11,11 +11,6 @@ on:
   schedule:
     - cron: "0 08 * * *"
 
-name: Render and deplot Book to Netlify
-
-env:
-  isExtPR: ${{ github.event.pull_request.head.repo.fork == true }}
-  RUST_BACKTRACE: 1
   
 jobs:
   build-deploy:
