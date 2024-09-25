@@ -14,9 +14,8 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-     env:
+    env:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
