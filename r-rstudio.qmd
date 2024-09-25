@@ -96,4 +96,4 @@ There's a new IDE that supports Python and R that is still under development by 
 ![Positron IDE](images/positron.png)
 
 ## Summary
-In this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes.  Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Postron, which is the next iteration of IDE from Posit.co
+In this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes.  Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Positron, which is the next iteration of IDE from Posit.co

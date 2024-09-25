@@ -1,6 +1,6 @@
 # R Basics {#sec-basics}
 
-Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic (e.g., addition, subtraction), comparison operations which involve using conditionals to check how object compares against one another and iterations or looping to solve repetitive tasks.
+Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic operations such as, addition, and subtraction, comparison operations which involves the use of conditionals to check how object compares against one another.
 
 ## Arithmetic Operators
 Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:
@@ -19,7 +19,7 @@ Operations such as addition, subtraction, multiplication and so on, are easy to 
 : Arithmetic operators in R {#tbl-arith-op .striped .hover}
 
 
-Type the following commands in your console and hit enter:
+Run the following commands in your console:
 
 ```{r}
 #| label: arithmetic-operation
@@ -40,6 +40,11 @@ The above operations are straightforward. `%%` operator returns the remainder wh
 R performs arithmetic easily and also follows the order of operations.
 
 ```{r}
+5 * 15 + 14 / 7
+```
+Above, we have `14 / 7`, a division first according to the order of operation followed by multiplication, `5 * 15`, then addition of both values `75 + 2` from the individual early evaluation to get the total. To avoid confusion, a convenient way to go about how you want your arithmetic to be evaluated is by using parenthesis **()** to block codes.
+
+```{r}
 3 + (5 - 2)
 
 (5 * 4) / (7 - (2 + 4))
@@ -47,11 +52,11 @@ R performs arithmetic easily and also follows the order of operations.
 
 
 :::{.callout-tip apperance=simple}
-Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you and people you work with / for will mostly be reading your codes.
+Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you and people you work with/for will mostly be reading your codes.
 :::
 
 ## Comparison Operators
-Comparison operators are used to compare values and returns either TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to data types.
+Comparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to @sec-logical in the next chapter.
 
 Comparison operator in R include
 

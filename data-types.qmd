@@ -182,7 +182,7 @@ You can create a sequence of data using **:**. For example to create a sequence 
 1:15
 ```
 
-## Boolean
+## Logical {#sec-logical}
 Boolean also referred to as logical values. Boolean includes `TRUE`, `FALSE` and `NA` which refers to not available.
 ```{r}
 class(TRUE)
