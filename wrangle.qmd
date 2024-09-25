@@ -1,5 +1,5 @@
 # Wrangle {#sec-wrangle}
 
-:::{.callout-important appearance=simple}
+::: {.callout-important appearance="simple"}
 Section will be written after whole content of this part is finished
 :::

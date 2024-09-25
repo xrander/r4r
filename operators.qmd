@@ -145,29 +145,31 @@ The assignment operator is used to bind values to names called variables. Variab
 
 : Assignment Operators in R {#tbl-ass .striped .hover}
 
-For example, we can assign the number `17` to the variable `c`. Whenever `c` is called, the value 17 is the result.
+For example, we can assign the value `17` to the variable `c`. Whenever `c` is called, the value 17 is the result.
 
 ```{r}
 c <- 17
 c
 ```
 
-Above we assigned the value `17` to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can change the value in `c` by assigning another value to it. This time let's assign the value 100 using the `=` operator
-```{r}
-c = 100
-c
-```
-
-When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For `->` assignment variable, it comes after the value. For example:
+This does not mean that the value(s) assigned to a particular variable cannot be changed. They can be changed easily by assigning the new value to the same name.
 
 ```{r}
-5000 -> d
-d
+c <- "man"
 ```
 
-:::{.callout-note appearnce=simple}
-While `->` is an assignment operator in R that is not common. `<-` is the main operator used for assignment while `=` is common within functions. Following this simple guide ensure an organized code that is easy to follow.
-:::
+Above we assigned the new value "man" to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using   `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+```{r}
+tree_height = 23
+tree_height
+```
+ 
+For `->` operator, the variable is at the right side of the operator.
+
+```{r}
+20 * 20 -> plot_size
+plot_size
+```
 
 The `$` will be discussed in future chapters and it will be used in this book.
 
@@ -210,5 +212,7 @@ ekki > obeche
 
 ## Summary
 In this chapter, you've been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as `<`, `<=`, `==`, `>=` and `>` for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. 
+
+When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time.
 
 Now that we've got a good understanding of the basic syntax,  we will move on to learn the data types in R.
