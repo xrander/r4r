@@ -171,12 +171,8 @@ For `->` operator, the variable is at the right side of the operator.
 plot_size
 ```
 
-The `$` will be discussed in future chapters and it will be used in this book.
-
-
-
 ## Making Comments
-There are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The `#` is used to indicate a comment. Anything that comes after `#` are not executed by the program. For example
+There are times when we do not want R to executes some lines. These lines are regarded to as comments. Comments are essential to documenting our code. They make our code easier to understand, as we can explain why a code is written in a certain way. This is very important when we collaborate with others or to help our understanding of our codes when we review/read them in the future. The `#` is used to make a comment. Anything that comes after `#` are not executed by the program. For example
 
 ```{r}
 x <- 15 # 15 here is in kg instead of g
@@ -186,7 +182,11 @@ x
 
 
 ## Bringing it all together
-We can perform simple operations with the operators covered recently. For example we can compare the average dry weight of different African tree species.
+We can perform simple operations with the operators covered in this chapter. For example we can compare the average dry weight of different African tree species.
+
+:::{.callout-note appearance=minimal}
+The local names of trees are referred to here.
+:::
 
 ```{r}
 # The dry weight in kg/m3
@@ -202,7 +202,8 @@ We can get the difference between `ekki` and `obeche`, and between `iroko` and `
 ekki - obeche
 iroko - moabi
 ```
-The command above translate to `1065 - 380` and `660 - 860`respectively. We can also use other operators on this variables.
+
+The command above translate to `1065 - 380` and `660 - 860`respectively. We can also use the comparison operators on this variables.
 ```{r}
 ekki < iroko
 moabi < ekki
@@ -211,8 +212,8 @@ ekki > obeche
 
 
 ## Summary
-In this chapter, you've been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as `<`, `<=`, `==`, `>=` and `>` for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable. 
+In this chapter, you've been introduced to some basic R syntax and the operators. The arithmetic operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We covered the comparison operator which include `<`, `<=`, `==`, `>=` and `>` for comparing values as well as their combinational with logical operators like `&` and `|`. 
 
-When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time.
+Lastly, we covered the assignment operator used to reference or bind values to names called variable. When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time.
 
-Now that we've got a good understanding of the basic syntax,  we will move on to learn the data types in R.
+Now that we've got a good understanding of some of the basic R syntax and the operators,  we will move on to @sec-data-types to learn about the data types in R.

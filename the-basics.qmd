@@ -1,6 +1,6 @@
 # Basics {#sec-basics}
 
-This sections
+
 ::: {.callout-important appearance="simple"}
-Section will be written after whole content of this part is finished
+This section is still under deveopment. It will be written after whole content of this part is finished
 :::
