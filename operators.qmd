@@ -62,7 +62,7 @@ Comparison operators are as their names imply. They are used to compare values. 
 Comparison operator in R include
 
 | Symbol | Meaning |
-| :--- | :--- |
+| :--- | ---: |
 | > |Greater than |
 | < | Less than |
 | == | Equal to |
@@ -83,51 +83,69 @@ Try these commands in R's console:
 Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!` (not).
 
 ### & (AND) operator
--   `&` returns TRUE when conditions on both sides of it are TRUE. All other conditions returns false
+-   `&` operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns false
 
 
-|Conditions|Result|
+|Conditions|result|
 |:-------|-------:|
-| TRUE & TRUE |TRUE|
-|TRUE & FALSE|FALSE|
-|FALSE & TRUE|FALSE|
-|FALSE & FALSE|FALSE|
+| TRUE & TRUE | TRUE |
+| TRUE & FALSE | FALSE |
+| FALSE & TRUE | FALSE |
+| FALSE & FALSE | FALSE |
 
-: & (And) operator conditions
+: Combination of & (And) operator conditions and its adjoining result {#tbl-and-operator .striped .hover}
 
 ```{r}
 28 > 10 & 50 > 40
 ```
-
-
--   `|` returns TRUE when one of the conditions on both sides of it are TRUE.
-
 ```{r}
-20 > 15 & 30 > 10
-```
-You can also use parentheses to enclose conditions when testing multiple conditions. The above condition can also be written as:
-
-```{r}
-(20 > 15) & (30 > 10)
+20 < 10 & 50 < 40
 ```
 
+```{r}
+20 > 10 & 50 < 40
+```
+
+-   `|` returns TRUE when **one** of the conditions on both sides of it are TRUE.
+
+|Conditions|result|
+|:----|----:|
+| TRUE `|` FALSE | TRUE |
+| FALSE `|` TRUE | TRUE |
+| TRUE `|` TRUE | TRUE |
+| FALSE `|` FALSE | FALSE |
+
+: Combination of `|` (OR) operator conditions and its adjoining result {#tbl-or-ope .striped .hover}
 
 
+```{r}
+20 > 15 | 30 > 10
+```
+
+```{r}
+20 < 15 | 30 < 10
+```
+
+You can also use parentheses to enclose conditions when testing multiple conditions. 
+
+```{r}
+(20 < 15) | (30 > 10)
+```
 
 ## Assignment Operators
 
-There are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.
+The assignment operator is used to bind values to names called variables. Variables are names that are used to reference values.
 
 | Symbol | Meaning |
 |:----|----:|
 | <- | Assignment / bind to value |
 |= | Assignment / bind to value |
-|-> | Assignment / bind to value|
-| $ | Access elements of objects |
+|-> | Rightward assignment / bind left value to the right variable|
 
-: Other Operators in R {#tbl-ass .striped .hover}
 
-For example, we can assign the number `17` to the variable `c`. `c` here is a container holding values.
+: Assignment Operators in R {#tbl-ass .striped .hover}
+
+For example, we can assign the number `17` to the variable `c`. Whenever `c` is called, the value 17 is the result.
 
 ```{r}
 c <- 17
@@ -153,9 +171,7 @@ While `->` is an assignment operator in R that is not common. `<-` is the main o
 
 The `$` will be discussed in future chapters and it will be used in this book.
 
-:::{.callout-note appearance=simple}
-Variables are objects that are used to store values.
-:::
+
 
 ## Making Comments
 There are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The `#` is used to indicate a comment. Anything that comes after `#` are not executed by the program. For example
