@@ -41,10 +41,10 @@ jobs:
       - name: Render Quarto site
         run: quarto render
 
-      - name: Push rendered site to deployment branch
+      - name: Commit and push changes
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add _book
-          git commit -m "Automated site render"
-          git push origin main
+          git add -f _book  # Force add the rendered book
+          git commit -m "Automated site render" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/xrander/r4r.git HEAD:main
