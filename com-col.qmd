@@ -1,0 +1,5 @@
+# Communicate and Collaborate {#sec-com-col}
+
+:::{.callout-important appearance=simple}
+Area will be written after whole content of this part is finished
+:::

@@ -94,9 +94,9 @@ R for Research covers essential techniques for data analysis using R, focusing o
 
 While the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.
 
-### What should expect from reading this books
+### What should you expect to learn from reading this books?
 
-By the end of this book, readers are expected to:
+By the end of this book, readers are should be able to:
 
 -  Understand R's core functions for data manipulation and visualization.
 -  Apply R to basic statistical analyses and data preparation.
@@ -104,3 +104,9 @@ By the end of this book, readers are expected to:
 -  Have confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.
 
 This book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.
+
+## How This Book is Organized
+
+:::{.callout-important appearance=simple}
+still under development.
+:::

@@ -84,7 +84,7 @@
     "href": "intro.html#scope-limitation-and-expectations",
     "title": "Introduction",
     "section": "Scope, Limitation, and Expectations",
-    "text": "Scope, Limitation, and Expectations\n\nScope\nR for Research covers essential techniques for data analysis using R, focusing on the needs of researchers across various disciplines. It introduces readers to R programming, data manipulation, statistical analysis, and visualization, with practical examples and case studies from academic research. The book is structured to help readers at any experience level, from beginner to intermediate, make effective use of R in their research.\n\n\nLimitation\nWhile the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.\n\n\nWhat should expect from reading this books\nBy the end of this book, readers are expected to:\n\nUnderstand R’s core functions for data manipulation and visualization.\nApply R to basic statistical analyses and data preparation.\nIntegrate R into their research workflow for reproducible and transparent analysis.\nHave confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.\n\nThis book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.",
+    "text": "Scope, Limitation, and Expectations\n\nScope\nR for Research covers essential techniques for data analysis using R, focusing on the needs of researchers across various disciplines. It introduces readers to R programming, data manipulation, statistical analysis, and visualization, with practical examples and case studies from academic research. The book is structured to help readers at any experience level, from beginner to intermediate, make effective use of R in their research.\n\n\nLimitation\nWhile the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.\n\n\nWhat should you expect to learn from reading this books?\nBy the end of this book, readers are should be able to:\n\nUnderstand R’s core functions for data manipulation and visualization.\nApply R to basic statistical analyses and data preparation.\nIntegrate R into their research workflow for reproducible and transparent analysis.\nHave confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.\n\nThis book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.",
     "crumbs": [
       "Introduction"
     ]
@@ -96,6 +96,7 @@
     "section": "",
     "text": "1.1 Installing R and RStudio\nR and RStudio are free to install and use softwares. To install them software, you need to download and install the right file for your machine’s operating system (OS). Below are the installation instructions based on operating system.",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
@@ -116,6 +117,7 @@
     "section": "1.2 The RStudio Interface",
     "text": "1.2 The RStudio Interface\nWhen you open RStudio newly, you are presented with three panes by default. You can get a fourth pane like what is shown in Figure 1.1. To do this, click the + button at the top-left and select R Script, or use the keyboard shortcut Ctrl + Shift + N on Windows/Linux and Cmd + Shift + N on Mac. More details on the panes is provided in ?sec-paness\n\n\n\n\n\n\nFigure 1.1: R Studio Environment\n\n\n\nYou can change the arrangement of the panes by clicking Tools on the menu bar then navigate to Global Options and Pane Layout in the popup box.\n\n1.2.1 RStudio Panes\nThe four components/panes shown in Figure 1.1 are:\n\nSource Pane: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.\n\n\n\n\nSource window\n\n\n\nConsole/Terminal/Background Jobs pane: Located in the bottom-left. It include the Console pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the Terminal pane which provides direct access to your computer using command line. Lastly, we have the Background Jobs pane which allows you to run tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.\n\n\n\n\nConsole window\n\n\n\nEnvironment / History Pane: Located in the top-right. It includes the Environment pane which displays all objects created during a session, such as data and variables. We also have the History pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to Histor pane is the Connection pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the Tutorial pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.\n\n\n\n\n\n\n\nAn R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.\n\n\n\n\n\n\nEnvironment window\n\n\n4 Files / Plots / Packages / Help / Viewer Window: This is located in the bottom-right and it consists of the Files pane which shows files and folders in your working directory. This pane also include tools for renaming, deleting, creating, copying and moving files and folders in your computer. Next is the Plots pane which displays visualizations. You can also export, zoom in or out, and copy to your clipboard the visuals created in this pane. The Packages pane follows closely and it helps to manage packages you have. It can also be used for updating old packages as well as installing new packages. Next is the Help pane which shows the documentation of packages different functions. This documentation include examples which can help understand the usage of the functions. Lastly, we have the Viewer pane which is used to display a variety of visual outputs including interactive web content, plots, maps, and web-based applications.\n\n\n\nFiles window",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
@@ -126,6 +128,7 @@
     "section": "",
     "text": "2.1 Arithmetic Operators\nOperations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:\nRun the following commands in your console:\n2 + 1\n\n[1] 3\n\n3 - 1\n\n[1] 2\n\n4 * 2\n\n[1] 8\n\n15 / 5\n\n[1] 3\n\n3 ^ 2\n\n[1] 9\n\n3 ** 2\n\n[1] 9\nThe above operations are straightforward. %% operator returns the remainder when two numbers are divided. While %/% returns the whole number or integer and discard the remainder.\n5 %% 3\n\n[1] 2\n\n5 %/% 2\n\n[1] 2\nR performs arithmetic easily and also follows the order of operations.\n5 * 15 + 14 / 7\n\n[1] 77\nAbove, we have 14 / 7, a division first according to the order of operation followed by multiplication, 5 * 15, then addition of both values 75 + 2 from the individual early evaluation to get the total. To avoid confusion, a convenient way to go about how you want your arithmetic to be evaluated is by using parenthesis () to block codes.\n3 + (5 - 2)\n\n[1] 6\n\n(5 * 4) / (7 - (2 + 4))\n\n[1] 20",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -146,6 +149,7 @@
     "section": "2.6 Summary",
     "text": "2.6 Summary\nIn this chapter, you’ve been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt;, &lt;=, ==, &gt;= and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable.\nNow that we’ve got a good understanding of the basic syntax, we will move on to learn the data types in R.",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -156,6 +160,7 @@
     "section": "",
     "text": "3.1 Character\nIn R programming, characters are things enclosed in quotation mark. This quotation mark can either be the single ' or double \", they are treated the same way in R programming. It is more common to use the \" than the single. Characters while often thought of as alphabets can also be numbers as long as they are enclosed in quotation marks. For example, “man” is a character:\n\"man\"\n\n[1] \"man\"\nWe can check what data type “man” is this with class() or typeof() function.\ntypeof(\"man\")\n\n[1] \"character\"\n\nclass(\"man\")\n\n[1] \"character\"\nFor now we will stick to using class() function. What about if we have a number enclosed in quotation marks?\nclass(\"2\")\n\n[1] \"character\"\nThis proves that anything enclosed in quotation marks are characters.\ntypeof(\"+\")\n\n[1] \"character\"\nThis is also true if values are assigned to a variable. The content of the variable will be evaluated and not the variable in its self. To put in simple terms, a bottle in itself is not evaluated but the content of the bottle, be it water, wine, or soft drink.\nman &lt;- \"olamide\"\nclass(man)\n\n[1] \"character\"\nLet’s look at the example below, we have error because olamide is an object with no values assigned to it. So olamide and “olamide” are different. The latter is a character while the formal is an object.\nclass(olamide)\nError: object 'olamide' not found.\nThere is a way to confirm if objects are characters, using is.character() function. The result of the function is either TRUE or FALSE.\nis.character(\"olamide\")\n\n[1] TRUE\nis.character(2)\n\n[1] FALSE\nis.character(\"2\")\n\n[1] TRUE",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -176,6 +181,7 @@
     "section": "3.3 Numerical Data",
     "text": "3.3 Numerical Data\nThere are two types of numerical data in R, integers and doubles.\n\nDoubles: These are decimal numbers\n\n\ntypeof(1.5)\n\n[1] \"double\"\n\n\n\nIntegers: These are whole number. They usually having a capital L in front but are printed normally\n\n\ntypeof(1L)\n\n[1] \"integer\"\n\n\nYou can create a sequence of data using :. For example to create a sequence of 1 to 15\n\n1:15\n\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -196,6 +202,7 @@
     "section": "3.5 Objects",
     "text": "3.5 Objects\nR allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:\n\nfruits &lt;- factor(c(\"mango\", \"papaya\", \"apple\"))\nage &lt;- 20\nresult &lt;- factor(c(0, 1, 3, 4, 5), labels = c(\"F\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\n\nThe object here is fruits, we can get the stored object anytime by calling the object\n\nfruits\n\n[1] mango  papaya apple \nLevels: apple mango papaya\n\nage\n\n[1] 20\n\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -206,6 +213,7 @@
     "section": "3.6 Changing Data Types",
     "text": "3.6 Changing Data Types\nChanging data types in R is referred to as coercing the data. The as._data_type helps us change between data types.\n\ntree_names &lt;- c(\"terminalia\", \"eucalyptus\", \"iroko\", \"oak\")\nclass(tree_names)\n\n[1] \"character\"\n\n\nTo change the above to a factor type we’ll use the as.factor() function to coerce it into factor data type.\n\ntree_names &lt;- as.factor(tree_names)\n\nclass(tree_names)\n\n[1] \"factor\"\n\n\nWe can change this back to factor by using the as.character() function to coerce our data into character data type.\n\ntree_names &lt;- as.character(tree_names)\nclass(tree_names)\n\n[1] \"character\"\n\n\nThe as.character() can be used to coerce any data type to character:\n\nnumbers &lt;- 1:20\nclass(numbers)\n\n[1] \"integer\"\n\n\n\nnumbers &lt;- as.character(numbers)\nclass(numbers)\n\n[1] \"character\"\n\n\nCharacters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA’s\n\ntree_height &lt;- c(10, 15, 20, \"25m\")\nclass(tree_height)\n\n[1] \"character\"\n\n\n\ntree_height &lt;- as.double(tree_height)\n\nWarning: NAs introduced by coercion\n\ntree_height\n\n[1] 10 15 20 NA\n\nclass(tree_height)\n\n[1] \"numeric\"\n\n\nData types can be converted to different types using the as.* including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.\n\nas.logical(c(\"TRUE\", 1, 0, \"FALSE\", \"F\", \"T\", 3, 4))\n\n[1]  TRUE    NA    NA FALSE FALSE  TRUE    NA    NA\n\n\n\nas.logical(c(1, 0, 1, 1, 0, 0 , 1))\n\n[1]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE\n\n\n\n\n\n\n\n\nNote\n\n\n\nData coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -716,6 +724,7 @@
     "section": "1.4 Positron",
     "text": "1.4 Positron\nThere’s a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called Positron. Positron is still in its early stage of development. Positron is a blend of the popular IDE VS Code and RStudio, with the major inspiration from VS Code, (Radečić 2024). What makes Positron different is the ease of using python, which is one of the most common programming language of choice for data professionals. To get more details about the development, click here and here for detailed introduction on Positron.\n\n\n\nPositron IDE",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
@@ -746,6 +755,7 @@
     "section": "2.5 Bringing it all together",
     "text": "2.5 Bringing it all together\nWe can perform simple operations with the operators covered recently. For example we can compare the average dry weight of different African tree species.\n\n# The dry weight in kg/m3\nekki &lt;- 1065\nmoabi &lt;- 860\nobeche &lt;- 380\niroko &lt;- 660\n\nWe can get the difference between ekki and obeche, and between iroko and moabi.\n\nekki - obeche\n\n[1] 685\n\niroko - moabi\n\n[1] -200\n\n\nThe command above translate to 1065 - 380 and 660 - 860respectively. We can also use other operators on this variables.\n\nekki &lt; iroko\n\n[1] FALSE\n\nmoabi &lt; ekki\n\n[1] TRUE\n\nekki &gt; obeche\n\n[1] TRUE",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -756,6 +766,7 @@
     "section": "",
     "text": "Table 2.1: Arithmetic operators in R\n\n\n\n\n\nOperator\nDefinition\n\n\n\n\n+\nAddition\n\n\n-\nSubtraction\n\n\n*\nMultiplication\n\n\n/\nDivision\n\n\n^\nExponent or Power\n\n\n**\nExponent or Power\n\n\n%%\nRemainder division\n\n\n%/%\nInteger division\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don’t be surprised that a lot of times you and people you work with/for will mostly be reading your codes.",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -766,6 +777,7 @@
     "section": "2.2 Comparison Operators",
     "text": "2.2 Comparison Operators\nComparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to ?sec-logical in the next chapter.\nComparison operator in R include\n\n\n\nTable 2.2: Comparison Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&gt;\nGreater than\n\n\n&lt;\nLess than\n\n\n==\nEqual to\n\n\n&gt;=\nGreater than or equal to\n\n\n&lt;=\nLess than or equal to\n\n\n!=\nNot equal to\n\n\n\n\n\n\nTry these commands in R’s console:\n\n4 &gt; 5\n\n[1] FALSE\n\n(5^2) &lt; (5 * 2)\n\n[1] FALSE\n\n10 &gt;= 7\n\n[1] TRUE\n\n10 == 12\n\n[1] FALSE",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -776,6 +788,7 @@
     "section": "2.3 Assignment Operators",
     "text": "2.3 Assignment Operators\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.\n\n\n\nTable 2.3: Other Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&lt;-\nAssignment / bind to value\n\n\n=\nAssignment / bind to value\n\n\n-&gt;\nAssignment / bind to value\n\n\n$\nAccess elements of objects\n\n\n\n\n\n\nFor example, we can assign the number 17 to the variable c. c here is a container holding values.\n\nc &lt;- 17\nc\n\n[1] 17\n\n\nAbove we assigned the value 17 to c using &lt;-. This is the convention used for assigning objects to variables in R. We can change the value in c by assigning another value to it. This time let’s assign the value 100 using the = operator\n\nc = 100\nc\n\n[1] 100\n\n\nWhen we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For -&gt; assignment variable, it comes after the value. For example:\n\n5000 -&gt; d\nd\n\n[1] 5000\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhile -&gt; is an assignment operator in R that is not common. &lt;- is the main operator used for assignment while = is common within functions. Following this simple guide ensure an organized code that is easy to follow.\n\n\nThe $ will be discussed in future chapters and it will be used in this book.\n\n\n\n\n\n\nVariables are objects that are used to store values.",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -806,6 +819,7 @@
     "section": "3.7 Summary",
     "text": "3.7 Summary\nYou learned about the data types in R. They include character, factor, double, integer, and boolean. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -816,6 +830,7 @@
     "section": "2.4 Making Comments",
     "text": "2.4 Making Comments\nThere are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The # is used to indicate a comment. Anything that comes after # are not executed by the program. For example\n\nx &lt;- 15 # 15 here is in kg instead of g\n# the line here is a comment\nx\n\n[1] 15",
     "crumbs": [
+      "the-basics.qmd",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>R Basics</span>"
     ]
   },
@@ -826,6 +841,7 @@
     "section": "3.2 Factors",
     "text": "3.2 Factors\nThere’s a variation of character data type called factors. Factors are also referred to as categorical data. In R, factors are always leveled. They can either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.\n\nNominal Factor: These are unordered categorical data with levels. There’s no degree of distance or ranking in nominal factor variables.\n\n\ntree_names &lt;- factor(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                       \"Celtis africana\"))\nclass(tree_names)\n\n[1] \"factor\"\n\n\n\n\n\n\n\n\nThe function c() is used to combine values.\n\n\n\n\ntree_names\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nYou can see that as part of the print, you have Levels which is the alphabetical arrangement of trees. To have a better understanding, lets create multiple copies of the trees which you have here using the rep() function and see what happens to levels on print.\n\ntree_names_rep &lt;- factor(rep(c(\"Lophira alata\", \"Triplochiton scleroxylon\",\n                               \"Celtis africana\"), 3))\n\ntree_names_rep\n\n[1] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[4] Lophira alata            Triplochiton scleroxylon Celtis africana         \n[7] Lophira alata            Triplochiton scleroxylon Celtis africana         \nLevels: Celtis africana Lophira alata Triplochiton scleroxylon\n\n\nThe levels remains the same even on increasing the length of the data here. Other examples of nominal data are:\n\nnames of people\nyes and no / true and false\nnationality\nfruits.\nOrdinal Factors: These are ordered categorical data with levels. They have some of distance or degree of ranking between them. The ordered argument within the factor() function ensure you make ordered list.\n\n\ngrade &lt;- factor(c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"),\n                levels = c(\"F\", \"E\", \"D\", \"C\", \"B\", \"A\"),\n                ordered = TRUE)\ngrade\n\n[1] A B C D E F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nYou can check the highest and lowest levels here by using the max() and min() functions.\n\nlevels(grade) # This returns all the grade\n\n[1] \"F\" \"E\" \"D\" \"C\" \"B\" \"A\"\n\nmax(grade) # This returns the highest level\n\n[1] A\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\nmin(grade) # This returns the lowest level.\n\n[1] F\nLevels: F &lt; E &lt; D &lt; C &lt; B &lt; A\n\n\nOther examples:\n\nSalary range\nEducation level\nCustomer level satisfaction\nTree health\n\n\n\n\n\n\n\nNote\n\n\n\nWhile factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Once created, factors can only contain a pre-defined set values,",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
     ]
   },
@@ -836,6 +852,7 @@
     "section": "1.3 Posit Cloud",
     "text": "1.3 Posit Cloud\nThere’s an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit https://posit.cloud/ and register. After registering, you get a page similar to Figure 1.2. After registering, click on new workspace on the left sidebar and create a new project.\n\n\n\n\n\n\nFigure 1.2: posit cloud\n\n\n\nThe video series in this link is a good resource for starting with Posit Cloud.\n\n\n\n\n\n\nScript vs Console\n\n\n\nIt is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
@@ -844,8 +861,9 @@
     "href": "r-rstudio.html#summary",
     "title": "1  R, RStudio, and Posit Cloud",
     "section": "1.5 Summary",
-    "text": "1.5 Summary\nIn this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes. Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Postron, which is the next iteration of IDE from Posit.co\n\n\n\n\nRadečić, Dario. 2024. “Introducing Positron: A New, yet Familiar IDE for r and Python.” RSS. https://www.appsilon.com/post/introducing-positron.",
+    "text": "1.5 Summary\nIn this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes. Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Positron, which is the next iteration of IDE from Posit.co\n\n\n\n\nRadečić, Dario. 2024. “Introducing Positron: A New, yet Familiar IDE for r and Python.” RSS. https://www.appsilon.com/post/introducing-positron.",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
     ]
   },
@@ -856,7 +874,146 @@
     "section": "",
     "text": "1.1.1 Installing R\nWindows OS (10/ 11): To download R from CRAN visit this link https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe and run the installer. This is the latest version at the time of writing this chapter\nMac OS: There are two versions of R for Mac users based on the processor in your computer.\n\nFor M1-M3 processors visit the link https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg and run the installer\nFor Intel processors visit the link https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg and run the installer.\n\nLinux Users R installation on Linux depends on your distribution. Open terminal (Ctrl + Alt + T) and enter the command below based on your distribution.\n\nDebian/Ubuntu distribution:\n\n#| eval: false\n$ sudo apt update\n$ sudo apt install r-base r-base-dev\n\nRedhat/Fedora distribution:\n\n#| eval: false\n$ sudo dnf install R\n\n\n1.1.2 Installing RStudio\nTo install RStudio, visit the link https://posit.co/download/rstudio-desktop/ scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:\n\nwindow\nMac\nlinux-ubuntu",
     "crumbs": [
+      "Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R, RStudio, and Posit Cloud</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html",
+    "href": "operators.html",
+    "title": "2  Operators in R",
+    "section": "",
+    "text": "2.1 Arithmetic Operators\nOperations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:\nRun the following commands in your console:\n2 + 1\n\n[1] 3\n\n3 - 1\n\n[1] 2\n\n4 * 2\n\n[1] 8\n\n15 / 5\n\n[1] 3\n\n3 ^ 2\n\n[1] 9\n\n3 ** 2\n\n[1] 9\nThe above operations are straightforward. %% operator returns the remainder when two numbers are divided. While %/% returns the whole number or integer and discard the remainder.\n5 %% 3\n\n[1] 2\n\n5 %/% 2\n\n[1] 2\nR performs arithmetic easily and also follows the order of operations.\n5 * 15 + 14 / 7\n\n[1] 77\nAbove, we have 14 / 7, a division first according to the order of operation followed by multiplication, 5 * 15, then addition of both values 75 + 2 from the individual early evaluation to get the total. To avoid confusion, a convenient way to go about how you want your arithmetic to be evaluated is by using parenthesis () to block codes.\n3 + (5 - 2)\n\n[1] 6\n\n(5 * 4) / (7 - (2 + 4))\n\n[1] 20",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#arithmetic-operators",
+    "href": "operators.html#arithmetic-operators",
+    "title": "2  Operators in R",
+    "section": "",
+    "text": "Table 2.1: Arithmetic operators in R\n\n\n\n\n\nOperator\nDefinition\n\n\n\n\n+\nAddition\n\n\n-\nSubtraction\n\n\n*\nMultiplication\n\n\n/\nDivision\n\n\n^\nExponent or Power\n\n\n**\nExponent or Power\n\n\n%%\nRemainder division\n\n\n%/%\nInteger division\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don’t be surprised that a lot of times you and people you work with/for will mostly be reading your codes.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#comparison-operators",
+    "href": "operators.html#comparison-operators",
+    "title": "2  Operators in R",
+    "section": "2.2 Comparison Operators",
+    "text": "2.2 Comparison Operators\nComparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to Chapter 3 in the next chapter.\nComparison operator in R include\n\n\n\nTable 2.2: Comparison Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&gt;\nGreater than\n\n\n&lt;\nLess than\n\n\n==\nEqual to\n\n\n&gt;=\nGreater than or equal to\n\n\n&lt;=\nLess than or equal to\n\n\n!=\nNot equal to\n\n\n\n\n\n\nTry these commands in R’s console:\n\n4 &gt; 5\n\n[1] FALSE\n\n(5^2) &lt; (5 * 2)\n\n[1] FALSE\n\n10 &gt;= 7\n\n[1] TRUE\n\n10 == 12\n\n[1] FALSE",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#assignment-operators",
+    "href": "operators.html#assignment-operators",
+    "title": "2  Operators in R",
+    "section": "2.3 Assignment Operators",
+    "text": "2.3 Assignment Operators\nThere are other operators which are useful in R. They are used to assign names to a variable or access elements of objects.\n\n\n\nTable 2.3: Other Operators in R\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n&lt;-\nAssignment / bind to value\n\n\n=\nAssignment / bind to value\n\n\n-&gt;\nAssignment / bind to value\n\n\n$\nAccess elements of objects\n\n\n\n\n\n\nFor example, we can assign the number 17 to the variable c. c here is a container holding values.\n\nc &lt;- 17\nc\n\n[1] 17\n\n\nAbove we assigned the value 17 to c using &lt;-. This is the convention used for assigning objects to variables in R. We can change the value in c by assigning another value to it. This time let’s assign the value 100 using the = operator\n\nc = 100\nc\n\n[1] 100\n\n\nWhen we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time. For -&gt; assignment variable, it comes after the value. For example:\n\n5000 -&gt; d\nd\n\n[1] 5000\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhile -&gt; is an assignment operator in R that is not common. &lt;- is the main operator used for assignment while = is common within functions. Following this simple guide ensure an organized code that is easy to follow.\n\n\nThe $ will be discussed in future chapters and it will be used in this book.\n\n\n\n\n\n\nVariables are objects that are used to store values.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#making-comments",
+    "href": "operators.html#making-comments",
+    "title": "2  Operators in R",
+    "section": "2.4 Making Comments",
+    "text": "2.4 Making Comments\nThere are times when we have lines written that we do not R to executes. These lines are regarded to as comments. Comments are essential for documenting code, making it easier to understand, especially for others or for future reference. The # is used to indicate a comment. Anything that comes after # are not executed by the program. For example\n\nx &lt;- 15 # 15 here is in kg instead of g\n# the line here is a comment\nx\n\n[1] 15",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#bringing-it-all-together",
+    "href": "operators.html#bringing-it-all-together",
+    "title": "2  Operators in R",
+    "section": "2.5 Bringing it all together",
+    "text": "2.5 Bringing it all together\nWe can perform simple operations with the operators covered recently. For example we can compare the average dry weight of different African tree species.\n\n# The dry weight in kg/m3\nekki &lt;- 1065\nmoabi &lt;- 860\nobeche &lt;- 380\niroko &lt;- 660\n\nWe can get the difference between ekki and obeche, and between iroko and moabi.\n\nekki - obeche\n\n[1] 685\n\niroko - moabi\n\n[1] -200\n\n\nThe command above translate to 1065 - 380 and 660 - 860respectively. We can also use other operators on this variables.\n\nekki &lt; iroko\n\n[1] FALSE\n\nmoabi &lt; ekki\n\n[1] TRUE\n\nekki &gt; obeche\n\n[1] TRUE",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "operators.html#summary",
+    "href": "operators.html#summary",
+    "title": "2  Operators in R",
+    "section": "2.6 Summary",
+    "text": "2.6 Summary\nIn this chapter, you’ve been introduced to some basic R syntax and the operators. The operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We also saw other operators such as &lt;, &lt;=, ==, &gt;= and &gt; for comparing values. Lastly, we saw the assignment operator used to store values into containers called variable.\nNow that we’ve got a good understanding of the basic syntax, we will move on to learn the data types in R.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operators in R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#how-this-book-is-organized",
+    "href": "intro.html#how-this-book-is-organized",
+    "title": "Introduction",
+    "section": "How This Book is Organized",
+    "text": "How This Book is Organized\n\n\n\n\n\n\nstill under development.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "data-types.html#sec-logical",
+    "href": "data-types.html#sec-logical",
+    "title": "3  Data Types in R",
+    "section": "3.4 Logical",
+    "text": "3.4 Logical\nBoolean also referred to as logical values. Boolean includes TRUE, FALSE and NA which refers to not available.\n\nclass(TRUE)\n\n[1] \"logical\"\n\nclass(NA)\n\n[1] \"logical\"\n\nclass(FALSE)\n\n[1] \"logical\"",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Types in R</span>"
+    ]
+  },
+  {
+    "objectID": "the-basics.html",
+    "href": "the-basics.html",
+    "title": "Basics",
+    "section": "",
+    "text": "Section will be written after whole content of this part is finished",
+    "crumbs": [
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wrangle.html",
+    "href": "wrangle.html",
+    "title": "Wrangle",
+    "section": "",
+    "text": "Section will be written after whole content of this part is finished",
+    "crumbs": [
+      "Wrangle"
+    ]
+  },
+  {
+    "objectID": "eda.html",
+    "href": "eda.html",
+    "title": "Exploratory Data Analysis",
+    "section": "",
+    "text": "Section will be written after whole content of this part is finished",
+    "crumbs": [
+      "Exploratory Data Analysis"
+    ]
+  },
+  {
+    "objectID": "com-col.html",
+    "href": "com-col.html",
+    "title": "Communicate and Collaborate",
+    "section": "",
+    "text": "Area will be written after whole content of this part is finished",
+    "crumbs": [
+      "Communicate and Collaborate"
     ]
   }
 ]

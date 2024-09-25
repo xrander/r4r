@@ -1,0 +1,5 @@
+# Exploratory Data Analysis {#sec-eda}
+
+:::{.callout-important appearance=simple}
+Section will be written after whole content of this part is finished
+:::

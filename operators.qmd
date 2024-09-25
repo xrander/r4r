@@ -1,4 +1,4 @@
-# R Basics {#sec-basics}
+# Operators in R {#sec-operators}
 
 Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic operations such as, addition, and subtraction, comparison operations which involves the use of conditionals to check how object compares against one another.
 
@@ -56,7 +56,7 @@ Notice the spaces between numbers in arithmetic operations. While not required, 
 :::
 
 ## Comparison Operators
-Comparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to @sec-logical in the next chapter.
+Comparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
 
 Comparison operator in R include
 
