@@ -5,8 +5,11 @@ on:
     branches:
       - main
   pull_request:
-    branches:
-      - main
+    branches: main
+  
+  workflow_dispatch:
+  schedule:
+    - cron: "0 08 * * *"
 
 jobs:
   build-deploy:
@@ -15,6 +18,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+          # LaTeX installation
+          tinytex: true
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
