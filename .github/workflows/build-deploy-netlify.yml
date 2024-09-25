@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 08 * * *"
+
 name: Render and deplot Book to Netlify
 
 env:
