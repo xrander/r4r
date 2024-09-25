@@ -42,7 +42,8 @@ R performs arithmetic easily and also follows the order of operations.
 ```{r}
 5 * 15 + 14 / 7
 ```
-Above, we have `14 / 7`, a division first according to the order of operation followed by multiplication, `5 * 15`, then addition of both values `75 + 2` from the individual early evaluation to get the total. To avoid confusion, a convenient way to go about how you want your arithmetic to be evaluated is by using parenthesis **()** to block codes.
+
+The order of operation here is division, `14 / 7 = 2`,  followed by multiplication, `5 * 15 = 75`, then addition of the values from the former operations `75 + 2` which is evaluated to give a total of 77. To avoid confusion, a convenient way to go about how you want your numbers to be evaluated is by using parenthesis **()** to block codes.
 
 ```{r}
 3 + (5 - 2)
@@ -52,11 +53,11 @@ Above, we have `14 / 7`, a division first according to the order of operation fo
 
 
 :::{.callout-tip apperance=simple}
-Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you and people you work with/for will mostly be reading your codes.
+Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you would try to figure out what you have done and also why you did particular thing. Also, if you work with in a team or want to share your work, people will be reading your codes.
 :::
 
 ## Comparison Operators
-Comparison operators are as their names implies, they are used to compare values with the resulting value being TRUE or FALSE. TRUE and FALSE are called logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
+Comparison operators are as their names imply. They are used to compare values. The result  from their operation is either TRUE or FALSE. TRUE and FALSE are logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
 
 Comparison operator in R include
 
@@ -78,6 +79,47 @@ Try these commands in R's console:
 10 >= 7
 10 == 12
 ```
+
+Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!` (not).
+
+### & (AND) operator
+-   `&` returns TRUE when conditions on both sides of it are TRUE. All other conditions returns false
+
+
+|Conditions|Result|
+|:-------|-------:|
+| TRUE & TRUE |TRUE|
+|TRUE & FALSE|FALSE|
+|FALSE & TRUE|FALSE|
+|FALSE & FALSE|FALSE|
+
+: & (And) operator conditions
+
+```{r}
+28 > 10 & 50 > 40
+```
+
+```{r}
+
+```
+
+
+
+
+
+-   `|` returns TRUE when one of the conditions on both sides of it are TRUE.
+
+```{r}
+20 > 15 & 30 > 10
+```
+You can also use parentheses to enclose conditions when testing multiple conditions. The above condition can also be written as:
+
+```{r}
+(20 > 15) & (30 > 10)
+```
+
+
+
 
 ## Assignment Operators
 

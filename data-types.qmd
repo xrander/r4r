@@ -3,31 +3,11 @@
 :::{.callout-caution appearance=minimal}
 This section is still under development
 :::
+
+
 Before performing any analysis, it's crucial to understand the types of data you are working with. Like data scientist or analysts, researchers must work with various data forms--whether they are survey response, secondary data, field data, or lab data. In the research process, as seen in @fig-str, data collection and analysis are key stages. Each data has its own unique structure and requirements influencing the method you'll use for their analysis. Understanding the distinctions between different data types ensures you can clean, manipulate, and interpret your dataset effectively. In this section, we’ll explore the foundational data types in R programming.
 
-```{r}
-#| echo: false
-#| label: fig-str
-#| fig-cap: "Stages of Research"
-
-library(DiagrammeR)
-grViz(
-  "digraph {
-    graph [layout = dot, rankdir = TB, splines = TRUE]
-    node [shape = box, style = filled, fillcolor = white, color = dodgerblue, fontcolor = gray4]
-    a [label = 'Identifying the Research Problem']
-    b [label = 'Literature Review']
-    c [label = 'Formulating Hypothesis or Research Questions']
-    d [label = 'Design Research Methodology']
-    e [label = 'Collecting Data', color = red, fillcolor = indianred3, fontcolor = white]
-    f [label = 'Data Analysis', color = red, fillcolor = indianred3, fontcolor = white]
-    g [label = 'Interpretation of Result']
-    h [label = 'Drawing Conclusion and Recommendation']
-    i [label = 'Report / Presentation to Academic Community and/or Stakeholders']
-    a -> b -> c -> d -> e -> f -> g -> h -> i
-  }"
-)
-```
+![Stahes of Research](images/research-stages.png) {#fig-str}
 
 
 There are five different data types in R programming, four which we will be using in this book. In R programming we use the function `typeof` and `class()` to check the type of data a variable is having. The data types are in R programming are:
