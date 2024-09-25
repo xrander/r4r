@@ -99,13 +99,6 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 28 > 10 & 50 > 40
 ```
 
-```{r}
-
-```
-
-
-
-
 
 -   `|` returns TRUE when one of the conditions on both sides of it are TRUE.
 
