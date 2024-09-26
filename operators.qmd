@@ -3,21 +3,21 @@
 Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic operations such as, addition, and subtraction, comparison operations which involves the use of conditionals to check how object compares against one another.
 
 ## Arithmetic Operators
+
 Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:
 
-|Operator|Definition|
-|:----|----:|
-|+|Addition|
-|-|Subtraction|
-|*|Multiplication|
-|/|Division|
-|^|Exponent or Power|
-|**|Exponent or Power|
-|%%|Remainder division|
-|%/%|Integer division|
+| Operator |         Definition |
+|:---------|-------------------:|
+| \+       |           Addition |
+| \-       |        Subtraction |
+| \*       |     Multiplication |
+| /        |           Division |
+| \^       |  Exponent or Power |
+| \*\*     |  Exponent or Power |
+| %%       | Remainder division |
+| %/%      |   Integer division |
 
 : Arithmetic operators in R {#tbl-arith-op .striped .hover}
-
 
 Run the following commands in your console:
 
@@ -30,6 +30,7 @@ Run the following commands in your console:
 3 ^ 2
 3 ** 2
 ```
+
 The above operations are straightforward. `%%` operator returns the remainder when two numbers are divided. While `%/%` returns the whole number or integer and discard the remainder.
 
 ```{r}
@@ -43,7 +44,7 @@ R performs arithmetic easily and also follows the order of operations.
 5 * 15 + 14 / 7
 ```
 
-The order of operation here is division, `14 / 7 = 2`,  followed by multiplication, `5 * 15 = 75`, then addition of the values from the former operations `75 + 2` which is evaluated to give a total of 77. To avoid confusion, a convenient way to go about how you want your numbers to be evaluated is by using parenthesis **()** to block codes.
+The order of operation here is division, `14 / 7 = 2`, followed by multiplication, `5 * 15 = 75`, then addition of the values from the former operations `75 + 2` which is evaluated to give a total of 77. To avoid confusion, a convenient way to go about how you want your numbers to be evaluated is by using parenthesis **()** to block codes.
 
 ```{r}
 3 + (5 - 2)
@@ -51,28 +52,29 @@ The order of operation here is division, `14 / 7 = 2`,  followed by multiplicati
 (5 * 4) / (7 - (2 + 4))
 ```
 
-
-:::{.callout-tip apperance=simple}
+::: {.callout-tip apperance="simple"}
 Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you would try to figure out what you have done and also why you did particular thing. Also, if you work with in a team or want to share your work, people will be reading your codes.
 :::
 
 ## Comparison Operators
-Comparison operators are as their names imply. They are used to compare values. The result  from their operation is either TRUE or FALSE. TRUE and FALSE are logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
+
+Comparison operators are as their names imply. They are used to compare values. The result from their operation is either TRUE or FALSE. TRUE and FALSE are logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
 
 Comparison operator in R include
 
-| Symbol | Meaning |
-| :--- | ---: |
-| > |Greater than |
-| < | Less than |
-| == | Equal to |
-| >= | Greater than or equal to |
-| <= | Less than or equal to |
-| != | Not equal to |
+| Symbol |                  Meaning |
+|:-------|-------------------------:|
+| \>     |             Greater than |
+| \<     |                Less than |
+| ==     |                 Equal to |
+| \>=    | Greater than or equal to |
+| \<=    |    Less than or equal to |
+| !=     |             Not equal to |
 
 : Comparison Operators in R {#tbl-comp-operators .striped .hover}
 
 Try these commands in R's console:
+
 ```{r}
 4 > 5
 (5^2) < (5 * 2)
@@ -83,21 +85,22 @@ Try these commands in R's console:
 Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!` (not).
 
 ### & (AND) operator
+
 -   `&` operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns false
 
-
-|Conditions|result|
-|:-------|-------:|
-| TRUE & TRUE | TRUE |
-| TRUE & FALSE | FALSE |
-| FALSE & TRUE | FALSE |
-| FALSE & FALSE | FALSE |
+| Conditions    | result |
+|:--------------|-------:|
+| TRUE & TRUE   |   TRUE |
+| TRUE & FALSE  |  FALSE |
+| FALSE & TRUE  |  FALSE |
+| FALSE & FALSE |  FALSE |
 
 : Combination of & (And) operator conditions and its adjoining result {#tbl-and-operator .striped .hover}
 
 ```{r}
 28 > 10 & 50 > 40
 ```
+
 ```{r}
 20 < 10 & 50 < 40
 ```
@@ -108,15 +111,14 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 
 -   `|` returns TRUE when **one** of the conditions on both sides of it are TRUE.
 
-|Conditions|result|
-|:----|----:|
-| TRUE `|` FALSE | TRUE |
-| FALSE `|` TRUE | TRUE |
-| TRUE `|` TRUE | TRUE |
-| FALSE `|` FALSE | FALSE |
+| Conditions      | result |
+|:----------------|-------:|
+| TRUE `|` FALSE  |   TRUE |
+| FALSE `|` TRUE  |   TRUE |
+| TRUE `|` TRUE   |   TRUE |
+| FALSE `|` FALSE |  FALSE |
 
 : Combination of `|` (OR) operator conditions and its adjoining result {#tbl-or-ope .striped .hover}
-
 
 ```{r}
 20 > 15 | 30 > 10
@@ -126,7 +128,7 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 20 < 15 | 30 < 10
 ```
 
-You can also use parentheses to enclose conditions when testing multiple conditions. 
+You can also use parentheses to enclose conditions when testing multiple conditions.
 
 ```{r}
 (20 < 15) | (30 > 10)
@@ -134,14 +136,13 @@ You can also use parentheses to enclose conditions when testing multiple conditi
 
 ## Assignment Operators
 
-The assignment operator is used to bind values to names called variables. Variables are names that are used to reference values.
+The assignment operator is used to bind values to names called *variables*. Variables are names that are used to reference values.
 
-| Symbol | Meaning |
-|:----|----:|
-| <- | Assignment / bind to value |
-|= | Assignment / bind to value |
-|-> | Rightward assignment / bind left value to the right variable|
-
+| Symbol |                                                      Meaning |
+|:-------|-------------------------------------------------------------:|
+| \<-    |                                   Assignment / bind to value |
+| =      |                                   Assignment / bind to value |
+| -\>    | Rightward assignment / bind left value to the right variable |
 
 : Assignment Operators in R {#tbl-ass .striped .hover}
 
@@ -158,12 +159,13 @@ This does not mean that the value(s) assigned to a particular variable cannot be
 c <- "man"
 ```
 
-Above we assigned the new value "man" to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using   `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+Above we assigned the new value "man" to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+
 ```{r}
 tree_height = 23
 tree_height
 ```
- 
+
 For `->` operator, the variable is at the right side of the operator.
 
 ```{r}
@@ -172,7 +174,8 @@ plot_size
 ```
 
 ## Making Comments
-There are times when we do not want R to executes some lines. These lines are regarded to as comments. Comments are essential to documenting our code. They make our code easier to understand, as we can explain why a code is written in a certain way. This is very important when we collaborate with others or to help our understanding of our codes when we review/read them in the future. The `#` is used to make a comment. Anything that comes after `#` are not executed by the program. For example
+
+There are times when we do not want R to executes some lines or text when writing our analysis. We can instruct the program to skip these lines by placing the `#` symbol followed by these lines or texts. These lines are called *comments*. Comments are essential to in-code documentation. They make our code easier to understand, as we can explain why a code is written in a certain way. This is very important when we collaborate with others or to help the understanding of our codes when we review/read them in the future. For example
 
 ```{r}
 x <- 15 # 15 here is in kg instead of g
@@ -180,12 +183,12 @@ x <- 15 # 15 here is in kg instead of g
 x
 ```
 
-
 ## Bringing it all together
+
 We can perform simple operations with the operators covered in this chapter. For example we can compare the average dry weight of different African tree species.
 
-:::{.callout-note appearance=minimal}
-The local names of trees are referred to here.
+::: {.callout-note appearance="minimal"}
+The local names of native African trees are referred to here.
 :::
 
 ```{r}
@@ -204,16 +207,17 @@ iroko - moabi
 ```
 
 The command above translate to `1065 - 380` and `660 - 860`respectively. We can also use the comparison operators on this variables.
+
 ```{r}
 ekki < iroko
 moabi < ekki
 ekki > obeche
 ```
 
-
 ## Summary
-In this chapter, you've been introduced to some basic R syntax and the operators. The arithmetic operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We covered the comparison operator which include `<`, `<=`, `==`, `>=` and `>` for comparing values as well as their combinational with logical operators like `&` and `|`. 
+
+In this chapter, you've been introduced to some basic R syntax and the operators. The arithmetic operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We covered the comparison operator which include `<`, `<=`, `==`, `>=` and `>` for comparing values as well as their combination with logical operators like `&` and `|`.
 
 Lastly, we covered the assignment operator used to reference or bind values to names called variable. When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time.
 
-Now that we've got a good understanding of some of the basic R syntax and the operators,  we will move on to @sec-data-types to learn about the data types in R.
+Now that we've got a good understanding of some of the basic R syntax and the operators, we will move on to @sec-data-types to learn about the data types in R.

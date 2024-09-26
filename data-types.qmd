@@ -1,58 +1,61 @@
 # Data Types in R {#sec-data-types}
 
-:::{.callout-caution appearance=minimal}
+::: {.callout-caution appearance="minimal"}
 This section is still under development
 :::
 
+Researchers regardless of the field are scientist working with various data forms, from survey responses, secondary data, Lab or field data. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a category or ranking such as yes/no response or response such as marital status. Before performing any analysis, it's crucial to understand the types of data you are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
 
-Before performing any analysis, it's crucial to understand the types of data you are working with. Like data scientist, researchers work with various data forms--whether they are survey response, secondary data, data from the lab or field. In the research process, as seen in @fig-str, data collection and analysis are key stages. 
-
-Each data has its own unique structure and requirements influencing the method you'll use for their analysis. Understanding the distinctions between different data types ensures you can clean, manipulate, and interpret your dataset effectively. In this section, we’ll explore the units of data you will be working which are regarded to as the atomic vectors. We will discuss a bit more vectors in @sec-data-structures.
+Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures you can manipulate, analyze and interpret the findings from your data effectively. Here, we will explore the data types in R
 
 ![Stages of Research](images/research-stages.png){#fig-str}
 
+There are about seven different data types in R, five which we will be using more in this book. In R programming, we use the function `typeof` and `class()` to check the type of data a variable is having. The data types are in R are:
 
-There are about seven different data types in R, five which we will be using more in this book. In R programming we use the functions `typeof` and `class()` to check the type of data a variable is having. The data types are in R programming are:
-
-*   character
-*   factor
-*   double
-*   integer
-*   complex
-*   logical
-*   date/POSIXt
+-   character
+-   factor
+-   double
+-   integer
+-   complex
+-   logical
+-   date/POSIXt
 
 ## Character
-Characters are text and in R they include anything enclosed in quotation marks. This quotation mark can either be the single  `'` or double `"`, they are treated the same way in R. It is more common to use the double, `"`, than the single, `'`. Characters while often thought of as alphabets can also be numbers as long as they are enclosed in quotation marks. For example:
+
+Characters are text and in R they are anything enclosed in quotation marks. This quotation mark can either be the single `'` or double `"`. It is more common to use the double, `"`, than the single, `'`. For example
 
 ```{r}
 "tree"
 ```
 
 We can check what data type *"man"* is this with `class()` or `typeof()` function.
+
 ```{r}
 typeof("tree")
 class("tree")
 ```
 
-For now we will stick to using  `class()` function. What about if we have a number enclosed in quotation marks?
+Characters while often thought of as alphabets can also be numbers as long as they are enclosed in quotation marks. For example:
 
 ```{r}
 class("2")
 ```
 
-This proves that anything enclosed in quotation marks are characters.
+Even when symbols, when enclosed in quotation marks are strings
+
 ```{r}
 class("+")
 ```
 
-This is also true if values are assigned to a variable. The content of the variable will be evaluated and not the variable in its self. To put in simple terms, the variables are references for the values.
+This is also true if values are assigned to a variable. The content of the variable will be evaluated and not the variable in its self. To put in simple terms, the variables are references to the values.
+
 ```{r}
 name_of_tree <- "Quercus robur"
 class(name_of_tree)
 ```
 
 Let's look at the example below, we have error because `oak` is an object with no values assigned to it. So `olamide` and "olamide" are different. The latter is a character while the former is an object.
+
 ```{r}
 #| error: true
 
@@ -73,11 +76,12 @@ is.character(2)
 is.character("2")
 ```
 
-
 ## Factors
-There's a variation of character data type called **factors**. Factors are also referred to as categorical data. In R, factors are always leveled. They can  either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.
 
-- **Nominal Factor**: These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables.
+There's a variation of character data type called **factors**. Factors are also referred to as categorical data. In R, factors are always leveled. They can either be ordered (ordinal) or unordered (nominal). The factor() function is used to create factors in R.
+
+-   **Nominal Factor**: These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables.
+
 ```{r}
 #| label: nominal-factor
 tree_names <- factor(c("Lophira alata", "Triplochiton scleroxylon",
@@ -85,7 +89,7 @@ tree_names <- factor(c("Lophira alata", "Triplochiton scleroxylon",
 class(tree_names)
 ```
 
-:::{.callout-tip appearance=simple}
+::: {.callout-tip appearance="simple"}
 The function c() is used to combine values.
 :::
 
@@ -93,7 +97,7 @@ The function c() is used to combine values.
 tree_names
 ```
 
-You can see that as part of the print, you have `Levels` which is the alphabetical arrangement of trees. To have a better understanding, lets create multiple copies of the trees which you have here using the rep() function and see what happens to levels on print. 
+You can see that as part of the print, you have `Levels` which is the alphabetical arrangement of trees. To have a better understanding, lets create multiple copies of the trees which you have here using the rep() function and see what happens to levels on print.
 
 ```{r}
 tree_names_rep <- factor(rep(c("Lophira alata", "Triplochiton scleroxylon",
@@ -102,18 +106,18 @@ tree_names_rep <- factor(rep(c("Lophira alata", "Triplochiton scleroxylon",
 tree_names_rep
 ```
 
-The levels remains the same even on increasing the length of the data here.
-Other examples of nominal data are:
+The levels remains the same even on increasing the length of the data here. Other examples of nominal data are:
 
-  - names of people
-  
-  - yes and no / true and false
-  
-  - nationality
-  
-  - fruits.
+-   names of people
 
-- **Ordinal Factors**: These are ordered categorical data with levels. They have some of distance or degree of ranking between them. The **ordered** argument within the factor() function ensure you make ordered list. 
+-   yes and no / true and false
+
+-   nationality
+
+-   fruits.
+
+-   **Ordinal Factors**: These are ordered categorical data with levels. They have some of distance or degree of ranking between them. The **ordered** argument within the factor() function ensure you make ordered list.
+
 ```{r}
 #| label: ordered-factor
 
@@ -124,6 +128,7 @@ grade
 ```
 
 You can check the highest and lowest levels here by using the max() and min() functions.
+
 ```{r}
 #| label: check-levels
 
@@ -133,23 +138,24 @@ min(grade) # This returns the lowest level.
 ```
 
 Other examples:
-    
-  - Salary range
-  
-  - Education level
-  
-  - Customer level satisfaction
-  
-  - Tree health
 
-:::{.callout-note}
-While factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Once created, factors can only contain a pre-defined set values, 
+-   Salary range
+
+-   Education level
+
+-   Customer level satisfaction
+
+-   Tree health
+
+::: callout-note
+While factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Once created, factors can only contain a pre-defined set values,
 :::
 
 ## Numerical Data
+
 There are two types of numerical data in R, integers and doubles.
 
-- **Doubles**: These are decimal numbers
+-   **Doubles**: These are decimal numbers
 
 ```{r}
 typeof(1.5)
@@ -160,22 +166,27 @@ typeof(1.5)
 ```{r}
 typeof(1L)
 ```
+
 You can create a sequence of data using **:**. For example to create a sequence of 1 to 15
+
 ```{r}
 1:15
 ```
 
 ## Logical {#sec-logical}
+
 Boolean also referred to as logical values. Boolean includes `TRUE`, `FALSE` and `NA` which refers to not available.
+
 ```{r}
 class(TRUE)
 class(NA)
 class(FALSE)
 ```
 
-
 ## Objects
+
 R allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:
+
 ```{r}
 fruits <- factor(c("mango", "papaya", "apple"))
 age <- 20
@@ -184,6 +195,7 @@ result <- factor(c(0, 1, 3, 4, 5), labels = c("F", "D", "C", "B", "A"),
 ```
 
 The object here is `fruits`, we can get the stored object anytime by calling the object
+
 ```{r}
 fruits
 age
@@ -191,6 +203,7 @@ grade
 ```
 
 ## Changing Data Types
+
 Changing data types in R is referred to as coercing the data. The `as._data_type` helps us change between data types.
 
 ```{r}
@@ -201,26 +214,34 @@ class(tree_names)
 ```
 
 To change the above to a factor type we'll use the as.factor() function to coerce it into factor data type.
+
 ```{r}
 tree_names <- as.factor(tree_names)
 
 class(tree_names)
 ```
+
 We can change this back to factor by using the as.character() function to coerce our data into character data type.
+
 ```{r}
 tree_names <- as.character(tree_names)
 class(tree_names)
 ```
+
 The as.character() can be used to coerce any data type to character:
+
 ```{r}
 numbers <- 1:20
 class(numbers)
 ```
+
 ```{r}
 numbers <- as.character(numbers)
 class(numbers)
 ```
+
 Characters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA's
+
 ```{r}
 tree_height <- c(10, 15, 20, "25m")
 class(tree_height)
@@ -233,6 +254,7 @@ class(tree_height)
 ```
 
 Data types can be converted to different types using the `as.*` including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.
+
 ```{r}
 as.logical(c("TRUE", 1, 0, "FALSE", "F", "T", 3, 4))
 ```
@@ -240,9 +262,11 @@ as.logical(c("TRUE", 1, 0, "FALSE", "F", "T", 3, 4))
 ```{r}
 as.logical(c(1, 0, 1, 1, 0, 0 , 1))
 ```
-:::{.callout-note}
+
+::: callout-note
 Data coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.
 :::
 
 ## Summary
+
 You learned about the data types in R. They include character, factor, double, integer, and boolean. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.
