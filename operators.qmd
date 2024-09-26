@@ -134,7 +134,7 @@ You can also use parentheses to enclose conditions when testing multiple conditi
 (20 < 15) | (30 > 10)
 ```
 
-## Assignment Operators
+## Assignment Operators {#sec-assign}
 
 The assignment operator is used to bind values to names called *variables*. Variables are names that are used to reference values.
 
@@ -175,7 +175,7 @@ plot_size
 
 ## Making Comments
 
-There are times when we do not want R to executes some lines or text when writing our analysis. We can instruct the program to skip these lines by placing the `#` symbol followed by these lines or texts. These lines are called *comments*. Comments are essential to in-code documentation. They make our code easier to understand, as we can explain why a code is written in a certain way. This is very important when we collaborate with others or to help the understanding of our codes when we review/read them in the future. For example
+There are times when we do not want R to executes some lines or text when writing our analysis code. We can instruct the program to skip these lines by placing the `#` symbol followed by these lines or texts. These lines are called *comments*. Comments are essential to in-code documentation. They make our code easier to understand, as we can explain why a code is written in a certain way. This is very important when we collaborate with others or to help the understanding of our codes when we review/read them in the future. For example
 
 ```{r}
 x <- 15 # 15 here is in kg instead of g
