@@ -1,25 +1,20 @@
 # Data Types in R {#sec-data-types}
 
-::: {.callout-caution appearance="minimal"}
-This section is still under development
-:::
-
 Researchers regardless of the field are analysts working with various forms of data, which can be in form of survey responses, secondary data, field or lab measurements. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a ranking or category such as yes/no responses, income level or marital status. Before proceeding with any analysis, it is crucial to understand the types of data we are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
 
 Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures you can manipulate, analyze and interpret the findings from your data effectively. Here, we will explore the data types in R
 
 ![Stages of Research](images/research-stages.png){#fig-str fig-align="center"}
 
-There are more than seven different data types in R, five which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
+There are six different data types in R, four which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
 
 -   character
 -   factor
--   double
--   integer
--   complex
+-   Numeric
+  +   double
+  +   integer
 -   logical
--   date
--   POSIXt
+-   complex
 
 ## Character
 
@@ -38,7 +33,7 @@ class("2")
 class("+")
 ```
 
-When we assign characters to a variable, the content of the variable will be evaluated and not the variable in its self. As explained in @sec-assign variables are references and not a value in themselves.
+When we assign characters to a variable, the content of the variable will be evaluated and not the variable in its self. As explained in @sec-operators variables are references and not a value in themselves.
 
 ```{r}
 tree <- "Quercus robur"
@@ -61,9 +56,9 @@ is.character(2)
 is.character("2")
 ```
 
-## Factors
+## Factors {#sec-fcts}
 
-Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. They can either be ordered (ordinal) or unordered (nominal). The function `factor()` is used to create factors in R.
+Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. They can either be ordered (ordinal) or unordered (nominal). The function `factor()` is used to create factors in R. Factors are built on integers.
 
 ### Nominal Factor
 
@@ -75,7 +70,10 @@ tree_names <- factor(c("Lophira alata", "Triplochiton scleroxylon", "Mansonia al
                        "Celtis africana", "Borassus aethiopum"))
 poultry_birds <-factor(c("breeders", "broilers", "layers"))
 fertilizer <- factor(c("N", "P", "K"))
+```
 
+
+```{r}
 tree_names
 poultry_birds
 fertilizer
@@ -108,7 +106,10 @@ satisfaction_level <- factor(c("very satisfied", "satisfied", "satisfied",
                              levels = c("very dissatisfied", "dissatisfied",
                                         "neutral", "satisfied", "very satisfied")
                 )
+```
 
+
+```{r}
 satisfaction_level
 
 class(satisfaction_level)
@@ -138,12 +139,18 @@ To confirm if a variable is a factor data type use the `is.factor()` . Let's cre
 satisfaction_level_chr <- c("very satisfied", "satisfied", "satisfied",
                                "dissatisfied", "very satisfied", "very dissatisfied",
                                "very satisfied", "dissatisfied")
+```
 
+
+```{r}
 is.factor(satisfaction_level_chr)
 is.factor(satisfaction_level)
 ```
 
-## Integer {#sec-integer}
+## Numeric Data type
+Numeric data are digits. There are two types of numeric data; integer and double.
+
+### Integer {#sec-integer}
 `Integer` are whole numbers and are written by writing a digit followed by a `L`.
 ```{r}
 5L
@@ -164,7 +171,8 @@ is.integer(5)
 is.integer(5L)
 ```
 
-## Doubles
+
+### Doubles
 Doubles are also referred to as floats. They are numbers with decimal point. 
 ```{r}
 5.1
@@ -185,12 +193,17 @@ A sequence of integers or doubles can be created using `:` with the start on the
 ```{r}
 1:15
 ```
+As `is.integer()` returns true for all integers and `is.double()` returns true for doubles, `is.numeric()` returns true for all both types of data.
+```{r}
+is.numeric(5L)
+is.numeric(3.5)
+```
 
 
-`
+
 ## Logical {#sec-logical}
 
-Boolean also referred to as logical values. Boolean includes `TRUE`, `FALSE` and `NA` which refers to not available.
+Logical data type are also referred to as Boolean values. Logical includes `TRUE`, `FALSE` and `NA` which means *Not Available*.
 
 ```{r}
 class(TRUE)
@@ -198,29 +211,52 @@ class(NA)
 class(FALSE)
 ```
 
-## Objects
-
-R allows you to save data by storing it into objects/variables. Objects are just names we can use to call up stored data. for example:
+Under comparison operators in @sec-operators, I said that comparison operators always returns a logical operator as their result. We can test that here.
 
 ```{r}
-fruits <- factor(c("mango", "papaya", "apple"))
-age <- 20
-result <- factor(c(0, 1, 3, 4, 5), labels = c("F", "D", "C", "B", "A"),
-                ordered = TRUE)
+class(5 > 2)
 ```
-
-The object here is `fruits`, we can get the stored object anytime by calling the object
+`5 > 2` is first evaluated which returns `TRUE`, then the `class` of the result is checked which returns `TRUE`. In R, the deepest of the nested expressions are evaluated first and evaluated outwardly to the umbrella expression. We can also check for a logical value using `is.logical()`
 
 ```{r}
-fruits
-age
-grade
+is.logical(20 < 3)
+is.logical(NA)
 ```
+
+## Complex
+We are not using the complex data type and you are unlikely to analyze these data types. Complex data types are numbers with an imaginary term `i` added to them
+
+```{r}
+5i
+1 + 5i
+
+typeof(3i)
+typeof(5 + 2i)
+```
+Similar to other data types, we can confirm if a data is a complex by using `is.complex()`
+```{r}
+is.complex(5i)
+```
+
 
 ## Changing Data Types
 
-Changing data types in R is referred to as coercing the data. The `as._data_type` helps us change between data types.
+In R we can change data types using `as._` similar to `is.` which is used to check a data type.
 
+```{r}
+tree_height <- 20:40
+tree_height
+
+typeof(tree_height)
+```
+The above can be changed to a double using `as.double()` and back to integer using `as.integer()`
+
+```{r}
+tree_height_2 <- as.double(tree_height)
+typeof(tree_height_2)
+```
+
+We can also change characters to factors and factors to characters in a similar way
 ```{r}
 #| label: changing-data-types
 
@@ -228,59 +264,73 @@ tree_names <- c("terminalia", "eucalyptus", "iroko", "oak")
 class(tree_names)
 ```
 
-To change the above to a factor type we'll use the as.factor() function to coerce it into factor data type.
+To change the above to factor data type we'll use the `as.factor()` function.
 
 ```{r}
-tree_names <- as.factor(tree_names)
+tree_names_fct <- as.factor(tree_names)
 
-class(tree_names)
+class(tree_names_fct)
 ```
 
-We can change this back to factor by using the as.character() function to coerce our data into character data type.
+We can change this back to character by using `as.character()`.
 
 ```{r}
-tree_names <- as.character(tree_names)
-class(tree_names)
+tree_names_chr <- as.character(tree_names_fct)
+class(tree_names_chr)
 ```
 
-The as.character() can be used to coerce any data type to character:
+`as.character()` can be used to coerce any data type to a character
 
-```{r}
-numbers <- 1:20
-class(numbers)
-```
-
-```{r}
-numbers <- as.character(numbers)
-class(numbers)
-```
-
-Characters can be changed back to numeric or double data type using the as.double(), as.integer() or as.numeric() function. The functions will return numbers only if what is been coerced contains numbers, else they are returned as NA's
-
-```{r}
-tree_height <- c(10, 15, 20, "25m")
+```{r} 
+tree_height
 class(tree_height)
 ```
 
+
+```{r} 
+tree_height_chr <- as.character(tree_height)
+class(tree_height_chr)
+```
+
+Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. You get a warning when there's not a digit in what is being converted.
+
 ```{r}
+tree_height <- c(10, 15, 20, "25m")
+tree_height
+class(tree_height)
 tree_height <- as.double(tree_height)
 tree_height
 class(tree_height)
 ```
 
-Data types can be converted to different types using the `as.*` including changing to a Boolean data type using the as.logical() function. Inspection after coercion is necessary to ensure that the result is as expected.
+You can also convert factors to integers as said in @sec-fcts, factors are built on integers.
 
 ```{r}
-as.logical(c("TRUE", 1, 0, "FALSE", "F", "T", 3, 4))
+fruits <- factor(c("orange", "tomato", "olive"))
+class(fruits)
+as.integer(fruits)
 ```
 
+We can also convert other data types to logical data type. All other numbers evaluate to TRUE either if they are positive or negative except zero which evaluates to zero.
 ```{r}
-as.logical(c(1, 0, 1, 1, 0, 0 , 1))
+as.logical(c(1, 0, -1, 3, 0, 0 , 32))
+```
+
+For characters, every other thing converts to NA, except **T**, **TRUE**, **True**, and **true** which converts to `TRUE` and **F**, **FALSE**, **False** and **false** which converts to `FALSE`
+```{r}
+as.logical(c("TRUE", 1, 0, "FALSE", "F", "T", 3, "False", "man", "true", "tRUE", "True", "t"))
 ```
 
 ::: callout-note
-Data coercion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it.
+Data coercion/conversion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it. 
 :::
+
+## Other Data Types
+There are other data types not covered such as:
+
+-   Date
+-   POSIXct
+-   Raw
 
 ## Recommended Reading
   [Chapter 3 of Advanced R by Hadley Wickham, 2019](https://adv-r.hadley.nz/vectors-chap.html) gives in-depth understanding of the data types in R.
@@ -289,4 +339,4 @@ Data coercion can either be implicit or explicit. Coercion is explicit when you 
 
 ## Summary
 
-You learned about the data types in R. They include character, factor, double, integer, and logical. You also learned how to access the properties and how to change from one data type to the other. In the next chapter you will learn about functions in R. You will learn some functions and how to create functions.
+Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
