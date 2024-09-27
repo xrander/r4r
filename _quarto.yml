@@ -30,7 +30,10 @@ book:
         - intro-github.qmd
         - quarto.qmd
     - references.qmd
+    
   favicon: cover.png
+  cover-image: cover.png
+  reader-mode: true
   page-footer:
     left: |
       R for Research was written by Olamide M. Adu.
@@ -48,6 +51,8 @@ format:
     cover-image: cover.png
     toc: true
     toc-depth: 3
+    code-link: true
+    callout-appearance: simple
     page-layout: full
     
   pdf:
@@ -56,5 +61,5 @@ format:
     cover-image: cover.png
     output-file: r-for-research.pdf
 
-editor: visual
+editor: source
 
