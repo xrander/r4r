@@ -1,7 +1,7 @@
 # R, RStudio, and Posit Cloud {#sec-environ}
 
 ::: {.callout-note appearnce="simple"}
-You can skip all the whole of @sec-installing-r if you already have R and RStudio installed. If not, proceed to the operating system loaded in your machine at @sec-install-r.
+You can skip all the whole of [ -@sec-installing-r] if you already have R and RStudio installed. If not, proceed to the operating system loaded in your machine at [ -@sec-install-r].
 :::
 
 ## Installing R and RStudio {#sec-installing-r}
