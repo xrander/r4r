@@ -56,7 +56,7 @@ The order of operation here is division, `14 / 7 = 2`, followed by multiplicatio
 Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you would try to figure out what you have done and also why you did particular thing. Also, if you work with in a team or want to share your work, people will be reading your codes.
 :::
 
-## Comparison Operators {##sec-comp-op}
+## Comparison Operators {#sec-comp}
 
 Comparison operators are as their names imply. They are used to compare values. The result from their operation is either TRUE or FALSE. TRUE and FALSE are logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
 

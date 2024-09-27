@@ -2,7 +2,7 @@
 
 Researchers regardless of the field are analysts working with various forms of data, which can be in form of survey responses, secondary data, field or lab measurements. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a ranking or category such as yes/no responses, income level or marital status. Before proceeding with any analysis, it is crucial to understand the types of data we are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
 
-Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures you can manipulate, analyze and interpret the findings from your data effectively. Here, we will explore the data types in R
+Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures we can manipulate, analyze and interpret the findings from our data effectively. Here, we will explore the data types in R
 
 ![Stages of Research](images/research-stages.png){#fig-str fig-align="center"}
 
@@ -33,7 +33,7 @@ class("2")
 class("+")
 ```
 
-When we assign characters to a variable, the content of the variable will be evaluated and not the variable in its self. As explained in @sec-operators variables are references and not a value in themselves.
+When we assign characters to a variable, the content of the variable will be evaluated and not the variable in its self. As explained in [Chapter @sec-ass] variables are references and not a value in themselves.
 
 ```{r}
 tree <- "Quercus robur"
@@ -87,7 +87,7 @@ When we print this variables, notice `Levels` as part of the print with the cate
 ```{r}
 class(tree_names)
 ```
-If we use the `typeof()` function on these objects, the result is `integer` which will be discussed in @sec-integer. The result is so because factors are built on top of integers.
+If we use the `typeof()` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
 
 ```{r}
 typeof(tree_names)
@@ -211,7 +211,7 @@ class(NA)
 class(FALSE)
 ```
 
-Under comparison operators in @sec-operators, I said that comparison operators always returns a logical operator as their result. We can test that here.
+In [Chapter @sec-comp], we saw that comparison operators always returns a logical operator as their result. We can also check the type as it is evaluated.
 
 ```{r}
 class(5 > 2)
@@ -224,7 +224,7 @@ is.logical(NA)
 ```
 
 ## Complex
-We are not using the complex data type and you are unlikely to analyze these data types. Complex data types are numbers with an imaginary term `i` added to them
+We will not use the complex data type and its unlikely to analyze these type of data. Complex data types are numbers with an imaginary term `i` added to them
 
 ```{r}
 5i
@@ -292,7 +292,7 @@ tree_height_chr <- as.character(tree_height)
 class(tree_height_chr)
 ```
 
-Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. You get a warning when there's not a digit in what is being converted.
+Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. we get a warning when there's not a digit in the object being converted.
 
 ```{r}
 tree_height <- c(10, 15, 20, "25m")
@@ -303,7 +303,7 @@ tree_height
 class(tree_height)
 ```
 
-You can also convert factors to integers as said in @sec-fcts, factors are built on integers.
+we can also convert factors to integers. As said in [ -@sec-fcts], factors are built on integers.
 
 ```{r}
 fruits <- factor(c("orange", "tomato", "olive"))
@@ -322,7 +322,7 @@ as.logical(c("TRUE", 1, 0, "FALSE", "F", "T", 3, "False", "man", "true", "tRUE",
 ```
 
 ::: callout-note
-Data coercion/conversion can either be implicit or explicit. Coercion is explicit when you intentionally change the variable type. Implicit coercion is when R changes the variable type for you automatically depending on when an operation needs it. 
+Data coercion/conversion can either be implicit or explicit. Coercion is explicit when we intentionally change the variable type. Implicit coercion is when R changes the variable type for us automatically. 
 :::
 
 ## Other Data Types
