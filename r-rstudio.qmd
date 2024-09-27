@@ -1,6 +1,6 @@
 # R, RStudio, and Posit Cloud {#sec-environ}
 
-:::{.callout-note appearnce=simple}
+::: {.callout-note appearnce="simple"}
 You can skip all the whole of @sec-installing-r if you already have R and RStudio installed. If not, proceed to the operating system loaded in your machine at @sec-install-r.
 :::
 
@@ -10,17 +10,16 @@ R and RStudio are free to install and use softwares. To install them software, y
 
 ### Installing R {#sec-install-r}
 
-**Windows OS (10/  11)**: To download R from CRAN visit this link <https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe> and run the installer. This is the latest version at the time of writing this chapter
+**Windows OS (10/ 11)**: To download R from CRAN visit this link <https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe> and run the installer. This is the latest version at the time of writing this chapter
 
 **Mac OS**: There are two versions of R for Mac users based on the processor in your computer.
 
-- For M1-M3 processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg> and run the installer
-- For Intel processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg> and run the installer.
+-   For M1-M3 processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg> and run the installer
+-   For Intel processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg> and run the installer.
 
-**Linux Users**
-R installation on Linux depends on your distribution. Open terminal (`Ctrl` + `Alt` + `T`) and enter the command below based on your distribution.
+**Linux Users** R installation on Linux depends on your distribution. Open terminal (`Ctrl` + `Alt` + `T`) and enter the command below based on your distribution.
 
-- Debian/Ubuntu distribution:
+-   Debian/Ubuntu distribution:
 
 ``` {.bash .terminal}
 #| eval: false
@@ -28,7 +27,7 @@ $ sudo apt update
 $ sudo apt install r-base r-base-dev
 ```
 
-- Redhat/Fedora distribution:
+-   Redhat/Fedora distribution:
 
 ``` {.bash .terminal}
 #| eval: false
@@ -39,35 +38,35 @@ $ sudo dnf install R
 
 To install RStudio, visit the link <https://posit.co/download/rstudio-desktop/> scroll down and download the package for your OS, and install. Installation of downloaded file is direct. If you prefer a video guide, choose the link based on your OS:
 
-- [window](https://www.youtube.com/watch?v=KUb_NYa4m3g)
+-   [window](https://www.youtube.com/watch?v=KUb_NYa4m3g)
 
-- [Mac](https://drive.google.com/file/d/1haHA_2r6L4D_VcBdTcgH53dcTbGV78_2/view?usp=drive_link)
+-   [Mac](https://drive.google.com/file/d/1haHA_2r6L4D_VcBdTcgH53dcTbGV78_2/view?usp=drive_link)
 
-- [linux-ubuntu](https://www.youtube.com/watch?v=Uw9fWa-hVdc)
-
+-   [linux-ubuntu](https://www.youtube.com/watch?v=Uw9fWa-hVdc)
 
 ## The RStudio Interface
 
-When you open RStudio newly, you are presented with three panes by default. You can get a fourth pane like what is shown in @fig-rstudio-environment. To do this, click the **+** button at the top-left and select R Script, or use the keyboard shortcut `Ctrl + Shift + N` on Windows/Linux and `Cmd + Shift + N` on Mac. More details on the panes is provided in @sec-paness
+When you open RStudio newly, you are presented with three panes by default. You can get a fourth pane like what is shown in @fig-rstudio-environment. To do this, click the **+** button at the top-left and select R Script, or use the keyboard shortcut `Ctrl + Shift + N` on Windows/Linux and `Cmd + Shift + N` on Mac. More details on the panes is provided in @sec-panes
 
 ![R Studio Environment](images/r_interface.png){#fig-rstudio-environment}
 
 You can change the arrangement of the panes by clicking `Tools` on the menu bar then navigate to `Global Options` and `Pane Layout` in the popup box.
 
 ### RStudio Panes {#sec-panes}
+
 The four components/panes shown in @fig-rstudio-environment are:
 
-1. **Source Pane**: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.
+1.  **Source Pane**: Located in the top-left. This pane shows after adding a R script. The R script is where you will do most of data analysis task. It is technically a plain text file containing a series of R commands that are executed in sequence. The source pane also shows your dataset in spreadsheet-like format.
 
 ![Source window](images/rscript.png)
 
-2. **Console/Terminal/Background Jobs pane**: Located in the bottom-left. It include the **Console** pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some  analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the **Terminal** pane which provides direct access to your computer using command line. Lastly, we have the **Background Jobs** pane which allows you to run tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing,  simulations, or model fitting. 
+2.  **Console/Terminal/Background Jobs pane**: Located in the bottom-left. It include the **Console** pane where outputs and results of your analysis are displayed. The console is also an interactive section where you can write code and carry out some analysis. All the codes written in the script are usually displayed and executed on the console. This pane also include the **Terminal** pane which provides direct access to your computer using command line. Lastly, we have the **Background Jobs** pane which allows you to run tasks in the background while you continue working on other tasks in the main R session. This pane is especially useful for long-running operations that might otherwise block your R session, such as data processing, simulations, or model fitting.
 
 ![Console window](images/console.png)
 
-3. **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **Histor** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
+3.  **Environment / History Pane**: Located in the top-right. It includes the **Environment** pane which displays all objects created during a session, such as data and variables. We also have the **History** pane which stores the history of commands executed. This pane allows you to select previous commands and rerun them or add them back to console if you want. Located closely to **Histor** pane is the **Connection** pane which helps you interact with and manage connections to external data sources, such as databases, cloud services, or remote data systems. It provides a user-friendly interface for establishing and managing these connections directly from RStudio, without needing to write extensive code. After this is the **Tutorial** pane provides additional learning materials for R and RStudio. It is designed to be an interactive R tutorial.
 
-:::{.callout-note appearance=simple}
+::: {.callout-note appearance="simple"}
 An R session refers to the instance of R that is currently running, which includes everything that is active in memory and the state of your environment in RStudio or any R interface.
 :::
 
@@ -78,22 +77,25 @@ An R session refers to the instance of R that is currently running, which includ
 ![Files window](images/file_pane.png)
 
 ## Posit Cloud
+
 There's an option to use R and RStudio online from your browser. This is through Posit Cloud (formerly RStudio Cloud). Posit cloud is owned by the same organization that made RStudio. To use posit cloud, visit <https://posit.cloud/> and register. After registering, you get a page similar to @fig-cloud. After registering, click on new workspace on the left sidebar and create a new project.
 
 ![posit cloud](images/posit-cloud.png){#fig-cloud}
 
-
 The video series in this [link](https://www.youtube.com/watch?v=VV_3MvJmwG4&list=PL9HYL-VRX0oSn7tBLDiSt4Vnyk3yB6ipA) is a good resource for starting with Posit Cloud.
 
-:::{.callout-tip appearance=simple}
+::: {.callout-tip appearance="simple"}
 ### Script vs Console
+
 It is advised to use a script to ensure reproducibility. It ensures you can edit your work when you make errors, share with others your analysis, and also reproduce all steps in your analysis instantly.
 :::
 
 ## Positron
+
 There's a new IDE that supports Python and R that is still under development by the company Posit PBC. This is called [Positron](https://github.com/posit-dev/positron/releases). Positron is still in its early stage of development. Positron is a blend of the popular IDE VS Code and RStudio, with the major inspiration from VS Code, [@Radečić]. What makes Positron different is the ease of using python, which is one of the most common programming language of choice for data professionals. To get more details about the development, [click here](https://github.com/posit-dev/positron/releases) and [here](https://www.appsilon.com/post/introducing-positron) for detailed introduction on Positron.
 
 ![Positron IDE](images/positron.png)
 
 ## Summary
-In this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes.  Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Positron, which is the next iteration of IDE from Posit.co
+
+In this chapter, we covered how to install R, and RStudio. We also introduced the different panes/windows of RStudio IDE which includes, the source, environment, console and files panes. Lastly, we introduced the Posit cloud platform, a cloud-based RStudio platform as well as Positron, which is the next iteration of IDE from Posit.co
