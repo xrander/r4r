@@ -38,11 +38,6 @@ jobs:
         run: |
           Rscript -e 'install.packages(c("quarto", "car", "tidyverse", "skimr", "psych", "janitor", "stats4nr", "ggthemes", "TukeyC"))'
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: "1.5.57"  # Replace with the latest stable version of Quarto
-
       - name: Render Quarto site
         run: quarto render
 
