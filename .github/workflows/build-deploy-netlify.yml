@@ -1,4 +1,4 @@
-name: Quarto Blog Auto-Render and Deploy
+name: Quarto Book Auto-Render and Deploy
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
 
       - name: Install necessary R packages
         run: |
-          Rscript -e 'install.packages(c("quarto", "car", "tidyverse", "psych", "janitor", "stats4nr", "ggthemes", "TukeyC"))'
+          Rscript -e 'install.packages(c("quarto", "car", "tidyverse", "skimr", "psych", "janitor", "stats4nr", "ggthemes", "TukeyC"))'
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
