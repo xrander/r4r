@@ -23,6 +23,7 @@ book:
         - data-manip.qmd
     - part: eda.qmd
       chapters: 
+        - viz-basic.qmd
         - edaI.qmd
         - edaII.qmd
     - part: com-col.qmd
