@@ -38,9 +38,21 @@ sd(tomato_diameter)
 var(tomato_diameter)
 cor(tomato_diameter, 1:10)
 ```
-Using functions such as `round` we can round off the values of the recorded tomatoes.
+Using functions such as `round` we can round off the values of the recorded tomatoes diameter to the nearest whole number.
 ```{r}
+round(tomato_diameter)
+```
+We can specify the decimal place to round to, by passing a number to the argument `digits`
+```{r}
+round(tomato_diameter, digits = 1)
+# Also the same as
+# round(tomato_diameter, 1)
+```
 
+To round up, we use a variation of `round`, `ceiling`, and to round down, we use `floor`.
+```{r}
+floor(3.544)
+ceiling(3.544)
 ```
 
 
@@ -172,12 +184,28 @@ hist(dt, xlab = "diameter")
 
 : Functions for generating random numbers of data in R {#tbl-distro-funs}
 
+Another important function for randomization is using `sample`. `sample` is used for selecting values at random from a set of data. Let's take the example below:
+
+```{r}
+new_dt <- seq(1, 20, 2)
+new_dt
+```
+We can randomly select five values from `new_dt` using `sample`
+```{r}
+set.seed(10)
+sample(new_dt, 5)
+```
+`sample` can be used for more, as we can select with replacement, and also set the probabilities of the values to we want to select. This is perfect for weighted probability.
+```{r}
+sample(new_dt, 20, replace = TRUE)
+```
+With `replace` set to `TRUE` we can select with replacement.
 
 ## Custom Functions {#sec-cust-fns}
 ### Creating Custom Functions 
 ### Using Custom function
 ## Getting Help
-
+Use the `help` function to get help, `?`, and also `args` to see the arguments of functions
 :::{.callout-caution}
 There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
 :::
