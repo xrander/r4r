@@ -4,14 +4,14 @@
 This section is still under development
 :::
 
-In previous chapters, we used functions such as `c()`, `as.factors()`, and `class()` to mention a few. So what are functions? Functions are self contained blocks of code that accomplish a specific task. A function we can relate with camera is taking pictures, and a bicycle is transportation. In R, functions are named objects followed by parentheses. Within the parentheses of functions are contained arguments. Arguments are values passed into a function to get a result or outcomes.
+In previous chapters, we used functions such as `c`, `as.factors`, and `class` to mention a few. So what are functions? Functions are self contained blocks of code that accomplish a specific task. A function we can relate with camera is taking pictures, and a bicycle is transportation. In R, functions are named objects followed by parentheses. Within the parentheses of functions are contained arguments. Arguments are values passed into a function to get a result or outcomes.
 
-For example to record the diameter (mm) of tomato plants, use the function `c()`. This function combine values into a list or vector.
+For example to record the diameter (mm) of tomato plants, use the function `c`. This function combine values into a list or vector.
 ```{r}
 tomato_diameter <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-You can print out the plants record by using the function `print()`
+You can print out the plants record by using the function `print`
 ```{r}
 print(tomato_diameter)
 ```
@@ -24,30 +24,68 @@ tomato_diameter
 ## Some Built-in Functions
 There are a lot of functions readily loaded in R to equip you for the analysis tasks you want to undertake. For tasks that R built-in function can't handle, you can install packages (covered in [Chapter @sec-pkgs]) or build your own covered in [ -@sec-cust-fns]. The various built-in functions are designed to perform specific tasks on the various data types. There are some designed to work with files and folders as well.
 
-We may be interested in finding the average of the records of tomato_diameter. To do that, we use `mean()`.
+We may be interested in finding the average of the records of tomato_diameter. To do that, we use `mean`.
 
 ```{r}
 mean(x = tomato_diameter)
 ```
-The above can also be written as `mean(tomato_diamter)`. `x` here is the argument that the function takes and in this case is our record *tomato_diameter*. To know more about any function use the function `help()` or type a question mark followed by the question name. So we have `help(mean)` or `?mean`.
+The above can also be written as `mean(tomato_diamter)`. `x` here is the argument that the function takes and in this case is our record *tomato_diameter*. To know more about any function use the function `help` or type a question mark followed by the question name. So we have `help(mean)` or `?mean`.
 
-We can check the median of the record using -- you guessed it right, `median()`. 
+We can check the median of the record using -- you guessed it right, `median`. We also `sd`, `var`, and `cor` for checking the standard deviation, variance and correlation respectively.
 ```{r}
 median(tomato_diameter)
+sd(tomato_diameter)
+var(tomato_diameter)
+cor(tomato_diameter, 1:10)
 ```
-To see a graph of the data you can pass the data into plot and it will generate an automatic plot for you. 
+Using functions such as `round` we can round off the values of the recorded tomatoes.
 ```{r}
-plot(tomato_diameter)
+
 ```
-The graph can be customized by passing values into other arguments within the `plot()` function.
+
+
+To create a sequence of number we can use the colon (`:`) symbol  and the `seq` function. `seq` gives more control on the sequence we want to generate. Important arguments of `seq` to remember are `from`, `to`, and `by`.
 ```{r}
+seq(from = 1, to = 100, by = 1)
+```
+The above is also similar to the code below, using position of the arguments instead of writing the argument out. Writing in such a manner is common when using R
+```{r}
+#| eval: false
+seq(1, 100, 1)
+```
+
+With the argument, `by`, we can create even and odd numbers easily.
+```{r}
+even_num <- seq(2, 100, 2)
+even_num
+```
+
+R also comes with built-in constants such as `pi` 
+```{r}
+pi
+```
+
+
+
+To see a graph of the *tomato_diameter* object, we can pass it to `plot` function as the first argument `x`, which is also x-axis, and a scattered plot graph is produced as seen in @fig-td. 
+```{r}
+#| label: fig-td
+#| fig-cap: Graph generated for tomato diameters using `plot`
+plot(x = tomato_diameter)
+```
+The graph can be customized by passing values into other arguments within the `plot` function. Arguments such as `col` changes the color while `pch` changes the shape of each point, @fig-plot-cust.You can also use `hist` to see the distribution of the data, @fig-td-hist.
+```{r}
+#| label: fig-plot-cust
+#| fig-cap: simple plot customization
 plot(tomato_diameter, col = "red", pch = 3)
 ```
-`col` changes the color while `pch` changes the shape of each point, you can also use `hist()` to see the distribution of the data.
+
 ```{r}
+#| label: fig-td-hist
+#| fig-cap: Histogram of Tomato Plant Diameters in mm
 hist(tomato_diameter, col = "coral3", xlab = "Tomato Diameter", main = "Distribution of Tomato Plant Diameter")
 ```
-The `xlab` argument is used to change the label of the x-axis, and to change the y-axis you can use `ylab`. The `main` argument is used to change the title of the graph. More on how to make visualization with R will be discussed in [Chapter @sec-dataviz] and [Chapter @sec-edai].
+The `xlab` argument is used to customize the label of the x-axis, while the y-axis is customized with `ylab`. The argument `main`, is used to change the title of the graph. More on how to make visualization with R will be discussed in [Chapter @sec-dataviz] and [Chapter @sec-edai].
 
 The code used to produce the graph is clear, but as you write more complex codes, readability reduces. The code could improve by writing one or two arguments in a line rather than all in a line. The code above can also be written as:
 
@@ -63,13 +101,13 @@ hist(
 ### Simulating Numbers
 An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the *runif* function generates random numbers from a uniform distribution, *rnorm* for the normal distribution, *rpois* for the Poisson distribution, and *rbinom* for the binomial distribution. These functions belong to a family that also includes functions for calculating density (*d*), distribution functions (*p*), quantiles (*q*), and random deviates (*r*) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
 
-For example we can simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age. To do that we use the function `rnorm()`. In forestry, the distribution of tree diameters is usually a bell-shaped curve. With some codes we will generate such curve @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen @fig-dia-hist-1.
+For example we can simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age. To do that we use the function `rnorm`. In forestry, the distribution of tree diameters is usually a bell-shaped curve. With some codes we will generate such curve @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen @fig-dia-hist-1.
 ```{r}
 teak_diameter <- rnorm(100, mean = 35, sd = 2.3)
 teak_diameter
 ```
 
-The following numbers generated will be different from that which you will get because they are random numbers. The beauty of R its reproducibility. Using the function `set.seed()` captures the number for others to use and replicate your work. Given that the seed number is the same whatever numbers we have can be replicated by another person.
+The numbers generated will be different from that which you will get when you run a similar code because they are random numbers. The beauty of R its reproducibility. Using the function `set.seed` captures the number for others to use and replicate your work. Given that the seed number is the same whatever numbers we have can be replicated by another person.
 
 ```{r}
 set.seed(123)
@@ -82,6 +120,7 @@ tree_diameter
 #| fig-cap: Histogram of simulated tree diameter distribution
 #| fig-subcap: true
 #| layout-ncol: 2
+#| echo: false
 
 hist(
   tree_diameter,
@@ -98,13 +137,18 @@ plot(
   lty = "dashed"
 )
 ```
-`runif()` is used to for generating number of a uniform distribution.
+`runif` is used to for generating number of a uniform distribution. A graph of the distribution is seen @fig-hist-unif. Other functions for generating random numbers 
 ```{r}
 set.seed(123)
-dt <- runif(20, min = 10, max = 20)
+dt <- runif(100, min = 10, max = 20)
 dt
 ```
 
+```{r}
+#| label: fig-hist-unif
+#| echo: false
+hist(dt, xlab = "diameter")
+```
 
 
 |Function|Distribution|Description|
@@ -137,3 +181,8 @@ dt
 :::{.callout-caution}
 There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
 :::
+
+## Exercise
+1. Using `seq` create a sequence of odd numbers between 1 and 100
+
+## Summary
