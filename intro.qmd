@@ -10,7 +10,7 @@ R is particularly favored in research involving statistical modeling, simulation
 
 In academic research, reproducibility is a crucial aspect, and R excels in this area. With some of its packages, users can create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R's associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.
 
-The reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like `quarto` and `RMarkdown` has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow.
+The reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like `Quarto` and `RMarkdown` has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow. This book was developed using quarto
 
 ## R and Data Science
 
