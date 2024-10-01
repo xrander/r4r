@@ -63,8 +63,52 @@ hist(
 ### Simulating Numbers
 An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the *runif* function generates random numbers from a uniform distribution, *rnorm* for the normal distribution, *rpois* for the Poisson distribution, and *rbinom* for the binomial distribution. These functions belong to a family that also includes functions for calculating density (*d*), distribution functions (*p*), quantiles (*q*), and random deviates (*r*) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
 
+For example we can simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age. To do that we use the function `rnorm()`. In forestry, the distribution of tree diameters is usually a bell-shaped curve. With some codes we will generate such curve @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen @fig-dia-hist-1.
+```{r}
+teak_diameter <- rnorm(100, mean = 35, sd = 2.3)
+teak_diameter
+```
+
+The following numbers generated will be different from that which you will get because they are random numbers. The beauty of R its reproducibility. Using the function `set.seed()` captures the number for others to use and replicate your work. Given that the seed number is the same whatever numbers we have can be replicated by another person.
+
+```{r}
+set.seed(123)
+tree_diameter <- rnorm(100, mean = 25, sd = 12.3)
+tree_diameter
+```
+
+```{r}
+#| label: fig-dia-hist
+#| fig-cap: Histogram of simulated tree diameter distribution
+#| fig-subcap: true
+#| layout-ncol: 2
+
+hist(
+  tree_diameter,
+  col = "springgreen3",
+  xlab = "Diameter",
+  main = "Histogram of Tree Diameter"
+)
+
+plot(
+  density(tree_diameter),
+  col = "chocolate3",
+  xlab = "Tree Diameter",
+  lwd = 4,
+  lty = "dashed"
+)
+```
+`runif()` is used to for generating number of a uniform distribution.
+```{r}
+set.seed(123)
+dt <- runif(20, min = 10, max = 20)
+dt
+```
+
+
+
 |Function|Distribution|Description|
-|--------|------------|-----------|
+|:--------|:------------|-----------:|
 |runif| Uniform distribution | Generates random numbers from a uniform distribution |
 |rnorm| Normal distribution | Generates random numbers from a normal distribution |
 |rpois| Poisson distribution | Generates random numbers from a poisson distribution |
