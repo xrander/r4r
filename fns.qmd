@@ -297,17 +297,15 @@ When do you need to write a function?
   - Avoiding code duplication
 
 
+:::{.callout-important}
 ## Getting Help
-Use the `help` function to get help, `?`, and also `args` to see the arguments of functions.
-
-
-
-:::{.callout-caution}
-There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
+Use the `help` function to get help, `?`, and also `args` to see the arguments of functions. There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
 :::
 
 ## Exercise
 1. Using `seq` create a sequence of odd numbers between 1 and 100
 2. Read the documentation of `mean`, `median`, `sd`, and `var`. What does the `is.na` argument does?
-3. Write
+
+
 ## Summary
+Functions are little codes that performs specific functions. Armed with them we can fly on eagles wing. Functions such as `mean`, `length`, `plot` and so on, makes it easier to perform tasks. However, this does not imply that there are functions for all tasks we want to accomplish. In such case, we need to develop our own functions called, custom functions. There are also functions in other packages which extends the capabilities of R.
