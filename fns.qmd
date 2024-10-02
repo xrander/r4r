@@ -225,7 +225,53 @@ table(die_selected)
 ```
 
 ### String Functions
-Some functions in R, makes it easy to work with strings.
+Some functions in R makes it easy to work with strings. Let's create a simple string vector to begin.
+```{r}
+tree_1 <- " Adansonia digitata "
+tree_1
+```
+We can count the number of characters in the object using `nchar`. Know that `nchar` also includes the spaces in the text.
+```{r}
+nchar(tree_1)
+```
+The data can be changed to lower cases by using `tolower`, and changed to upper cases by using `toupper`. Unfortunately, Base R does not provide a function to changed strings to title or sentence cases. You can explore [stringr](https://stringr.tidyverse.org/) by Hadley Wickham and [stringi](https://stringi.gagolewski.com/) by Marek Gagolewski for string processing in R.
+
+```{r}
+tolower(tree_1)
+toupper(tree_1)
+```
+With `trimws` you can remove the white spaces around your strings.
+```{r}
+tree_1 <- trimws(tree_1)
+tree_1
+```
+After trimming the white spaces, the number of characters would reduce.
+```{r}
+nchar(tree_1)
+```
+To extract certain aspect of your text, use `substring`, or `substr`. `substr` takes the argument `x` which your data, `start` which is the integer for the first element of the text to be extracted or replaced, and `stop` which is the integer for the last element of the text to be extracted or replaced. For example, we can extract `Adansonia` from the text with the following code.
+```{r}
+substr(tree_1, start = 1, stop = 9)
+```
+
+`substr` is also used to replace strings in data.
+```{r}
+substr(tree_1, start = 11, nchar(tree_1)) <- "gregorii"
+tree_1
+```
+
+There are times, we would like to split text data, using `strsplit`, we can split the `tree_1` strings to genus and species with the spaces between them.
+```{r}
+strsplit(tree_1, split = " ")
+```
+
+Notice the output, both words now have their inverted comma.
+
+There are still more functions for string manipulation in R, not all will be covered, as this will be a large book volume. However, Concatenation will be covered. To concatenate data using either `paste0` or `paste`. There are almost similar having slight differences. 
+```{r}
+paste(tree_1, " man")
+paste("My best tree species is ", tree_1)
+```
 
 ## Custom Functions {#sec-cust-fns}
 The functions that are preloaded in R are a lot, and they will likely not meet all our statistical or operational needs. For some tasks you want to do, you would need to write your own function. 
@@ -302,9 +348,11 @@ When do you need to write a function?
 Use the `help` function to get help, `?`, and also `args` to see the arguments of functions. There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
 :::
 
-## Exercise
-1. Using `seq` create a sequence of odd numbers between 1 and 100
+## Exercise {.unnumbered}
+1. Using `seq`, create a sequence of odd numbers between 1 and 100.
 2. Read the documentation of `mean`, `median`, `sd`, and `var`. What does the `is.na` argument does?
+3. What is the difference between `substring` and `substr`?
+4. What is the difference between `paste` and `paste0`.
 
 
 ## Summary
