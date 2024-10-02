@@ -1,7 +1,7 @@
 # Functions {#sec-fns}
 
-:::{.callout-caution}
-This section is still under development
+:::{.callout-tip}
+This section is under review.
 :::
 
 In previous chapters, we used functions such as `c`, `as.factors`, and `class` to mention a few. So what are functions? Functions are self contained blocks of code that accomplish a specific task. A function we can relate with camera is taking pictures, and a bicycle is transportation. In R, functions are named objects followed by parentheses. Within the parentheses of functions are contained arguments. Arguments are values passed into a function to get a result or outcomes.
@@ -90,16 +90,17 @@ To see a graph of the *tomato_diameter* object, we can pass it to `plot` functio
 #| fig-cap: Graph generated for tomato diameters using `plot`
 plot(x = tomato_diameter)
 ```
-The graph can be customized by passing values into other arguments within the `plot` function. Arguments such as `col` changes the color while `pch` changes the shape of each point, @fig-plot-cust.You can also use `hist` to see the distribution of the data, @fig-td-hist.
+The graph can be customized by passing values into other arguments within the `plot` function. Arguments such as `col` changes the color while `pch` changes the shape of each point, @fig-plot-cust. You can also use `hist` to see the distribution of the data, @fig-td-hist.
 ```{r}
+
 #| label: fig-plot-cust
-#| fig-cap: simple plot customization
+#| fig-cap: Simple plot customization: point shape changed to cross and color changed to red
 plot(tomato_diameter, col = "red", pch = 3)
 ```
 
 ```{r}
 #| label: fig-td-hist
-#| fig-cap: Histogram of Tomato Plant Diameters in mm
+#| fig-cap: Histogram of Tomato Plant Diameters (mm) showing a normal distribution
 hist(tomato_diameter, col = "coral3", xlab = "Tomato Diameter", main = "Distribution of Tomato Plant Diameter")
 ```
 The `xlab` argument is used to customize the label of the x-axis, while the y-axis is customized with `ylab`. The argument `main`, is used to change the title of the graph. More on how to make visualization with R will be discussed in [Chapter @sec-dataviz] and [Chapter @sec-edai].
@@ -107,6 +108,7 @@ The `xlab` argument is used to customize the label of the x-axis, while the y-ax
 The code used to produce the graph is clear, but as you write more complex codes, readability reduces. The code could improve by writing one or two arguments in a line rather than all in a line. The code above can also be written as:
 
 ```{r}
+#| eval: false
 hist(
   tomato_diameter,
   col = "coral3",
@@ -116,9 +118,9 @@ hist(
 ```
 
 ### Simulating Numbers
-An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the *runif* function generates random numbers from a uniform distribution, *rnorm* for the normal distribution, *rpois* for the Poisson distribution, and *rbinom* for the binomial distribution. These functions belong to a family that also includes functions for calculating density (*d*), distribution functions (*p*), quantiles (*q*), and random deviates (*r*) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
+An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the `runif` function generates random numbers from a uniform distribution, `rnorm` for the normal distribution, `rpois` for the Poisson distribution, and `rbinom` for the binomial distribution. These functions belong to a family that also includes functions for calculating density (**d**), distribution functions (**p**), quantiles (**q**), and random deviates (**r**) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
 
-For example we can simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age. To do that we use the function `rnorm`. In forestry, the distribution of tree diameters is usually a bell-shaped curve. With some codes we will generate such curve @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen @fig-dia-hist-1.
+For example we can simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age. To do that we use the function `rnorm`. In forestry, the distribution of tree diameters is usually a bell-shaped curve. With some codes we will generate such curve, @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen in @fig-dia-hist-1.
 ```{r}
 teak_diameter <- rnorm(100, mean = 35, sd = 2.3)
 teak_diameter
@@ -164,12 +166,17 @@ dt
 ```{r}
 #| label: fig-hist-unif
 #| echo: false
-hist(dt, xlab = "diameter")
+#| fig-cap: Uniformly distributed randomly generated numbers.
+hist(
+  dt,
+  xlab = "diameter",
+  main = "Uniform distribution"
+)
 ```
 
 
 |Function|Distribution|Description|
-|:--------|:------------|-----------:|
+|:--------|:------------|:-----------|
 |runif| Uniform distribution | Generates random numbers from a uniform distribution |
 |rnorm| Normal distribution | Generates random numbers from a normal distribution |
 |rpois| Poisson distribution | Generates random numbers from a poisson distribution |
@@ -326,10 +333,18 @@ z_score <- function(x) {
 Next is using the custom function. We should note that, custom functions are called in a similar way that R's built-in functions are called, the object name followed by parenthesis.
 ```{r}
 z_tomato_2 <- z_score(tomato_diameter)
-z_tree_diameter_2 <- z_score(tree_diameter)
-z_dt_2 <- z_score(dt)
 z_tomato_2
+```
+
+
+```{r}
+z_tree_diameter_2 <- z_score(tree_diameter)
 z_tree_diameter_2
+```
+
+
+```{r}
+z_dt_2 <- z_score(dt)
 z_dt_2
 ```
 Using a custom function does not only make our code more readable, it prevents errors from copying and pasting, and if we need to make a change in out formula, we need to do it in only a place--the function definition.
