@@ -6,13 +6,12 @@ Each data has its own unique structure and requirements influencing the method u
 
 ![Stages of Research](images/research-stages.png){#fig-str fig-align="center"}
 
-There are six different data types in R, four which will be used frequently in this book. In R,  the function `typeof` and `class` are used to check the data type of a variable. The data types are in R are:
+There are six different data types in R, four which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
 
 -   character
 -   factor
--   Numeric
-  +   double
-  +   integer
+-   double    
+-   integer
 -   logical
 -   complex
 
@@ -24,7 +23,7 @@ Characters represent text and are written in R by enclosing contents in quotatio
 "tree"
 ```
 
-We can check the data type of the text *"tree"* with either `class` or `typeof`.
+We can check the data type of the text *"tree"* with either `class()` or `typeof()`.
 
 ```{r}
 typeof("tree")
@@ -48,7 +47,7 @@ Let's look at the example below, we have error because `oak` is an object with n
 class(oak)
 ```
 
-There is a way to check if an objects is a character or not different from using `class` and `typeof`. Using `is.character` function returns a TRUE or FALSE when checking if objects are character data type.
+There is a way to check if an objects is a character or not different from using `class()` and `typeof()`. Using `is.character()` function returns a TRUE or FALSE when checking if objects are character data type.
 
 ```{r}
 is.character("moabi")
@@ -58,7 +57,7 @@ is.character("2")
 
 ## Factors {#sec-fcts}
 
-Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. They can either be ordered (ordinal) or unordered (nominal). The function `factor` is used to create factors in R. Factors are built on integers.
+Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. They can either be ordered (ordinal) or unordered (nominal). The function `factor()` is used to create factors in R. Factors are built on integers.
 
 ### Nominal Factor
 
@@ -87,7 +86,7 @@ When we print this variables, notice `Levels` as part of the print with the cate
 ```{r}
 class(tree_names)
 ```
-If we use the `typeof` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
+If we use the `typeof()` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
 
 ```{r}
 typeof(tree_names)
@@ -121,7 +120,7 @@ On printing the variable we can see that:
 *   The order arrangement of the levels when we print the follows the order specified in the argument `levels`,
 *   The value neutral indicated in levels but not in the data collected is still printed as part of the levels. This indicate that factors are indeed predefined even if data on a particular factor is not collected. 
 
-We can perform a quick check on the frequency of each category using the function `table`.
+We can perform a quick check on the frequency of each category using the function `table()`.
 
 ```{r}
 table(satisfaction_level)
@@ -133,7 +132,7 @@ The result shows `neutral` as having zero, meaning that no respondent choose neu
 we have been using functions a lot now without properly defining what functions are. Just keep in mind that functions are little programs or block of codes that perform specified actions. More will be discussion on that in @sec-fns.
 :::
 
-To confirm if a variable is a factor data type use the `is.factor` . Let's create a new survey response, but this time it won't be wrapped in the factor variable.
+To confirm if a variable is a factor data type use the `is.factor()` . Let's create a new survey response, but this time it won't be wrapped in the factor variable.
 
 ```{r}
 satisfaction_level_chr <- c("very satisfied", "satisfied", "satisfied",
@@ -164,7 +163,7 @@ When divided by another integer or another numeric data type the result is usual
 typeof(25L / 5L)
 ```
 
-Just like characters and factors, we can also check if a particular object is an integer using `is.integer`.
+Just like characters and factors, we can also check if a particular object is an integer using `is.integer()`.
 
 ```{r}
 is.integer(5)
@@ -182,7 +181,7 @@ When a mathematical operation is performed on a double, a double is return
 ```{r}
 typeof(1.5/3)
 ```
-To check if an object is a double we use its `is._` variant, in this case `is.double`
+To check if an object is a double we use its `is._` variant, in this case `is.double()`
 
 ```{r}
 is.double(2.9)
@@ -193,7 +192,7 @@ A sequence of integers or doubles can be created using `:` with the start on the
 ```{r}
 1:15
 ```
-As `is.integer` returns true for all integers and `is.double` returns true for doubles, `is.numeric` returns true for all both types of data.
+As `is.integer()` returns true for all integers and `is.doubl()e` returns true for doubles, `is.numeric()` returns true for all both types of data.
 ```{r}
 is.numeric(5L)
 is.numeric(3.5)
@@ -216,7 +215,7 @@ In [Chapter @sec-comp], we saw that comparison operators always returns a logica
 ```{r}
 class(5 > 2)
 ```
-`5 > 2` is first evaluated which returns `TRUE`, then the `class` of the result is checked which returns `TRUE`. In R, the deepest of the nested expressions are evaluated first and evaluated outwardly to the umbrella expression. We can also check for a logical value using `is.logical`
+`5 > 2` is first evaluated which returns `TRUE`, then the `class()` of the result is checked which returns `TRUE`. In R, the deepest of the nested expressions are evaluated first and evaluated outwardly to the umbrella expression. We can also check for a logical value using `is.logical()`
 
 ```{r}
 is.logical(20 < 3)
@@ -233,7 +232,7 @@ We will not use the complex data type and its unlikely to analyze these type of 
 typeof(3i)
 typeof(5 + 2i)
 ```
-Similar to other data types, we can confirm if a data is a complex by using `is.complex`
+Similar to other data types, we can confirm if a data is a complex by using `is.complex()`
 ```{r}
 is.complex(5i)
 ```
@@ -249,7 +248,7 @@ tree_height
 
 typeof(tree_height)
 ```
-The above can be changed to a double using `as.double` and back to integer using `as.integer`
+The above can be changed to a double using `as.double()` and back to integer using `as.integer()`
 
 ```{r}
 tree_height_2 <- as.double(tree_height)
@@ -264,7 +263,7 @@ tree_names <- c("terminalia", "eucalyptus", "iroko", "oak")
 class(tree_names)
 ```
 
-To change the above to factor data type we'll use the `as.factor` function.
+To change the above to factor data type we'll use the `as.factor()` function.
 
 ```{r}
 tree_names_fct <- as.factor(tree_names)
@@ -272,14 +271,14 @@ tree_names_fct <- as.factor(tree_names)
 class(tree_names_fct)
 ```
 
-We can change this back to character by using `as.character`.
+We can change this back to character by using `as.character()`.
 
 ```{r}
 tree_names_chr <- as.character(tree_names_fct)
 class(tree_names_chr)
 ```
 
-`as.character` can be used to coerce any data type to a character
+`as.character()` can be used to coerce any data type to a character
 
 ```{r} 
 tree_height
@@ -292,7 +291,7 @@ tree_height_chr <- as.character(tree_height)
 class(tree_height_chr)
 ```
 
-Characters can be changed back to numeric or double data type using the `as.double`, `as.integer` or `as.numeric` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. we get a warning when there's not a digit in the object being converted.
+Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. we get a warning when there's not a digit in the object being converted.
 
 ```{r}
 tree_height <- c(10, 15, 20, "25m")
@@ -339,4 +338,4 @@ There are other data types not covered such as:
 
 ## Summary
 
-Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class`,  `typeof` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
+Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
