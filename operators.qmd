@@ -239,7 +239,7 @@ Lastly, we covered the assignment operator used to reference or bind values to n
 Now that we've got a good understanding of some of the basic R syntax and the operators, we will move on to @sec-data-types to learn about the data types in R.
 
 ## Exercise {.unnumbered}
-### Part 1: Arithmetic Operators
+### Part 1: Arithmetic Operators {.unnumbered}
 
 1. Perform the following calculations in R:
 
@@ -261,7 +261,7 @@ Now that we've got a good understanding of some of the basic R syntax and the op
     e. x %% y (remaining trees after dividing by the number of plots)
     f. x ^ y (exponent for more complex calculations)
 
-### Part 2: Assignment Operators
+### Part 2: Assignment Operators {.unnumbered}
 
 4.  Assign the value `25` (representing the number of endangered species spotted) to a variable named `species`. Now, assign the sum of `species` and `12` (representing newly discovered species) to a variable named `total_species`. What is the value of `total_species`?
 
@@ -269,7 +269,7 @@ Now that we've got a good understanding of some of the basic R syntax and the op
 
 6.  Assign the value of `total_species` (from Question 4) to a new variable named `species_count` using the `<-` operator.
 
-### Part 3: Comparison Operators
+### Part 3: Comparison Operators {.unnumbered}
 
 7.  Consider the following variables: `tree_height1 = 15` (meters) and `tree_height2 = 12`. Using comparison operators, answer whether the following statements are TRUE or FALSE:
 
@@ -285,7 +285,7 @@ Now that we've got a good understanding of some of the basic R syntax and the op
     a. Check if `fertilizer_applied` is less than `recommended_fertilizer`.
     b. Check if `fertilizer_applied` is equal to `recommended_fertilizer`.
     c. Check if `recommended_fertilizer` is greater than or equal to `fertilizer_applied`.
-### Part 4: Logical Operators (&, |, !)
+### Part 4: Logical Operators (&, |, !) {.unnumbered}
 
 9. Consider the following variables: `irrigation = TRUE` and `pesticide_use = FALSE`. Evaluate the following expressions:
 
