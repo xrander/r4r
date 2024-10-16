@@ -84,7 +84,7 @@ Try these commands in R's console:
 
 Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!` (not).
 
-### & (AND) operator
+### AND (&), | (OR), and !(NOT) Operators.
 
 -   `&` operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns false
 
@@ -133,6 +133,22 @@ You can also use parentheses to enclose conditions when testing multiple conditi
 ```{r}
 (20 < 15) | (30 > 10)
 ```
+
+-   `!` is used to negate, and returns the opposite of a result. This is an operator that can be very useful in complex operations. You will see this being used as we continue.
+
+| Conditions | result |
+|:-----------|-------:|
+| !TRUE | FALSE |
+| !FALSE | !TRUE |
+
+: Result from negating logicals using `!` operator {#tbl-not-ope .striped .hover}
+
+```{r}
+!TRUE
+
+!((20 < 15) | (30 > 10))
+```
+
 
 ## Assignment Operators {#sec-ass}
 
