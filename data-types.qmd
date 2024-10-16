@@ -1,12 +1,12 @@
 # Data Types in R {#sec-data-types}
 
-Researchers regardless of the field are analysts working with various forms of data, which can be in form of survey responses, secondary data, field or lab measurements. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a ranking or category such as yes/no responses, income level or marital status. Before proceeding with any analysis, it is crucial to understand the types of data we are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
+ One of the most common source of error when using R, or performing analysis in general regardless of the platform or software used is [wrong, inappropriate or inconsistent data types](https://statsandr.com/blog/top-10-errors-in-r/). Understanding data types in R is fundamental for effective data analysis and manipulation. Some operations and analysis are possible because of specific types of data, getting this wrong will give unexpected results. Researchers regardless of the field are analysts working with various forms of data, which can be in form of survey responses, secondary data, field or lab measurements. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a ranking or category such as yes/no responses, income level or marital status. Before proceeding with any analysis, it is crucial to understand the types of data we are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
 
 Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures we can manipulate, analyze and interpret the findings from our data effectively. Here, we will explore the data types in R
 
 ![Stages of Research](images/research-stages.png){#fig-str fig-align="center"}
 
-There are six different data types in R, four which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
+There are six different data types in R, five which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
 
 -   character
 -   factor
@@ -55,13 +55,15 @@ is.character(2)
 is.character("2")
 ```
 
+Do not be surprised when you import some data into R and see that numbers are characters, so ensure you confirm that using all the `is._` variations of functions you will see in this chapter.
+
 ## Factors {#sec-fcts}
 
-Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. They can either be ordered (ordinal) or unordered (nominal). The function `factor()` is used to create factors in R. Factors are built on integers.
+Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. A good example of data that can be represented as factors are survey response like educational status, income level, satisfaction rating and so on. There are two types of factors or categorical data. We have ordered (ordinal) categorical data or unordered (nominal) categorical data. The function `factor()` is used to create factors in R.
 
 ### Nominal Factor
 
-These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example can be a finite number of tree species in an experimental setup, different types of fertilizers for crops, types of poultry birds
+These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example can be a finite number of tree species in a plantation experimental setup, testing the effect of different different types of fertilizers on the growth of trees. Another example can be the type of birds according to purpose in a poultry
 
 ```{r}
 #| label: nominal-factor
@@ -79,14 +81,21 @@ fertilizer
 ```
 
 ::: {.callout-tip appearance="simple"}
-The function `c` used above is used to combine values.
+The function `c()` used above is used to combine values.
 :::
+When we print this variables, notice that `Levels` is included as part of the print with the categories arranged in alphabetical order. To see the levels of a factor object pass the object to the function `levels()`
 
-When we print this variables, notice `Levels` as part of the print with the categories arranged in alphabetical order.
+```{r}
+levels(tree_names)
+```
+
+We can check the class of these objects and confirm that they are indeed factors.
 ```{r}
 class(tree_names)
+class(poultry_birds)
+class(fertilizer)
 ```
-If we use the `typeof()` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
+When you use the `typeof()` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
 
 ```{r}
 typeof(tree_names)
@@ -120,7 +129,7 @@ On printing the variable we can see that:
 *   The order arrangement of the levels when we print the follows the order specified in the argument `levels`,
 *   The value neutral indicated in levels but not in the data collected is still printed as part of the levels. This indicate that factors are indeed predefined even if data on a particular factor is not collected. 
 
-We can perform a quick check on the frequency of each category using the function `table()`.
+WWe can perform a quick check on the frequency of each category using the function `table()`.
 
 ```{r}
 table(satisfaction_level)
@@ -144,6 +153,12 @@ satisfaction_level_chr <- c("very satisfied", "satisfied", "satisfied",
 ```{r}
 is.factor(satisfaction_level_chr)
 is.factor(satisfaction_level)
+```
+
+We can also confirm if a factor is ordered or not using the function `is.ordered()`
+
+```{r}
+is.ordered(satisfaction_level)
 ```
 
 ## Numeric Data type
@@ -336,6 +351,44 @@ There are other data types not covered such as:
 
   [Hands-On Programming with R by Garret Grolemund](https://rstudio-education.github.io/hopr/r-objects.html) explain the concepts of R in a game-like approach using deck of cards.
 
-## Summary
+## Summary {.unnumbered}
 
 Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
+
+## Exercise {.unnumbered}
+
+1. Create a character variable to store the name of a tree species, `Pinus sylvestris`.
+
+  * Verify that this is a character variable using the class() function. What data type does R return?
+
+2. Assign the total land area of a forest, 2500 hectares, to a variable called `forest_area`.
+```{r}
+forest_area <- 2500
+```
+
+Check the data type of `forest_area` using `class()`. Is it numeric or integer?
+
+3. The number of plots in a nature reserve is 15. Store this as an integer in the variable plot_count.
+```{r}
+plot_count <- 15L
+```
+  
+  * Confirm that plot_count is an integer using the is.integer() function. What does R return?
+
+4. Create a logical variable `protected_area `that stores whether a certain plot of land is a protected area (TRUE).
+
+  *  Use the class() function to verify that protected_area is logical.
+  
+5. Suppose the types of vegetation in a nature reserve can be categorized into "forest", "grassland", and "wetland". Create a factor variable `vegetation_type` using these categories.
+
+  * Check the structure of the `vegetation_type` variable using str(). What data type is returned?
+
+
+Part 2: Data Type Conversions
+6.  Convert the numeric variable `forest_area` (from Question 2) to a character and assign it to a new variable `forest_area_char`. Verify the data type of `forest_area_char`.
+
+7.  Convert the logical variable `protected_area` (from Question 4) to numeric. What value does R assign when you convert TRUE to a number?
+
+8.  The variable `tree_species` (from Question 1) contains a character string. Convert it to a factor and check its structure using str().
+
+9. Convert the `vegetation_type` factor variable (from Question 5) to numeric. What values are assigned to each level of the factor?
