@@ -230,7 +230,7 @@ moabi < ekki
 ekki > obeche
 ```
 
-## Summary
+## Summary {.unnumbered}
 
 In this chapter, you've been introduced to some basic R syntax and the operators. The arithmetic operators are used for mathematical operations, such as addition, multiplication, and division to mention a few. We covered the comparison operator which include `<`, `<=`, `==`, `>=` and `>` for comparing values as well as their combination with logical operators like `&` and `|`.
 
