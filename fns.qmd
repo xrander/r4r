@@ -4,19 +4,28 @@
 This section is under review.
 :::
 
-In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` to mention a few were used. So what are functions? Functions are self contained blocks of code that accomplish a specific task. A function we can relate with a camera is taking pictures, and a bicycle is transportation. In R, functions are named objects followed by parentheses. Within the parentheses of functions are contained arguments. Arguments are values passed into a function to get a result or outcomes.
+In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` to mention a few were used. But what exactly are functions, and why are they important? Functions in R are self-contained blocks of code designed to perform specific tasks.
 
-For example to record the diameter (mm) of tomato plants, use the function `c()`. This function combine values into a list or vector.
+Think of a function like a kitchen knife—its purpose is to cut, and how you use it depends on the task at hand. For example, the function `c()` stands for "concatenate" or "combine," and its role is to combine objects into a list or vector.
+
+We use functions because they simplify our work and make analyses more efficient. If we make mistakes, functions allow for easy corrections and re-use. In R, function names are usually verbs, representing actions to be taken. Functions are named objects followed by parentheses. Inside these parentheses are arguments, which are the values passed to the function to control how it operates and the type of result it returns.
+
+Just like how a knife can cut onions in different ways—rings, half-moons, juliennes, dice, or rough chops—arguments allow us to specify the exact type of result we want from a function. Each variation produces a different output, but the underlying tool (the function) remains the same.
+
+As an example, let's take an hypothetical tomato nursery experiment. In this experiment, we get some tomato fruit and measure their diameter. To record the diameter, we use the concatenation, `c()` function.
+
 ```{r}
 tomato_diameter <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-You can print out the plants record by using the function `print()`
+There are two ways to see the diameter collected. The first is using the `print()` function
+
 ```{r}
 print(tomato_diameter)
 ```
 
-Alternatively, writing the object name on the console and pressing `enter` on your keyboard would return records
+The other option is by calling the object. This automatically print the result. It's more common you see people do this than using the `print()` function, although, `print()` is still used a lot.
+
 ```{r}
 tomato_diameter
 ```
@@ -40,10 +49,11 @@ The above can also be written as
 `mean(tomato_diamter)`
 ```
 
-. 
 `x` here is the keyword argument that the function takes and in this case is the data *tomato_diameter*. To know more about any function use the function `help()` or type a question mark followed by the question name. So we have `help(mean)` or `?mean`.
 
-To check the median of the data use -- you guessed it right, `median()`. There's also `sd()`, `var()`, and `cor()` for checking the standard deviation, variance and correlation respectively.
+To check the median of the data use (you guessed it right) `median()`. We also have `sd()`, `var()`, and `cor()` for estimating the standard deviation, variance and correlation respectively.
+
+
 ```{r}
 median(tomato_diameter)
 sd(tomato_diameter)
@@ -100,7 +110,10 @@ The graph can be customized by passing values into other arguments within the `p
 ```{r}
 
 #| label: fig-plot-cust
-#| fig-cap: Simple plot customization: point shape changed to cross and color changed to red
+#| fig-cap: |
+#|    Simple plot customization: point shape changed to cross and color changed to red
+
+
 plot(tomato_diameter, col = "red", pch = 3)
 ```
 
@@ -181,6 +194,8 @@ hist(
 ```
 
 Other functions for generating random numbers according to distribution are:
+
+
 |Function|Distribution|Description|
 |:--------|:------------|:-----------|
 |runif| Uniform distribution | Generates random numbers from a uniform distribution |
@@ -200,7 +215,7 @@ Other functions for generating random numbers according to distribution are:
 |qpois| Poisson distribution | Computes the quantiles of a poisson distribution |
 |qbinom| Binomial distribution | Computes the quantiles of a binomial distribution |
 
-: Functions for generating random numbers of data in R {#tbl-distro-funs}
+: Functions for generating random numbers of data in R {#tbl-distro-funs tbl-colwidths="[10, 25, 65]"}
 
 ### Sampling with sample()
 Another important function for randomization is using `sample()`. `sample()` is used for selecting values at random from a set of data. Let's take the example below:
