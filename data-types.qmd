@@ -112,8 +112,10 @@ satisfaction_level <- factor(c("very satisfied", "satisfied", "satisfied",
                                "dissatisfied", "very satisfied", "very dissatisfied",
                                "very satisfied", "dissatisfied"), 
                              levels = c("very dissatisfied", "dissatisfied",
-                                        "neutral", "satisfied", "very satisfied")
+                                        "neutral", "satisfied", "very satisfied"),
+                             ordered = TRUE
                 )
+
 ```
 
 
@@ -357,9 +359,7 @@ Data types in R include character, factor, double, integer, and logical. This da
 
 ## Exercise {.unnumbered}
 
-1. Create a character variable to store the name of a tree species, `Pinus sylvestris`.
-
-  * Verify that this is a character variable using the class() function. What data type does R return?
+1. Create a character variable to store the name of a tree species, `Pinus sylvestris`. Verify that this is a character variable using the class() function. What data type does R return?
 
 2. Assign the total land area of a forest, 2500 hectares, to a variable called `forest_area`.
 ```{r}
@@ -373,18 +373,12 @@ Check the data type of `forest_area` using `class()`. Is it numeric or integer?
 plot_count <- 15L
 ```
   
-  * Confirm that plot_count is an integer using the is.integer() function. What does R return?
+Confirm that plot_count is an integer using the is.integer() function. What does R return?
 
-4. Create a logical variable `protected_area `that stores whether a certain plot of land is a protected area (TRUE).
-
-  *  Use the class() function to verify that protected_area is logical.
+4. Create a logical variable `protected_area `that stores whether a certain plot of land is a protected area (TRUE). Use the class() function to verify that protected_area is logical.
   
-5. Suppose the types of vegetation in a nature reserve can be categorized into "forest", "grassland", and "wetland". Create a factor variable `vegetation_type` using these categories.
+5. Suppose the types of vegetation in a nature reserve can be categorized into "forest", "grassland", and "wetland". Create a factor variable `vegetation_type` using these categories. Check the structure of the `vegetation_type` variable using str(). What data type is returned?
 
-  * Check the structure of the `vegetation_type` variable using str(). What data type is returned?
-
-
-Part 2: Data Type Conversions
 6.  Convert the numeric variable `forest_area` (from Question 2) to a character and assign it to a new variable `forest_area_char`. Verify the data type of `forest_area_char`.
 
 7.  Convert the logical variable `protected_area` (from Question 4) to numeric. What value does R assign when you convert TRUE to a number?
