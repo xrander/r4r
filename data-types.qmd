@@ -63,7 +63,7 @@ Factors are used to represent categorical data in R. In R, factors are always le
 
 ### Nominal Factor
 
-These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, nursery plantation site, and so on.
+These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, nursery plantation site, and so on. Below are three data, one for tree names, another for poultry birds according to use, and the last is fertilizer.
 
 ```{r}
 #| label: nominal-factor
@@ -102,7 +102,7 @@ typeof(tree_names)
 ```
 
 ###   Ordinal Factors
-Ordinal factors are somewhat different from nominal or regular factors. When the nominal factors above where created, we did it without specifying a level argument, when the level is specified, we are indicating a rank or degree of distance between the factors. For example let's construct a hypothetical survey response on the satisfaction_level of having trees cut down for other needs other than conservation:
+Ordinal factors are somewhat different from nominal or regular factors. When the nominal factors above where created, we did it without specifying a level argument, when the level is specified, we are indicating a rank or degree of distance between the factors. An example is month, days of the week, satisfaction level, employee's position in an organization and so on. Let's construct a hypothetical survey response on the satisfaction level of having trees cut down for other needs other than conservation:
 
 
 ```{r}
