@@ -63,7 +63,7 @@ Factors are used to represent categorical data in R. In R, factors are always le
 
 ### Nominal Factor
 
-These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example can be a finite number of tree species in a plantation experimental setup, testing the effect of different different types of fertilizers on the growth of trees. Another example can be the type of birds according to purpose in a poultry
+These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, nursery plantation site, and so on.
 
 ```{r}
 #| label: nominal-factor
