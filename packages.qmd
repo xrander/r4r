@@ -5,7 +5,7 @@ This section is still under development
 :::
 In @sec-fns we saw numerous functions being used. There are yet many functions in R that are not part of base R, created by the R community to assist with various analyses. This is similar to third-party mobile applications or software like WhatsApp, Signal and Telegram, which serve similar functions to the default SMS app on mobile devices. Of course they have extended capabilities like Video Call, read receipt, availability status, and so on. These mobile application are downloaded from Apple Store or Play Store. Packages in R are similar to this and are hosted by [CRAN](https://cran.r-project.org/). A popular package in the R community is the `tidyverse` metapackage, which is a collection of multiple packages such as `dplyr`, `ggplot2` and so on. We will use the tidyverse for most part of this training. 
 
-:::{.callout-note appearance-simple}
+:::{.callout-note}
 To see the statistics of downloaded R packages can be found check [here](https://www.datasciencemeta.com/rpackages).
 :::
 ## Installing Packages in R
