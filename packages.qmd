@@ -51,3 +51,10 @@ dplyr::lag()
 :::{.callout-important appearance=minimal}
 For every R session you have to load the package you want to use. Installation of packages only needs to be once.
 :::
+
+## Summary {.unnumbered}
+Here, we introduces R packages as essential tools developed by the R community, similar to third-party mobile applications with extended functionality beyond standard options. R packages, hosted on CRAN, enable users to perform diverse analyses in R.
+
+To install packages, use install.packages(), which downloads the package from CRAN, requiring an internet connection. Once installed, you can load a package using library() to access its functions. Alternatively, specific functions from a package can be called directly without loading the full package, which is helpful when different packages contain functions with the same names.
+
+**A reminder**: loading packages must be repeated each session, while installation only needs to happen once.
