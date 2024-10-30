@@ -7,6 +7,7 @@ book:
   date: "2024-09-11"
   chapters:
     - index.qmd
+    - preface.qmd
     - intro.qmd
     - part: the-basics.qmd
       chapters:
