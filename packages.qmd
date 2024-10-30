@@ -3,58 +3,136 @@
 :::{.callout-caution appearance=minimal}
 This section is still under development
 :::
-In @sec-fns we saw numerous functions being used. There are yet many functions in R that are not part of base R, created by the R community to assist with various analyses. This is similar to third-party mobile applications or software like WhatsApp, Signal and Telegram, which serve similar functions to the default SMS app on mobile devices. Of course they have extended capabilities like Video Call, read receipt, availability status, and so on. These mobile application are downloaded from Apple Store or Play Store. Packages in R are similar to this and are hosted by [CRAN](https://cran.r-project.org/). A popular package in the R community is the `tidyverse` metapackage, which is a collection of multiple packages such as `dplyr`, `ggplot2` and so on. We will use the tidyverse for most part of this training. 
 
-:::{.callout-note}
-To see the statistics of downloaded R packages can be found check [here](https://www.datasciencemeta.com/rpackages).
+In @sec-fns, we saw that R comes with many built-in functions (base R, utils and stats package functions). However, the true power of R lies in its extensive ecosystem of additional packages created by the R community. These packages extend R's capabilities, similar to how third-party apps like WhatsApp, Telegram or Signal extend a phone's basic messaging capabilities with features like video calls, read receipts, status updates and so on.
+
+## Package Repositories
+### CRAN (Primary Repository)
+Like Apple store and Play store, most R packages are hosted on [CRAN (Comprehensive R Archive Network)](https://cran.r-project.org/), R's official package repository. [CRAN](https://cran.r-project.org/) provides rigorous quality control, ensuring packages meet strict guidelines for reliability and documentation. The [tidyverse](https://www.tidyverse.org/), for example, is a popular meta-package from [CRAN](https://cran.r-project.org/) that includes several essential packages for data science like [dplyr](https://dplyr.tidyverse.org/), [ggplot2](https://ggplot2.tidyverse.org/), and others, which we'll use extensively in this training.
+
+#### Installing Packages from CRAN
+To install packages from CRAN, use `install.packages()`:
+
+```{r}
+#| eval: false
+# Install the tidyverse package
+
+install.packages("tidyverse")
+```
+
+:::{.callout-important appearance="minimal"}
+Package installation requires an internet connection and only needs to be done once per package.
 :::
-## Installing Packages in R
-Installing packages in R requires an internet connection. To install packages use the command `install.packages()`.
+
+### Alternative Repositories
+
+#### Bioconductor
+[Bioconductor](https://www.bioconductor.org/) is a specialized repository focusing on packages for bioinformatics and genomic data analysis. It maintains its own installation system:
 
 ```{r}
 #| eval: false
 
-# installing the tidyverse package
-install.packages("tidyverse")
+
+# Install Bioconductor's package manager
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# Install Bioconductor packages
+BiocManager::install("DESeq2")  # Example package for RNA-seq analysis
 ```
 
-The command above downloads the package from CRAN's repository.
+#### GitHub and Other Development Platforms
+Many R package developers share their work on platforms like GitHub, GitLab, or Bitbucket before official CRAN submission or for experimental features. To install packages from GitHub, you'll need the [devtools](https://devtools.r-lib.org/) or [remotes](https://remotes.r-lib.org/) package:
 
-## Making Use of Downloaded Package
-You can make use of packages you install by:
--   Using the `library` function,
--   Declaring packages in use.
+```{r}
+#| eval: false
+
+# Install devtools first if you haven't
+install.packages("devtools")
+```
+
+Using `devtools`
+```{r}
+#| eval: false
+
+# Install a package from GitHub
+# Format: devtools::install_github("username/repository")
+devtools::install_github("clauswilke/ggtextures")  # Latest the ggtexture package
+
+# Specify a specific branch, tag, or commit
+devtools::install_github("username/repository@branch")
+devtools::install_github("username/repository@v1.0.0")  # Install a specific version
+```
+
+:::{.callout-note}
+For package download statistics, visit [R Package Stats](https://r-universe.dev/packages).
+:::
 
 
-### Using the Library Function
+:::{.callout-important appearance="minimal"}
+While alternative repositories offer cutting-edge or specialized packages, CRAN remains the primary and most reliable source for R packages. Always prefer CRAN versions for production environments unless you specifically need features from other sources.
+:::
+
+## Using Installed Packages
+There are two main ways to use installed packages:
+
+1. \textbf{Loading Entire Packages}
+Use the `library()` function to load all functions from a package:
 ```{r}
 #| eval: false
 library(tidyverse)
 ```
 
-If you see an error like:
+If you see this error:
 
-> `Error in library(tidyverse) : there is no package called 'tidyverse'`
+> Error in library(tidyverse) : there is no package called 'tidyverse'
 
-it means the package is not installed, and you should install it using `install.packages(tidyverse)`.
+It means the package needs to be installed first using `install.packages("tidyverse")`.
 
-### Declaring Packages in Use
-Sometimes we only need a function from a package and not the whole thing. In such scenario we do not need to load the package but declare it once. Declaring packages is also important important when you have packages with conflicting function/object names, explicit declaration of package in such scenario ensures you get the result you want. For example, the `dplyr` and the `stats` package both have the function lag() and filter().
+2. \textbf{Using Specific Functions}
+To use individual functions without loading the entire package, use the package name followed by `::` and the function name:
+
 ```{r}
 #| label: declaring-package
 #| eval: false
-
-stats::lag()
-dplyr::lag()
+stats::lag()    # Use lag() from stats package
+dplyr::lag()    # Use lag() from dplyr package
 ```
 
-:::{.callout-important appearance=minimal}
-For every R session you have to load the package you want to use. Installation of packages only needs to be once.
+This method is particularly useful when different packages have functions with the same name (like `lag()` and `filter()` in [dplyr](https://dplyr.tidyverse.org/) and [stats](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html)).
+
+:::{.callout-important appearance="minimal"}
+Remember: While package installation is a one-time process, you must reload packages with `library()` in each new R session.
 :::
 
+## Common Package Installation Errors
+When installing R packages, you might encounter various errors. Here's how to identify and resolve the most common ones:
+
+1. \textbf{Forgetting the quotation marks}.
+This is common, especially amongst beginners
+```{r}
+#| error: true
+
+install.packages(tidyverse)
+```
+Fix: 
+- Wait for the auto-complete option and select the package, it automatically inserts the quotation marks.
+- Manually enclose the package name in quotation marks.
+
+2. \textbf{Permission Errors}
+This typically occurs when R doesn't have write permissions to the installation directory.
+
+Fix:
+
+- Windows: Run RStudio as administrator
+- Linux/Mac:
+```{r}
+#| eval: false
+install.packages("tidyverse", lib = "~/R/library")
+```
+
+Or use `sudo R` in terminal (not recommended)
+
+
 ## Summary {.unnumbered}
-Here, we introduces R packages as essential tools developed by the R community, similar to third-party mobile applications with extended functionality beyond standard options. R packages, hosted on CRAN, enable users to perform diverse analyses in R.
-
-To install packages, use install.packages(), which downloads the package from CRAN, requiring an internet connection. Once installed, you can load a package using library() to access its functions. Alternatively, specific functions from a package can be called directly without loading the full package, which is helpful when different packages contain functions with the same names.
-
-**A reminder**: loading packages must be repeated each session, while installation only needs to happen once.
+R packages extend base R's functionality, providing specialized tools for various analyses. They're primarily hosted on CRAN and can be installed using `install.packages()`. After installation, packages can be used either by loading them entirely with `library()` or by accessing specific functions using the `package::function` syntax. While installation is permanent, packages must be reloaded in each new R session.
