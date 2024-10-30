@@ -71,18 +71,6 @@ Despite R's strengths, there are scenarios where it may not be the best fit:
 
 Each of these alternatives has its strengths, and the choice depends on the project requirements, performance needs, and user expertise.
 
-## Goal of the book
-
-The primary goal of R for Research is to provide a clear and practical guide to using R for data analysis in research settings. This book aims to bridge the gap between theoretical knowledge and practical application, equipping readers with the skills needed to handle complex datasets, perform statistical analyses, and create insightful visualizations. Whether you are a beginner or have prior programming experience, this book will help you leverage the full power of R to streamline your research process and make data-driven decisions with confidence.
-
-By the end of this book, readers will have:
-
--  A solid understanding of R’s core functionalities for data analysis.
--  Proficiency in using key R packages for data manipulation, visualization, and statistical modeling.
--  Practical experience through real-world examples and exercises that are relevant to various research fields.
--  The ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
-
-Ultimately, R for Research is designed to enhance your analytical skills, helping you transform raw data into meaningful insights that drive impactful research.
 
 
 ## Scope, Limitation, and Expectations
