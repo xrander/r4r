@@ -381,7 +381,9 @@ When do you need to write a function?
 
 :::{.callout-important}
 ## Getting Help
-Use the `help()` function to get help, `?`, and also `args()` to see the arguments of functions. There are more than 2300 functions loaded when an R session starts and that's a lot. Some will be remembered and some forgotten. You are not expected to remember these functions, even the people that developed these functions forget some of the function and their arguments. Remember there always resources for you
+Use the `help()` function and `?` to get help. Also, use `args()` to see the arguments of functions. Just to let you know, there are more than 2300 functions loaded when an R session starts and that's a lot. You will remember some and forget some, but as keep using R they become a part of you.
+
+You are not expected to remember these functions, use `help()`, `?` and `args` and check online for resources when you neeed help.
 :::
 
 ## Exercise {.unnumbered}
