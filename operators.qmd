@@ -84,7 +84,7 @@ Try these commands in R's console:
 
 Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!` (not).
 
-### AND (&), | (OR), and !(NOT) Operators.
+## AND (&), | (OR), and !(NOT) Operators.
 
 -   `&` operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns false
 
@@ -285,6 +285,7 @@ Now that we've got a good understanding of some of the basic R syntax and the op
     a. Check if `fertilizer_applied` is less than `recommended_fertilizer`.
     b. Check if `fertilizer_applied` is equal to `recommended_fertilizer`.
     c. Check if `recommended_fertilizer` is greater than or equal to `fertilizer_applied`.
+
 ### Part 4: Logical Operators (&, |, !) {.unnumbered}
 
 9. Consider the following variables: `irrigation = TRUE` and `pesticide_use = FALSE`. Evaluate the following expressions:
