@@ -1,21 +1,5 @@
-# R for Research {.unnumbered}
-
-# Welcome {.unnumbered}
-
-The primary goal of R for Research is to provide a clear and practical guide to using R for data analysis in research settings. This book aims to bridge the gap between theoretical knowledge and practical application, equipping readers with the skills needed to handle complex datasets, perform statistical analyses, and create insightful visualizations. Whether you are a beginner or have prior programming experience, this book will help you leverage the full power of R to streamline your research process and make data-driven decisions with confidence.
-
-By the end of this book, readers will have:
-
--  A solid understanding of R’s core functionalities for data analysis.
-
--  Proficiency in using key R packages for data manipulation, visualization, and statistical modeling.
-
--  Practical experience through real-world examples and exercises that are relevant to various research fields.
-
--  The ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
-
-
-Ultimately, [R for Research]{https://r4r.olamideadu.com/} is a beginner oriented book designed to introduce you to data analysis with R, helping you transform raw data into meaningful insights that drive impactful research.
+# Welcome{.unnumbered}
+Welcome to **R for Research**, a book written to give you a strong introduction to R programming language and its uses in research workflow. The primary goal of **R for Research** is to provide a clear and practical guide to using R for your entire research workflow. While R is practically seen as a programming language for statistical computing, it should be noted that since the development of R Markdown [(Yihui Xie, 2012)](https://bookdown.org/yihui/rmarkdown/), R use have extended beyond statistical analysis. Using R Markdown package within RStudio IDE, you can have a word-processor and statistical analysis tool. 
 
 
 This book will be under development for a while; expected completion should be around early 2026. Do not be surprised if a lot of the chapters do not cohere. You are welcome to open to an [issue on github](https://github.com/xrander/r4r/issues) if you find anything that could improve the work.

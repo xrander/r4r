@@ -59,18 +59,8 @@ Despite R's strengths, there are scenarios where it may not be the best fit:
 
 -   SPSS: SPSS is another statistical tool widely used in academic research and business analytics. Like SAS, it’s user-friendly for statistical analysis but is expensive and less flexible than R or Python.
 
--   SQL: For tasks that involve managing and querying large databases, SQL is often the better tool. It is not a replacement for R’s statistical capabilities but excels at managing, querying, and manipulating relational databases.
-
--   MATLAB: Popular in academia and engineering, MATLAB is strong in matrix computations and simulations. It has high performance but comes with expensive licensing and is more niche compared to R and Python.
-
--   Stata: Commonly used in economics, sociology, and epidemiology, Stata is known for its ease of use and built-in support for statistical and econometric analysis. It has an intuitive interface, making it accessible to non-programmers. However, it lacks the flexibility and vast package ecosystem of R.
-
--   Tableau/Power BI: These tools are highly effective for creating data visualizations and dashboards. While not as powerful as R in terms of statistical computing, they excel in visualizing and presenting data, especially in a business context.
-
-- Microsoft Excel: While very versatile can not typically be considered a direct alternative to R but is sometimes used as a simpler tool for data analysis, especially for smaller datasets. However, compared to R, Excel has limitations in handling larger datasets, performing complex statistical modeling, and automation. While Excel is great for basic data entry, simple calculations, and visualization, R is more suited for advanced statistical analysis, reproducibility, programming, and working with large-scale data. Therefore, Excel may complement R but can't replace its capabilities.
 
 Each of these alternatives has its strengths, and the choice depends on the project requirements, performance needs, and user expertise.
-
 
 
 ## Scope, Limitation, and Expectations
@@ -86,10 +76,10 @@ While the book provides a comprehensive introduction to R, it does not cover adv
 
 By the end of this book, readers are should be able to:
 
--  Understand R's core functions for data manipulation and visualization.
--  Apply R to basic statistical analyses and data preparation.
--  Integrate R into their research workflow for reproducible and transparent analysis.
--  Have confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.
+-  understand R's core functions for data manipulation and visualization.
+-  apply R to basic and complex statistical analyses and data preparation.
+-  integrate R into their research workflow for reproducible and transparent analysis.
+-  have confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.
 
 This book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.
 
