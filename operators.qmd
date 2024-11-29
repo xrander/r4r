@@ -17,7 +17,7 @@ Operations such as addition, subtraction, multiplication and so on, are easy to 
 | %%       | Remainder division |
 | %/%      |   Integer division |
 
-: Arithmetic operators in R {#tbl-arith-op .striped .hover}
+: Arithmetic operators in R {#tbl-arith-op .striped .hover .bordered}
 
 Run the following commands in your console:
 
@@ -38,7 +38,7 @@ The above operations are straightforward. `%%` operator returns the remainder wh
 5 %/% 2
 ```
 
-R performs arithmetic easily and also follows the order of operations.
+R also follows the order of operations.
 
 ```{r}
 5 * 15 + 14 / 7
@@ -53,12 +53,12 @@ The order of operation here is division, `14 / 7 = 2`, followed by multiplicatio
 ```
 
 ::: {.callout-tip apperance="simple"}
-Notice the spaces between numbers in arithmetic operations. While not required, spacing makes the code more readable. Don't be surprised that a lot of times you would try to figure out what you have done and also why you did particular thing. Also, if you work with in a team or want to share your work, people will be reading your codes.
+Can you notice the space between numbers and the operators. While not required, such spacing makes your code readable. Don't be surprised that a lot of times you will read your codes. Also, if you work with in a team or want to share your work, people will be reading your codes.
 :::
 
 ## Comparison Operators {#sec-comp}
 
-Comparison operators are as their names imply. They are used to compare values. The result from their operation is either TRUE or FALSE. TRUE and FALSE are logical value. You will get more information on this when we get to @sec-data-types in the next chapter.
+Comparison operators are as their names imply, they are used to compare values. The result from their operation returns either TRUE or FALSE. You will get more information on this when we get to @sec-data-types in the next chapter.
 
 Comparison operator in R include
 
@@ -71,7 +71,7 @@ Comparison operator in R include
 | \<=    |    Less than or equal to |
 | !=     |             Not equal to |
 
-: Comparison Operators in R {#tbl-comp-operators .striped .hover}
+: Comparison Operators in R {#tbl-comp-operators .striped .hover .bordered}
 
 Try these commands in R's console:
 
@@ -86,7 +86,7 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 
 ## AND (&), | (OR), and !(NOT) Operators.
 
--   `&` operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns false
+-   AND (`&`) operator returns TRUE when **all** conditions on both its sides of are TRUE. All other conditions returns FALSE
 
 | Conditions    | result |
 |:--------------|-------:|
@@ -95,7 +95,7 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 | FALSE & TRUE  |  FALSE |
 | FALSE & FALSE |  FALSE |
 
-: Combination of & (And) operator conditions and its adjoining result {#tbl-and-operator .striped .hover}
+: Combination of operations with `&` (And) operator {#tbl-and-operator .striped .hover .bordered}
 
 ```{r}
 28 > 10 & 50 > 40
@@ -109,7 +109,7 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 20 > 10 & 50 < 40
 ```
 
--   `|` returns TRUE when **one** of the conditions on both sides of it are TRUE.
+-   OR (`|`) returns TRUE when **one** of the conditions on both sides of it are TRUE.
 
 | Conditions      | result |
 |:----------------|-------:|
@@ -118,7 +118,7 @@ Multiple comparisons can be combined using operator `&` (and), `|` (or), and `!`
 | TRUE `|` TRUE   |   TRUE |
 | FALSE `|` FALSE |  FALSE |
 
-: Combination of `|` (OR) operator conditions and its adjoining result {#tbl-or-ope .striped .hover}
+: Combination of operations with `|` (OR) operator {#tbl-or-ope .striped .hover .bordered}
 
 ```{r}
 20 > 15 | 30 > 10
@@ -141,7 +141,7 @@ You can also use parentheses to enclose conditions when testing multiple conditi
 | !TRUE | FALSE |
 | !FALSE | !TRUE |
 
-: Result from negating logicals using `!` operator {#tbl-not-ope .striped .hover}
+: Result from negating logicals using `!` operator {#tbl-not-ope .striped .hover .bordered}
 
 ```{r}
 !TRUE
@@ -160,7 +160,7 @@ The assignment operator is used to bind values to names called *variables*. Vari
 | =      |                                   Assignment / bind to value |
 | -\>    | Rightward assignment / bind left value to the right variable |
 
-: Assignment Operators in R {#tbl-ass .striped .hover}
+: Assignment Operators in R {#tbl-ass .striped .hover .bordered}
 
 For example, we can assign the value `17` to the variable `c`. Whenever `c` is called, the value 17 is the result.
 
@@ -175,7 +175,7 @@ This does not mean that the value(s) assigned to a particular variable cannot be
 c <- "man"
 ```
 
-Above we assigned the new value "man" to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+Above we assigned the new value `man` to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
 
 ```{r}
 tree_height = 23
