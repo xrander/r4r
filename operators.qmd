@@ -175,11 +175,11 @@ This does not mean that the value(s) assigned to a particular variable cannot be
 c <- "man"
 ```
 
-Above we assigned the new value `man` to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable tree_height using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+Above we assigned the new value `man` to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable weight using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
 
 ```{r}
-tree_height = 23
-tree_height
+weight = 23
+weight
 ```
 
 For `->` operator, the variable is at the right side of the operator.
@@ -237,74 +237,4 @@ In this chapter, you've been introduced to some basic R syntax and the operators
 Lastly, we covered the assignment operator used to reference or bind values to names called variable. When we assign a different value to the same variable name in R, it gets replaced by the new value, thus a variable can only hold one value at a time.
 
 Now that we've got a good understanding of some of the basic R syntax and the operators, we will move on to @sec-data-types to learn about the data types in R.
-
-## Exercise {.unnumbered}
-### Part 1: Arithmetic Operators {.unnumbered}
-
-1. Perform the following calculations in R:
-
-    a. Add the number of trees planted in two different plots: 120 and 85.
-    b. Subtract the number of endangered species observed in two forests: 23 and 5.
-    c. Multiply the average yield per hectare (7 tons) by the number of hectares (15).
-    d. Divide the total rainfall (850 mm) by the number of days (17).
-    e. Find the remainder when dividing the number of harvested crops (345) by 6 (representing packing units).
-    f. Raise the average tree height (2 meters) to the power of 3.
-    
-2.  Assign the result of `(80 + 5) * 3` (total seeds planted and their multiplication) to a variable named `total_seeds`. What is the value of `total_seeds`?
-
-3. If `x = 150` (representing trees in plot A) and `y = 30` (representing trees removed due to disease), calculate the following:
-
-    a. x + y (total trees planted and removed)
-    b. x - y (remaining trees)
-    c. x * y (estimated wood volume)
-    d. x / y (tree-to-removed ratio)
-    e. x %% y (remaining trees after dividing by the number of plots)
-    f. x ^ y (exponent for more complex calculations)
-
-### Part 2: Assignment Operators {.unnumbered}
-
-4.  Assign the value `25` (representing the number of endangered species spotted) to a variable named `species`. Now, assign the sum of `species` and `12` (representing newly discovered species) to a variable named `total_species`. What is the value of `total_species`?
-
-5.  Use the `->` operator to assign the value `350` (representing crop yield in kg) to a variable named `yield`. Verify the value of `yield`.
-
-6.  Assign the value of `total_species` (from Question 4) to a new variable named `species_count` using the `<-` operator.
-
-### Part 3: Comparison Operators {.unnumbered}
-
-7.  Consider the following variables: `tree_height1 = 15` (meters) and `tree_height2 = 12`. Using comparison operators, answer whether the following statements are TRUE or FALSE:
-
-    a. tree_height1 == tree_height2
-    b. tree_height1 != tree_height2
-    c. tree_height1 > tree_height2
-    d. tree_height1 < tree_height2
-    e. tree_height1 >= tree_height2
-    f. tree_height1 <= tree_height2
-
-8.  Assign values `fertilizer_applied = 200` (kg/ha) and `recommended_fertilizer = 250 (kg/ha)`. Write R commands to:
-
-    a. Check if `fertilizer_applied` is less than `recommended_fertilizer`.
-    b. Check if `fertilizer_applied` is equal to `recommended_fertilizer`.
-    c. Check if `recommended_fertilizer` is greater than or equal to `fertilizer_applied`.
-
-### Part 4: Logical Operators (&, |, !) {.unnumbered}
-
-9. Consider the following variables: `irrigation = TRUE` and `pesticide_use = FALSE`. Evaluate the following expressions:
-
-    a. irrigation & pesticide_use
-    b. irrigation | pesticide_use
-    c. !irrigation
-    d. !pesticide_use
-
-10. If `water_level = 8` (meters) and `soil_moisture = 5 `(index value), check whether:
-
-    a. water_level > 5 & soil_moisture < 7
-    b. water_level < 3 | soil_moisture > 4
-    c. !(water_level == soil_moisture)
-
-11. Create a logical expression using the & operator that returns `TRUE` if both conditions are met:
-
-    a. tree_age > 10 (years)
-    b. soil_quality < 7 (index value)
-
-12. Write an R command that evaluates whether either `crop_yield > 300` (kg) or `rainfall < 20` (mm) using the | operator.
 
