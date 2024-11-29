@@ -356,33 +356,3 @@ There are other data types not covered such as:
 ## Summary {.unnumbered}
 
 Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
-
-## Exercise {.unnumbered}
-
-1. Create a character variable to store the name of a tree species, `Pinus sylvestris`. Verify that this is a character variable using the class() function. What data type does R return?
-
-2. Assign the total land area of a forest, 2500 hectares, to a variable called `forest_area`.
-```{r}
-forest_area <- 2500
-```
-
-Check the data type of `forest_area` using `class()`. Is it numeric or integer?
-
-3. The number of plots in a nature reserve is 15. Store this as an integer in the variable plot_count.
-```{r}
-plot_count <- 15L
-```
-  
-Confirm that plot_count is an integer using the is.integer() function. What does R return?
-
-4. Create a logical variable `protected_area `that stores whether a certain plot of land is a protected area (TRUE). Use the class() function to verify that protected_area is logical.
-  
-5. Suppose the types of vegetation in a nature reserve can be categorized into "forest", "grassland", and "wetland". Create a factor variable `vegetation_type` using these categories. Check the structure of the `vegetation_type` variable using str(). What data type is returned?
-
-6.  Convert the numeric variable `forest_area` (from Question 2) to a character and assign it to a new variable `forest_area_char`. Verify the data type of `forest_area_char`.
-
-7.  Convert the logical variable `protected_area` (from Question 4) to numeric. What value does R assign when you convert TRUE to a number?
-
-8.  The variable `tree_species` (from Question 1) contains a character string. Convert it to a factor and check its structure using str().
-
-9. Convert the `vegetation_type` factor variable (from Question 5) to numeric. What values are assigned to each level of the factor?
