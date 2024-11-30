@@ -1,4 +1,4 @@
-# Welcome{.unnumbered}
+# Welcome {.unnumbered}
 Welcome to **R for Research**, a book written to give you a strong introduction to R programming language and its uses in research workflow. The primary goal of **R for Research** is to provide a clear and practical guide to using R for your entire research workflow. While R is practically seen as a programming language for statistical computing, it should be noted that since the development of R Markdown [(Yihui Xie, 2012)](https://bookdown.org/yihui/rmarkdown/), R use have extended beyond statistical analysis. Using R Markdown package within RStudio IDE, you can have a word-processor and statistical analysis tool. 
 
 
