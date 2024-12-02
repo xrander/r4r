@@ -37,7 +37,6 @@ For examples, you may want to know the total number of values we have in our rec
 length(tomato_diameter)
 ```
 
-
 To find the average of the records of tomato_diameter use `mean()`.
 
 ```{r}
@@ -76,6 +75,7 @@ To round up in a specific direction, either up or down, we have two variation of
 floor(3.544)
 ceiling(3.544)
 ```
+
 
 To create a sequence of number use the colon (`:`) symbol  and the `seq()` function. `seq()` gives more control on the sequence you want to generate. Important arguments of `seq` to remember are `from`, `to`, and `by`.
 ```{r}
@@ -386,12 +386,12 @@ Use the `help()` function and `?` to get help. Also, use `args()` to see the arg
 You are not expected to remember these functions, use `help()`, `?` and `args` and check online for resources when you neeed help.
 :::
 
+
+## Summary
+Functions are little codes that performs specific functions. Armed with them we can fly on eagles wing. Functions such as `mean()`, `length()`, `plot()` and so on, makes it easier to perform tasks. However, this does not imply that there are functions for all tasks we want to accomplish. In such case, we need to develop our own functions called, custom functions. There are also functions in other packages which extends the capabilities of R.
+
 ## Exercise {.unnumbered}
 1. Using `seq()`, create a sequence of odd numbers between 1 and 100.
 2. Read the documentation of `mean()`, `median()`, `sd()`, and `var()`. What does the `is.na()` argument does?
 3. What is the difference between `substring()` and `substr()`?
 4. What is the difference between `paste()` and `paste0()`.
-
-
-## Summary
-Functions are little codes that performs specific functions. Armed with them we can fly on eagles wing. Functions such as `mean()`, `length()`, `plot()` and so on, makes it easier to perform tasks. However, this does not imply that there are functions for all tasks we want to accomplish. In such case, we need to develop our own functions called, custom functions. There are also functions in other packages which extends the capabilities of R.
