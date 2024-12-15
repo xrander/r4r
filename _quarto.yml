@@ -38,9 +38,9 @@ book:
   reader-mode: true
   page-footer:
     left: |
-      R for Research was written by Olamide M. Adu.
+      R for Research was written by Olamide M. Adu for EU StudyAssist.
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
+      This book was built with <a href="https://quarto.org/">Quarto</a> @2025.
   site-url: https://r4r.olamideadu.com/
   repo-url: https://github.com/xrander/r4r/
   repo-branch: main
