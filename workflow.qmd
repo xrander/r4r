@@ -1,9 +1,15 @@
-# Workflow {#sec-wf}
+# Workflow in R: Best Practices for Efficient R Programming {#sec-wf}
 
 :::{.callout-caution appearance=minimal}
 This section is still under development
 :::
 
+Early when learning to program, it is easy to focus on getting our code to work as expected. While this is good, we pay less attention on organizing and styling our code, things which is something that can be learned alongside getting our codes to work. Adopting good programming practices makes our work efficient, easy to follow and understand our logic when we revisit the code, easy for others to reproducible and collaborate with us.
+
+For a comprehensive exposition on good coding practices read the [Tidyverse Style Guide](https://style.tidyverse.org/).
+
+## Names
+Naming is an important part of the coding process, as you will name your scripts, name your variables and name your custom functions. This might be tedious at first but with time you get better giving names. There a few caveat for 
 ## The R Script
 ## Creating a R Script 
 ## The R Project

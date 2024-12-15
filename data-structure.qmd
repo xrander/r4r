@@ -4,7 +4,7 @@
 This section is still under development
 :::
 
-In the @sec--data-types, we learned about different data types in R (numbers, text, logical values, etc.). Just as we organize physical items - R needs special containers to organize and store different types of data. These containers are called data structures. 
+In the @sec-data-types, we learned about different data types in R (numbers, text, logical values, etc.). Just as we organize physical items - R needs special containers to organize and store different types of data. These containers are called data structures. 
 
 Each data structure in R has specific characteristics:
 
@@ -312,7 +312,7 @@ You can apply operations you want on each variable this way. For example we can 
 sum(fruit_tbl$stock)
 ```
 
-Using the square brackets, columns we can be remove old columns or add new columns to a data frame.
+Using the square brackets, and index number of the column we want to remove, we can remove old columns or add new columns to a data frame.
 ```{r}
 # Removing a Column
 fruit_tbl[-1]
