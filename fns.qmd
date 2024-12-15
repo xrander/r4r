@@ -18,7 +18,7 @@ As an example, let's take an hypothetical tomato nursery experiment. In this exp
 tomato_diameter <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-There are two ways to see the diameter collected. The first is using the `print()` function
+There are two ways to view the diameter collected. The first is using the `print()` function
 
 ```{r}
 print(tomato_diameter)
@@ -139,13 +139,13 @@ hist(
 ### Simulating Numbers
 An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the `runif()` function generates random numbers from a uniform distribution, `rnorm()` for the normal distribution, `rpois()` for the Poisson distribution, and `rbinom()` for the binomial distribution. These functions belong to a family that also includes functions for calculating density (**d**), distribution functions (**p**), quantiles (**q**), and random deviates (**r**) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
 
-For example, to simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 25 cm and a deviation of 2.3 cm all of the same age use `rnorm()`. In forestry, the distribution of trees diameter in a plantation is usually a bell-shaped curve. With some codes you will generate such curve as @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen in @fig-dia-hist-1.
+For example, to simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 35 cm and a deviation of 2.3 cm all of the same age use `rnorm()`. In forestry, the distribution of trees diameter in a plantation is usually a bell-shaped curve. With some codes you will generate such curve as @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen in @fig-dia-hist-1.
 ```{r}
 teak_diameter <- rnorm(100, mean = 35, sd = 2.3)
 teak_diameter
 ```
 
-The numbers generated above will be different from that which you will produce and may never get the exact thing. This is because they are random numbers. The beauty of R is its reproducibility. Using `set.seed()` captures a specific number, a pseudorandom number and makes your work replicatable. Given that the seed number is the same, whatever pseudorandom numbers are produce can be replicated by another person.
+The numbers generated above will be different from that which you will produce and may never get the exact thing. This is because they are random numbers. The beauty of R is its reproducibility. Using the function `set.seed()`, you can capture or get a snapshot of specific number random numbers, a pseudorandom number which makes your work replicable. Given that the seed number is the same, whatever pseudorandom numbers are produce can be replicated by another person.
 
 ```{r}
 set.seed(123)
