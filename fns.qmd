@@ -310,9 +310,9 @@ For example we can estimate the z-score of some the data we have created so far.
 $$Z = \frac{x - \mu}{\sigma}$$
 Where:
 
-    -   $x$ is the value in the vector,
-    -   $\mu$ is the mean of the vector,
-    -   $\sigma$ is the standard deviation of the vector.
+-   $x$ is the value in the vector,
+-   $\mu$ is the mean of the vector,
+-   $\sigma$ is the standard deviation of the vector.
 
 Without a custom function we will do the following:
 ```{r}
