@@ -16,6 +16,7 @@ book:
         - data-types.qmd
         - fns.qmd
         - data-structure.qmd
+        - control-str.qmd
         - packages.qmd
         - workflow.qmd
     - part: wrangle.qmd
@@ -44,6 +45,7 @@ book:
   site-url: https://r4r.olamideadu.com/
   repo-url: https://github.com/xrander/r4r/
   repo-branch: main
+  
 
 bibliography: references.bib
 

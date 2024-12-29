@@ -1,0 +1,214 @@
+# Control Structure {#sec-ctr-str}
+
+Control structures is a block of program which determines the direction to go once executed. It allows us control the flow of execution of R expressions [@peng2016r]. Control structure allows us to execute different expressions based on conditions. In addition to getting results based on conditions, it also prevents unnecessary repetition of the same code and iterates through our data. Some of the control structure in R are:
+
+-   `if`, `else`, `ifelse` and `case_when`
+-   `for`
+-   `while`
+-   `repeat`
+-   `break` and `next`
+
+We won't be covering all the control structure listed here. For example, case_when is not a part of base R but of a package, a concept which we will cover next. To get more info on control structure, read [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Roger D Peng.
+
+## `if`, `else`, and `ifelse`
+
+The `if` statement is exactly as it sounds:
+
+> if .... then do ......
+
+The syntax of `if` statement is written as, if a certain condition is met then do the following:
+
+```{r}
+#| eval: false
+#| label: if-syntax
+
+if (condition) {
+  # expression
+}
+```
+
+
+For example let's multiply a number  by 2 if its greater than 5.
+
+```{r}
+#| label: if-sample
+my_num <- 10
+
+if (my_num > 5) {
+  print(paste("The number", my_num, "is greater than 5"))
+}
+
+```
+
+`if` only does something when one result of the condition, `TRUE`, is met, and does nothing when the result equates to false. 
+
+```{r}
+#| label: if-no-result
+if (my_num < 5)  {
+  print(paste("The number", my_num, "is less than 5"))
+}
+```
+
+We can see it returns no result. That's where the `else` clause comes in to handle results when the conditions in the `if` clause are unmet. It is important to note that the if clause operates only on single element. The `else` clause is used in combination with the `if` clause and follows the syntax:
+
+```{r}
+#| eval: false
+#| label: else-syntax
+
+if (condition) {
+  # expression_1
+} else {
+  # expression_2
+}
+```
+
+Let's build on the previous last example to see how `else` works
+
+```{r}
+#| label: if-else-statement
+if (my_num < 5)  {
+  print(paste("The number", my_num, "is less than 5"))
+} else {
+  print(paste("The number", my_num, "is greater than 5"))
+}
+```
+As seen above, the else does not hold any condition. If you want to test more than two conditions you can use the `else if` clause. The `else if` comes after the `if` clause, the syntax is shown below:
+
+```{r}
+#| label: else-if-syntax
+#| eval: false
+
+if (condition) {
+  # expression_1
+} else if (condition) {
+  # expression_2
+} else {
+  # expression_3
+}
+```
+
+
+Example of the elseif statement in action:
+```{r}
+#| label: elseif-statement
+if (my_num > 10) {
+  print(paste("The number", my_num, "is greater than 10"))
+} else if (my_num == 10) {
+  print("The number is exactly 10")
+} else {
+  print(paste("The number", my_number, "is less than 10"))
+}
+```
+
+This method while it works can lead to a long chain. An alternative method is to use `case_when` of `dplyr` package. `case_when` is an inspiration from SQL and won't be covered now but later on in [Part II](wrangle.qmd) of this book. However the syntax is given below:
+
+```{r}
+#| eval: false
+#| label: case-when-syntax
+
+case_when(
+  # condition_1 ~ result or expression,
+  # condition_2 ~ result_2 or expression,
+  .default = # default_result or default expression
+)
+```
+
+
+## `for` Loops
+`for` loops are used for iterating over elements of objects such as list, vector, matrices, and so on [@peng2016r]. The syntax of the `for` is straightforward. It takes the `for` clause, an iterator and an object covered in parenthesis and a curly bracket which takes the expression of what you want to do on the elements of each object. 
+
+```{r}
+#| label: for-syntax
+#| eval: false
+for (iterator in object) {
+  # expression
+}
+```
+
+The way the `for` loop works, the iterator is used as an representation of each element of the object to be iterated upon, and this. Let's take the example below to understand the concept
+
+```{r}
+num <- 1:10
+
+for (i in num){
+  print(i + 3)
+}
+```
+
+`i` here is the iterator and takes each element, and in each iteration of the loop it gives the values 1, 3, 4, ..., 10, executes the expression, i.e, the code in the curly. It's not uncommon to use some functions such `seq_along()`, `length()` in the `for` loop in order to generate a sequence based on the object.
+
+```{r}
+set.seed(123)
+
+my_num <- runif(10, min = -1, max = 1)
+
+for (i in seq_along(my_num))  {
+  print(my_num[i])
+}
+
+# alternatively
+for (i in 1:length(my_num)) {
+  print(my_num[i])
+}
+```
+This is using `i` as an index in this case.
+
+:::{.callout-tip appearance=minimal}
+The iterator, `i`, which are stand in variable for each elements of an object in a for loop can be named as anything, but it is advised to use the name that reflects the objects in the collection. For example:
+
+- fruits: fruit
+- names: name
+- cities: city
+
+If you are iterating over numbers use, `i`, `j` or `k`. These are commonly used convention
+:::
+
+
+### Nesting the `for` Loop
+You can nest `for` loops inside each other. In this case indent you code, so you can understand the flow of your code. A good nested `for` loop is shown below:
+
+```{r}
+#| eval: false
+#| label: nested-for-syntax
+for (i in x) {
+  for (j in y) {
+    z <- j * 2
+  }
+  a <- z + i
+  print(a)
+}
+```
+
+You can copy and run the code below on your console.
+```{r}
+#| eval: false
+x <- 1:10
+y <- 11:20
+
+for (i in x) {
+  for (j in y) {
+   z <- j * 2 
+   a <- z + i
+   print(a)
+  }
+}
+```
+
+
+## While Loop
+`while` loops test a condition and keeps terating until they are no longer true and the loop exits.
+```{r}
+x <- 0
+
+while (x < 10) {
+  print(paste("The value of x was", x))
+  x = x + 1
+  print(paste("The value of x is now", x))
+}
+```
+
+:::{.callout-caution appearance=minimal}
+Use the `while` loop with care, if not used with care, the code will keep running till infinity. You can break this infinite loop with `CTRL/CMD`+`C`
+:::
+
+To know about `repeat`, `next` and `break`, read R Programming for Data Science by Robert Peng.
