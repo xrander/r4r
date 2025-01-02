@@ -10,12 +10,12 @@ R and RStudio are free to install and use softwares. To install them software, y
 
 ### Installing R {#sec-install-r}
 
-**Windows OS (10/ 11)**: To download R from CRAN visit this link <https://cran.rstudio.com/bin/windows/base/R-4.4.1-win.exe> and run the installer. This is the latest version at the time of writing this chapter
+**Windows OS (10/ 11)**:  <a href="https://cran.rstudio.com/bin/windows/base/R-4.4.2-win.exe" title="Download R version 4.4.2, Big Sur" download="R-4.4.2-latest-64-bit">Download R-4.4.2 for Windows</a> and run the installer. This is the latest version at the time of writing this chapter.
 
 **Mac OS**: There are two versions of R for Mac users based on the processor in your computer.
 
--   For M1-M3 processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg> and run the installer
--   For Intel processors visit the link <https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.1-x86_64.pkg> and run the installer.
+-   For M1, M2, and recent M_ processors: <a href="https://cran.rstudio.com/bin/macosx/big-sur-arm64/base/R-4.4.2-arm64.pkg" title="R R version 4.4.2, Big Sur" download="R-4.4.2-latest-64-bit">Download R-4.4.2 for Mac M-Processor</a> and run the installer
+-   For Intel processors: <a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.2-x86_64.pkg" title="R R version 4.4.2, Big Sur" download="R-4.4.2-latest-64-bit">Download R-4.4.2 for Mac Intel processor</a> and run the installer.
 
 **Linux Users** R installation on Linux depends on your distribution. Open terminal (`Ctrl` + `Alt` + `T`) and enter the command below based on your distribution.
 
