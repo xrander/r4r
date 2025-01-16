@@ -210,5 +210,4 @@ while (x < 10) {
 :::{.callout-caution appearance=minimal}
 Use the `while` loop with care, if not used with care, the code will keep running till infinity. You can break this infinite loop with `CTRL/CMD`+`C`
 :::
-
 To know about `repeat`, `next` and `break`, read R Programming for Data Science by Robert Peng.
