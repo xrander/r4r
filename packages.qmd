@@ -4,7 +4,7 @@
 This section is still under development
 :::
 
-In @sec-fns, we saw that R comes with many built-in functions (base R, utils and stats package functions). However, the true power of R lies in its extensive ecosystem of additional packages created by the R community. These packages extend R's capabilities, similar to how third-party apps like WhatsApp, Telegram or Signal extend a phone's basic messaging capabilities with features like video calls, read receipts, status updates and so on.
+In @sec-fns, we saw that R comes with many built-in functions preintstalled (base R, utils and stats package functions). However, the true power of R lies in its extensive ecosystem of additional packages created by the R community. These packages extend R's capabilities, similar to how third-party apps like WhatsApp, Telegram or Signal extend a phone's basic messaging capabilities with features like video calls, read receipts, status updates and so on.
 
 ## Package Repositories
 ### CRAN (Primary Repository)
@@ -31,7 +31,6 @@ Package installation requires an internet connection and only needs to be done o
 
 ```{r}
 #| eval: false
-
 
 # Install Bioconductor's package manager
 if (!require("BiocManager", quietly = TRUE))
@@ -74,7 +73,7 @@ While alternative repositories offer cutting-edge or specialized packages, CRAN 
 :::
 
 ## Using Installed Packages
-There are two main ways to use installed packages:
+There are two ways to use installed packages:
 
 1. \textbf{Loading Entire Packages}
 Use the `library()` function to load all functions from a package:
@@ -89,7 +88,7 @@ If you see this error:
 
 It means the package needs to be installed first using `install.packages("tidyverse")`.
 
-2. \textbf{Using Specific Functions}
+2. \textbf{Declarative Use of Functions}}
 To use individual functions without loading the entire package, use the package name followed by `::` and the function name:
 
 ```{r}
