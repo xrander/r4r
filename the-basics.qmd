@@ -1,6 +1,8 @@
 # Basics {#sec-basics}
 
-
-::: {.callout-important appearance="simple"}
-This section is still under deveopment. It will be written after whole content of this part is finished
+:::{.callout-tip}
+This section is under review.
 :::
+
+
+In the first part of this books you will be introduced to R, the RStudio IDE, and an online IDE, Posit Cloud, and the newly created Positron IDE in [Chapter @sec-environ]. After, we get the fundamentals of the R programming, getting familiar with the syntax of the language and handling some basic operations in [Chapter @sec-operators]. The goal here is to get you familiar with R as fast as possible. After this, we move on the various data types in R, since R is mainly for data analysis, [Chapter @sec-data-types] introduces you with the common data type you will come across in your daily work. You will get acquainted to performing some operation on the different data-types in [Chapter @sec-fns], and get to know how the different data types can be arranged or organized for data analysis in [Chapter @sec-data-structures].[ Chapter @sec-ctr-str] introduces us to conditionals and loops to ensure that we get result based on set conditions. To round up this part, we see get to see how to initiate a project in [Chapter @sec-wf].
