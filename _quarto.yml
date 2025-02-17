@@ -35,7 +35,7 @@ book:
     - references.qmd
     
   favicon: cover.png
-  cover-image: cover.png
+  cover-image: cover1.png
   reader-mode: true
   page-footer:
     left: |
@@ -62,7 +62,7 @@ format:
   pdf:
     documentclass: scrreprt
     pdf-engine: xelatex
-    cover-image: cover.png
+    cover-image: cover1.png
     output-file: r-for-research.pdf
 
 editor: source
