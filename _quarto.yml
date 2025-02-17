@@ -52,7 +52,7 @@ bibliography: references.bib
 format:
   html:
     theme: yeti
-    cover-image: cover.png
+    cover-image: cover1.png
     toc: true
     toc-depth: 3
     code-link: true
