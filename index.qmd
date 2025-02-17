@@ -3,3 +3,6 @@ Welcome to **R for Research**, a book written to give you a strong introduction 
 
 
 This book will be under development for a while; expected completion should be around early 2026. Do not be surprised if a lot of the chapters do not cohere. You are welcome to provide suggestions and give corrections through [github issues](https://github.com/xrander/r4r/issues). If you find anything that could improve the work and would also like to collaborate do not hesitate to reach me via [email](mailto:olamideadu@gmail.com).
+
+
+Cover image, a Red-legged Patridge walking in Snowy Van, in Turkiye is by [ezvedat](https://www.pexels.com/@ezvedat-337111750/) on the [pexels](https://www.pexels.com/@ezvedat-337111750/) platform. All pexels images are free to use.
