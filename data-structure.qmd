@@ -4,25 +4,25 @@
 This section is still under development
 :::
 
-In the @sec-data-types, we learned about different data types in R (numbers, text, logical values, etc.). Just as we organize physical items - R needs special containers to organize and store different types of data. These containers are called data structures. 
+In the @sec-data-types, we learned about different data types in R such as double, integer, character, and logical. Just as we organize physical items, and organize our personal space - R needs special containers to organize and store different types of data. These containers are called data structures. 
 
 Each data structure in R has specific characteristics:
 
 - What types of data it can hold (single or multiple types)
-- How it organizes the data (one-dimensional, two-dimensional, etc.)
+- How it organizes the data (one-dimensional, two-dimensional, or multidimensional)
 - How we can interact with the data inside it
 
 Before exploring each data structure, we can use these functions to inspect any container:
 
-- `length()`: Shows how many elements are stored
+- `length()`: Shows how many elements are stored in a container.
 - `dim()`: Shows the dimensions (rows and columns)
-- `str()`: Displays the structure and contents in detail
+- `str()`: Displays the structure of the container
 
 
 ## Atomic Vectors
 
-### What is a Vector?
-An atomic vector is the simplest data structure in R. Think of it as a single row or column that can hold only one type of data. To create vectors we can pass 
+### What is an Atomic Vector?
+An atomic vector is the simplest data structure in R [@grolemund2014hands]. Think of it as a one-dimensional data that can hold only one type of data. The different data types are actually atomic vectors. 
 
 ```{r}
 # Single Vector
@@ -31,7 +31,7 @@ fruit <- "papaya"
 fruit
 ```
 
-To combine multiple values to an object, use `c()`.
+We can make our vectors longer using use `c()` [@wickham2019advanced].
 
 ```{r}
 # Multivalue vector
@@ -41,6 +41,7 @@ fruits <- c("papaya", "orange", "apple", "pineapple", "grape",
 fruits
 ```
 
+
 To get the number of elements in an object use `length()`.
 ```{r}
 length(fruit) # shows the number of elements in fruit
@@ -48,6 +49,22 @@ length(fruits) # shows the number of elements in fruits
 ```
 
 Next we will see the different operations such as slicing, subsetting and so on which we can perform on vector objects. 
+
+:::{.callout-note appearance=minimal}
+Atomic vectors can only hold one data type at a time. In the example below, we created a new object of double data type, then combine it with the ˋfruitsˋ object we created earlier. Checking the data type of the new object ˋnew_dataˋ, only a data type is returned.
+
+```{r}
+#| label: vector-hold-single-data-type
+set.seed(123)
+diameter <- round(rnorm(10, mean = 23.5, sd = 0.6), 2)
+typeof(diameter)
+
+new_data <- c(fruits, diameter)
+new_data
+typeof(new_data)
+```
+
+:::
 
 ### Vector Operations
 
@@ -62,7 +79,7 @@ y + x
 y %% x
 y / x
 ```
-When the length of vectors is greater than one, element-wise operations can be performed on them. Each element in the longer object will be operated on by the short one. When we have objects with more than one element, the elements are operated on one-to-one if they are divisible without remainder. If the division is with remainder, we get a warning about the vectors not being multiples. Although this does not stop the operation, the operation gets recycled with the short-length object operating on the longer one with its first element. This phenomenon of starting the operation again in R is called `vector recycling`.
+When the length of one vector is greater than the other, element-wise operations is performed on them. Each element in the longer object will be operated on by the element of the short one. When we have objects with more than one element, the elements are operated on one-to-one if they are divisible without remainder. If the division is with remainder, we get a warning about the vectors not being multiples. Although this does not stop the operation, the operation gets recycled with the short-length object operating on the longer one with its first element. This phenomenon of starting the operation again in R is called `vector recycling`.
 
 ```{r}
 #| warning: true
@@ -80,7 +97,7 @@ When operating on vectors of different lengths, R will "recycle" the shorter vec
 :::
 
 ### Accessing Vector Elements
-To access a value in a vector we can get it via its index. Indexing allows us access or modify specific elements in different data structures. We use the squared-brackets [] to index the position of elements. To get the first element in the `fruits` vector, *papaya*, we specify its index position, 1, within the squared brackets.
+To access a value in a vector we can get it via its index. Indexing allows us access or modify specific elements in different data structures. We use the square brackets [] to index the position of elements. To get the first element in the `fruits` vector, *papaya*, we specify its index position, 1, within the square brackets.
 
 | Vector | papaya | orange | apple | pineapple | grape | strawberries | avocado |
 |:------:|:------:|:------:|:-----:|:---------:|:-----:|:------------:|:-------:|
@@ -93,7 +110,7 @@ fruits
 fruits[1]
 ```
 
-To return multiple element we can include the elements index position within `c()` and pass it to the squared brackets. You can return a ranged of elements using `:`.
+To return multiple element we can include the elements index position within `c()` and pass it to the square brackets. You can return a ranged of elements using `:`.
 
 ```{r}
 # remove elements by specific position
@@ -105,37 +122,72 @@ fruits[2:5]
 
 ### Modifying Vectors
 
-#### Adding Elements to a Vector
-There are two ways to add new elements to a vector. First, use the `append()` function
+#### Adding and Altering Elements to a Vector
+There are two ways to add new elements to a vector:
+
+- `append()` function
+- The square bracket `[]`
+
+Using ˋ[]ˋ offers more flexibility, as it can be used to add, change and remove the elements of a vector.
+
+##### The `append()` Function
+We can use `append()` which add elements to the end of the vector. It takes three arguments, x, the vector that you want to add a value to, values, the new value you want to add to the vector, and after, which determines the index position where you want the new value added.
+
 ```{r}
-fruits <- append(fruits, "banana") # adding new element
+length(fruits) # number of fruits prior adding the new element
+
+fruits <- append(x = fruits, values = "banana", after = 5) # adding new element element after the last element
+
 length(fruits) # The number of elements have increased by one.
+
 fruits # The new elements
 ```
-Secondly, assign the new value to a new index number
+
+If the parameter `after` is omitted with no argument, the new values are automatically placed at the end of the vector.
+
+```{r}
+new_fruits <- c("kiwi", "grape", "cherry", "mango", "peach")
+
+extended_fruits <- append(fruits, new_fruits)
+extended_fruits
+```
+
+##### Using the Square Bracket, []
+
+To add a new object, you place the index number where the new object will occupy in the square bracket
 ```{r}
 fruit 
 fruit[2] <- "mango" # add new element to a new index number
 fruit
 ```
-
-#### Altering Elements in a Vector
-Vectors are altered using the index number of the element to be changed.
+If you insert a number that is way more than the next number of the length of the vector, the spaces get filled with `NA`. 
 ```{r}
-fruits[7] # Position to be changed
-fruits[7] <- "tomato" # Replace avocado with tomato
-fruits # new elements
+fruit[5] <- "Clementine"
+fruit
+```
+To prevent this, you can use a simple trick, pass the length of the fruit + 1 into the square bracket when you want to add the new value.
+```{r}
+fruit[length(fruit)+1] <- "Guava"
+fruit
 ```
 
-#### Removing Elements in Vectors
-Subtract out the element to be removed from a vector with it's index number.
+The square brackets is also used to modify the elements of object using their index position. 
+
 ```{r}
-fruits[-1] # Show values left after removing first value.
-fruits <- fruits[-1] # Reassign to variable to confirm the change.
+fruit[3] # Position to be changed
+fruit[3] <- "tomato" # Replace avocado with tomato
+fruit # new elements
+```
+
+You can also remove elements of a vector using the square bracket. You do this by passing a negative value into the index number
+
+```{r}
+fruit[-4] # Show values left after removing first value.
+fruit <- fruit[-1] # Reassign to variable to confirm the change.
 ```
 
 :::{.callout-tip appearance=simple}
-To confirm an object data structure, use their `is.*()` variant. For vectors, `is.vector()`, for matrix, `is.matrix()` and so on. To convert from one structure to another, use their `as.*()` variant.
+To confirm an object data structure, use their `is.*()` variant. For vectors, `is.vector()`, for matrix, `is.matrix()` and so on. To convert from one structure to another, use their `as.*()` variant. For vector `as.vector()`, for matrix, `as.matrix()` and so on.
 :::
 
 ## Matrices
@@ -215,7 +267,7 @@ fruit_mat
 ```
 
 ### Accessing Elements in a Matrix
-Like with vectors, you can access any particular element in a matrix using the squared brackets, **[]**. Since matrix is two dimensional, there's a little adjustment in how we access elements as we have to specify rows and columns. The syntax is **[row_index, column_index]**. For example, let's access the third row and second column element of `fruit_mat`.
+Like with vectors, you can access any particular element in a matrix using the square brackets, **[]**. Since matrix is two dimensional, there's a little adjustment in how we access elements as we have to specify rows and columns. The syntax is **[row_index, column_index]**. For example, let's access the third row and second column element of `fruit_mat`.
 ```{r}
 fruit_mat
 fruit_mat[3, 2]
@@ -231,7 +283,7 @@ You can also use `:` within an axis to access elements within a range
 fruit_mat[2:4, c(1, 2)] # returns row 2, 3, and 4 element of column 1 and 2.
 ```
 
-To return all the rows of a particular column, leave the row space within the squared bracket empty, and specify the index of the column you want to return
+To return all the rows of a particular column, leave the row space within the square bracket empty, and specify the index of the column you want to return
 ```{r}
 fruit_mat[,1]
 fruit_mat[,2]
@@ -356,7 +408,7 @@ my_list
 
 
 ### Accessing Elements in a List
-The squared-bracket, **[]** is used to select elements in a list but to print the items in the object you use **[[]]**. Like data.frame you can also use the dollar sign, **$**,
+The square bracket, **[]** is used to select elements in a list but to print the items in the object you use **[[]]**. Like data.frame you can also use the dollar sign, **$**,
 ```{r}
 my_list[1]
 ```
@@ -376,3 +428,4 @@ my_list[[1]][3]
 
 ## Summary
 In this chapter you learned about data structures in R. You saw how to create each data structure, how to access the elements of each structure. Also, you learned how to add and remove items from each data structure. You got introduced to checking the properties of each data structure such as their length and dimensions. Next you will learn about packages in R and how to install them, after you will bring together the knowledge you've gathered from chapter one into making R Scripts and R projects.
+
