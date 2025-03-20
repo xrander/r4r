@@ -122,8 +122,7 @@ fruits[2:5]
 
 ### Modifying Vectors
 
-#### Adding and Altering Elements to a Vector
-There are two ways to add new elements to a vector:
+There are two ways to modify new elements in a vector:
 
 - `append()` function
 - The square bracket `[]`
