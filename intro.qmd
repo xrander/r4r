@@ -1,26 +1,21 @@
 # Introduction {#sec-intro .unnumbered}
 
-R has become a cornerstone in the data science community and academia, largely due to its flexibility, open-source nature, and extensive statistical capabilities. Originally developed in the early 1990s by statisticians Ross Ihaka and Robert Gentleman, R was designed as a language specifically for data analysis and statistical computing. Over time, it evolved into one of the most popular tools for researchers, data scientists, and statisticians alike.
+R has become one of the cornerstone in the data science community and its use in academia is increasing daily. This is largely due to its flexibility, open-source nature, and extensive statistical capabilities. Originally developed in the early 1990s by statisticians Ross Ihaka and Robert Gentleman, R was designed as a language specifically for data analysis [@ihaka1996r]. Over time, it evolved into one of the most popular tools for researchers, data scientists, and statisticians alike.
 
 ## R and Academia
 
-In academia, R holds a uniSque position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, sociology, biostatistics, pharmacolgy, health sciences, biology, genomics, nature and environmental sciences, where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.
+In academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, biostatistics, pharmacology, life sciences, nature management, environmental sciences, and courses where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.
 
-R is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists.
+R is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists and researchers across discipline. While there's a common misconception that not all fields require sophisticated analytical capabilities, this is demonstrably incorrect. The bedrock of robust research is rigorous data analysis and interpretation, regardless of the specific domain.
 
-In academic research, reproducibility is a crucial aspect, and R excels in this area. With some of its packages, users can create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R's associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.
+In academic research, reproducibility is a crucial aspect, and R excels in this area. In addition to that, R through the RStudio IDE allows  users create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R's associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.
 
-The reproducibility features of R make it particularly appealing in academic settings where transparency and rigor in research are paramount. R packages like `Quarto` and `RMarkdown` has become a standard for producing research papers, technical reports, and even full theses. It allows researchers to mix prose, statistical results, and plots within a single document, all while maintaining a fully reproducible workflow. This book was developed using quarto
-
-## R and Data Science
-
-R use is not limited to academia, it's use is becoming one of the major tool used in a lot of sectors. These sectors usually need some type of data scientist, researcher, data analyst or data visualization specialist. With R and the numerous packages it supports these roles are fulfilled and be automated. This makes R and it's associated IDE RStudio a tool for all. In the data science community, R is known for its versatility in handling data wrangling, visualization, and modeling tasks. It is an excellent tool for managing complex data workflows from data cleaning to presentation and reporting insights from data.
 
 ## The R Community and Ecosystem
 
-One of R’s most significant strengths is its vibrant and growing community. [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org), a central repository for R packages, contains over [21000 packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) as at the time of this book was written, with contributions from thousands of developers worldwide. These packages extend R’s functionality to virtually every domain of data science and research, from time-series analysis to geospatial data, genomics, and beyond. This ecosystem makes R adaptable to a broad range of applications, enabling users to apply cutting-edge techniques to their data.
+One of R’s most significant strengths is its vibrant and growing community. This is made through the efforts of the R Development Core Team responsible for the ongoing developnent and maintenance of the R language and environment. [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org), a central repository for R packages, contains over [21000 packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) as at the time of this book was written, with contributions from thousands of developers worldwide. These packages extend R’s functionality to virtually every field in the world. This ecosystem makes R adaptable to a broad range of industry, enabling users to apply cutting-edge techniques to their data problem.
 
-The R community is also known for its strong support culture. Forums like Stack Overflow, R-bloggers, and [Posit Community](https://forum.posit.co/) provide a wealth of knowledge and resources, ensuring that newcomers and experienced users alike can find help when they encounter challenges. This collaborative environment is a significant factor in R’s popularity, as users can quickly find solutions and learn from one another.
+The vibrant R community, often identified with the hashtag #rstats is also known for its strong support culture. Forums like Stack Overflow, R-bloggers, Linkedin, X (formerly Twitter) and [Posit Community](https://forum.posit.co/) provide a wealth of knowledge and resources, ensuring that newcomers and experienced users alike can find help when they encounter challenges. This highly collaborative environment is a significant driver of R's enduring popularity, enabling users to efficiently overcome obstacles and continuously learn from the collective expertise of their peers.
 
 ## Why Learn R
 
@@ -51,7 +46,7 @@ Despite R's strengths, there are scenarios where it may not be the best fit:
 
 ## Alternatives to R
 
--  Python: Python is a popular alternative, known for its versatility beyond data science. It has extensive libraries for machine learning (e.g., scikit-learn, TensorFlow), data manipulation (pandas), and visualization (matplotlib, seaborn). Python's general-purpose nature makes it suitable for both data analysis and broader applications like web development, app development and automation.
+-  Python: a popular alternative, known for its versatility beyond data science. It has extensive libraries for machine learning (e.g., scikit-learn, TensorFlow), data manipulation (pandas), and visualization (matplotlib, seaborn). Python's general-purpose nature makes it suitable for both data analysis and broader applications like web development, app development and automation.
 
 -   Julia: Julia is emerging as a high-performance language designed for numerical and scientific computing. It offers speed advantages over R and Python, particularly in tasks that involve heavy computation.
 
@@ -60,17 +55,18 @@ Despite R's strengths, there are scenarios where it may not be the best fit:
 -   SPSS: SPSS is another statistical tool widely used in academic research and business analytics. Like SAS, it’s user-friendly for statistical analysis but is expensive and less flexible than R or Python.
 
 
-Each of these alternatives has its strengths, and the choice depends on the project requirements, performance needs, and user expertise.
+Each of these alternatives has their strengths, and the choice depends on the project requirements, performance needs, and user expertise. I have often found myself falling back to R during data analysis.
 
 
-## Scope, Limitation, and Expectations
+## Scope, Limitations, and Expectations
+
 ### Scope
 
 R for Research covers essential techniques for data analysis using R, focusing on the needs of researchers across various disciplines. It introduces readers to R programming, data manipulation, statistical analysis, and visualization, with practical examples and case studies from academic research. The book is structured to help readers at any experience level, from beginner to intermediate, make effective use of R in their research.
 
 ### Limitation
 
-While the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep statistical modeling, or specialized fields like genomics or financial modeling in detail. The focus is primarily on general research applications, so readers looking for highly specialized content may need to supplement their learning with more advanced resources.
+While the book provides a comprehensive introduction to R, it does not cover advanced topics such as machine learning, deep learning, books like [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/) by Bradley Boehmke and [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r-second-edition) by  François Chollet and Joseph J Allaire would provide sufficient knowledge on these topics. Field specific use of R like its application for genomics or financial modeling are not covered here, [Computational genomics with R](https://compgenomr.github.io/book/) by Altuna Alkalin is a good resource for people interested in genomics. The focus of this book is on R's use for general research, so readers looking for highly specialized content may need to supplement their learning with some of the advanced resources suggested.  
 
 ### What should you expect to learn from reading this books?
 
@@ -81,9 +77,11 @@ By the end of this book, readers are should be able to:
 -  integrate R into their research workflow for reproducible and transparent analysis.
 -  have confidence in handling real-world data sets for various research contexts, but be aware that mastering complex, domain-specific analyses may require further study.
 
-This book sets a foundation, equipping readers with skills and knowledge to build upon in more specialized areas of data science and research.
 
 ## How This Book is Organized
+
+Readers are firstly introduced to the basics of R covering the foundational aspect of R as a programming language. Next is the story mode section, that will set the stage for using R in a Research setting. These aspect will cover concepts we will mostly likely encounter in everyday  routine, such as, importing data, visualization, conducting analysis, and cleaning data among others.s
+
 
 :::{.callout-important appearance=simple}
 still under development.

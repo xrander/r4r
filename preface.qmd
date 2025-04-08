@@ -6,19 +6,17 @@ This book, **R for Research**, is designed for researchers, data scientists, and
 
 The journey of mastering R may feel daunting at first, but with the right approach and persistence, it quickly becomes intuitive and rewarding. Through hands-on examples, practical exercises, and detailed explanations of core concepts, this book will take you from a beginner to an adept user, ready to tackle complex research problems with confidence.
 
-Whether you're aiming to publish a research, gain insights from large datasets, or deepen your understanding of the data you are working on, this book equips you with the tools and skills to succeed in your endeavors. 
-
-Either if you are a beginner or you have some experience in other programming language, this book will unlock the the power of R to streamline your research process and make data-driven decisions with confidence.
+Whether you're aiming to publish a research, gain insights from large datasets, or deepen your understanding of the data you are working on, this book equips you with the tools and skills to succeed in your endeavors. The book is beginner friendly, so you can follow along with no coding experience. Since R is statistics software, basic knowledge of statistics is required to follow along. Efforts will be made to explain some statistical concepts, but this will not be in all cases.
 
 By the end of this book, readers will have:
 
--  A solid understanding of R’s core functionalities for data analysis.
+-  a solid understanding of R’s core functionalities for data analysis.
 
--  Proficiency in using key R packages for data manipulation, visualization, and statistical modeling.
+-  proficiency in using key R packages for data manipulation, visualization, and statistical modeling.
 
--  Practical experience through real-world examples and exercises that are relevant to various research fields.
+-  practical experience through real-world examples and exercises that are relevant to various research fields.
 
--  The ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
+-  the ability to integrate R into your research workflow, allowing for reproducible and transparent analyses.
 
 
 Ultimately, [R for Research](https://r4r.olamideadu.com/) is a beginner oriented book designed to introduce you to data analysis with R, helping you transform raw data into meaningful insights that drive impactful research.
