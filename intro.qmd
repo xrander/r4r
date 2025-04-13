@@ -4,18 +4,18 @@ R has become one of the cornerstone in the data science community and its use in
 
 ## R and Academia
 
-In academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, biostatistics, pharmacology, life sciences, nature management, environmental sciences, and courses where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited.
+In academia, R holds a unique position due to its roots in statistical analysis. Many academic researchers favor R for its comprehensive set of statistical tools, making it ideal for disciplines like economics, psychology, biostatistics, pharmacology, life sciences, nature management, environmental sciences, and courses where complex data analysis is routine. The fact that R is free and open-source has contributed to its popularity in academic settings, where budgets can be tight, and access to proprietary software may be limited, even without budget limits, its capabilities rivals a lot of proprietary software.
 
-R is particularly favored in research involving statistical modeling, simulations, and advanced analytics such as machine learning, which is essential for the rapid analysis of large datasets. Universities often integrate R into their curricula in courses related to statistics, bioinformatics, silviculture, biometrics, and even computational social sciences, making it a key part of training the next generation of data scientists and researchers across discipline. While there's a common misconception that not all fields require sophisticated analytical capabilities, this is demonstrably incorrect. The bedrock of robust research is rigorous data analysis and interpretation, regardless of the specific domain.
+R is particularly favored in research , with increased popularity in finance, healthcare and life sciences. Universities often integrate R into their curricula in  courses such as bioinformatics, silviculture, biometrics, and even social sciences, making it a key part of training the next generation of data scientists and researchers across discipline. While there's a common misconception that not all fields require sophisticated analytical capabilities, this is demonstrably incorrect. The bedrock of robust research is rigorous data analysis and interpretation, regardless of the specific domain.
 
 In academic research, reproducibility is a crucial aspect, and R excels in this area. In addition to that, R through the RStudio IDE allows  users create dynamic reports that integrate code, data, and narrative in a single document. This allows researchers to ensure that their analyses are transparent and reproducible by others, a key requirement for peer-reviewed publications. Reports, research papers, presentations, and even books can be generated directly from RStudio (R's associated and most popular integrated development environment - IDE), providing a streamlined workflow for sharing results.
 
 
 ## The R Community and Ecosystem
 
-One of R’s most significant strengths is its vibrant and growing community. This is made through the efforts of the R Development Core Team responsible for the ongoing developnent and maintenance of the R language and environment. [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org), a central repository for R packages, contains over [21000 packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) as at the time of this book was written, with contributions from thousands of developers worldwide. These packages extend R’s functionality to virtually every field in the world. This ecosystem makes R adaptable to a broad range of industry, enabling users to apply cutting-edge techniques to their data problem.
+One of R’s most significant strengths is its vibrant and growing community. This is made through the efforts of the R Development Core Team responsible for the ongoing development and maintenance of the R language and environment, and Posit PBC, the creator of RStudio and Positron which sponsors and develops open-source technologies. [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org), a central repository for R packages, contains over [21000 packages](https://cran.r-project.org/web/packages/available_packages_by_name.html) as at the time of this book was written, with contributions from thousands of developers worldwide. These packages extend R’s functionality to virtually every field in the world. This ecosystem makes R adaptable to a broad range of industry, enabling users to apply cutting-edge techniques to their data problem.
 
-The vibrant R community, often identified with the hashtag #rstats is also known for its strong support culture. Forums like Stack Overflow, R-bloggers, Linkedin, X (formerly Twitter) and [Posit Community](https://forum.posit.co/) provide a wealth of knowledge and resources, ensuring that newcomers and experienced users alike can find help when they encounter challenges. This highly collaborative environment is a significant driver of R's enduring popularity, enabling users to efficiently overcome obstacles and continuously learn from the collective expertise of their peers.
+The vibrant R community, often identified with the hashtag **#rstats** is also known for its strong support culture. Forums like Stack Overflow, R-bloggers, Linkedin, X (formerly Twitter) and [Posit Community](https://forum.posit.co/) provide a wealth of knowledge and resources, ensuring that newcomers and experienced users alike can find help when they encounter challenges. This highly collaborative environment is a significant driver of R's enduring popularity, enabling users to efficiently overcome obstacles and continuously learn from the collective expertise of their peers.
 
 ## Why Learn R
 
@@ -34,29 +34,36 @@ The vibrant R community, often identified with the hashtag #rstats is also known
 
 Despite R's strengths, there are scenarios where it may not be the best fit:
 
--   Performance Limitations: R is often slower than other languages like Python or Julia, especially when dealing with very large datasets or high-performance tasks such as real-time processing. To increase the performance of R, using packages like `data.table`, `parallel`, `duckdb`, `arrow` and `future` can be helpful.
+-   **Performance Limitations**: R is not the fastest of programming language as it was deliberately designed to prioritize ease of use for humans instead of computational efficiency [@wickham2019advanced]. This design choice reflects R's fundamental philosophy of making data analysis and statistics easier for users, even if it means the computer has to work harder . To increase the performance of R, using packages like `data.table`, `parallel`, `duckdb`, `arrow` and `future` can be helpful.
 
--   Learning Curve: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.
+-   **Learning Curve**: While R’s syntax is intuitive for statistical tasks, its learning curve can be steep for those unfamiliar with its unique paradigms. Tasks beyond basic data analysis may require more in-depth coding skills.
 
--   Less Versatility: R is heavily focused on data analysis and statistics, making it less suited for general-purpose programming. Its capabilities outside of data science, machine learning, and statistical computing are limited compared to more versatile languages.
+-   **Less Versatility**: R is heavily focused on data analysis and statistics, making it less suited for general-purpose programming. Its capabilities outside of data science, machine learning, and statistical computing are continually be addressed with packages.
 
--  Package Dependency: Although R has a vast library of packages, their quality can vary. Some packages might be poorly maintained or have compatibility issues with newer R versions.
+-  **Package Dependency**: Although R has a vast library of packages, their quality can vary. Some packages might be poorly maintained or have compatibility issues with newer R versions.
 
--   Integration: R is not always the first choice for web development, app development, or integration with production systems. While solutions exist (such as Shiny for web apps), these use cases are generally more efficient in other languages like Python or JavaScript.
+-   **Integration**: R is not always the first choice for web development, app development, or integration with production systems. While solutions exist (such as Shiny for web apps), these use cases are generally more efficient in other languages like Python or JavaScript.
 
 ## Alternatives to R
 
--  Python: a popular alternative, known for its versatility beyond data science. It has extensive libraries for machine learning (e.g., scikit-learn, TensorFlow), data manipulation (pandas), and visualization (matplotlib, seaborn). Python's general-purpose nature makes it suitable for both data analysis and broader applications like web development, app development and automation.
+-  **Python**: a popular alternative, known for its versatility beyond data science. It has extensive libraries for machine learning (e.g., scikit-learn, TensorFlow), data manipulation (pandas), and visualization (matplotlib, seaborn). Python's general-purpose nature makes it suitable for both data analysis and broader applications like web development, app development and automation.
 
--   Julia: Julia is emerging as a high-performance language designed for numerical and scientific computing. It offers speed advantages over R and Python, particularly in tasks that involve heavy computation.
+-   **Julia**: Julia is emerging as a high-performance language designed for numerical and scientific computing. It offers speed advantages over R and Python, particularly in tasks that involve heavy computation.
 
--   SAS: Commonly used in industries such as healthcare, SAS is a robust tool for statistical analysis with a long history in academia and corporate sectors. It provides a stable environment but comes with high licensing costs compared to R's open-source nature.
+-   **SAS**: Commonly used in industries such as healthcare, SAS is a robust tool for statistical analysis with a long history in academia and corporate sectors. It provides a stable environment but comes with high licensing costs compared to R's open-source nature.
 
--   SPSS: SPSS is another statistical tool widely used in academic research and business analytics. Like SAS, it’s user-friendly for statistical analysis but is expensive and less flexible than R or Python.
+-   **SPSS**: SPSS is another statistical tool widely used in academic research and business analytics. Like SAS, it’s user-friendly for statistical analysis but is expensive and less flexible than R or Python.
+
+
+-   **Excel / Googlesheets**: Spreadsheets are one of the fundamental tools in data analysis, but they come with significant limitations. Regardless of this, they can perform some tasks well, and are easy to use.
 
 
 Each of these alternatives has their strengths, and the choice depends on the project requirements, performance needs, and user expertise. I have often found myself falling back to R during data analysis.
 
+
+::: {.callout-note}
+While R was originally designed with a focus on statistical analysis, it has evolved into a full-fledged programming language with comprehensive capabilities beyond statistics. Its extensive package ecosystem ensures robust problem-solving, improved workflow, and enhanced communication of findings, including computing dynamic results.
+:::
 
 ## Scope, Limitations, and Expectations
 
@@ -83,6 +90,6 @@ By the end of this book, readers are should be able to:
 Readers are firstly introduced to the basics of R covering the foundational aspect of R as a programming language. Next is the story mode section, that will set the stage for using R in a Research setting. These aspect will cover concepts we will mostly likely encounter in everyday  routine, such as, importing data, visualization, conducting analysis, and cleaning data among others.s
 
 
-:::{.callout-important appearance=simple}
+:::{.callout-important}
 still under development.
 :::

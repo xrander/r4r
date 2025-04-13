@@ -3,8 +3,19 @@ project:
 
 book:
   title: "R for Research"
-  author: "Olamide M. Adu"
+  
   date: "2024-09-11"
+  favicon: cover.png
+  cover-image: cover1.png
+  reader-mode: true
+  page-footer:
+    left: |
+      R for Research was written by Olamide M. Adu for yourStudyAssist.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a> @2025.
+  site-url: https://r4r.olamideadu.com/
+  repo-url: https://github.com/xrander/r4r/
+  repo-branch: main
   chapters:
     - index.qmd
     - preface.qmd
@@ -33,18 +44,7 @@ book:
         - intro-github.qmd
         - quarto.qmd
     - references.qmd
-    
-  favicon: cover.png
-  cover-image: cover1.png
-  reader-mode: true
-  page-footer:
-    left: |
-      R for Research was written by Olamide M. Adu for EU StudyAssist.
-    right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a> @2025.
-  site-url: https://r4r.olamideadu.com/
-  repo-url: https://github.com/xrander/r4r/
-  repo-branch: main
+  
   
 
 bibliography: references.bib
@@ -59,11 +59,14 @@ format:
     callout-appearance: simple
     page-layout: full
     
+    author-meta: "Olamide M. Adu"
+    
   pdf:
     documentclass: scrreprt
     pdf-engine: xelatex
     cover-image: cover1.png
     output-file: r-for-research.pdf
+  
 
 editor: source
 
