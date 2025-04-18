@@ -1,8 +1,11 @@
-# Basics {#sec-basics}
+# Part I: The Basics {#sec-basics}
 
 :::{.callout-tip}
 This section is under review.
 :::
 
+The first part of this book introduces R as a language to you. It focuses on the fundamental concepts needed to follow through the other parts of the books. If R is your first programming language or are unfamiliar with the R Syntax, this chapter will be a gentle introduction to R, else you can skip to [Part II](wrangle.qmd).
 
-In the first part of this books you will be introduced to R, the RStudio IDE, and an online IDE, Posit Cloud, and the newly created Positron IDE in [Chapter @sec-environ]. After, we get the fundamentals of the R programming, getting familiar with the syntax of the language and handling some basic operations in [Chapter @sec-operators]. The goal here is to get you familiar with R as fast as possible. After this, we move on the various data types in R, since R is mainly for data analysis, [Chapter @sec-data-types] introduces you with the common data type you will come across in your daily work. You will get acquainted to performing some operation on the different data-types in [Chapter @sec-fns], and get to know how the different data types can be arranged or organized for data analysis in [Chapter @sec-data-structures].[ Chapter @sec-ctr-str] introduces us to conditionals and loops to ensure that we get result based on set conditions. To round up this part, we see get to see how to initiate a project in [Chapter @sec-wf].
+[Chapter @sec-environ] introduces R, RStudio IDE, Posit Cloud, and the Positron IDE in . After that, the syntax and some common operations are introduced in [Chapter @sec-operators]. The goal here is to get you familiar with R as fast as possible. Next is the data types in [Chapter @sec-data-types] and this is one of the key building block in any programming language. [Chapter @sec-fns] gets you acquainted to performing some operation on the different data-types, and [Chapter @sec-data-structures] shows how the different data types can be organized for data analysis. This continues with [Chapter @sec-ctr-str], which introduces you to conditionals and loops which provides tools to control our output based on criteria which we set. To round up Part I, we aggregate the knowledge of this part and get a guide on how to initiate a project in [Chapter @sec-wf].
+
+Each chapter builds upon previous concepts, ensuring a solid foundation for more advanced topics in later parts of the book. The progression is designed to get you comfortable with R as quickly as possible while ensuring you understand the underlying concepts that are crucial for effective data analysis.

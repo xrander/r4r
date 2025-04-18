@@ -12,7 +12,7 @@ book:
     left: |
       R for Research was written by Olamide M. Adu for yourStudyAssist.
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a> @2025.
+      <p>This book was built with <a href="https://quarto.org/">Quarto</a> &commat; 2025</p> .
   site-url: https://r4r.olamideadu.com/
   repo-url: https://github.com/xrander/r4r/
   repo-branch: main
@@ -32,6 +32,7 @@ book:
         - workflow.qmd
     - part: wrangle.qmd
       chapters: 
+        - r-and-research.qmd
         - importing-data.qmd
         - data-manip.qmd
     - part: eda.qmd
