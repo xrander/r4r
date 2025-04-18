@@ -1,10 +1,10 @@
 # Operators in R {#sec-operators}
 
-Understanding the basic syntax of R is essential for performing complex operations. Basic operations in R include arithmetic operations such as, addition, and subtraction, comparison operations which involves the use of conditionals to check how object compares against one another.
+This chapter introduces some of the common operations you can do with R. To achieve this, we will use R as a simple calculator using its operators and getting a view of how its statements are structured, i.e., its syntax. Understanding the basic syntax is essential for using R for solving your pressing problem be it a simple task such as adding two numbers or performing more complex operations. This codes in this chapter are simplified one-liners and are easy to follow. With the goal being to give you a feel of the language, it will cover basic operations including arithmetic operations such as, addition, subtraction, division, and the likes, comparison operations which involves comparing two values.
 
 ## Arithmetic Operators
 
-Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below:
+Operations such as addition, subtraction, multiplication and so on, are easy to execute in R. The arithmetic operators are given below, they are the same as symbols used in elementary mathematics with only few changes:
 
 | Operator |         Definition |
 |:---------|-------------------:|
@@ -152,7 +152,7 @@ You can also use parentheses to enclose conditions when testing multiple conditi
 
 ## Assignment Operators {#sec-ass}
 
-The assignment operator is used to bind values to names called *variables*. Variables are names that are used to reference values.
+The assignment operator is used to bind values to names/labels called *variables*. These names, variables, are used to reference values.
 
 | Symbol |                                                      Meaning |
 |:-------|-------------------------------------------------------------:|
@@ -162,25 +162,29 @@ The assignment operator is used to bind values to names called *variables*. Vari
 
 : Assignment Operators in R {#tbl-ass .striped .hover .bordered}
 
-For example, we can assign the value `17` to the variable `c`. Whenever `c` is called, the value 17 is the result.
+For example, we can assign the value `17` to the variable `c`. Whenever `c` is called, the value 17 is returned.
 
 ```{r}
 c <- 17
 c
 ```
 
-This does not mean that the value(s) assigned to a particular variable cannot be changed. They can be changed easily by assigning the new value to the same name.
+This does not mean that the value(s) assigned to a particular variable cannot be changed. They can be changed easily by assigning a new value to the name.
 
 ```{r}
 c <- "man"
 ```
 
-Above we assigned the new value `man` to `c` using `<-`. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable weight using `=` as shown below. The `=` operator is best used within functions, which are collections of codes that perform certain actions, more on that in @sec-fns.
+Now the value `man` is assigned to `c` using `<-` operator. This is the convention used for assigning objects to variables in R. We can assign values to variables using other operators too, but they have specific use. For example while we can assign the value `23` to the variable weight using `=` as shown below. The `=` operator is best used within functions.
 
 ```{r}
 weight = 23
 weight
 ```
+
+:::
+Functions are collections of codes that perform certain actions, more on that in @sec-fns.
+:::
 
 For `->` operator, the variable is at the right side of the operator.
 
@@ -201,34 +205,36 @@ x
 
 ## Bringing it all together
 
-We can perform simple operations with the operators covered in this chapter. For example we can compare the average dry weight of different African tree species.
+We can perform simple operations with the operators covered in this chapter. For example, you work in a forestry research institute where local/common names are used to identify indigenous trees. You've been instructed by your supervisor to go collect data on one of the experiment your team is working on. The experiment needs data on the dry weights of the stem sections  of four different species. You go to the lab, measure the dry weight of the tree stems, recorded them on your recording sheet and head back to your office to fire up your computer. As a R beginner that you decide to use it as your tool of choice to see if it improves your research workflow. You load R up and input the data with the knowledge you just gained in your most recent lesson (Operators in R). You assign the values of the dry weight of each species to their respective name:
 
-::: {.callout-note appearance="minimal"}
-The local names of native African trees are referred to here.
+::: {.callout-note}
+Trees used in this example is native to Africa.
 :::
 
 ```{r}
 # The dry weight in kg/m3
-ekki <- 1065
-moabi <- 860
-obeche <- 380
-iroko <- 660
+ekki <- 900
+moabi <- 700
+obeche <- 240
+iroko <- 450
 ```
 
-We can get the difference between `ekki` and `obeche`, and between `iroko` and `moabi`.
+Your supervisor moves in and ask you to get the difference between the dry weight of `ekki` and `obeche`, and  the difference between the dry weight of `iroko` and `moabi`.
 
 ```{r}
 ekki - obeche
 iroko - moabi
 ```
 
-The command above translate to `1065 - 380` and `660 - 860`respectively. We can also use the comparison operators on this variables.
+Within seconds you said the difference between the dry weight of Ekki and Obeche is 660kg and that of Iroko and Moabi is -250. This is quite easy to follow for you since you understand that the command you gave above have the variables holding values you assigned too it earlier, thus representing `900 - 240` and `450 - 700`. 
+
+Surprised to hear a negative value, your supervisor ask if `iroko` is greater than `obeche`. You executed the command quickly, making use of the greater than comparison operator
 
 ```{r}
-ekki < iroko
-moabi < ekki
-ekki > obeche
+iroko > obeche
 ```
+
+You said yes, and continued in your response stating that the result you gave earlier was the difference between Iroko and Moabi. Realizing the error, your said he meant the difference between Iroko and Obeche, and the difference between Ekki and Moabi. You executed the new commanfe gave the result swiftly using R as a basic calculator.
 
 ## Summary {.unnumbered}
 
