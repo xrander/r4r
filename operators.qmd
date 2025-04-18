@@ -226,7 +226,7 @@ ekki - obeche
 iroko - moabi
 ```
 
-Within seconds you said the difference between the dry weight of Ekki and Obeche is 660kg and that of Iroko and Moabi is -250. This is quite easy to follow for you since you understand that the command you gave above have the variables holding values you assigned too it earlier, thus representing `900 - 240` and `450 - 700`. 
+Within seconds you said the difference between the dry weight of Ekki and Obeche is `660kg` and that of Iroko and Moabi is `-250`. This is quite easy to follow for you since you understand that the command you gave above have the variables holding values you assigned to it earlier, thus representing `900 - 240` and `450 - 700`. 
 
 Surprised to hear a negative value, your supervisor ask if `iroko` is greater than `obeche`. You executed the command quickly, making use of the greater than comparison operator
 
@@ -234,7 +234,7 @@ Surprised to hear a negative value, your supervisor ask if `iroko` is greater th
 iroko > obeche
 ```
 
-You said yes, and continued in your response stating that the result you gave earlier was the difference between Iroko and Moabi. Realizing the error, your said he meant the difference between Iroko and Obeche, and the difference between Ekki and Moabi. You executed the new commanfe gave the result swiftly using R as a basic calculator.
+You said yes, and continued in your response stating that the result you gave earlier was the difference between Iroko and Moabi. Realizing the error, your supervisor said he intended the difference between Iroko and Obeche, and the difference between Ekki and Moabi. You executed the new command and gave the result swiftly using R as a basic calculator.
 
 ## Summary {.unnumbered}
 
