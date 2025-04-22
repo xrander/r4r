@@ -1,12 +1,13 @@
 # Data Types in R {#sec-data-types}
 
- One of the most common source of error when using R, or performing analysis in general regardless of the platform or software used is [wrong, inappropriate or inconsistent data types](https://statsandr.com/blog/top-10-errors-in-r/). Understanding data types in R is fundamental for effective data analysis and manipulation. Some operations and analysis are possible because of specific types of data, getting this wrong will give unexpected results. Researchers regardless of the field are analysts working with various forms of data, which can be in form of survey responses, secondary data, field or lab measurements. These data are usually a combination of numbers in the form of a measurements, words or text, such as survey participants responses, or a ranking or category such as yes/no responses, income level or marital status. Before proceeding with any analysis, it is crucial to understand the types of data we are working with. In the research process, as seen in @fig-str, data collection and analysis are key stages.
+Now that we are familiar with the basic syntax of R and its syntax. We move on to different data types, and that's because these operators works on one or more of these data types. Understanding the concept of the data types, reduces the likelihood of an error occurring, or in some case ease the debugging process when an error does occur. This is because one of the most common source of error when using R, or performing analysis in general regardless of the software used is wrong, inappropriate or inconsistent data types, [read this blog post for more details ](https://statsandr.com/blog/top-10-errors-in-r/).
 
-Each data has its own unique structure and requirements influencing the method used in analyzing them. Understanding the distinctions between different data types ensures we can manipulate, analyze and interpret the findings from our data effectively. Here, we will explore the data types in R
+Researchers regardless of the field are analysts working with various forms of data, which can be survey responses, secondary data from institutions, and field or lab measurements among others. These data are usually any of numbers, response in form of alphabets, ranking, rating or choice response such as yes/no. It is crucial to understand the types of data you are working with before any analysis is done. In the research process @fig-str, data collection and analysis are key stages, and one that frustrates a lot of researcher. While data collection is often tedious, this should not be the same with data analysis. With a proper framework and workflow, analyzing your data should be less daunting than collecting it.
 
-![Stages of Research](images/research-stages.png){#fig-str fig-align="center"}
 
-There are six different data types in R, five which will be used frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable. The data types are in R are:
+![Stages of Research](images/research-stages.png){#fig-str fig-align="center" .lightbox}
+
+There are six different data types in R, five which we will come across frequently in this book. In R,  the function `typeof()` and `class()` are used to check the data type of a variable, these functions will be useful as we move along. The data types are in R are: 
 
 -   character
 -   factor
@@ -17,13 +18,29 @@ There are six different data types in R, five which will be used frequently in t
 
 ## Character
 
-Characters represent text and are written in R by enclosing contents in quotation marks. The quotation mark can either be the single `'` or double `"` and anything can be the content of a string as long as the quotation mark enclose the content. It is more common to use the double `"` than the single `'`. 
+Characters represent strings/texts and are written in R by enclosing contents in quotation marks. The quotation mark can either be the single `'` or double `"` and anything can be a character as long its contents are wrapped in quotation mark. 
 
 ```{r}
 "tree"
 ```
 
-We can check the data type of the text *"tree"* with either `class()` or `typeof()`.
+I'd advise to use the double `"` over the single `'` as it allows you to use the apostrophe without worry, and it just also looks better. 
+
+```{r}
+#| error: true
+
+'My boss said - "what makes a good boss is not knowing all, that's why I have employees"'
+```
+
+The above code is wrong because of the apostrophe as it is mistaken as closing the character statement.
+```{r}
+"My boss said - 'what makes a good boss is not knowing all, that's why I have employees'"
+"The man's children" # Definitely looks better
+'The man"s children'
+
+```
+
+We can check the data type of an object with either `class()` or `typeof()`. 
 
 ```{r}
 typeof("tree")
@@ -39,7 +56,7 @@ tree <- "Quercus robur"
 class(tree)
 ```
 
-Let's look at the example below, we have error because `oak` is an object with no values assigned to it. So `oak` and "oak" are different. The latter is a character while the former is an object.
+Let's look at the example below, we have error because `oak` is an object with no values assigned to it. So `oak` and `"oak"` are different. The latter is a character while the former is an object.
 
 ```{r}
 #| error: true
@@ -47,7 +64,7 @@ Let's look at the example below, we have error because `oak` is an object with n
 class(oak)
 ```
 
-There is a way to check if an objects is a character or not different from using `class()` and `typeof()`. Using `is.character()` function returns a TRUE or FALSE when checking if objects are character data type.
+There is a way to check if an objects is a character or not different from using `class()` and `typeof()`. The `is.character()` function returns a `TRUE` or `FALSE` used. `TRUE`, its a character data type and vice-versa.
 
 ```{r}
 is.character("moabi")
@@ -55,54 +72,82 @@ is.character(2)
 is.character("2")
 ```
 
-Do not be surprised when you import some data into R and see that numbers are characters, so ensure you confirm that using all the `is._` variations of functions you will see in this chapter.
 
 ## Factors {#sec-fcts}
 
-Factors are used to represent categorical data in R. In R, factors are always leveled, and can only contain predefined values. A good example of data that can be represented as factors are survey response like educational status, income level, satisfaction rating and so on. There are two types of factors or categorical data. We have ordered (ordinal) categorical data or unordered (nominal) categorical data. The function `factor()` is used to create factors in R.
+Factors are used to represent categorical data in R. They are usually leveled, and can only contain predefined values. The levels are usually distinct values. Data that can be represented as factors relates to responses like educational status, income level/class, satisfaction rating and so on. For example, in a farm of 5000 livestock, 2000 are goats, 390 cattles, 1500 sheeps, and 1100 pigs. The levels, i.e., the distinct animals in the farm include goat, sheep, pig, and cattle.
 
-### Nominal Factor
 
-These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, nursery plantation site, and so on. Below are three data, one for tree names, another for poultry birds according to use, and the last is fertilizer.
+### Types of Factors
+
+There are two types of factors or categorical data. We have ordered (ordinal) categorical data or unordered (nominal) categorical data. The function `factor()` is used to create factors in R.
+
+- **Nominal Factor**: These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, names of treatments, and so on. Below are example nominal data.
 
 ```{r}
 #| label: nominal-factor
-tree_names <- factor(c("Lophira alata", "Triplochiton scleroxylon", "Mansonia altissima",
-                       "Celtis africana", "Borassus aethiopum"))
+
+livestocks <- factor(c("pig", "cattle", "goat", "sheep", "sheep",
+                       "sheep", "pig", "sheep","sheep",
+                       "sheep", "pig", "pig", "goat", "goat", "cattle")
+                     )
+tree_names <- factor(c("Lophira alata", "Triplochiton scleroxylon",
+                       "Mansonia altissima", "Celtis africana", 
+                       "Borassus aethiopum")
+                     )
 poultry_birds <-factor(c("breeders", "broilers", "layers"))
 fertilizer <- factor(c("N", "P", "K"))
 ```
 
 
 ```{r}
+livestocks
 tree_names
 poultry_birds
 fertilizer
 ```
 
-::: {.callout-tip appearance="simple"}
-The function `c()` used above is used to combine values.
+::: {.callout-tip}
+The function, `c()`, is used to combine values. More about `c()` will be discussed in [Chapter @sec-fns]
 :::
-When we print this variables, notice that `Levels` is included as part of the print with the categories arranged in alphabetical order. To see the levels of a factor object pass the object to the function `levels()`
+
+::: {.callout-note}
+Treatment is a technical term used in research, if the word treatment seem unfamiliar to you at the moment, we will discuss it in the next part of this book.
+:::
+
+When we print this variables, notice the output, especially that of `livestock`, we see that `Levels` is included as part of the result with the categories arranged in alphabetical order. At a closer look, you see that `livestock` Levels returns only the distinct animals even while they appear more than once in the data.
+
+Using the function `levels()` we can get this distinct values of a factor returned as character.
 
 ```{r}
 levels(tree_names)
 ```
 
-We can check the class of these objects and confirm that they are indeed factors.
+Using `class()` we can confirm the data type of these objects.
 ```{r}
-class(tree_names)
 class(poultry_birds)
-class(fertilizer)
 ```
-When you use the `typeof()` function on these objects, the result is `integer` which will be discussed in [ -@sec-integer]. The result is so because factors are built on top of integers.
+If we use the `typeof()` function instead we get `integer`,soon to be discussed in [-@sec-integer]. This is because `class()` checks the object class, while `typeof()` storage mode or internal type of objects and the factors are built on top of integers.
 
 ```{r}
 typeof(tree_names)
 ```
 
-###   Ordinal Factors
-Ordinal factors are somewhat different from nominal or regular factors. When the nominal factors above where created, we did it without specifying a level argument, when the level is specified, we are indicating a rank or degree of distance between the factors. An example is month, days of the week, satisfaction level, employee's position in an organization and so on. Let's construct a hypothetical survey response on the satisfaction level of having trees cut down for other needs other than conservation:
+- **Ordinal Factors**: Ordinal factors are different from nominal factors, as they indicate a degree of difference, hierarchy, rank or order. Before we proceed to creating ordinal factors, let's get more understanding into the levels attribute of factors. When we created the nominal factors, we did not include the level argument, as R automatically does that for us. If we specify the level argument we take more control of how factors are organized dictating a particular print order. For example, let's check the difference in how the levels are arranged in the gender object below:
+
+```{r}
+gender_1 <- factor(c("m", "f"), levels = c("f", "m"))
+gender_2 <- factor(c("m", "f"), levels = c("m", "f"))
+```
+
+```{r}
+gender_1
+gender_2
+```
+
+
+
+An example is month, days of the week, satisfaction level, employee's position in an organization and so on. Let's construct a hypothetical survey response on the satisfaction level of having trees cut down for other needs other than conservation:
 
 
 ```{r}
@@ -347,6 +392,10 @@ There are other data types not covered such as:
 -   Date
 -   POSIXct
 -   Raw
+
+:::{.callout-note}
+Do not be surprised when you import some data into R and see that numbers are characters, so ensure you confirm that using all the `is._` variations of functions you will see in this chapter.
+:::
 
 ## Recommended Reading
   [Chapter 3 of Advanced R by Hadley Wickham, 2019](https://adv-r.hadley.nz/vectors-chap.html) gives in-depth understanding of the data types in R.
