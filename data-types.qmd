@@ -435,13 +435,54 @@ There are other data types not covered such as:
 -   POSIXct
 -   Raw
 
+## Bringing it all together
+Just like you, your friend is a beginner of R and a new recruit at the National Bureau of Statistics.On his very first day, a dataset in 852 data sheet collected by 80 field staff was placed on his desk. The data includes responses from a recent survey on selected food prices across different regions of the country.
+
+Feeling a bit overwhelmed, he paused and thought: ***"How can I make sense of all this data?"*** Then he remembered his last R training session especially the part about data types.
+
+He picked up the survey sheets. Since the questions were well-structured, it became easier to identify what types of data he was dealing with. He decided to begin by categorizing the responses by region. For simplicity, we’ll focus on four main regions: North, East, West, and South.
+For the regions, he recorded them as characters.
+```{r}
+regions <- c("north", "east", "west", "south")
+```
+
+Next, he sorted the data according to the food items, recording them also as characters also.
+```{r}
+food_item <- c("rice", "beans", "yam", "flour", "cassava")
+```
+
+After, he recorded the prices of each item, their quantity sold and their availability in the market.
+
+```{r}
+rice_price <- 200
+beans_price <- 300
+yam_price <- 700
+flour_price <- 120
+cassava_price <- 90
 
 
-## Recommended Reading
+rice_quantity <- 3000L
+beans_quantity <- 1500L
+yam_quantity <- 1800L
+flour_price <- 4500L
+cassava_quantity <- 10000L
+```
+
+
+## Recommended Reading {.unnumbered}
   [Chapter 3 of Advanced R by Hadley Wickham, 2019](https://adv-r.hadley.nz/vectors-chap.html) gives in-depth understanding of the data types in R.
 
   [Hands-On Programming with R by Garret Grolemund](https://rstudio-education.github.io/hopr/r-objects.html) explain the concepts of R in a game-like approach using deck of cards.
 
 ## Summary {.unnumbered}
 
-Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is._` function. These data types can be converted from one type to another using `as._`.
+Data types in R include character, factor, double, integer, and logical. This data type can be checked using `class()`,  `typeof()` and their adjoining `is.data_type` function. These data types can be converted from one type to another using `as.data_type` variant.
+
+
+## Short Exercise {.unnumbered}
+
+Take a moment to reflect on your friend's approach to organizing the survey data. Based on what you've just learned:
+
+-  What data types did your friend use to record the responses?
+-  Do you think he chose the right data types for each variable? If not, what changes would you suggest and why?
+-  Given the task assigned to your friend, could there be a better way to organize or structure the data for easier analysis?
