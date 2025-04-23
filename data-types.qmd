@@ -82,12 +82,18 @@ Factors are used to represent categorical data in R. They are usually leveled, a
 
 There are two types of factors or categorical data. We have ordered (ordinal) categorical data or unordered (nominal) categorical data. The function `factor()` is used to create factors in R.
 
-- **Nominal Factor**: These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, names of treatments, and so on. Below are example nominal data.
+#### Nominal Factor
+These are unordered categorical data with levels. There's no degree of distance or ranking in nominal factor variables. Example are the name of states in a country, name of trees, names of treatments, and so on. Below are example nominal data.
+
+::: {.callout-note}
+Treatment is a technical term used in research, if the word treatment seem unfamiliar to you at the moment, we will discuss it in the next part of this book.
+:::
+
 
 ```{r}
 #| label: nominal-factor
 
-livestocks <- factor(c("pig", "cattle", "goat", "sheep", "sheep",
+livestock <- factor(c("pig", "cattle", "goat", "sheep", "sheep",
                        "sheep", "pig", "sheep","sheep",
                        "sheep", "pig", "pig", "goat", "goat", "cattle")
                      )
@@ -101,7 +107,7 @@ fertilizer <- factor(c("N", "P", "K"))
 
 
 ```{r}
-livestocks
+livestock
 tree_names
 poultry_birds
 fertilizer
@@ -111,9 +117,6 @@ fertilizer
 The function, `c()`, is used to combine values. More about `c()` will be discussed in [Chapter @sec-fns]
 :::
 
-::: {.callout-note}
-Treatment is a technical term used in research, if the word treatment seem unfamiliar to you at the moment, we will discuss it in the next part of this book.
-:::
 
 When we print this variables, notice the output, especially that of `livestock`, we see that `Levels` is included as part of the result with the categories arranged in alphabetical order. At a closer look, you see that `livestock` Levels returns only the distinct animals even while they appear more than once in the data.
 
@@ -133,7 +136,8 @@ If we use the `typeof()` function instead we get `integer`,soon to be discussed 
 typeof(tree_names)
 ```
 
-- **Ordinal Factors**: Ordinal factors are different from nominal factors, as they indicate a degree of difference, hierarchy, rank or order. Before we proceed to creating ordinal factors, let's get more understanding into the levels attribute of factors. When we created the nominal factors, we did not include the level argument, as R automatically does that for us. If we specify the level argument we take more control of how factors are organized dictating a particular print order. For example, let's check the difference in how the levels are arranged in the gender object below:
+#### Ordinal Factors
+Ordinal factors are different from nominal factors, as they indicate a degree of difference, hierarchy, rank or order. Before we proceed to creating ordinal factors, let's get more understanding into the levels attribute of factors. When we created the nominal factors, we did not include the level argument, as R automatically does that for us. If we specify the level argument we take more control of how factors are organized dictating a particular print order. For example, let's check the difference in how the levels are arranged in the gender object below:
 
 ```{r}
 gender_1 <- factor(c("m", "f"), levels = c("f", "m"))
@@ -144,69 +148,107 @@ gender_2 <- factor(c("m", "f"), levels = c("m", "f"))
 gender_1
 gender_2
 ```
-
-
-
-An example is month, days of the week, satisfaction level, employee's position in an organization and so on. Let's construct a hypothetical survey response on the satisfaction level of having trees cut down for other needs other than conservation:
-
+The levels of `gender_1` and `gender_2` follows the arrangement specified in their `levels` argument. The output of `gender_1` is also similar to running the code without the `levels` argument specified, i.e., arranged in alphabetical order. This knowledge will be important when we want to create ordinal factors. There are two ways to create ordinal factors. The first is using the `ordered()` function, and the second is passing `TRUE` to the `ordered` argument in `factor`. Let's take a quick example of a response that include educational level. The survey question would be typically asked such that only one response is ticked - " What's your highest educational level attained." The responses when recorded could be encoded using numbers such 1, 2, 3, and so on, or alphabets such as A, B, C, etc., to represent the levels. For this example, the 2011 International Standard Classification of education which categorize education level into 9 distinct classes will be useful [@isced2012international] .
 
 ```{r}
-#| label: ordered-factor
+#| label: ordinal-factor-unlabelled
 
-satisfaction_level <- factor(c("very satisfied", "satisfied", "satisfied",
-                               "dissatisfied", "very satisfied", "very dissatisfied",
-                               "very satisfied", "dissatisfied"), 
-                             levels = c("very dissatisfied", "dissatisfied",
-                                        "neutral", "satisfied", "very satisfied"),
-                             ordered = TRUE
-                )
+education_level <- factor(
+  c(7, 8, 4, 2, 3, 3, 4, 1, 5, 4, 4, 7, 2, 6, 5,
+    1, 2, 7, 7, 6, 0, 3, 3, 7, 8, 1, 0, 5, 3, 7, 7,
+    0, 5, 8, 0, 5, 6, 2, 2, 0, 2, 2, 6, 1, 5, 0, 3,
+    8, 8, 5),
+  levels = c(0:8),
+  ordered = TRUE
+)
 
+education_level
+```
+
+The data might not make sense to some people, and it should not. With a good data documentation, understanding what the data means becomes easier.
+Some could argue that it would be better to write the label outright without the stress of encoding them with numbers, and that's a solid argument, but such data entry task could be daunting depending on the size of the project. There's an easy way to go about this would be that makes the stress of retyping reduce with the `labels` argument. The `labels` argument replaces the numbers with texts/labels so they are easy to understand.
+
+```{r}
+#| label: ordinal-factor-labelled
+
+education_level_labelled <- factor(
+  c(7, 8, 4, 2, 3, 3, 4, 1, 5, 4, 4, 7, 2, 6, 5,
+    1, 2, 7, 7, 6, 0, 3, 3, 7, 8, 1, 0, 5, 3, 7, 7,
+    0, 5, 8, 0, 5, 6, 2, 2, 0, 2, 2, 6, 1, 5, 0, 3,
+    8, 8, 5),
+  levels = c(0:8),
+  labels = c("Early childhood", "Primary", "Lower secondary", 
+             "Upper secondary", "Post secondary non-tertiary",
+             "Short cycle tertiary", "Bachelors", "Masters",
+             "Doctoral"),
+  ordered = TRUE
+)
+
+education_level_labelled
+```
+
+Now, this is easier to understand. 
+
+Let's switch our attention back to ordinal factors. First, we set the `ordered` argument within factor to `TRUE` and a closer look at the Levels shows a different output. We have the lesser than symbol, which shows that `Early childhood` is lesser than `Primary`, `Primary` lesser than `Lower secondary` and so on. This represents a rank. Here, `Early childhood` is the lowest rank and `Doctoral` the highest rank. Using the function `table()` we can take a frequency of the response.
+
+```{r}
+table(education_level_labelled)
+```
+
+Specifying the levels is important as it also helps us detect if a level is missing.
+
+```{r}
+edu_level <- factor(
+  c(1, 2, 3, 4, 1, 1, 2, 3, 7, 8),
+  levels = c(0:8),
+  labels = c("Early childhood", "Primary", "Lower secondary", 
+             "Upper secondary", "Post secondary non-tertiary",
+             "Short cycle tertiary", "Bachelors", "Masters",
+             "Doctoral"),
+  ordered = TRUE
+)
+
+edu_level
+```
+
+Even when missing some levels, the Levels are still shown. In the current version of education level, `edu_level`, `Early childhood`, `Bachelors`, and `Short cycle tertiary` education levels are  missing. Using `table()` shows this better.
+
+```{r}
+table(edu_level)
 ```
 
 
-```{r}
-satisfaction_level
 
-class(satisfaction_level)
-```
-
-On printing the variable we can see that:
-
-*   The levels are not arranged according to alphabetical order, 
-*   The order arrangement of the levels when we print the follows the order specified in the argument `levels`,
-*   The value neutral indicated in levels but not in the data collected is still printed as part of the levels. This indicate that factors are indeed predefined even if data on a particular factor is not collected. 
-
-WWe can perform a quick check on the frequency of each category using the function `table()`.
-
-```{r}
-table(satisfaction_level)
-```
- 
-The result shows `neutral` as having zero, meaning that no respondent choose neutral in this hypothetical survey.
-
-:::{.callout-note appearance="simple"}
-we have been using functions a lot now without properly defining what functions are. Just keep in mind that functions are little programs or block of codes that perform specified actions. More will be discussion on that in @sec-fns.
+:::{.callout-note}
+We have been using functions like `c()`, `table()`, `class()` and so on for a while now without properly introducing functions properly. Just keep in mind that functions are variables with parenthesis in front of them. They are block of codes that perform specified actions. More will be discussion on that in @sec-fns.
 :::
 
 To confirm if a variable is a factor data type use the `is.factor()` . Let's create a new survey response, but this time it won't be wrapped in the factor variable.
 
 ```{r}
-satisfaction_level_chr <- c("very satisfied", "satisfied", "satisfied",
-                               "dissatisfied", "very satisfied", "very dissatisfied",
-                               "very satisfied", "dissatisfied")
+edu_level_chr <- c("Early childhood", "Primary", "Lower secondary", 
+                            "Upper secondary", "Post secondary non-tertiary",
+                            "Short cycle tertiary", "Bachelors", "Masters",
+                            "Doctoral")
 ```
 
 
 ```{r}
-is.factor(satisfaction_level_chr)
-is.factor(satisfaction_level)
+is.factor(edu_level_chr)
+is.factor(livestock)
 ```
 
 We can also confirm if a factor is ordered or not using the function `is.ordered()`
 
 ```{r}
-is.ordered(satisfaction_level)
+is.ordered(edu_level)
 ```
+
+
+::: {.callout-important}
+It is important to take a closer look at the output of your codes it shows if the output is what you expect. Factors have no quotation marks when returned, but characters do. This is a good distinction to keep in mind.
+:::
+
 
 ## Numeric Data type
 Numeric data are digits. There are two types of numeric data; integer and double.
@@ -302,7 +344,7 @@ is.complex(5i)
 
 ## Changing Data Types
 
-In R we can change data types using `as._` similar to `is.` which is used to check a data type.
+In R we can change data types using `as.data_type` similar to `is.*` which is used to check a data type.
 
 ```{r}
 tree_height <- 20:40
@@ -353,7 +395,7 @@ tree_height_chr <- as.character(tree_height)
 class(tree_height_chr)
 ```
 
-Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return numbers only if what is been converted contains only digits, else NA is returned as the result. we get a warning when there's not a digit in the object being converted.
+Characters can be changed back to numeric or double data type using the `as.double()`, `as.integer()` or `as.numeric()` function. The functions will return a number only if what is been converted contains only digits, else, `NA` is returned as the result. we get a warning when there's not a digit in the object being converted.
 
 ```{r}
 tree_height <- c(10, 15, 20, "25m")
@@ -367,7 +409,7 @@ class(tree_height)
 we can also convert factors to integers. As said in [ -@sec-fcts], factors are built on integers.
 
 ```{r}
-fruits <- factor(c("orange", "tomato", "olive"))
+fruits <- factor(c("clementine", "kiwi", "avocado"))
 class(fruits)
 as.integer(fruits)
 ```
@@ -393,9 +435,7 @@ There are other data types not covered such as:
 -   POSIXct
 -   Raw
 
-:::{.callout-note}
-Do not be surprised when you import some data into R and see that numbers are characters, so ensure you confirm that using all the `is._` variations of functions you will see in this chapter.
-:::
+
 
 ## Recommended Reading
   [Chapter 3 of Advanced R by Hadley Wickham, 2019](https://adv-r.hadley.nz/vectors-chap.html) gives in-depth understanding of the data types in R.

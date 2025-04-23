@@ -58,6 +58,8 @@ format:
     toc-depth: 3
     code-link: true
     callout-appearance: simple
+    number-sections: true
+    title-prefix: "Chapter "
     page-layout: full
     
     author-meta: "Olamide M. Adu"
