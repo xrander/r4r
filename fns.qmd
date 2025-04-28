@@ -4,51 +4,49 @@
 This section is under review.
 :::
 
-In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` to mention a few were used. But what exactly are functions, and why are they important? Functions in R are self-contained blocks of code designed to perform specific tasks.
+In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` were used. These objects with parentheses in front of them are referred to as functions. Functions are self-contained blocks of code designed to perform specific tasks. For example, the function `c()` stands for "concatenate" or "combine," and its role is to combine objects into a vector.
 
-Think of a function like a kitchen knife—its purpose is to cut, and how you use it depends on the task at hand. For example, the function `c()` stands for "concatenate" or "combine," and its role is to combine objects into a list or vector.
+We use functions because they simplify our work and make analyses more efficient. If we make mistakes, functions allow for easy corrections and the interesting thing is they are reusable. You don't throw away a knife once you are done with it, you clean it and reuse it. In R, function names are usually verbs, representing actions to be taken. Since functions are named objects followed by parentheses, their parentheses serve a purpose -- to hold arguments.  **Arguments** are the values passed to the function to perform a task on, think of them as onions, beef, or whatever you use a knife to cut.
 
-We use functions because they simplify our work and make analyses more efficient. If we make mistakes, functions allow for easy corrections and re-use. In R, function names are usually verbs, representing actions to be taken. Functions are named objects followed by parentheses. Inside these parentheses are arguments, which are the values passed to the function to control how it operates and the type of result it returns.
-
-Just like how a knife can cut onions in different ways—rings, half-moons, juliennes, dice, or rough chops—arguments allow us to specify the exact type of result we want from a function. Each variation produces a different output, but the underlying tool (the function) remains the same.
-
-As an example, let's take an hypothetical tomato nursery experiment. In this experiment, we get some tomato fruit and measure their diameter. To record the diameter, we use the concatenation, `c()` function.
+One of the most basic and very important function is `c()` which combines values. As an example, let's take an hypothetical tomato nursery experiment. In this experiment, we get some tomato fruit and measure their diameter. Using `c()`, you can combine the values of all the tomato ball diameter recorded.
 
 ```{r}
 tomato_diameter <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-There are two ways to view the diameter collected. The first is using the `print()` function
+To see the diameter you have recorded, you can use either the `print()` function or simply call the variable as is and run  it.
 
 ```{r}
 print(tomato_diameter)
 ```
 
-The other option is by calling the object. This automatically print the result. It's more common you see people do this than using the `print()` function, although, `print()` is still used a lot.
 
 ```{r}
 tomato_diameter
 ```
 
 ## Some Built-in Functions
-There are a lot of functions readily loaded in R to equip you for the analysis tasks you want to undertake. For tasks that R built-in function can't handle, you can install packages (covered in [Chapter @sec-pkgs]) or build your own, covered in [ -@sec-cust-fns]. The various built-in functions are designed to perform specific tasks on the various data types. There are some designed to work with files and folders as well.
-For examples, you may want to know the total number of values we have in our record, that is the count. You can do this with `length()`.
+There are a lot of functions readily loaded in R to help with your analysis tasks. For tasks that R built-in function can't handle, you can always install packages (covered in [Chapter @sec-pkgs]) or develop your custom function, a concept which we will cover in [ -@sec-cust-fns]. 
+
+For examples, to know the total number of values we have in our recorded in `tomato_diameter` we can use `length()`.
 ```{r}
 length(tomato_diameter)
 ```
 
-To find the average of the records of tomato_diameter use `mean()`.
+To find the average of the records of tomato_diameter use `mean()` and pass the object in between the parentheses.
 
 ```{r}
 mean(x = tomato_diameter)
 ```
-The above can also be written as 
+
+In the function `mean()`, `x` is the **parameter**. Parameters usually differ from function to functions. We can also write the above as.
 ```{r}
+#| label: function
 #| eval: false
 `mean(tomato_diamter)`
 ```
 
-`x` here is the keyword argument that the function takes and in this case is the data *tomato_diameter*. To know more about any function use the function `help()` or type a question mark followed by the question name. So we have `help(mean)` or `?mean`.
+When we use `x` in the function, we are using a **keyword argument**, while when unused like seen in the second code, we are using the **position argument**. To know more about any function use `help()` and pass the function in between the parentheses or type a question mark followed by the function name. For example, `help(mean)` or `?mean`.
 
 To check the median of the data use (you guessed it right) `median()`. We also have `sd()`, `var()`, and `cor()` for estimating the standard deviation, variance and correlation respectively.
 
@@ -59,15 +57,21 @@ sd(tomato_diameter)
 var(tomato_diameter)
 cor(tomato_diameter, 1:10)
 ```
-Using functions such as `round()` you can round off the values of the recorded tomatoes diameter to the nearest whole number.
+
+We can round up numbers using `round()`.
+
 ```{r}
 round(tomato_diameter)
 ```
-To specify the decimal place to round to, pass a number, which is ideally an integer or whole number to the argument `digits`.
+To specify the decimal place to round to, pass a number, which is ideally an integer to the argument `digits`.
 ```{r}
 round(tomato_diameter, digits = 1)
+```
+
+The positional argument syntax is shown below.
+```{r}
 # Also the same as
-# round(tomato_diameter, 1)
+round(tomato_diameter, 1)
 ```
 
 To round up in a specific direction, either up or down, we have two variation of `round()`, `ceiling()`, to round up and `floor()` to round down.
