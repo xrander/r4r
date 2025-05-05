@@ -39,7 +39,7 @@ To find the average of the records of tomato_diameter use `mean()` and pass the 
 mean(x = tomato_diameter)
 ```
 
-In the function `mean()`, `x` is the **parameter**. Parameters usually differ from function to functions. We can also write the above as.
+In the function `mean()`, `x` is the **argument**. Arguments usually differ from function to functions. We can also write the above as.
 ```{r}
 #| label: function
 #| eval: false
@@ -63,7 +63,9 @@ We can round up numbers using `round()`.
 ```{r}
 round(tomato_diameter)
 ```
+
 To specify the decimal place to round to, pass a number, which is ideally an integer to the argument `digits`.
+
 ```{r}
 round(tomato_diameter, digits = 1)
 ```
@@ -74,18 +76,19 @@ The positional argument syntax is shown below.
 round(tomato_diameter, 1)
 ```
 
-To round up in a specific direction, either up or down, we have two variation of `round()`, `ceiling()`, to round up and `floor()` to round down.
+To round up in a specific direction, either up or down, we have two variation of `round()`. The `ceiling()`, to round up and `floor()` to round down.
+
 ```{r}
 floor(3.544)
 ceiling(3.544)
 ```
 
+To create a sequence of number, we can use the colon, `:`, symbol  and the `seq()` function. The `seq()` function gives more control on the sequence and how they are generated. Important arguments of `seq()` to remember are `from`, `to`, and `by`.
 
-To create a sequence of number use the colon (`:`) symbol  and the `seq()` function. `seq()` gives more control on the sequence you want to generate. Important arguments of `seq` to remember are `from`, `to`, and `by`.
 ```{r}
 seq(from = 1, to = 100, by = 1)
 ```
-The above is also similar to the code below, using position of the arguments instead of writing the argument out. Writing in such a manner is common in the R community.
+The above is also similar to the code below, making use of positional instead of keyword arguments. Writing in such a manner is common in the R community.
 ```{r}
 #| eval: false
 seq(1, 100, 1)
@@ -382,8 +385,8 @@ When do you need to write a function?
   - For individuals that regular submit report to different people, stakeholders, and groups, parametizing different inputs in your report ensure you produce multiple focused report at once.
   - Avoiding code duplication
 
-
 :::{.callout-important}
+
 ## Getting Help
 Use the `help()` function and `?` to get help. Also, use `args()` to see the arguments of functions. Just to let you know, there are more than 2300 functions loaded when an R session starts and that's a lot. You will remember some and forget some, but as keep using R they become a part of you.
 
@@ -398,4 +401,4 @@ Functions are little codes that performs specific functions. Armed with them we 
 1. Using `seq()`, create a sequence of odd numbers between 1 and 100.
 2. Read the documentation of `mean()`, `median()`, `sd()`, and `var()`. What does the `is.na()` argument does?
 3. What is the difference between `substring()` and `substr()`?
-4. What is the difference between `paste()` and `paste0()`.
+4. What is the difference between `paste()` and `paste0()`?
