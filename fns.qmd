@@ -4,17 +4,19 @@
 This section is under review.
 :::
 
-In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` were used. These objects with parentheses in front of them are referred to as functions. Functions are self-contained blocks of code designed to perform specific tasks. For example, the function `c()` stands for "concatenate" or "combine," and its role is to combine objects into a vector.
+In the previous chapters, functions such as `c()`, `as.factors()`, and `class()` were used. These objects with parentheses in front of them are referred to as **functions**. Functions are self-contained blocks of code designed to perform specific tasks. 
 
-We use functions because they simplify our work and make analyses more efficient. If we make mistakes, functions allow for easy corrections and the interesting thing is they are reusable. You don't throw away a knife once you are done with it, you clean it and reuse it. In R, function names are usually verbs, representing actions to be taken. Since functions are named objects followed by parentheses, their parentheses serve a purpose -- to hold arguments.  **Arguments** are the values passed to the function to perform a task on, think of them as onions, beef, or whatever you use a knife to cut.
+We use functions because they simplify our work and make analyses more efficient. If we make mistakes, functions allow for easy corrections and the interesting thing is they are reusable. You don't throw away a knife once you are done using it, you clean it up and reuse it whenever you need it again. Functions are similar to that reusable chunks of codes.
 
-One of the most basic and very important function is `c()` which combines values. As an example, let's take an hypothetical tomato nursery experiment. In this experiment, we get some tomato fruit and measure their diameter. Using `c()`, you can combine the values of all the tomato ball diameter recorded.
+In R, function names are usually verbs, representing actions to be taken. Since functions are named objects followed by parentheses, their parentheses serve a purpose -- to hold arguments.  **Arguments** are the values passed to the function to perform a task on, think of them as onions, beef, or whatever you use a knife to cut, but this time around they are our a part or the whole of a data
+
+One of the most basic and very important function is `c()` which combines values. Let's take a hypothetical tomato experiment as an example. In this experiment, we are interested in seeing how three fertilizers influences the weight of tomato. So we go to our greenhouse and get some tomato fruit measuring their weight in `g`. Using `c()`, we can combine the values of all the tomato weights collected.
 
 ```{r}
-tomato_diameter <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
+tomato_weight <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-To see the diameter you have recorded, you can use either the `print()` function or simply call the variable as is and run  it.
+To see the weights that have been recorded, we can use either the `print()` function or simply call the variable as is and run  it.
 
 ```{r}
 print(tomato_diameter)
