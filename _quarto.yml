@@ -61,6 +61,7 @@ format:
     number-sections: true
     title-prefix: "Chapter "
     page-layout: full
+    lightbox: true
     
     author-meta: "Olamide M. Adu"
     

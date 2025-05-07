@@ -131,21 +131,25 @@ month.abb
 
 
 ### Simulating Numbers
-An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the `runif()` function generates random numbers from a uniform distribution, `rnorm()` for the normal distribution, `rpois()` for the Poisson distribution, and `rbinom()` for the binomial distribution. These functions belong to a family that also includes functions for calculating density (**d**), distribution functions (**p**), quantiles (**q**), and random deviates (**r**) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
+Aside from generating sequence of numbers, we can simulate numbers using R to meet certain distributions. An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different distributions. For example, the `runif()` function generates random numbers from a uniform distribution, `rnorm()` for the normal distribution, `rpois()` for the Poisson distribution, and `rbinom()` for the binomial distribution. These functions belong to a family that also includes functions for calculating density (**d**), distribution functions (**p**), quantiles (**q**), and random deviates (**r**) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
 
-For example, to simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 35 cm and a deviation of 2.3 cm all of the same age use `rnorm()`. In forestry, the distribution of trees diameter in a plantation is usually a bell-shaped curve. With some codes you will generate such curve as @fig-dia-hist-2 while the distribution of the diameters represented as a histogram can be seen in @fig-dia-hist-1.
+For example, to simulate the height of 100 *Tectona grandis* in a plantation with mean diameter of 35 cm and a standard deviation of 2.3 cm we use `rnorm()`. `rnorm()` generates random numbers following the normal distribution.
 ```{r}
 teak_diameter <- rnorm(100, mean = 35, sd = 2.3)
 teak_diameter
 ```
 
-The numbers generated above will be different from that which you will produce and may never get the exact thing. This is because they are random numbers. The beauty of R is its reproducibility. Using the function `set.seed()`, you can capture or get a snapshot of specific number random numbers, a pseudorandom number which makes your work replicable. Given that the seed number is the same, whatever pseudorandom numbers are produce can be replicated by another person.
+The numbers generated above will be different from that which you will produce. This is because they are random numbers. The beauty of R is its reproducibility, and what use is reproducibility if others can't get the same result as us if they follow exactly the same steps as us. That's why there's the `set.seed()` function which captures or get a snapshot of specific numbers randomly generated. Given that the seed number is the same, whatever pseudorandom numbers are produce can be replicated by another person.
 
 ```{r}
 set.seed(123)
 tree_diameter <- rnorm(100, mean = 25, sd = 12.3)
 tree_diameter
 ```
+
+With the seed set already, you should have exactly the same result as what is produced here.
+
+We can understand the data which we just produced if it is visualized. With the `plot()` function, we can produce a graph. Not to worry we will cover more on visualizations @sec-dataviz. 
 
 ```{r}
 #| label: fig-dia-hist
@@ -169,7 +173,11 @@ plot(
   lty = "dashed"
 )
 ```
-`runif()` is used to for generating number of a uniform distribution, @fig-hist-unif.
+
+In forestry, the distribution of trees diameter in a plantation is usually a bell-shaped curve. @fig-dia-hist-2 shows the distribution of the diameter, while the distribution of the diameters represented as a histogram can be seen in @fig-dia-hist-1.
+
+
+While `rnorm()` generates numbers that follow a normal distribution `runif()` generates numbers that follow a uniform distribution, @fig-hist-unif.
 ```{r}
 set.seed(123)
 dt <- runif(100, min = 10, max = 20)
@@ -224,13 +232,25 @@ set.seed(10)
 sample(new_dt, 5)
 ```
 
+The `sample()` function is used for simulating die roll, coin toss, and even draws from a stack of card. For example, we can simulate the number we get from a die with the following:
+
+```{r}
+die <- 1:6
+```
+
+```{r}
+sample(die, 1)
+```
+
+If you continue to run the code above, you will continue to get different values. A good challenge for you would be to simulate two die.
+
 #### Weighted Samples and Sampling with Replacement
-More than selecting values at random, with `sample()` we can also select with replacement by setting the value of the argument `replace` to `TRUE`. 
+More than selecting values at random, with `sample()`, we can also select with replacement by setting the value of the argument `replace` to `TRUE`. 
 ```{r}
 sample(new_dt, 20, replace = TRUE)
 ```
 
-The probabilities of the values we want to randomly select can also be determined by the `prob`. This is perfect for weighted probability. Example is a die of unequal prob.
+The probabilities of the values we want to randomly select can also be determined by the `prob` argument. This is perfect for weighted probability. Example is a die of unequal prob.
 ```{r}
 die <- 1:6
 die_prob <- c(0.23, 0.23, 0.23, 0.21, 0.07, 0.03)
@@ -301,7 +321,9 @@ The functions that are preloaded in R are a lot, and they will likely not meet a
 ### Creating Custom Functions 
 For example we can estimate the z-score of some the data we have created so far. The z-score tells you how many standard deviations an element is from the mean of the vector. It transforms our data into a common scale. The formula for z-score is given as:
 
-$$Z = \frac{x - \mu}{\sigma}$$
+$Z = \frac{x - \mu}{\sigma}$
+
+
 Where:
 
 -   $x$ is the value in the vector,
