@@ -16,134 +16,119 @@ One of the most basic and very important function is `c()` which combines values
 tomato_weight <- c(43.68, 70.23, 29.31, 83.08, 27.42, 53.50, 30.95, 10.51, 41.41, 68.06)
 ```
 
-To see the weights that have been recorded, we can use either the `print()` function or simply call the variable as is and run  it.
+To see the weights that have been recorded simply call the variable as is and run  it.
 
 ```{r}
-print(tomato_diameter)
+tomato_weight
+```
+Alternatively, you can use either the `print()` function
+
+
+```{r}
+print(x = tomato_weight)
+```
+
+Let's breakdown the `print()` function:
+
+- The name of the variable that will hold the value, `x`, is the **parameter**.
+- The name-value pair `x = tomato_weight` is the argument
+- `tomato_weight` is the value
+
+
+## Some Insights on Arguments
+Arguments are the input you pass to a unction when you call it.  It provides a value for a parameter, and it can be passed by position or by name, i.e., keyword.
+
+### Types of Arguments
+
+- **Keyword or named arguments**: Here, you explicitly name the parameter in the function call. This makes your code clearer and order-independent.
+The previous print statement used the keyword argument. Another example is below with the `round()` function which round-up values
+```{r}
+round(x = tomato_weight, digits = 1)
+```
+The `tomato_weight` values are rounded up to 1 decimal point. This could be written with a different order, and the result will still be the same because the keywords are used.
+
+```{r}
+round(digits = 1, x = tomato_weight)
+```
+
+- **Positional argument**: Here, you provide the value in order without including the parameter name. The function matches the value to parameters by their position in the function definition. This is quite a common practice as it reduces typing. Most functions usually takes the object/data and with that understanding positional arguments are used. 
+```{r}
+round(tomato_weight, 1)
+```
+
+`tomato_weight` is matched to the first parameter `x` in the `round()` function and `1` matched to `digits`. If this is reordered without the keyword, we'd either get an unexpected result or an error.
+
+```{r}
+round(1, tomato_weight)
 ```
 
 
+To know more about any function use `help()` and pass the function in between the parentheses or type a question mark `?` followed by the function name. 
+
 ```{r}
-tomato_diameter
+?round()
+help("round")
 ```
+
+The result should be something like in @fig-help
+
+![Documentation of the `round()` function. Preview of functions documentations looks like](images/help-fns.png){#fig-help width=80% .lightbox fig-align="center"}
 
 ## Some Built-in Functions
-There are a lot of functions readily loaded in R to help with your analysis tasks. For tasks that R built-in function can't handle, you can always install packages (covered in [Chapter @sec-pkgs]) or develop your custom function, a concept which we will cover in [ -@sec-cust-fns]. 
+There are many functions readily available in R to assist with your analysis tasks. For tasks that R's built-in functions can't handle, you can always install packages (covered in [Chapter @sec-pkgs]) or develop your custom functions, a concept we will cover in @sec-cust-fns.
 
-For examples, to know the total number of values we have in our recorded in `tomato_diameter` we can use `length()`.
+
+For examples, to know the total number of observations we have in `tomato_weight` we can use `length()`.
 ```{r}
-length(tomato_diameter)
+length(tomato_weight)
 ```
 
-To find the average of the records of tomato_diameter use `mean()` and pass the object in between the parentheses.
+To find the average of `tomato_weight`, we use `mean()`.
 
 ```{r}
-mean(x = tomato_diameter)
+mean(x = tomato_weight)
 ```
-
-In the function `mean()`, `x` is the **argument**. Arguments usually differ from function to functions. We can also write the above as.
-```{r}
-#| label: function
-#| eval: false
-`mean(tomato_diamter)`
-```
-
-When we use `x` in the function, we are using a **keyword argument**, while when unused like seen in the second code, we are using the **position argument**. To know more about any function use `help()` and pass the function in between the parentheses or type a question mark followed by the function name. For example, `help(mean)` or `?mean`.
 
 To check the median of the data use (you guessed it right) `median()`. We also have `sd()`, `var()`, and `cor()` for estimating the standard deviation, variance and correlation respectively.
 
 
 ```{r}
-median(tomato_diameter)
-sd(tomato_diameter)
-var(tomato_diameter)
-cor(tomato_diameter, 1:10)
+median(tomato_weight)
+sd(tomato_weight)
+var(tomato_weight)
+cor(tomato_weight, 1:10)
 ```
 
-We can round up numbers using `round()`.
-
-```{r}
-round(tomato_diameter)
-```
-
-To specify the decimal place to round to, pass a number, which is ideally an integer to the argument `digits`.
-
-```{r}
-round(tomato_diameter, digits = 1)
-```
-
-The positional argument syntax is shown below.
-```{r}
-# Also the same as
-round(tomato_diameter, 1)
-```
-
-To round up in a specific direction, either up or down, we have two variation of `round()`. The `ceiling()`, to round up and `floor()` to round down.
+We've seen `round()` in action before. However `round()` is having two siblings . The `ceiling()` and `floor()` function to round up and down respectively.
 
 ```{r}
 floor(3.544)
 ceiling(3.544)
 ```
 
-To create a sequence of number, we can use the colon, `:`, symbol  and the `seq()` function. The `seq()` function gives more control on the sequence and how they are generated. Important arguments of `seq()` to remember are `from`, `to`, and `by`.
+To create a sequence of number, we can use colon (`:`).
+```{r}
+20:30
+30:20
+```
+This gives a sequence of numbers increased or decreased by 1. To get more control over the sequence you want to create use the `seq()` function. Important arguments of `seq()` to remember are `from`, `to`, and `by`.
 
 ```{r}
 seq(from = 1, to = 100, by = 1)
 ```
-The above is also similar to the code below, making use of positional instead of keyword arguments. Writing in such a manner is common in the R community.
+With positional argument, it could be written as shown below
 ```{r}
 #| eval: false
 seq(1, 100, 1)
 ```
 
-With the argument, `by`, we can create even and odd numbers easily.
-```{r}
-even_num <- seq(2, 100, 2)
-even_num
-```
-
-R also comes with built-in constants such as `pi` 
+R also comes with built-in constants such as `pi` , `letters`, `LETTERS`, `month.abb` and `month.name`
 ```{r}
 pi
+letters
+month.abb
 ```
 
-
-### Making Graphs with the `plot()` Function
-To see a graph of the *tomato_diameter* object, pass it to `plot()` function as the first argument `x`. `x` stands for x-axis, and a scattered plot graph is produced as shown in @fig-td. 
-```{r}
-#| label: fig-td
-#| fig-cap: Graph generated for tomato diameters using `plot`
-plot(x = tomato_diameter)
-```
-The graph can be customized by passing values into other arguments within the `plot()` function. Arguments such as `col` changes the color while `pch` changes the shape of each point, @fig-plot-cust. You can also use `hist()` to see the distribution of the data, @fig-td-hist.
-```{r}
-
-#| label: fig-plot-cust
-#| fig-cap: |
-#|    Simple plot customization: point shape changed to cross and color changed to red
-
-
-plot(tomato_diameter, col = "red", pch = 3)
-```
-
-```{r}
-#| label: fig-td-hist
-#| fig-cap: Histogram of Tomato Plant Diameters (mm) showing a normal distribution
-hist(tomato_diameter, col = "coral3", xlab = "Tomato Diameter", main = "Distribution of Tomato Plant Diameter")
-```
-The `xlab` argument is used to customize the label of the x-axis, while the y-axis is customized with `ylab`. The argument `main`, is used to change the title of the graph. More on how to make visualization with R will be discussed in [Chapter @sec-dataviz] and [Chapter @sec-edai].
-
-The code used to produce the graph is clear, but as you write more complex codes, readability reduces. The code could improve by writing one or two arguments in a line rather than all in a line. The code above can also be written as:
-
-```{r}
-#| eval: false
-hist(
-  tomato_diameter,
-  col = "coral3",
-  xlab = "Tomato Diameter",
-  main = "Distribution of Tomato Plant Diameter"
-)
-```
 
 ### Simulating Numbers
 An important part of research is data simulation and R provides a robust set of functions for generating random numbers from different probability distributions. For example, the `runif()` function generates random numbers from a uniform distribution, `rnorm()` for the normal distribution, `rpois()` for the Poisson distribution, and `rbinom()` for the binomial distribution. These functions belong to a family that also includes functions for calculating density (**d**), distribution functions (**p**), quantiles (**q**), and random deviates (**r**) for various statistical distributions. A comprehensive list of these functions can be found in @tbl-distro-funs.
@@ -325,9 +310,9 @@ Where:
 
 Without a custom function we will do the following:
 ```{r}
-average_tomato <- mean(tomato_diameter)
-sd_tomato <- sd(tomato_diameter)
-z_tomato <- (tomato_diameter - average_tomato) / sd_tomato
+average_tomato <- mean(tomato_weight)
+sd_tomato <- sd(tomato_weight)
+z_tomato <- (tomato_weight - average_tomato) / sd_tomato
 
 average_tree_diameter <- mean(tree_diameter)
 sd_tree_diameter <- sd(tree_diameter)
@@ -362,7 +347,7 @@ z_score <- function(x) {
 
 Next is using the custom function. We should note that, custom functions are called in a similar way that R's built-in functions are called, the object name followed by parenthesis.
 ```{r}
-z_tomato_2 <- z_score(tomato_diameter)
+z_tomato_2 <- z_score(tomato_weight)
 z_tomato_2
 ```
 
