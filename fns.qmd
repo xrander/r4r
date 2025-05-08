@@ -35,8 +35,8 @@ Let's breakdown the `print()` function:
 - `tomato_weight` is the value
 
 
-## Some Insights on Arguments
-Arguments are the input you pass to a unction when you call it.  It provides a value for a parameter, and it can be passed by position or by name, i.e., keyword.
+## Arguments
+Arguments are the input you pass to a function when you call it.  It provides a value for a parameter, and it can be passed by position or by name, i.e., keyword.
 
 ### Types of Arguments
 
@@ -72,7 +72,7 @@ help("round")
 
 The result should be something like in @fig-help
 
-![Documentation of the `round()` function. Preview of functions documentations looks like](images/help-fns.png){#fig-help width=80% .lightbox fig-align="center"}
+![Documentation of the `round()` function. Preview of functions documentations looks like](images/help-fns.png){#fig-help width=80% fig-align="center"}
 
 ## Some Built-in Functions
 There are many functions readily available in R to assist with your analysis tasks. For tasks that R's built-in functions can't handle, you can always install packages (covered in [Chapter @sec-pkgs]) or develop your custom functions, a concept we will cover in @sec-cust-fns.
@@ -187,7 +187,7 @@ dt
 ```{r}
 #| label: fig-hist-unif
 #| echo: false
-#| fig-cap: Uniformly distributed randomly generated numbers.
+#| fig-cap: Uniformly distributed randomly generated numbers. The higher the number of observations the more uniform the distribution.
 hist(
   dt,
   xlab = "diameter",
@@ -261,65 +261,117 @@ set.seed(123)
 die_selected <- sample(x = die, size = 100, replace = TRUE, prob = die_prob)
 die_selected
 ```
-To get the number of occurrence of each die face we can use the `table()` function. and notice that values with lower probability of occuring such as 5 and 6 were sampled less.
+To get the number of occurrence of each die face we can use the `table()` function. and notice that values with lower probability of occurring such as 5 and 6 were sampled less.
 ```{r}
 table(die_selected)
 ```
 
-### String Functions
-Some functions in R makes it easy to work with strings. Let's create a simple string vector to begin.
+### Character Functions
+We've been working with numbers for a while, now lets see some functions that we can use for character data types. To begin, let's create a vector of character data type.
 ```{r}
-tree_1 <- " Adansonia digitata "
+tree_1 <- "Adansonia digitata"
 tree_1
 ```
-We can count the number of characters in the object using `nchar()`. Know that `nchar()` also includes the spaces in the text.
+#### Counting Characters
+
+Counting character is done using `nchar()`. Whenever, we count characters, we usually neglect the space and as such when we count the `tree_1` object we should expect 17 characters as what we have in @fig-char.
+
+![Number of characters in the object if counted without the space](images/nchar-wrong.png){#fig-char fig-align="center" width=80%}
+
+
+Using `nchar()` we get a different result.
 ```{r}
 nchar(tree_1)
 ```
-The data can be changed to lower cases by using `tolower`, and changed to upper cases by using `toupper`. Unfortunately, Base R does not provide a function to changed strings to title or sentence cases, but there are open source packages available to do this . You can explore [stringr](https://stringr.tidyverse.org/) by Hadley Wickham and [stringi](https://stringi.gagolewski.com/) by Marek Gagolewski which contains functions for such operation and other complex string manipulation operations in R.
+This might come as a surprise.  This is because spaces are also counted as characters, not only in R, but also in word processors like Microsoft Word or LibreOffice Writer and other programming languages. Given that, @fig-nchar shows the actual number of characters with spaces included.
+
+
+![Number of characters in the object with the spaces included](images/nchar.png){#fig-nchar fig-align="center" width=80%}
+
+
+Characters can also be changed to lower cases by using `tolower()`, and changed to upper cases by using `toupper()`. Unfortunately, Base R does not provide a function to changed strings to title or sentence cases, but there are open source packages available to do this . You can explore [stringr](https://stringr.tidyverse.org/) by Hadley Wickham and [stringi](https://stringi.gagolewski.com/) by Marek Gagolewski which contains functions for such operation and other complex string manipulation operations in R.
 
 ```{r}
 tolower(tree_1)
 toupper(tree_1)
 ```
-With `trimws()` you can remove the white spaces around your strings. As the name sound `trimws()` -- `trim white spaces`
+
+
+#### Trimming Characters
+
+There are some data where part of the variable are filled by respondents. This can include records of names, for example, clinic require records of physicians and the name of their patients. A particular physician could attend to multiple patient in a day and at different times in a day. Below is an example of physicians name in a clinic working different times.
+e could have the names of five clinic physicians repeated multiple times, according to the number of times they have shifts, or attend to patients. 
+
 ```{r}
-tree_1 <- trimws(tree_1)
-tree_1
+physician <- c("Clara Reeves", "Motolani Eniola", "Praaval Duval", " Praaval Duval ", "Sunmisola Aderibigbe ", " Sunmisola Aderibigbe"," Clara Reeves", "Clara Reeves ", " Motolani Eniola ", "Praaval Duval ")
+
+physician
 ```
-After trimming the white spaces, the number of characters would reduce.
+
+The example above is a classic example of having white spaces. We can check the data to see the number of distinct physicians we have.
+
 ```{r}
-nchar(tree_1)
+length(unique(physician))
 ```
-To extract certain aspect of your text, use `substring()`, or `substr()`. `substr()` takes the argument `x` which your data, `start` which is the integer for the first element of the text to be extracted or replaced, and `stop` which is the integer for the last element of the text to be extracted or replaced. For example, we can extract `Adansonia` from the text with the following code.
+This returns 10 but we can see clearly that some names just has extra white spaces. With the `trimws()` function we could remove excess white spaces in the data. Before using the function lets count the number of characters we have for each observation. We will do the same after trimming to see the difference.
+
+```{r}
+nchar(physician)
+```
+
+
+```{r}
+physician_trimmed <- trimws(physician)
+physician_trimmed
+```
+
+```{r}
+nchar(physician_trimmed)
+```
+
+Now we can tell the number of characters reduced for most of the observations. We can now confirm the number of physicians we have using `length()` and `unique()`.
+
+```{r}
+length(unique(physician_trimmed))
+```
+The four physicians are:
+
+```{r}
+unique(physician_trimmed)
+```
+
+:::{.callout-important}
+The technique taught here is very useful in the data cleaning process.
+:::
+
+
+#### Extracting and Replacing Part(s) of a Chaaracter
+
+To extract certain aspect of your text, use `substring()`, or `substr()`. `substr()` takes the argument `x` which is your data, `start` which is the index position for the first value of the text to be extracted or replaced, and `stop` which is the index position for the last value of the text to be extracted or replaced. For example, we can extract `Adansonia` from the text with the following code.
 ```{r}
 substr(tree_1, start = 1, stop = 9)
 ```
 
-`substr()` is also used to replace strings in data.
+To replace a certain part of the text we can also use `substr()`.
 ```{r}
 substr(tree_1, start = 11, nchar(tree_1)) <- "gregorii"
 tree_1
 ```
 
-There are times, we would like to split text data, using `strsplit()`, we can split the `tree_1` strings to genus and species with the spaces between them.
+There are times, we would like to split text data, using `strsplit()`. For example we can split the `tree_1` to genus and species with the spaces between them.
 ```{r}
 strsplit(tree_1, split = " ")
 ```
 
 Notice the output, both words now have their inverted comma.
 
-There are still more functions for string manipulation in R, not all will be covered, as this will be a large book volume. However, Concatenation will be covered. To concatenate data using either `paste0()` or `paste()`. There are almost similar having slight differences. 
-```{r}
-paste(tree_1, " man")
-paste("My best tree species is ", tree_1)
-```
+There are still more functions for string manipulation in R, not all will be covered, as this will be a large book volume.
 
 ## Custom Functions {#sec-cust-fns}
-The functions that are preloaded in R are a lot, and they will likely not meet all our statistical or operational needs. For some tasks you want to do, you would need to write your own function. 
+The functions that are preloaded in R are a lot, but that does not mean they will meet all our statistical or operational needs. For some tasks you want to do, you would need to write your own function. 
 
 ### Creating Custom Functions 
-For example we can estimate the z-score of some the data we have created so far. The z-score tells you how many standard deviations an element is from the mean of the vector. It transforms our data into a common scale. The formula for z-score is given as:
+For example we can estimate the z-score of the `tomato_weight` data. The z-score tells you how many standard deviations an element is from the mean of the vector. It transforms our data into a common scale. The formula for z-score is given as:
 
 $Z = \frac{x - \mu}{\sigma}$
 
@@ -399,7 +451,7 @@ When do you need to write a function?
 ## Getting Help
 Use the `help()` function and `?` to get help. Also, use `args()` to see the arguments of functions. Just to let you know, there are more than 2300 functions loaded when an R session starts and that's a lot. You will remember some and forget some, but as keep using R they become a part of you.
 
-You are not expected to remember these functions, use `help()`, `?` and `args` and check online for resources when you neeed help.
+You are not expected to remember these functions, use `help()`, `?` and `args()` and check online for resources when you need help.
 :::
 
 

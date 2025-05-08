@@ -10,7 +10,7 @@ To see a graph of the *tomato_weight* object, pass it to `plot()` function as th
 #| label: fig-td
 #| fig-cap: Graph generated for tomato diameters using `plot`
 #| eval: false
-plot(x = tomato_weight)
+#plot(x = tomato_weight)
 ```
 The graph can be customized by passing values into other arguments within the `plot()` function. Arguments such as `col` changes the color while `pch` changes the shape of each point, @fig-plot-cust. You can also use `hist()` to see the distribution of the data, @fig-td-hist.
 ```{r}
@@ -21,14 +21,14 @@ The graph can be customized by passing values into other arguments within the `p
 #|    Simple plot customization: point shape changed to cross and color changed to red
 
 
-plot(tomato_weight, col = "red", pch = 3)
+#plot(tomato_weight, col = "red", pch = 3)
 ```
 
 ```{r}
 #| label: fig-td-hist
 #| eval: false
 #| fig-cap: Histogram of Tomato Plant Diameters (mm) showing a normal distribution
-hist(tomato_weight, col = "coral3", xlab = "Tomato Diameter", main = "Distribution of Tomato Plant Diameter")
+#hist(tomato_weight, col = "coral3", xlab = "Tomato Diameter", main = "Distribution of Tomato Plant Diameter")
 ```
 The `xlab` argument is used to customize the label of the x-axis, while the y-axis is customized with `ylab`. The argument `main`, is used to change the title of the graph. More on how to make visualization with R will be discussed in [Chapter @sec-dataviz] and [Chapter @sec-edai].
 
@@ -36,12 +36,12 @@ The code used to produce the graph is clear, but as you write more complex codes
 
 ```{r}
 #| eval: false
-hist(
-  tomato_weight,
-  col = "coral3",
-  xlab = "Tomato Diameter",
-  main = "Distribution of Tomato Plant Diameter"
-)
+# hist(
+#   tomato_weight,
+#   col = "coral3",
+#   xlab = "Tomato Diameter",
+#   main = "Distribution of Tomato Plant Diameter"
+# )
 ```
 
 ## Introduction to the grammar of graphics
