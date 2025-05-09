@@ -4,25 +4,21 @@
 This section is still under development
 :::
 
-In the @sec-data-types, we learned about different data types in R such as double, integer, character, and logical. Just as we organize physical items, and organize our personal space - R needs special containers to organize and store different types of data. These containers are called data structures. 
+In the @sec-data-types, we learned about different data types in R such as double, integer, character, and logical. Just as we organize physical items, and organize our personal space - our data needs special containers to organize and store different types of data. These containers are called **data structures**. 
 
 Each data structure in R has specific characteristics:
 
-- What types of data it can hold (single or multiple types)
-- How it organizes the data (one-dimensional, two-dimensional, or multidimensional)
-- How we can interact with the data inside it
+- What types of data can it hold? ***single or multiple types***
+- How are the data organized? ***one-dimensional, i.e., having a single dimension, two-dimensional, i.e., having x or y axis or multidimensional, having more than two axis.***
+- How can we interact with the data inside the object? ***using `[]` or` $`***
 
-Before exploring each data structure, we can use these functions to inspect any container:
-
-- `length()`: Shows how many elements are stored in a container.
-- `dim()`: Shows the dimensions (rows and columns)
-- `str()`: Displays the structure of the container
+Before exploring the different data structures, we have three functions that can help us understand the data structure. `length()` tells us the number of elements we have in one dimensional data structures, `dim()` tells us the number of rows and columns in a multidimensional data structure. Lastly, we have `str()` which gives information about the number of rows and columns, and the underlying data types for the columns with preview.
 
 
 ## Atomic Vectors
 
 ### What is an Atomic Vector?
-An atomic vector is the simplest data structure in R [@grolemund2014hands]. Think of it as a one-dimensional data that can hold only one type of data. The different data types are actually atomic vectors. 
+We've actually worked with atomic vectors, and we have been working with them since the start of this book. An atomic vector is the simplest data structure in R [@grolemund2014hands]. Think of it as a one-dimensional data that can hold only one type of data. Honestly, the different data types are actually atomic vectors. The simplest for of atomic vectors is the scalar vector which contains only one element.
 
 ```{r}
 # Single Vector
@@ -31,7 +27,7 @@ fruit <- "papaya"
 fruit
 ```
 
-We can make our vectors longer using use `c()` [@wickham2019advanced].
+We can make our vectors longer using `c()`.
 
 ```{r}
 # Multivalue vector
@@ -42,16 +38,14 @@ fruits
 ```
 
 
-To get the number of elements in an object use `length()`.
+Since both `fruit` and `fruits` have one dimension we can use `length()` to get their number of elements.
 ```{r}
-length(fruit) # shows the number of elements in fruit
-length(fruits) # shows the number of elements in fruits
+length(fruit) # shows the number of element(s) in fruit
+length(fruits) # shows the number of element(s) in fruits
 ```
 
-Next we will see the different operations such as slicing, subsetting and so on which we can perform on vector objects. 
 
-:::{.callout-note appearance=minimal}
-Atomic vectors can only hold one data type at a time. In the example below, we created a new object of double data type, then combine it with the ˋfruitsˋ object we created earlier. Checking the data type of the new object ˋnew_dataˋ, only a data type is returned.
+Atomic vectors can only hold one data type at a time. In the example below, we created a new object of double data type, then combine it with the `fruits` object which we created earlier. Checking the data type of the new object `new_data`, only a the character data type is returned.
 
 ```{r}
 #| label: vector-hold-single-data-type
@@ -64,12 +58,10 @@ new_data
 typeof(new_data)
 ```
 
-:::
 
 ### Vector Operations
 
-#### Basic Operation
-Simple operations like addition, subtraction, multiplication, and other arithmetic are part of the operations that can be performed on vectors.
+Simple operations like addition, subtraction, multiplication, division, and so on, are the operations that can be performed on vectors. We can also use functions on them as shown in [Chapter @sec-fns].
 
 ```{r}
 # Arithmetic Operation
@@ -79,31 +71,26 @@ y + x
 y %% x
 y / x
 ```
-When the length of one vector is greater than the other, element-wise operations is performed on them. Each element in the longer object will be operated on by the element of the short one. When we have objects with more than one element, the elements are operated on one-to-one if they are divisible without remainder. If the division is with remainder, we get a warning about the vectors not being multiples. Although this does not stop the operation, the operation gets recycled with the short-length object operating on the longer one with its first element. This phenomenon of starting the operation again in R is called `vector recycling`.
+
+
+Working with different data types that doesn't mix well could be the only stumbling blocks in these simple operations. 
 
 ```{r}
-#| warning: true
-# Vector recycling
-a <- 1:5 # Creates vector of 1, 2, 3, 4, 5
-b <- 2
-c <- 7:9 # Creates vector of 7, 8, 9
+#| error: true
 
-a + b
-a / b
-a / c
+"man" * 5
 ```
-:::{.callout-note appearance=simple}
-When operating on vectors of different lengths, R will "recycle" the shorter vector's values to match the longer vector's length. This can be useful but also dangerous if not used carefully!
+:::{.callout-note}
+In general character and numeric data types don't mix, logical mixes with all data types.
 :::
 
 ### Accessing Vector Elements
-To access a value in a vector we can get it via its index. Indexing allows us access or modify specific elements in different data structures. We use the square brackets [] to index the position of elements. To get the first element in the `fruits` vector, *papaya*, we specify its index position, 1, within the square brackets.
+To access a value in a vector we can get it with its index number. Indexing allows us access, slice, subset or modify specific elements in different data structures. We use the square brackets [] to specify the index position of elements we are interested in. The index position starts with 1, the index position of elements in `fruits` is show in @fig-index.
 
-| Vector | papaya | orange | apple | pineapple | grape | strawberries | avocado |
-|:------:|:------:|:------:|:-----:|:---------:|:-----:|:------------:|:-------:|
-| Index number | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+![Index number of `fruits` vector](images/index-pos.png){#fig-index width=80% fig-align="center"}
 
-: Index number of fruit vector {#tbl-index}
+To get the first element in the `fruits` vector, *papaya*, we specify its index position, 1 in this case, within the square brackets.
+
 
 ```{r}
 fruits
@@ -127,7 +114,7 @@ There are two ways to modify new elements in a vector:
 - `append()` function
 - The square bracket `[]`
 
-Using ˋ[]ˋ offers more flexibility, as it can be used to add, change and remove the elements of a vector.
+Using `[]` offers more flexibility, as it can be used to add, change and remove the elements of a vector.
 
 ##### The `append()` Function
 We can use `append()` which add elements to the end of the vector. It takes three arguments, x, the vector that you want to add a value to, values, the new value you want to add to the vector, and after, which determines the index position where you want the new value added.
@@ -188,6 +175,39 @@ fruit <- fruit[-1] # Reassign to variable to confirm the change.
 :::{.callout-tip appearance=simple}
 To confirm an object data structure, use their `is.*()` variant. For vectors, `is.vector()`, for matrix, `is.matrix()` and so on. To convert from one structure to another, use their `as.*()` variant. For vector `as.vector()`, for matrix, `as.matrix()` and so on.
 :::
+
+
+#### Recycling
+There are instances where we perform operations such as converting from one unit to the other. In the case where our recorded values are more than one, which is usually the case, we would like to convert all of them with a single value. For example: An experiment is designed to evaluate the impact of various feed formulations on the weight gain and overall health of pigs, with the objective of selecting the optimal diet for a new litter to maximize growth and well-being. The weights of 40 pigs that have been administered `feed_x` for 3 months is given below.
+
+```{r}
+#| label: weight simulation for a feed
+set.seed(123)
+feed_x <- round(rnorm(n = 40, mean = 87000, sd = 10000), 2)
+feed_x
+```
+The value gotten was recorded in grams and we prefer the kilogram. To do this, we simply divide by a 1000
+```{r}
+feed_x_kg <- round(feed_x / 1000, 2)
+
+feed_x_kg
+```
+This is possible because the operation is carried out element-wise, and a phenomenon called **vector recycling** is happening. In vector recycling, vectors of shorter length are repeated multiple times to match up with longer vectors. As long as the longer vector is a multiple of the short vector, we get no warning message as we have below. 
+
+```{r}
+feed_x_kg * c(0.1, 0.5)
+```
+If the longer vector is not a multiple, we get a warning message and the result gets computed regardless, but there will be a cut off in operation.
+
+```{r}
+feed_x_kg / c(0.3, 0.3, 0.4)
+```
+
+
+:::{.callout-important}
+While recycling can be powerful, it can also leads to wrong results, so ensure you check if there are warnings and results are as expected.
+:::
+
 
 ## Matrices
 ### What is a Matrix?
