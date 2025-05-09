@@ -1,7 +1,7 @@
 # Data Structure {#sec-data-structures}
 
-:::{.callout-caution appearance=minimal}
-This section is still under development
+:::{.callout-caution}
+Still under construction.
 :::
 
 In the @sec-data-types, we learned about different data types in R such as double, integer, character, and logical. Just as we organize physical items, and organize our personal space - our data needs special containers to organize and store different types of data. These containers are called **data structures**. 
@@ -346,27 +346,18 @@ dim(fruit_mat_transposed)
 
 ### What is a Data Frame
 
-Data frames are two-dimensional like matrix and are the most common way to store data. They are similar to Excel spreadsheets. What makes data frames different from matrix is their ability to store different data types. To create a data frame, we use the `data.frame()` function.
+Data frames are two-dimensional like matrix and are one of the most common way to store data. They are similar to Excel spreadsheets in how they look. What makes data frames different from matrix is their ability to store different data types. To create a data frame, we use the `data.frame()` function.
 
 ```{r}
-
-```
-
-
-
-Below is a simple data frame that stores the inventory of a fruit in a store.
-
-```{r}
-fruit_inventory <- data.frame(
-  type = c("pineapple", "mango", "apple"), # character data type
-  stock = c(5, 3, 0), # double data type
-  available = c(TRUE, TRUE, FALSE) # logical data type
+data.frame(
+  x = 1:10,
+  y = letters[1:10],
+  z = month.abb[1:10]
 )
-
-fruit_inventory
 ```
 
-Data frames can combine vectors into a table where each vector becomes a column. The vectors to be used have to be of the same length to avoid error:
+
+Data frames can combine vectors into a table where each vector becomes a column. The vectors to be used have to be of the same length to avoid error. 
 
 ```{r}
 fruit <- c("orange", "mango", "apple")
@@ -376,18 +367,29 @@ available <- c(TRUE, TRUE, FALSE)
 fruit_tbl <- data.frame(fruit, stock, available)
 fruit_tbl
 ```
+
 ### Accessing and Modifying Elements in a Data Frame
-Elements in data.frame are accessed in a similar fashion as matrix. Data frames also uses the dollar sign, `$` to access columns.
+Elements in data.frame are accessed in a similar fashion as matrix with an extra tweak of their columns being accessible using the dollar sign `$`. Using the dollar sign returns the columns as a vector.
 
 ```{r}
 fruit_tbl$stock
-fruit_tbl$available
 ```
 
-You can apply operations you want on each variable this way. For example we can check the total stocks available.
+When accessing a column with its name and the square bracket, it's not necessary to include the comma when the name is in quotation marks. The column with the specified name will be returned. This is also the same when you use index number, once a comma is not included, the column is automatically returned
 
 ```{r}
-sum(fruit_tbl$stock)
+#| label: accessing-elements-data-frames
+#| layout-ncol: 2
+#| tbl-cap: Accessing elements in a data frame
+
+fruit_tbl["stock"]
+fruit_tbl[2]
+```
+
+
+You can still use the commas to return specific rows and columns if you choose to, or return a particular observation as shown below:
+```{r}
+fruit_tbl[2, 3]
 ```
 
 Using the square brackets, and index number of the column we want to remove, we can remove old columns or add new columns to a data frame.
@@ -414,7 +416,8 @@ my_list <- list(
   c(TRUE, FALSE),
   FALSE, 
   fruit_mat_transposed,
-  fruit_tbl
+  fruit_tbl,
+  my_calendar
 )
 
 my_list
@@ -425,7 +428,7 @@ my_list
 The objects in a list can be given a name using `names()` function.
 ```{r}
 names(my_list) <- c("fruits", "fruit_mat", "logical_1", "logical_2",
-                    "fruit_transposed_matrix", "fruit_dataframe")
+                    "fruit_transposed_matrix", "fruit_dataframe", "my_calendar_matrix")
 ```
 On printing list now, we'll see each object named.
 ```{r}
@@ -459,9 +462,11 @@ To confirm an object data structure, use their `is.*()` variant. For vectors, `i
 is.vector(my_calendar)
 is.vector(fruits)
 is.matrix(my_calendar)
+as.data.frame(my_calendar)
 ```
-
 :::
+
+## Bringing it all together
 
 ## Summary
 In this chapter you learned about data structures in R. You saw how to create each data structure, how to access the elements of each structure. Also, you learned how to add and remove items from each data structure. You got introduced to checking the properties of each data structure such as their length and dimensions. Next you will learn about packages in R and how to install them, after you will bring together the knowledge you've gathered from chapter one into making R Scripts and R projects.
