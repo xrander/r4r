@@ -89,23 +89,25 @@ To access a value in a vector we can get it with its index number. Indexing allo
 
 ![Index number of `fruits` vector](images/index-pos.png){#fig-index width=80% fig-align="center"}
 
-To get the first element in the `fruits` vector, *papaya*, we specify its index position, 1 in this case, within the square brackets.
+To get the first element *papaya* in the `fruits` vector, we specify its index position. As seen in @fig-index, the index of *papaya* is 1 in this case.
 
 
 ```{r}
-fruits
 fruits[1]
 ```
 
-To return multiple element we can include the elements index position within `c()` and pass it to the square brackets. You can return a ranged of elements using `:`.
+To return multiple values at the same time, we combine those values with `c()` and pass it to the square brackets. To return *avocado*, *grape*, and *orange*, we select them by index position. 
 
 ```{r}
-# remove elements by specific position
-fruits[c(7, 5, 2)] 
-# remove the range of elements that fall within that number.
-fruits[2:5] 
+# select elements by specific position
+fruits[c(7, 5, 2)]
 ```
 
+ We can also select a range of elements using `:`. To select elements from *orange* to *grape*, we do the following:
+```{r}
+# select the range of elements that fall within that number.
+fruits[2:5] 
+```
 
 ### Modifying Vectors
 
@@ -114,66 +116,60 @@ There are two ways to modify new elements in a vector:
 - `append()` function
 - The square bracket `[]`
 
-Using `[]` offers more flexibility, as it can be used to add, change and remove the elements of a vector.
-
 ##### The `append()` Function
-We can use `append()` which add elements to the end of the vector. It takes three arguments, x, the vector that you want to add a value to, values, the new value you want to add to the vector, and after, which determines the index position where you want the new value added.
+We can use `append()` to add elements to a vector. The elements are usually added to the end of the vector. `append()` takes three arguments, **x**, the vector that you want to add a value(s) to, **values**, the new value(s) you want to add to the vector, and **after**, which determines the index position where you want the new value(s) slotted into.
 
 ```{r}
-length(fruits) # number of fruits prior adding the new element
-
-fruits <- append(x = fruits, values = "banana", after = 5) # adding new element element after the last element
-
-length(fruits) # The number of elements have increased by one.
-
-fruits # The new elements
+append(x = fruits, values = "banana", after = 5) # adding new value in index position 5
 ```
 
-If the parameter `after` is omitted with no argument, the new values are automatically placed at the end of the vector.
+Multiple values can be added when they are combined with `c()`. If the `after` argument is left empty, the new values are automatically placed at the end of the vector.
 
 ```{r}
 new_fruits <- c("kiwi", "grape", "cherry", "mango", "peach")
-
-extended_fruits <- append(fruits, new_fruits)
-extended_fruits
+append(fruits, new_fruits)
 ```
 
-##### Using the Square Bracket, []
+##### Using the Square Bracket `[]`
 
-To add a new object, you place the index number where the new object will occupy in the square bracket
+To add a new value using the square bracket you have to assign the value to the index position you want the new value to occupy.
 ```{r}
-fruit 
 fruit[2] <- "mango" # add new element to a new index number
 fruit
 ```
-If you insert a number that is way more than the next number of the length of the vector, the spaces get filled with `NA`. 
+If you insert an index that is more than the very next index number, you get the index positions filled with `NA` until the position you specified. 
 ```{r}
 fruit[5] <- "Clementine"
 fruit
 ```
-To prevent this, you can use a simple trick, pass the length of the fruit + 1 into the square bracket when you want to add the new value.
+To prevent this, you can use a simple trick. Simply pass the length of the fruit + 1 into the square bracket when you want to add a new value to the last position.
 ```{r}
 fruit[length(fruit)+1] <- "Guava"
 fruit
 ```
+You can also remove elements of a vector using the square bracket. You do this by passing a negative value into the index number
 
-The square brackets is also used to modify the elements of object using their index position. 
+```{r}
+fruit[-4] # Show values left after removing first value.
+fruit <- fruit[-1] # Reassign to variable to confirm the change.
+fruit
+```
+
+The square brackets is also used to change the values of object using their index position. 
 
 ```{r}
 fruit[3] # Position to be changed
 fruit[3] <- "tomato" # Replace avocado with tomato
 fruit # new elements
 ```
-
-You can also remove elements of a vector using the square bracket. You do this by passing a negative value into the index number
-
+Multiple positions can also be changed by using `c()` or using `:` for a sequence of index position.
 ```{r}
-fruit[-4] # Show values left after removing first value.
-fruit <- fruit[-1] # Reassign to variable to confirm the change.
+fruit[2:3] <- c("cayenne", "pomegranate")
+fruit
 ```
 
-:::{.callout-tip appearance=simple}
-To confirm an object data structure, use their `is.*()` variant. For vectors, `is.vector()`, for matrix, `is.matrix()` and so on. To convert from one structure to another, use their `as.*()` variant. For vector `as.vector()`, for matrix, `as.matrix()` and so on.
+:::{.callout-note}
+Using `[]` offers more flexibility than `append()`, as it can be used to add, change and remove the elements of a vector.
 :::
 
 
@@ -203,33 +199,35 @@ If the longer vector is not a multiple, we get a warning message and the result 
 feed_x_kg / c(0.3, 0.3, 0.4)
 ```
 
-
-:::{.callout-important}
-While recycling can be powerful, it can also leads to wrong results, so ensure you check if there are warnings and results are as expected.
+:::{.callout-note}
+While recycling can be useful, it can also leads to wrong results, so ensure you check if there are warnings and your results are as expected.
 :::
 
 
 ## Matrices
+
 ### What is a Matrix?
-A matrix is a two-dimensional data structure that holds elements of the same type arranged in rows and columns. Think of it as a table with uniform data type. To create a matrix, use the `matrix()` function. Within the function, specify the number of rows, `nrow` or number of columns `ncol`
+A matrix is a two-dimensional data structure that holds elements of the same data type arranged in rows and columns. Think of it as a calendar with with just numbers. To create a matrix, use the `matrix()` function. Since it is two dimensional, you have to specify the number of rows and columns you want. You can specify the number of rows with `nrow` and the number of columns with `ncol`.
 
 ```{r}
-mat <- matrix(1:6, nrow = 2)
+mat <- matrix(1:6, nrow = 2, ncol = 3)
 mat
 ```
-The number in the matrix get filled by columns. To change this arrangement, set the `byrow` to TRUE
+If you use only one of `nrow` or `ncol`, the other gets filled automatically. For example we can create a simple calendar month.
 
 ```{r}
-matrix(1:6, nrow = 2, byrow = TRUE)
+my_calendar <-  matrix(1:30, ncol = 7)
+my_calendar
 ```
 
-We can confirm if the object is a matrix by using `is.matrix()`
+The calendar looks weird and that's because the numbers are usually filled by columns. To change this arrangement, set the `byrow` to TRUE
 
 ```{r}
-is.matrix(mat) # confirm object is a matrix
+my_calendar <- matrix(1:30, ncol = 7, byrow = TRUE)
+my_calendar
 ```
 
-You can make a matrix from a vector by passing it to the `matrix()` function.
+Now this looks more like a calendar. But an incomplete calendar, we need the names of the day, and also the week numbers. We will get to this in the next section, but let's address something else which you will come across a lot. That is creating matrix from vector objects. We make a matrix from a vector by passing it to the `matrix()` function and giving a value to either of `nrow` or `ncol`.
 
 ```{r}
 fruit_mat <- matrix(fruits, nrow = 4) # make matrix from fruits vector
@@ -240,14 +238,23 @@ To get the dimension of matrix use `dim()` function.
 ```{r}
 dim(fruit_mat)
 ```
-The result `[1] 4 2` is interpreted 4 by 2, i.e. four rows and two column. That matrix is thereby called a four by two matrix. Check @fig-mat-index to see an example.
+The result `[1] 4 2` is interpreted 4 by 2, i.e. four rows and two column. That matrix is thereby called a `4` by `2`. The object `my_calendar` is having `{r} dim(my_calendar)[1]` rows by `{r} dim(my_calendar)[2]` columns, that makes it a 5 by 7 matrix
 
-![matrix indexing, source: https://biocore.crg.eu](https://biocorecrg.github.io/CRG_RIntroduction/images/matrix_indices.png){#fig-mat-index}
+#### Naming Rows and Columns
 
-For example,  @fig-mat-index shows indexing for a simple 3 * 2 matrix.
+A property of matrix is being two dimensional. From the current result of the calendar, we have [1,] and [,1] signifying rows and columns respectively. These numbers are the column and row indices of a matrix and they can replaced with names of our choosing using the `colnames()` and `rownames()` functions.
+
+```{r}
+colnames(my_calendar) <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
+
+rownames(my_calendar) <- paste("Week", 1:5)
+
+my_calendar
+```
+Now `my_calendar` looks more like a calendar.
 
 ### Matrix Operations
-#### Basic Operations
+
 Similar to vectors, matrix can perform arithmetic operations. For arithmetic with scalar vector, the operation is carried on each element of the matrix.
 
 ```{r}
@@ -271,22 +278,10 @@ my_mat3 + my_mat
 ```
 
 
-#### Naming Rows and Columns
-A property of matrix is being two dimensional. From the result printed above, we have [,1] and [1,] signifying rows and columns. These are the column and row indices of a matrix and they can replaced with names of our choosing. Using the `colnames()` and `rownames()` functions, the names of columns and rows of a matrix can be changed respectively.
 
-```{r}
-# represent column names with values a and b
-colnames(fruit_mat) <- letters[1:2] 
-
-fruit_mat
-# represent the row names with uppercase A, B, C, and D
-rownames(fruit_mat) <- LETTERS[1:4] 
-
-fruit_mat
-```
 
 ### Accessing Elements in a Matrix
-Like with vectors, you can access any particular element in a matrix using the square brackets, **[]**. Since matrix is two dimensional, there's a little adjustment in how we access elements as we have to specify rows and columns. The syntax is **[row_index, column_index]**. For example, let's access the third row and second column element of `fruit_mat`.
+Like with vectors, you can access any particular element in a matrix using the square brackets, `[]`. Since matrix is two dimensional, there's a little adjustment in how we access elements as we have to specify rows and columns. The syntax is **[row_index, column_index]**. For example, let's access the third row and second column element of `fruit_mat`.
 ```{r}
 fruit_mat
 fruit_mat[3, 2]
@@ -316,7 +311,7 @@ fruit_mat[3:4, ] # returns element of row 3 and 4 for all the columns.
 
 You can also access an element using the row and column names.
 ```{r}
-fruit_mat["A", "a"]
+my_calendar["Week 2", ]
 ```
 
 ### Adding New Element to a Matrix
@@ -324,21 +319,21 @@ To add new columns to a matrix use `cbind()` and to add rows use `rbind()`. We'l
 ```{r}
 new_fruit_list <- matrix(c("raspberry", "blue berries", 
                            "kiwi", "clementine"),
-       nrow = 4,
-       dimnames = list(letters[1:4], "C"))
+       nrow = 4)
 
 new_fruit_list
 
 fruit_list <- cbind(fruit_mat, new_fruit_list)
 fruit_list
 ```
-Ensure the number of rows of the matrices to be joined matches when performing a column bind and the number of columns matches when performing a row bind.
+To prevent error when combining column-wise ensure the number of rows of the matrices to be joined are equal and the number of columns are equal when combining row-wise.
 
 ```{r}
 rbind(fruit_list, c("avocado", "pear", "lemon"))
 ```
  
 ### Transposing Matrix
+
 Transposing matrix is done using `t()`. This flips row elements to columns and column elements to rows.
 ```{r}
 fruit_mat_transposed <- t(fruit_mat)
@@ -348,8 +343,19 @@ dim(fruit_mat_transposed)
 
 
 ## Data frames
+
 ### What is a Data Frame
-Data frames are two-dimensional like matrix and are the standard way to store data. They are similar to Excel spreadsheets. What makes them different from matrix is their ability to store different data types. To create a data frame, use the `data.frame()` function. Below is a simple data frame that stores the inventory of a fruit in a store.
+
+Data frames are two-dimensional like matrix and are the most common way to store data. They are similar to Excel spreadsheets. What makes data frames different from matrix is their ability to store different data types. To create a data frame, we use the `data.frame()` function.
+
+```{r}
+
+```
+
+
+
+Below is a simple data frame that stores the inventory of a fruit in a store.
+
 ```{r}
 fruit_inventory <- data.frame(
   type = c("pineapple", "mango", "apple"), # character data type
@@ -361,6 +367,7 @@ fruit_inventory
 ```
 
 Data frames can combine vectors into a table where each vector becomes a column. The vectors to be used have to be of the same length to avoid error:
+
 ```{r}
 fruit <- c("orange", "mango", "apple")
 stock <- c(5, 3, 0)
@@ -444,6 +451,17 @@ To access the item in each object add a square bracket in front.
 my_list[[1]][3]
 ```
 
+:::{.callout-tip}
+To confirm an object data structure, use their `is.*()` variant. For vectors, `is.vector()`, for matrix, `is.matrix()` and so on. To convert from one structure to another, use their `as.*()` variant. For vector `as.vector()`, for matrix, `as.matrix()` and so on.
+
+
+```{r}
+is.vector(my_calendar)
+is.vector(fruits)
+is.matrix(my_calendar)
+```
+
+:::
 
 ## Summary
 In this chapter you learned about data structures in R. You saw how to create each data structure, how to access the elements of each structure. Also, you learned how to add and remove items from each data structure. You got introduced to checking the properties of each data structure such as their length and dimensions. Next you will learn about packages in R and how to install them, after you will bring together the knowledge you've gathered from chapter one into making R Scripts and R projects.
