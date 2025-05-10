@@ -17,7 +17,7 @@ Operations such as addition, subtraction, multiplication and so on, are easy to 
 | %%       | Remainder division |
 | %/%      |   Integer division |
 
-: Arithmetic operators in R {#tbl-arith-op .striped .hover .bordered}
+: Arithmetic operators in R {#tbl-arith-op .hover .bordered}
 
 Run the following commands in your console:
 
