@@ -67,7 +67,7 @@ format:
     
   pdf:
     documentclass: scrreprt
-    pdf-engine: xelatex
+    pdf-engine: pdflatex
     cover-image: cover1.png
     output-file: r-for-research.pdf
   
