@@ -80,13 +80,13 @@ When should you use an R project? For all new projects 🤷. This is the logical
 ## Creating an R Project
 Before we create any project, we need to understand file organizations. Preinstalled with many operating system is the file manager. In file managers, we have some folders created readily, such as Music, Pictures, Videos, Documents, Downloads, and Desktop or Home. These folders ensure we organize our files based on their types and/or purposes. The memorable images we took last christmas is sure to be saved in a pictures folder. If we want to be more organized we can ensure the christmas pictures have it owns dedicated folder within the Pictures folder. A simple diagram of such file organization is shown in @fig-file-tree
 
-![Example of a file tree showing the contents of Pictures folder and the contents of its subfolders Christmas 2024 and Summer 2024](images/file-tree.png){#fig-file-tree width=100%}
+![Example of a file tree showing the contents of Pictures folder and the contents of its subfolders Christmas 2024 and Summer 2024](images/file-tree.png){#fig-file-tree width=50% height=50%}
 
 A similar level of organization is needed when you create R Projects, you can have all your data in a folder, images in another folder, and have another folder housing your R scripts or manuscript.
 
 To create a project click on *File* > *New Project* on the top-left edge of RStudio. You can create a [new directory]{.underline}, use an [existing directory]{.underline}, or clone a project from a [version control system]{.underline} repository. Alternatively, on the top-right edge of RStudio you will see a drop down button (horizontal arrow) that is like what is shown in @fig-proj-dropdown, you can create a new project from there, as well as recent projects (rectangular bar). Using that button also gives you the option to open multiple projects at once by clicking the icon on the edge (second arrow). I tend to use this button a lot, and I think getting used to it saves you a lot of trouble.
 
-![The R Project button on the top-right edge of RStudio. This drop down gives you options to create new project, switch to a different project, and open multiple projects at once.](images/proj-dropdown.png){#fig-proj-dropdown}
+![The R Project button on the top-right edge of RStudio. This drop down gives you options to create new project, switch to a different project, and open multiple projects at once.](images/proj-dropdown.png){#fig-proj-dropdown height=40% width=50%}
 
 ## Summary {.unnumbered}
 We have cleared the first step to using R effectively and that's getting the basics down. This chapter shows the first approach towards using R for our research. These are the steps:

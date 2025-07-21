@@ -4,7 +4,9 @@
 This section is still under development
 :::
 
-In @sec-fns, we saw that R comes with many built-in functions preintstalled (base R, utils and stats package functions). However, the true power of R lies in its extensive ecosystem of additional packages created by the R community. These packages extend R's capabilities, similar to how third-party apps like WhatsApp, Telegram or Signal extend a phone's basic messaging capabilities with features like video calls, read receipts, status updates and so on.
+In @sec-fns, we saw that R comes with many built-in functions. These functions are pre-installed in what is called the **Base packages**. They include `base`, `compiler`, `datasets`, `grDevices`, `graphics`, `grid`, `methods`, `parallel`, `splines`, `stats`, `stats4`, `tcltk`, `tools`, `translations`, and `utils` [@R-FAQ]. 
+These packages can handle a plethora amount of tasks, as your new mobile phones handle a lot of tasks. Notwithstanding, one of the first few things you do would be to go to playstore and appstore to download apps that your native device app 
+However, the true power of R lies in its extensive ecosystem of additional packages created by the R community. These packages extend R's capabilities, similar to how third-party apps like WhatsApp, Telegram or Signal extend a phone's basic messaging capabilities with features like video calls, read receipts, status updates and so on.
 
 ## Package Repositories
 ### CRAN (Primary Repository)
@@ -75,7 +77,7 @@ While alternative repositories offer cutting-edge or specialized packages, CRAN 
 ## Using Installed Packages
 There are two ways to use installed packages:
 
-1. \textbf{Loading Entire Packages}
+1. **Loading Entire Packages**
 Use the `library()` function to load all functions from a package:
 ```{r}
 #| eval: false
@@ -88,7 +90,7 @@ If you see this error:
 
 It means the package needs to be installed first using `install.packages("tidyverse")`.
 
-2. \textbf{Declarative Use of Functions}}
+2. **Declarative Use of Functions**
 To use individual functions without loading the entire package, use the package name followed by `::` and the function name:
 
 ```{r}
@@ -107,24 +109,26 @@ Remember: While package installation is a one-time process, you must reload pack
 ## Common Package Installation Errors
 When installing R packages, you might encounter various errors. Here's how to identify and resolve the most common ones:
 
-1. \textbf{Forgetting the quotation marks}.
+1. **Forgetting the quotation marks**.
 This is common, especially amongst beginners
 ```{r}
 #| error: true
 
 install.packages(tidyverse)
 ```
-Fix: 
+**Fix**:
+
 - Wait for the auto-complete option and select the package, it automatically inserts the quotation marks.
 - Manually enclose the package name in quotation marks.
 
-2. \textbf{Permission Errors}
+2. **Permission Errors**
 This typically occurs when R doesn't have write permissions to the installation directory.
 
-Fix:
-
+**Fix**:
+    
 - Windows: Run RStudio as administrator
 - Linux/Mac:
+
 ```{r}
 #| eval: false
 install.packages("tidyverse", lib = "~/R/library")
