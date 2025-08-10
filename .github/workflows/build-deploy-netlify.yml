@@ -36,7 +36,7 @@ jobs:
 
       - name: Install necessary R packages
         run: |
-          Rscript -e 'install.packages(c("quarto", "car", "tidyverse", "skimr", "psych", "janitor", "stats4nr", "ggthemes", "TukeyC"))'
+          Rscript -e 'install.packages(c("quarto", "car", "tidyverse", "skimr", "psych", "janitor", "stats4nr", "ggthemes", "TukeyC", "pacman"))'
 
       - name: Render Quarto site
         run: quarto render
